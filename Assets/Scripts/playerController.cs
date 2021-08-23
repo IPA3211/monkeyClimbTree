@@ -8,6 +8,7 @@ public class playerController : MonoBehaviour
     public float XPower;
     public float YPower;
     public float immuneTime;
+    Animator anim;
     Rigidbody2D rigied;
     SpriteRenderer spriteRenderer;
     Vector2 saveVelo;
@@ -19,6 +20,7 @@ public class playerController : MonoBehaviour
 
     void Start()
     {
+        anim = gameObject.GetComponent<Animator>();
         rigied = gameObject.GetComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         Jump(true);
@@ -61,6 +63,7 @@ public class playerController : MonoBehaviour
                     Jump(false);
                 }
                 isOnWall = false;
+                anim.SetBool("IsOnWall", isOnWall);
             }
         }
         else{
@@ -75,22 +78,28 @@ public class playerController : MonoBehaviour
     void Jump(bool isRight){
         if(isRight){
             rigied.velocity = new Vector2(-XPower, YPower);
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
             isOnRight = false;
         }
         else{
             rigied.velocity = new Vector2(XPower, YPower);
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
             isOnRight = true;
         }
         isOnWall = false;
+        anim.SetBool("IsOnWall", isOnWall);
     }
     void OnCollisionEnter2D (Collision2D other){
         if((other.gameObject.tag == "Wall" || other.gameObject.tag == "EnemyWall") && !isOnWall){
             rigied.velocity = new Vector2(0, 0);
             isOnWall = true;
+            anim.SetBool("IsOnWall", isOnWall);
         }
 
+        if (other.gameObject.tag == "EnemyWall")
+        {
+            playerHit();
+        }
     }
 
     void OnCollisionStay2D(Collision2D other){
