@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Enemy
+  - EnemyWall
   layers:
   - Default
   - TransparentFX
@@ -48,4 +49,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 853616669
+    locked: 0
+  - name: Wall
+    uniqueID: 3846187337
     locked: 0

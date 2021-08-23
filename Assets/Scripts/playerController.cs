@@ -7,6 +7,7 @@ public class playerController : MonoBehaviour
     // Start is called before the first frame update
     public float XPower;
     public float YPower;
+    public float immuneTime;
     Rigidbody2D rigied;
     SpriteRenderer spriteRenderer;
     Vector2 saveVelo;
@@ -14,6 +15,7 @@ public class playerController : MonoBehaviour
     bool isOnWall = false;
     bool isPaused = false;
     bool isLevelUped = false;
+    bool isImmune = false;
 
     void Start()
     {
@@ -60,8 +62,6 @@ public class playerController : MonoBehaviour
                 }
                 isOnWall = false;
             }
-
-
         }
         else{
             //퍼즈 될때
@@ -86,10 +86,34 @@ public class playerController : MonoBehaviour
         isOnWall = false;
     }
     void OnCollisionEnter2D (Collision2D other){
-        if(other.gameObject.tag == "Wall" && !isOnWall){
+        if((other.gameObject.tag == "Wall" || other.gameObject.tag == "EnemyWall") && !isOnWall){
             rigied.velocity = new Vector2(0, 0);
             isOnWall = true;
-            Debug.Log("wow");
         }
+
+    }
+
+    void OnCollisionStay2D(Collision2D other){
+        if(other.gameObject.tag == "EnemyWall"){
+            playerHit();
+        }
+    }
+
+    public void playerHit(){
+        if(!isImmune){
+            GameSystem.damaged(1);
+            StartCoroutine("playerImmuned");
+        }
+    }
+
+    IEnumerator playerImmuned() {
+        isImmune = true;
+        SpriteRenderer rend = gameObject.GetComponent<SpriteRenderer>();
+        for(int i = 0; i < immuneTime * 10; i++){
+            rend.enabled = !rend.enabled;
+            yield return new WaitForSeconds(0.1f);
+        }
+        rend.enabled = true;
+        isImmune = false;
     }
 }

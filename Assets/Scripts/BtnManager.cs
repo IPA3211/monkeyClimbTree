@@ -25,12 +25,12 @@ public class BtnManager : MonoBehaviour
 
 
     playerController pctrl;
-    Rigidbody2D rigidbody;
+    Rigidbody2D rigi;
     SmoothCamera smoothCamera;
     void Start()
     {
         pctrl = player.GetComponent<playerController>();
-        rigidbody = player.GetComponent<Rigidbody2D>();
+        rigi = player.GetComponent<Rigidbody2D>();
         smoothCamera = gameObject.GetComponent<SmoothCamera>();
         
         xPower.text = pctrl.XPower.ToString();
@@ -38,7 +38,7 @@ public class BtnManager : MonoBehaviour
         camOffset.text = smoothCamera.camOffset.ToString();
         camSpeed.text = smoothCamera.camSpeed.ToString();
         timeScale.text = Time.timeScale.ToString();
-        gravityScale.text = rigidbody.gravityScale.ToString();
+        gravityScale.text = rigi.gravityScale.ToString();
         charScale.text = player.transform.localScale.x.ToString();
     }
 
@@ -62,7 +62,7 @@ public class BtnManager : MonoBehaviour
         smoothCamera.camOffset = float.Parse(camOffset.text);
         smoothCamera.camSpeed = float.Parse(camSpeed.text);
         Time.timeScale = float.Parse(timeScale.text);
-        rigidbody.gravityScale = float.Parse(gravityScale.text);
+        rigi.gravityScale = float.Parse(gravityScale.text);
         player.transform.localScale = new Vector3(float.Parse(charScale.text), float.Parse(charScale.text), 0);
     }
 }
