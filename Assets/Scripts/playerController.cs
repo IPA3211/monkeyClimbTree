@@ -49,7 +49,6 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        GameSystem.playerHeight = gameObject.transform.position.y;
         if(!GameSystem.getPause()){
             if(isPaused){
                 //퍼즈 되고서 돌아갈때
@@ -66,6 +65,8 @@ public class playerController : MonoBehaviour
                 }
                 return;
             }
+            
+            GameSystem.playerHeight = gameObject.transform.position.y;
             
             if(isOnWall){
                 //벽에 부딪힐떄
