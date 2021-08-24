@@ -11,6 +11,7 @@ public class SpawnEnemy : MonoBehaviour
     public bool spawnWall;
     [Space(10f)]
 
+    public AudioManager audioManager;
     public GameObject snake;
     public bool spawnSnake;
     [Space(10f)]
@@ -52,21 +53,26 @@ public class SpawnEnemy : MonoBehaviour
         Debug.Log(spawnPoint);
         switch(spawnPoint){
             case 1:
-                Instantiate(snake, new Vector3(4.6f, cam.position.y + 11.25f, 0), Quaternion.Euler(0, 0, 180));
+                Instantiate(snake, new Vector3(5f, cam.position.y + 11.25f, 0), Quaternion.Euler(0, 0, 180));
+                audioManager.Play("Snake");
             break;
             case 2:
-                Instantiate(snake, new Vector3(-4.6f, cam.position.y + 11.25f, 0), Quaternion.Euler(0, 0, 180));
+                Instantiate(snake, new Vector3(-5f, cam.position.y + 11.25f, 0), Quaternion.Euler(0, 0, 180));
+                audioManager.Play("Snake");
             break;
             case 3:
-                Instantiate(snake, new Vector3(4.6f, cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(snake, new Vector3(5f, cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
+                audioManager.Play("Snake");
             break;
             case 4:
-                Instantiate(snake, new Vector3(-4.6f, cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(snake, new Vector3(-5f, cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
+                audioManager.Play("Snake");
             break;
         }
     }
 
     public void SpawnPanzee(){
         Instantiate(panzee, new Vector3(Random.Range(-4f, 4f), cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
+        audioManager.Play("Chimpanzee");
     }
 }

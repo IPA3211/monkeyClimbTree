@@ -7,14 +7,15 @@ public class playerController : MonoBehaviour
     // Start is called before the first frame update
     public float XPower;
     public float YPower;
-    public float doubleJumpPower = 5;
+    public float doubleJumpPower;
     public float immuneTime;
     Animator anim;
     Rigidbody2D rigied;
     SpriteRenderer spriteRenderer;
     Vector2 saveVelo;
+    public AudioManager audioManager;
     bool isStarted = false;
-    bool isOnRight = true;
+    public bool isOnRight = true;
     public bool isOnWall = false;
     bool isPaused = false;
     bool isLevelUped = false;
@@ -39,11 +40,24 @@ public class playerController : MonoBehaviour
                 Jump(true);
             }
         }
-        if(Input.GetMouseButtonDown(0) && !isOnWall && !isDoubleJumped && Mathf.Abs(gameObject.transform.position.x) < 3){
-            if(doubleJumpPower > 1){
-                rigied.velocity = new Vector2(rigied.velocity.x, doubleJumpPower);
-                isDoubleJumped = true;
+        if(Input.GetMouseButtonDown(0) && !isOnWall && !isDoubleJumped && Mathf.Abs(gameObject.transform.position.x) < 3.3f){
+            //더블점프 사용가능 범위때문에 나누긴 했는데 결국엔 다시 돌아옴 ㅋㅋ
+            if(isOnRight){
+                if(doubleJumpPower > 1){
+                    //rigied.velocity = new Vector2(rigied.velocity.x / 1.5f, doubleJumpPower);
+                    rigied.velocity = new Vector2(7f, doubleJumpPower);
+                    isDoubleJumped = true;
+                    Debug.Log(isOnRight);
+                }
             }
+            else{
+                if(doubleJumpPower > 1){
+                    //rigied.velocity = new Vector2(rigied.velocity.x / 1.5f, doubleJumpPower);
+                    rigied.velocity = new Vector2(-7f, doubleJumpPower);
+                    isDoubleJumped = true;
+                    Debug.Log(isOnRight);
+                }
+            }            
         }
     }
     // Update is called once per frame
@@ -110,7 +124,7 @@ public class playerController : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D other){
         if((other.gameObject.tag == "Wall" || other.gameObject.tag == "EnemyWall") && !isOnWall){
-            Debug.Log("wow");
+            //Debug.Log("wow");
             rigied.velocity = new Vector2(0, 0);
             isOnWall = true;
             isDoubleJumped = false;
@@ -144,7 +158,8 @@ public class playerController : MonoBehaviour
 
     public void playerHit(){
         if(!isImmune){
-            GameSystem.damaged(1);
+            audioManager.Play("Monkey_Cry");
+            GameSystem.damaged(1);            
             StartCoroutine("playerImmuned");
         }
     }
