@@ -12,11 +12,20 @@ public class BtnManager : MonoBehaviour
     [Space (10f)]
     public InputField xPower;
     public InputField yPower;
-    public InputField camOffset;
-    public InputField camSpeed;
     public InputField timeScale;
     public InputField gravityScale;
     public InputField charScale;
+    public InputField immuneTime;
+    public InputField doubleJumpPower;
+
+        [Space (10f)]
+    public InputField enemyP;
+    public InputField enviP;
+    public Toggle wallT;
+    public Toggle snakeT;
+    public Toggle panzeeT;
+    public Toggle branchT;
+    public Toggle bushT;
     
     [Header ("In Play UI")]
     public Text scoreText;
@@ -26,20 +35,31 @@ public class BtnManager : MonoBehaviour
 
     playerController pctrl;
     Rigidbody2D rigi;
-    SmoothCamera smoothCamera;
+    SpawnEnemy enemy;
+    SpawnEnvironment envi;
     void Start()
     {
         pctrl = player.GetComponent<playerController>();
         rigi = player.GetComponent<Rigidbody2D>();
-        smoothCamera = gameObject.GetComponent<SmoothCamera>();
+        enemy = gameObject.GetComponent<SpawnEnemy>();
+        envi = gameObject.GetComponent<SpawnEnvironment>();
         
         xPower.text = pctrl.XPower.ToString();
         yPower.text = pctrl.YPower.ToString();
-        camOffset.text = smoothCamera.camOffset.ToString();
-        camSpeed.text = smoothCamera.camSpeed.ToString();
         timeScale.text = Time.timeScale.ToString();
         gravityScale.text = rigi.gravityScale.ToString();
         charScale.text = player.transform.localScale.x.ToString();
+        immuneTime.text = pctrl.immuneTime.ToString();
+        doubleJumpPower.text = pctrl.doubleJumpPower.ToString();
+
+        enemyP.text = enemy.spawnPeriod.ToString();
+        enviP.text = envi.spawnPeriod.ToString();
+        
+        wallT.isOn = enemy.spawnWall;
+        snakeT.isOn = enemy.spawnSnake;
+        panzeeT.isOn = enemy.spawnPanzee;
+        branchT.isOn = envi.spawnBranch;
+        bushT.isOn = envi.spawnBush;
     }
 
     void FixedUpdate(){
@@ -59,10 +79,21 @@ public class BtnManager : MonoBehaviour
     void changeConfig(){
         pctrl.XPower = float.Parse(xPower.text);
         pctrl.YPower = float.Parse(yPower.text);
-        smoothCamera.camOffset = float.Parse(camOffset.text);
-        smoothCamera.camSpeed = float.Parse(camSpeed.text);
         Time.timeScale = float.Parse(timeScale.text);
         rigi.gravityScale = float.Parse(gravityScale.text);
         player.transform.localScale = new Vector3(float.Parse(charScale.text), float.Parse(charScale.text), 0);
+        pctrl.immuneTime = float.Parse(immuneTime.text);
+        pctrl.doubleJumpPower = float.Parse(doubleJumpPower.text);
+
+
+        
+        enemy.spawnPeriod = float.Parse(enemyP.text);
+        envi.spawnPeriod = float.Parse(enviP.text);
+        
+        enemy.spawnWall = wallT.isOn;
+        enemy.spawnSnake = snakeT.isOn;
+        enemy.spawnPanzee = panzeeT.isOn;
+        envi.spawnBranch = branchT.isOn;
+        envi.spawnBush = bushT.isOn;
     }
 }

@@ -8,6 +8,7 @@ public class EnvironmentBranch : MonoBehaviour
     public float warningTime;
     public float health = 1.5f;
     bool playerHit = false;
+    Rigidbody2D playerRigid;
     // Start is called before the first frame update
     void Start()
     {

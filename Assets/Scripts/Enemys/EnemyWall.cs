@@ -38,15 +38,15 @@ public class EnemyWall : MonoBehaviour
             while (progress <= 1)
             {
                 rend.color = Color.Lerp(rawColor, Color.red, progress);
-                progress += 0.02f;
-                yield return new WaitForSeconds(0.005f);
+                progress += 0.1f;
+                yield return new WaitForSeconds(0.05f);
             }
             progress = 0;
             while (progress <= 1)
             {
                 rend.color = Color.Lerp(Color.red, rawColor, progress);
-                progress += 0.02f;
-                yield return new WaitForSeconds(0.005f);
+                progress += 0.1f;
+                yield return new WaitForSeconds(0.05f);
             }
         }
 
@@ -56,8 +56,8 @@ public class EnemyWall : MonoBehaviour
         
         tree.tag = "EnemyWall";
 
-        rend.color = Color.blue;
-        yield return new WaitForSeconds(2f);
+        rend.color = new Color(0, 0.5f, 1f, 1f);
+        yield return new WaitForSeconds(1f);
         rend.color = rawColor;
 
         tree.tag = "Wall";
