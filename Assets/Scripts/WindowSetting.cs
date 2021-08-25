@@ -8,11 +8,11 @@ public class WindowSetting : MonoBehaviour
     private void Awake()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        Screen.SetResolution(576, 1024, false);
+        Screen.SetResolution(1080, 1920, false);
     }
     // Use this for initialization
     void Start () {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        Screen.SetResolution(576, 1024, false);
+        Screen.SetResolution(1080, 1920, false);
     }
 }

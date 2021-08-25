@@ -14,7 +14,6 @@ public class playerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Vector2 saveVelo;
     public AudioManager audioManager;
-    bool isStarted = false;
     public bool isOnRight = true;
     public bool isOnWall = false;
     bool isPaused = false;
@@ -30,16 +29,13 @@ public class playerController : MonoBehaviour
         rigied = gameObject.GetComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         rigied.simulated = false;
+        Jump(true);
     }
 
     void Update(){
         //FixedUpdate 에서는 GetMouseButtonDown 인식이 정확하지 않아서 Update 문으로 왔음
-        if(isStarted == false){
-            if(Input.GetMouseButtonDown(0)){
-                isStarted = true;
-                rigied.simulated = true;
-                Jump(true);
-            }
+        if(GameSystem.isStarted == false){
+            return;
         }
         if(Input.GetMouseButtonDown(0) && !isOnWall && !isDoubleJumped && Mathf.Abs(gameObject.transform.position.x) < 3.3f){
             //더블점프 사용가능 범위때문에 나누긴 했는데 결국엔 다시 돌아옴 ㅋㅋ
@@ -64,7 +60,7 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(!GameSystem.getPause()){
+        if(!GameSystem.getPause() && GameSystem.isStarted){
             if(isPaused){
                 //퍼즈 되고서 돌아갈때
                 isPaused = !isPaused;

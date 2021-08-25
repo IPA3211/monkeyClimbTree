@@ -19,4 +19,7 @@ public class RuntimeGameManager : MonoBehaviour
     public void levelUp(){
         GameSystem.isLevelUping = true;
     }
+    public void gameStart(){
+        GameSystem.isStarted = true;
+    }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameSystem
 {
     private static bool isPasued = false;
+    public static bool isStarted = false;
     public static float playerHeight = 0;
     private static int score = 0;
     public static int health = 3;

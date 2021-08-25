@@ -9,6 +9,7 @@ TagManager:
   - EnemyWall
   - EnemyBounce
   - Bush
+  - UI_Player
   layers:
   - Default
   - TransparentFX

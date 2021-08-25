@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BtnManager : MonoBehaviour
+public class configUIManager : MonoBehaviour
 {
     // Start is called before the first frame update
     [Header ("Config")]
     public GameObject player;
+    public GameObject gameManager;
     public GameObject pauseMenu;
     [Space (10f)]
     public InputField xPower;
@@ -26,12 +27,6 @@ public class BtnManager : MonoBehaviour
     public Toggle panzeeT;
     public Toggle branchT;
     public Toggle bushT;
-    
-    [Header ("In Play UI")]
-    public Text scoreText;
-    public Text healthText;
-
-
 
     playerController pctrl;
     Rigidbody2D rigi;
@@ -41,8 +36,8 @@ public class BtnManager : MonoBehaviour
     {
         pctrl = player.GetComponent<playerController>();
         rigi = player.GetComponent<Rigidbody2D>();
-        enemy = gameObject.GetComponent<SpawnEnemy>();
-        envi = gameObject.GetComponent<SpawnEnvironment>();
+        enemy = gameManager.GetComponent<SpawnEnemy>();
+        envi = gameManager.GetComponent<SpawnEnvironment>();
         
         xPower.text = pctrl.XPower.ToString();
         yPower.text = pctrl.YPower.ToString();
@@ -62,16 +57,13 @@ public class BtnManager : MonoBehaviour
         bushT.isOn = envi.spawnBush;
     }
 
-    void FixedUpdate(){
-        scoreText.text =  GameSystem.getScore().ToString();
-        healthText.text = GameSystem.getHealth().ToString();
-    }
-
     public void ChangePauseSetting(){
         GameSystem.setPause(!GameSystem.getPause());
+        Time.timeScale = 0;
         pauseMenu.SetActive(GameSystem.getPause());
 
         if(!GameSystem.getPause()){
+            Time.timeScale = 1;
             changeConfig();
         }
     }
