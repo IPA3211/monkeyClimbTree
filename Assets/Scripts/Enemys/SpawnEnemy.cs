@@ -53,19 +53,19 @@ public class SpawnEnemy : MonoBehaviour
         Debug.Log(spawnPoint);
         switch(spawnPoint){
             case 1:
-                Instantiate(snake, new Vector3(5f, cam.position.y + 11.25f, 0), Quaternion.Euler(0, 0, 180));
+                Instantiate(snake, new Vector3(5.1f, cam.position.y + 11.25f, 0), Quaternion.Euler(0, 0, 180));
                 audioManager.Play("Snake");
             break;
             case 2:
-                Instantiate(snake, new Vector3(-5f, cam.position.y + 11.25f, 0), Quaternion.Euler(0, 0, 180));
+                Instantiate(snake, new Vector3(-5.1f, cam.position.y + 11.25f, 0), Quaternion.Euler(0, 180, 180));
                 audioManager.Play("Snake");
             break;
             case 3:
-                Instantiate(snake, new Vector3(5f, cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(snake, new Vector3(5.1f, cam.position.y - 11.25f, 0), Quaternion.Euler(0, 180, 0));
                 audioManager.Play("Snake");
             break;
             case 4:
-                Instantiate(snake, new Vector3(-5f, cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(snake, new Vector3(-5.1f, cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
                 audioManager.Play("Snake");
             break;
         }
