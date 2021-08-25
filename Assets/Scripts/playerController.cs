@@ -131,11 +131,6 @@ public class playerController : MonoBehaviour
             isDoubleJumped = false;
             anim.SetBool("IsOnWall", isOnWall);
         }
-
-        if (other.gameObject.tag == "EnemyWall")
-        {
-            playerHit();
-        }
     }
 
     void OnCollisionStay2D(Collision2D other){
@@ -144,14 +139,19 @@ public class playerController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other){
+    void OnTriggerStay2D(Collider2D other){
+        if (other.gameObject.tag == "EnemyWall")
+        {
+            playerHit();
+        }
+
         if(other.gameObject.tag == "Enemy"){
             playerHit();
         }
 
         if(other.gameObject.tag == "EnemyBounce"){
             playerHit();
-            if(!isOnWall){
+            if(!isOnWall && !isImmune){
                 Jump(isOnRight, XPower, rigied.velocity.y + 1f);
             }
         }
