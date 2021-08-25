@@ -33,6 +33,7 @@ public class playerController : MonoBehaviour
     }
 
     void Update(){
+        //FixedUpdate 에서는 GetMouseButtonDown 인식이 정확하지 않아서 Update 문으로 왔음
         if(isStarted == false){
             if(Input.GetMouseButtonDown(0)){
                 isStarted = true;
@@ -71,6 +72,7 @@ public class playerController : MonoBehaviour
             }
 
             if(GameSystem.isLeveluped){
+                //레벨업 하는 중 일때(넝쿨 타고 올라가는 중 일때)
                 rigied.simulated = false;
                 transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 5);
                 if(GameSystem.playerHeight + 10 < gameObject.transform.position.y){
@@ -79,7 +81,8 @@ public class playerController : MonoBehaviour
                 }
                 return;
             }
-            
+            //게임 시스템에 플레이어 높이 갱신
+            //위에 레벨업 하는 중 일때 사용해서 위 if 문 보다 아래에 위치해야함
             GameSystem.playerHeight = gameObject.transform.position.y;
             
             if(isOnWall){
@@ -105,6 +108,7 @@ public class playerController : MonoBehaviour
     }
 
     void Jump(bool isRight, float x, float y){
+        //파워를 직접 정해줄 수 있는 Jump함수
         if(isRight){
             rigied.velocity = new Vector2(-x, y);
             isOnRight = false;
@@ -119,12 +123,13 @@ public class playerController : MonoBehaviour
     }
 
     void Jump(bool isRight){
+        //미리 지정된 파워를 사용하는 Jump override 함수
         Jump(isRight, XPower, YPower);
     }
 
     void OnCollisionEnter2D (Collision2D other){
         if((other.gameObject.tag == "Wall" || other.gameObject.tag == "EnemyWall") && !isOnWall){
-            //Debug.Log("wow");
+            //벽에 부딪힐때
             rigied.velocity = new Vector2(0, 0);
             isOnWall = true;
             isDoubleJumped = false;
