@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class levelUpVine : MonoBehaviour
 {
+    GameObject cam;
     // Start is called before the first frame update
     void Start()
     {
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     // Update is called once per frame
     void Update()
     {
         if(!GameSystem.isStarted){
-            transform.position = new Vector3(0, (GameSystem.level + 1) * 20 + 5, 0);
+            transform.position = cam.transform.position + new Vector3(0, 25, -10);
+            
             return;
         }
         if(GameSystem.isLeveluped){

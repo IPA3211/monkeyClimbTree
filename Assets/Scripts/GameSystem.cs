@@ -40,15 +40,15 @@ public class GameSystem
         isLeveluped = true;
     }
     public static void stageUp(){
-        setLevel((getLevel() / 3) * 3 + 3);
+        setLevel((int)(getLevel() / 3) * 3 + 3);
     }
     public static void stageDown(){
-        setLevel((getLevel() / 3) * 3 - 3);
+        setLevel((int)(getLevel() / 3) * 3 - 3);
         
     }
     public static void setLevel(int newLevel){
         level = newLevel;
-        if(level < maxLevel){
+        if(level > maxLevel){
             level = maxLevel;
         }
         if (level <= 0){

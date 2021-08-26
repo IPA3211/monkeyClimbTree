@@ -20,6 +20,7 @@ public class RuntimeGameManager : MonoBehaviour
         GameSystem.isLevelUping = true;
     }
     public void gameStart(){
-        GameSystem.isStarted = true;
+        if(!gameObject.GetComponent<CamMoveByLevel>().isMoving)
+            GameSystem.isStarted = true;
     }
 }
