@@ -1,43 +1,55 @@
 fileFormatVersion: 2
-guid: 0d00902782d58644bb4d35ac02651f46
+guid: 1de8904630e63ab4bb57333d0bc33180
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3585856376580923426
-    second: monkey_legend_climb_star_sprite2_0
+      213: -2289547404612205738
+    second: monkey_legend_all_green_0
   - first:
-      213: 5241427255606936604
-    second: monkey_legend_climb_star_sprite2_1
+      213: 114550469442000825
+    second: monkey_legend_all_green_1
   - first:
-      213: -2454647228250504499
-    second: monkey_legend_climb_star_sprite2_2
+      213: -7579703106991105807
+    second: monkey_legend_all_green_2
   - first:
-      213: 4156477182205620010
-    second: monkey_legend_climb_star_sprite2_3
+      213: 8699360932940882212
+    second: monkey_legend_all_green_3
   - first:
-      213: -1773052827992391738
-    second: monkey_legend_climb_star_sprite2_4
+      213: -34622337277540059
+    second: monkey_legend_all_green_4
   - first:
-      213: 8890395065857441876
-    second: monkey_legend_climb_star_sprite2_5
+      213: 222786893762040379
+    second: monkey_legend_all_green_5
   - first:
-      213: 7565048241416222918
-    second: monkey_legend_climb_star_sprite2_6
+      213: -4752243886462563154
+    second: monkey_legend_all_green_6
   - first:
-      213: -4662977232926861566
-    second: monkey_legend_climb_star_sprite2_7
+      213: -7369671594855093236
+    second: monkey_legend_all_green_7
   - first:
-      213: -2461607569993707606
-    second: monkey_legend_climb_star_sprite2_8
+      213: 3984717699874341459
+    second: monkey_legend_all_green_8
   - first:
-      213: -8061429387866605785
-    second: monkey_legend_climb_star_sprite2_9
+      213: 9219879939135351160
+    second: monkey_legend_all_green_9
   - first:
-      213: -1041715535882498414
-    second: monkey_legend_climb_star_sprite2_10
+      213: 101641067714417661
+    second: monkey_legend_all_green_10
   - first:
-      213: -6540495725848021609
-    second: monkey_legend_climb_star_sprite2_11
+      213: 6997645770663252291
+    second: monkey_legend_all_green_11
+  - first:
+      213: -2985514252832747719
+    second: monkey_legend_all_green_12
+  - first:
+      213: 1732382073329101143
+    second: monkey_legend_all_green_13
+  - first:
+      213: 4700545252320427378
+    second: monkey_legend_all_green_14
+  - first:
+      213: -6984873370849174070
+    second: monkey_legend_all_green_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,18 +136,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -151,253 +151,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: monkey_legend_climb_star_sprite2_0
+      name: monkey_legend_all_green_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 50
-        height: 50
+        width: 80
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edf135acf9a7c3ec0800000000000000
-      internalID: -3585856376580923426
+      spriteID: 6530cab14c4e930e0800000000000000
+      internalID: -2289547404612205738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monkey_legend_climb_star_sprite2_1
+      name: monkey_legend_all_green_1
       rect:
         serializedVersion: 2
-        x: 51
+        x: 80
         y: 0
-        width: 50
-        height: 50
+        width: 80
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c148086915a4db840800000000000000
-      internalID: 5241427255606936604
+      spriteID: 9b7d1f78b07f69100800000000000000
+      internalID: 114550469442000825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monkey_legend_climb_star_sprite2_2
+      name: monkey_legend_all_green_2
       rect:
         serializedVersion: 2
-        x: 102
+        x: 160
         y: 0
-        width: 50
-        height: 50
+        width: 80
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc24b37e9575fedd0800000000000000
-      internalID: -2454647228250504499
+      spriteID: 1f8ded4ee2c7fc690800000000000000
+      internalID: -7579703106991105807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monkey_legend_climb_star_sprite2_3
+      name: monkey_legend_all_green_3
       rect:
         serializedVersion: 2
-        x: 153
+        x: 240
         y: 0
-        width: 50
-        height: 50
+        width: 80
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2fe16aa9f5cea930800000000000000
-      internalID: 4156477182205620010
+      spriteID: 4212ad46da65ab870800000000000000
+      internalID: 8699360932940882212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monkey_legend_climb_star_sprite2_4
+      name: monkey_legend_all_green_4
       rect:
         serializedVersion: 2
-        x: 204
+        x: 320
         y: 0
-        width: 50
-        height: 50
+        width: 80
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cff283d8d9d467e0800000000000000
-      internalID: -1773052827992391738
+      spriteID: 529474dea2ff48ff0800000000000000
+      internalID: -34622337277540059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monkey_legend_climb_star_sprite2_5
+      name: monkey_legend_all_green_5
       rect:
         serializedVersion: 2
-        x: 255
+        x: 400
         y: 0
-        width: 50
-        height: 50
+        width: 80
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45081558537016b70800000000000000
-      internalID: 8890395065857441876
+      spriteID: b329c4fdf7f771300800000000000000
+      internalID: 222786893762040379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monkey_legend_climb_star_sprite2_6
+      name: monkey_legend_all_green_6
       rect:
         serializedVersion: 2
-        x: 306
+        x: 480
         y: 0
-        width: 50
-        height: 50
+        width: 80
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c8be425b437cf860800000000000000
-      internalID: 7565048241416222918
+      spriteID: eac806d1d53ac0eb0800000000000000
+      internalID: -4752243886462563154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monkey_legend_climb_star_sprite2_7
+      name: monkey_legend_all_green_7
       rect:
         serializedVersion: 2
-        x: 357
+        x: 560
         y: 0
-        width: 50
-        height: 50
+        width: 80
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20719a389e6c94fb0800000000000000
-      internalID: -4662977232926861566
+      spriteID: c0c206d0bbaa9b990800000000000000
+      internalID: -7369671594855093236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monkey_legend_climb_star_sprite2_8
+      name: monkey_legend_all_green_8
       rect:
         serializedVersion: 2
-        x: 408
+        x: 640
         y: 0
-        width: 50
-        height: 50
+        width: 80
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aafcc1e05fc96ddd0800000000000000
-      internalID: -2461607569993707606
+      spriteID: 352c837d2af8c4730800000000000000
+      internalID: 3984717699874341459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monkey_legend_climb_star_sprite2_9
+      name: monkey_legend_all_green_9
       rect:
         serializedVersion: 2
-        x: 459
+        x: 720
         y: 0
-        width: 50
-        height: 50
+        width: 80
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 727f05adeac002090800000000000000
-      internalID: -8061429387866605785
+      spriteID: 879a9e3a4f793ff70800000000000000
+      internalID: 9219879939135351160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monkey_legend_climb_star_sprite2_10
+      name: monkey_legend_all_green_10
       rect:
         serializedVersion: 2
-        x: 510
+        x: 800
         y: 0
-        width: 50
-        height: 50
+        width: 80
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29ec7b64d351b81f0800000000000000
-      internalID: -1041715535882498414
+      spriteID: df395b7330a196100800000000000000
+      internalID: 101641067714417661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monkey_legend_climb_star_sprite2_11
+      name: monkey_legend_all_green_11
       rect:
         serializedVersion: 2
-        x: 561
+        x: 880
         y: 0
-        width: 50
-        height: 50
+        width: 80
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7953ed55acd7b35a0800000000000000
-      internalID: -6540495725848021609
+      spriteID: 341d568d0c1ac1160800000000000000
+      internalID: 6997645770663252291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_legend_all_green_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93fc900ea925196d0800000000000000
+      internalID: -2985514252832747719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_legend_all_green_13
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75929003158aa0810800000000000000
+      internalID: 1732382073329101143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_legend_all_green_14
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27d353f9001bb3140800000000000000
+      internalID: 4700545252320427378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_legend_all_green_15
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd13793daeb01f90800000000000000
+      internalID: -6984873370849174070
       vertices: []
       indices: 
       edges: []

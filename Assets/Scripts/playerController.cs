@@ -45,6 +45,7 @@ public class playerController : MonoBehaviour
                     //rigied.velocity = new Vector2(rigied.velocity.x / 1.5f, doubleJumpPower);
                     rigied.velocity = new Vector2(7f, doubleJumpPower);
                     isDoubleJumped = true;
+                    anim.SetBool("IsDoubleJump", isDoubleJumped);
                     Debug.Log(isOnRight);
                 }
             }
@@ -53,6 +54,7 @@ public class playerController : MonoBehaviour
                     //rigied.velocity = new Vector2(rigied.velocity.x / 1.5f, doubleJumpPower);
                     rigied.velocity = new Vector2(-7f, doubleJumpPower);
                     isDoubleJumped = true;
+                    anim.SetBool("IsDoubleJump", isDoubleJumped);
                     Debug.Log(isOnRight);
                 }
             }            
@@ -149,6 +151,7 @@ public class playerController : MonoBehaviour
             isOnWall = true;
             isDoubleJumped = false;
             anim.SetBool("IsOnWall", isOnWall);
+            anim.SetBool("IsDoubleJump", isDoubleJumped);
         }
     }
 

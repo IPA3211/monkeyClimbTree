@@ -2399,8 +2399,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 784131744}
   skinDatas:
-  - {fileID: 2800000, guid: 600b4a2433e8d8644b901da022b0ba75, type: 3}
-  - {fileID: 2800000, guid: 0d00902782d58644bb4d35ac02651f46, type: 3}
+  - {fileID: 2800000, guid: 094a44158049a7e4c9885ce4e277dcaa, type: 3}
+  - {fileID: 2800000, guid: 1de8904630e63ab4bb57333d0bc33180, type: 3}
   skinNumber: 0
 --- !u!1 &352276157
 GameObject:
@@ -5731,12 +5731,12 @@ SpriteRenderer:
   m_SortingLayerID: 853616669
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8220736051980282837, guid: 600b4a2433e8d8644b901da022b0ba75, type: 3}
+  m_Sprite: {fileID: 725137815180615252, guid: 094a44158049a7e4c9885ce4e277dcaa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.25, y: 1.25}
+  m_Size: {x: 1.6, y: 1.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -46,11 +46,11 @@ public class LobbyUIManager : MonoBehaviour
 
     }
     public void OnLeftBtnClicked(){
-        GameSystem.level -= 3;
-        stageText.text = "Stage " + (GameSystem.level / 3 + 1); 
+        GameSystem.stageDown();
+        stageText.text = "Stage " + (GameSystem.getLevel() / 3 + 1); 
     }
     public void OnRightBtnClicked(){
-        GameSystem.level += 3;
-        stageText.text = "Stage " + (GameSystem.level / 3 + 1); 
+        GameSystem.stageUp();
+        stageText.text = "Stage " + (GameSystem.getLevel() / 3 + 1); 
     }
 }

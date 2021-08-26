@@ -51,5 +51,8 @@ public class GameSystem
         if(level < maxLevel){
             level = maxLevel;
         }
+        if (level <= 0){
+            level = 0;
+        }
     }
 }
