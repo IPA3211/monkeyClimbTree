@@ -6,16 +6,20 @@ public class SpawnEnemy : MonoBehaviour
 {   
     [Header ("Config")]
     public float spawnPeriod;
+    public AudioManager audioManager;
 
     [Header ("Enemies")]
     public bool spawnWall;
+    public int wallAmount;
     [Space(10f)]
-
-    public AudioManager audioManager;
     public GameObject snake;
+    public float snakeSpeed;
     public bool spawnSnake;
+    
     [Space(10f)]
     public GameObject panzee;
+    public float panzeeXPower;
+    public float panzeeYPower;
     public bool spawnPanzee;
     float timeCount;
     WallPositionSetter wallPositionSetter;
@@ -36,7 +40,7 @@ public class SpawnEnemy : MonoBehaviour
         if(timeCount > spawnPeriod && !GameSystem.isLevelUping && !GameSystem.isLeveluped){
             timeCount = 0;
             if(spawnWall)
-                wallPositionSetter.wallOnCam.GetComponent<EnemyWall>().spawn(0);
+                wallPositionSetter.wallOnCam.GetComponent<EnemyWall>().spawn(wallAmount);
             
             if(spawnSnake)
                 SpawnSnake(0);
@@ -50,6 +54,7 @@ public class SpawnEnemy : MonoBehaviour
         if(spawnPoint == 0)
             spawnPoint = Random.Range(1, 5);
 
+        snake.GetComponent<EnemySnake>().speed = snakeSpeed;
         Debug.Log(spawnPoint);
         switch(spawnPoint){
             case 1:
@@ -72,6 +77,8 @@ public class SpawnEnemy : MonoBehaviour
     }
 
     public void SpawnPanzee(){
+        panzee.GetComponent<EnemyPanzee>().XPower = panzeeXPower;
+        panzee.GetComponent<EnemyPanzee>().YPower = panzeeYPower;
         Instantiate(panzee, new Vector3(Random.Range(-4f, 4f), cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
         audioManager.Play("Chimpanzee");
     }

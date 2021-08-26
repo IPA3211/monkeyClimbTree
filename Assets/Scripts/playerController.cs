@@ -20,6 +20,7 @@ public class playerController : MonoBehaviour
     bool isLevelUped = false;
     bool isImmune = false;
     public bool isDoubleJumped = true;
+    GameObject stuckBush;
     GameObject cam;
 
     void Start()
@@ -57,7 +58,7 @@ public class playerController : MonoBehaviour
             }            
         }
     }
-    // Update is called once per frame
+
     void FixedUpdate()
     {
         if(!GameSystem.getPause() && GameSystem.isStarted){
@@ -65,6 +66,19 @@ public class playerController : MonoBehaviour
                 //퍼즈 되고서 돌아갈때
                 isPaused = !isPaused;
                 rigied.simulated = true;
+            }
+
+            if(stuckBush){
+                if(rigied.constraints == RigidbodyConstraints2D.FreezeRotation){
+                    saveVelo = rigied.velocity;
+                    rigied.constraints = RigidbodyConstraints2D.FreezeAll;
+                }
+            }
+            else{
+                if(rigied.constraints == RigidbodyConstraints2D.FreezeAll){
+                    rigied.velocity = saveVelo;
+                    rigied.constraints = RigidbodyConstraints2D.FreezeRotation;
+                }
             }
 
             if(GameSystem.isLeveluped){
@@ -89,10 +103,8 @@ public class playerController : MonoBehaviour
             if(Input.GetMouseButton(0) && isOnWall && cam.transform.position.y + 8> transform.position.y){
                 //터치 될때
                 Jump(isOnRight);
-                isOnWall = false;
                 anim.SetBool("IsOnWall", isOnWall);
             }
-
         }
         else{
             //퍼즈 될때
@@ -105,6 +117,9 @@ public class playerController : MonoBehaviour
 
     void Jump(bool isRight, float x, float y){
         //파워를 직접 정해줄 수 있는 Jump함수
+        if(rigied.constraints == RigidbodyConstraints2D.FreezeAll)
+            return;
+
         if(isRight){
             rigied.velocity = new Vector2(-x, y);
             isOnRight = false;
@@ -150,10 +165,14 @@ public class playerController : MonoBehaviour
         }
 
         if(other.gameObject.tag == "EnemyBounce"){
-            playerHit();
             if(!isOnWall && !isImmune){
                 Jump(isOnRight, XPower, rigied.velocity.y + 1f);
             }
+            playerHit();
+        }
+
+        if(other.gameObject.tag == "Bush"){
+            stuckBush = other.gameObject;
         }
     }
 

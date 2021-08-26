@@ -8,20 +8,16 @@ public class EnvironmentBush : MonoBehaviour
     public int touchHealth;
     public float health;
     bool playerHit = false;
+    Vector3 playerVelocity;
+    bool isOnWall;
+    float playerGravity;
     Rigidbody2D playerRigid;
+    playerController pctrl;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("BushLife");
     }
-
-    void OnDestroy() {
-        if(playerHit){
-            playerRigid.simulated = true;
-        }
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if(playerHit){
@@ -35,17 +31,14 @@ public class EnvironmentBush : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void OnDestroy() {
+        
+    }
+    
     void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.tag == "Player"){
-            playerRigid = other.gameObject.GetComponent<Rigidbody2D>();
-            playerRigid.simulated = false;
+            
             playerHit = true;
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D other){
-        if(other.gameObject.tag == "Player"){
-            playerHit = false;
         }
     }
 

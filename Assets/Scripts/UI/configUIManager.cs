@@ -22,6 +22,10 @@ public class configUIManager : MonoBehaviour
         [Space (10f)]
     public InputField enemyP;
     public InputField enviP;
+    public InputField snakeSpeed;
+    public InputField wallAmount;
+    public InputField panzeeX;
+    public InputField panzeeY;
     public Toggle wallT;
     public Toggle snakeT;
     public Toggle panzeeT;
@@ -49,6 +53,11 @@ public class configUIManager : MonoBehaviour
 
         enemyP.text = enemy.spawnPeriod.ToString();
         enviP.text = envi.spawnPeriod.ToString();
+
+        snakeSpeed.text = enemy.snakeSpeed.ToString();
+        wallAmount.text = enemy.wallAmount.ToString();
+        panzeeX.text = enemy.panzeeXPower.ToString();
+        panzeeY.text = enemy.panzeeYPower.ToString();
         
         wallT.isOn = enemy.spawnWall;
         snakeT.isOn = enemy.spawnSnake;
@@ -76,11 +85,14 @@ public class configUIManager : MonoBehaviour
         player.transform.localScale = new Vector3(float.Parse(charScale.text), float.Parse(charScale.text), 0);
         pctrl.immuneTime = float.Parse(immuneTime.text);
         pctrl.doubleJumpPower = float.Parse(doubleJumpPower.text);
-
-
         
         enemy.spawnPeriod = float.Parse(enemyP.text);
         envi.spawnPeriod = float.Parse(enviP.text);
+
+        enemy.snakeSpeed = float.Parse(snakeSpeed.text);
+        enemy.wallAmount = int.Parse(wallAmount.text);
+        enemy.panzeeXPower = float.Parse(panzeeX.text);
+        enemy.panzeeYPower = float.Parse(panzeeY.text);
         
         enemy.spawnWall = wallT.isOn;
         enemy.spawnSnake = snakeT.isOn;
