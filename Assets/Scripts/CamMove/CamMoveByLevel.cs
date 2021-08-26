@@ -18,7 +18,7 @@ public class CamMoveByLevel : MonoBehaviour
     {
         if(!GameSystem.getPause()){
             cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, GameSystem.level * moveDistance, -10), Time.deltaTime * camSpeed);
-            if(cam.transform.position.y > GameSystem.level * moveDistance - 0.2f){
+            if(Mathf.Abs((GameSystem.level * moveDistance) - cam.transform.position.y) < 0.1f){
                 cam.transform.position = new Vector3(0, GameSystem.level * moveDistance, -10);
             }
         }

@@ -26,5 +26,14 @@ public class WallPositionSetter : MonoBehaviour
             wall2.transform.position = wall1.transform.position + new Vector3(0, wallOffset, 0);
             wallOnCam = wall1;
         }
+
+        if (cam.transform.position.y < wall1.transform.position.y - wallOffset){
+            wall1.transform.position = wall2.transform.position - new Vector3(0, wallOffset, 0);
+            wallOnCam = wall2;
+        }
+        else if (cam.transform.position.y < wall2.transform.position.y - wallOffset){
+            wall2.transform.position = wall1.transform.position - new Vector3(0, wallOffset, 0);
+            wallOnCam = wall1;
+        }
     }
 }

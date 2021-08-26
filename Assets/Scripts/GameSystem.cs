@@ -10,6 +10,7 @@ public class GameSystem
     private static int score = 0;
     public static int health = 3;
     public static int level = 0;
+    public static int maxLevel = 15;
     public static bool isLevelUping = false;
     public static bool isLeveluped = false;
     
@@ -35,10 +36,20 @@ public class GameSystem
         return level;
     }
     public static void levelUp(){
-        level++;
+        setLevel(getLevel() + 1);
         isLeveluped = true;
+    }
+    public static void stageUp(){
+        setLevel((getLevel() / 3) * 3 + 3);
+    }
+    public static void stageDown(){
+        setLevel((getLevel() / 3) * 3 - 3);
+        
     }
     public static void setLevel(int newLevel){
         level = newLevel;
+        if(level < maxLevel){
+            level = maxLevel;
+        }
     }
 }

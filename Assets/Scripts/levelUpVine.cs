@@ -12,12 +12,15 @@ public class levelUpVine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!GameSystem.isStarted){
+            transform.position = new Vector3(0, (GameSystem.level + 1) * 20 + 5, 0);
+            return;
+        }
         if(GameSystem.isLeveluped){
             //플레이어가 넝쿨에 부딪혀서 타고 올라감
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 5);
         }
-
         else if(GameSystem.isLevelUping){
             //넝쿨 내려옴
             gameObject.GetComponent<BoxCollider2D>().enabled = true;

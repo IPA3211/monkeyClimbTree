@@ -61,6 +61,10 @@ public class playerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(!GameSystem.isStarted){
+            gameObject.transform.position = cam.transform.position + new Vector3(0, -4, 10);
+        }
+
         if(!GameSystem.getPause() && GameSystem.isStarted){
             if(isPaused){
                 //퍼즈 되고서 돌아갈때
