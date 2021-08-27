@@ -43,6 +43,6 @@ public class SpawnItems : MonoBehaviour
 
     void SpawnCoin()
     {
-        Instantiate(coin, new Vector3(Random.Range(-4f, 4f), Random.Range(-9f,  9f) + cam.position.y, 0), Quaternion.Euler(0, 0, 0));
+        Instantiate(coin, new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(-8f,  9f) + cam.position.y, 0), Quaternion.Euler(0, 0, 0));
     }
 }
