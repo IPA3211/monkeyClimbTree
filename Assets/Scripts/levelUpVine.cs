@@ -15,7 +15,7 @@ public class levelUpVine : MonoBehaviour
     void Update()
     {
         if(!GameSystem.isStarted){
-            transform.position = cam.transform.position + new Vector3(0, 25, -10);
+            transform.position = cam.transform.position + new Vector3(0, 25, 10);
             
             return;
         }
@@ -27,13 +27,13 @@ public class levelUpVine : MonoBehaviour
         else if(GameSystem.isLevelUping){
             //넝쿨 내려옴
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
-            if((GameSystem.level + 1) * 20 < transform.position.y){
+            if((GameSystem.getLevel() + 1) * 20 < transform.position.y){
                 transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * 5);
             }
         }
         else{
             //기본 상태
-            if((GameSystem.level + 1) * 20 + 5 > transform.position.y){
+            if((GameSystem.getLevel() + 1) * 20 + 5 > transform.position.y){
                 transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 10);
             }
         }

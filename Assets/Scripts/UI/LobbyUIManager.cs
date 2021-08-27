@@ -18,14 +18,6 @@ public class LobbyUIManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(GameSystem.isStarted){
-            lobbyUI.SetActive(false);
-        }
-    }
-
     public void OnSkinBtnClicked(){
         etcUIBackground.SetActive(true);
         skinUI.SetActive(true);
@@ -52,5 +44,8 @@ public class LobbyUIManager : MonoBehaviour
     public void OnRightBtnClicked(){
         GameSystem.stageUp();
         stageText.text = "Stage " + (GameSystem.getLevel() / 3 + 1); 
+    }
+    public void OnStartBtnClicked(){
+        lobbyUI.SetActive(false);
     }
 }

@@ -24,6 +24,9 @@ public class EnvironmentBranch : MonoBehaviour
         if(health < 0){
             Destroy(gameObject);
         }
+
+        if(GameSystem.isDead)
+            Destroy(gameObject);
     }
     void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.tag == "Player"){

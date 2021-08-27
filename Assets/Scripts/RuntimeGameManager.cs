@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class RuntimeGameManager : MonoBehaviour
 {
+    public GameObject canvas;
+    ReadyUIManager readyUIManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        readyUIManager = canvas.GetComponent<ReadyUIManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(GameSystem.playDeadUI){
+            GameSystem.playDeadUI = false;
+            playerDead();
+        }
     }
 
     public void levelUp(){
@@ -21,6 +26,9 @@ public class RuntimeGameManager : MonoBehaviour
     }
     public void gameStart(){
         if(!gameObject.GetComponent<CamMoveByLevel>().isMoving)
-            GameSystem.isStarted = true;
+            readyUIManager.countDown();
+    }
+    public void playerDead(){
+        canvas.GetComponent<GameoverUI>().startGameoverUI();
     }
 }

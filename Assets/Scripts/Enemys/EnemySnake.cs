@@ -21,6 +21,9 @@ public class EnemySnake : MonoBehaviour
         if(isInAction){
             gameObject.transform.Translate(Vector3.up * Time.deltaTime * speed);
         }
+
+        if(GameSystem.isDead)
+            Destroy(gameObject);
     }
 
     IEnumerator WarnAttack() {

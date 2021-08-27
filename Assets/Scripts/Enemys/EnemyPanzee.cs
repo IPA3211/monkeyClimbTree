@@ -37,6 +37,9 @@ public class EnemyPanzee : MonoBehaviour
         if(transform.position.x > 4.6){
             Jump(true);
         }
+
+        if(GameSystem.isDead)
+            Destroy(gameObject);
     }
     void Jump(bool isRight, float x, float y){
         if(isRight){

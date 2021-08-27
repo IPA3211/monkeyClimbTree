@@ -40,23 +40,16 @@ public class playerController : MonoBehaviour
         }
         if(Input.GetMouseButtonDown(0) && !isOnWall && !isDoubleJumped && Mathf.Abs(gameObject.transform.position.x) < 3.3f){
             //더블점프 사용가능 범위때문에 나누긴 했는데 결국엔 다시 돌아옴 ㅋㅋ
-            if(isOnRight){
-                if(doubleJumpPower > 1){
-                    //rigied.velocity = new Vector2(rigied.velocity.x / 1.5f, doubleJumpPower);
+            if(doubleJumpPower > 1){
+                if(isOnRight)
                     rigied.velocity = new Vector2(7f, doubleJumpPower);
-                    isDoubleJumped = true;
-                    anim.SetBool("IsDoubleJump", isDoubleJumped);
-                    Debug.Log(isOnRight);
-                }
-            }
-            else{
-                if(doubleJumpPower > 1){
-                    //rigied.velocity = new Vector2(rigied.velocity.x / 1.5f, doubleJumpPower);
+                
+                else
                     rigied.velocity = new Vector2(-7f, doubleJumpPower);
-                    isDoubleJumped = true;
-                    anim.SetBool("IsDoubleJump", isDoubleJumped);
-                    Debug.Log(isOnRight);
-                }
+                
+                isDoubleJumped = true;
+                anim.SetBool("IsDoubleJump", isDoubleJumped);
+                Debug.Log(isOnRight);
             }            
         }
     }
@@ -67,13 +60,16 @@ public class playerController : MonoBehaviour
             gameObject.transform.position = cam.transform.position + new Vector3(0, -4, 10);
         }
 
-        if(!GameSystem.getPause() && GameSystem.isStarted){
+        if(!GameSystem.getPause() && GameSystem.isStarted && !GameSystem.isDead){
             if(isPaused){
                 //퍼즈 되고서 돌아갈때
                 isPaused = !isPaused;
                 rigied.simulated = true;
+                if(GameSystem.isRestarted){
+                    Jump(true);
+                }
             }
-
+            //bush 에 걸렸을 때
             if(stuckBush){
                 if(rigied.constraints == RigidbodyConstraints2D.FreezeRotation){
                     saveVelo = rigied.velocity;
@@ -102,22 +98,30 @@ public class playerController : MonoBehaviour
             GameSystem.playerHeight = gameObject.transform.position.y;
             
             if(isOnWall){
-                //벽에 부딪힐떄
-                rigied.velocity = rigied.velocity * new Vector2(0,1);
+                //벽에 부딪혀 있을경우
+                MonkeyOnWall();
             }
 
-            if(Input.GetMouseButton(0) && isOnWall && cam.transform.position.y + 8> transform.position.y){
-                //터치 될때
-                Jump(isOnRight);
-                anim.SetBool("IsOnWall", isOnWall);
+            if(transform.position.y < cam.transform.position.y - 15f){
+                //원숭이가 카메라 아래 5지점에 있을경우
+                GameSystem.setHealth(0);
             }
         }
         else{
-            //퍼즈 될때
             if(!isPaused){
+                //퍼즈 될때
                 isPaused = true;
                 rigied.simulated = false;
             }
+        }
+    }
+
+    void MonkeyOnWall(){
+        rigied.velocity = rigied.velocity * new Vector2(0,1);
+        if(Input.GetMouseButton(0) && cam.transform.position.y + 8> transform.position.y){
+            //터치 될때
+            Jump(isOnRight);
+            anim.SetBool("IsOnWall", isOnWall);
         }
     }
 

@@ -30,7 +30,11 @@ public class SpawnEnvironment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeCount += Time.deltaTime;
+        if(GameSystem.isStarted && !GameSystem.isDead)
+            timeCount += Time.deltaTime;
+        else
+            timeCount = 0;
+
         if(timeCount > spawnPeriod && !GameSystem.isLevelUping && !GameSystem.isLeveluped){
             StartCoroutine("EnvironmentWarn");
             

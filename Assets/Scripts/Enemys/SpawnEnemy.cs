@@ -36,7 +36,12 @@ public class SpawnEnemy : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        timeCount += Time.deltaTime;
+        if(GameSystem.isStarted && !GameSystem.isDead)
+            timeCount += Time.deltaTime;
+        else
+            timeCount = 0;
+        
+
         if(timeCount > spawnPeriod && !GameSystem.isLevelUping && !GameSystem.isLeveluped){
             timeCount = 0;
             if(spawnWall)

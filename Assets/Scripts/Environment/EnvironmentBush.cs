@@ -30,6 +30,9 @@ public class EnvironmentBush : MonoBehaviour
         if(touchHealth == 0 || health < 0){
             Destroy(gameObject);
         }
+
+        if(GameSystem.isDead)
+            Destroy(gameObject);
     }
     void OnDestroy() {
         
