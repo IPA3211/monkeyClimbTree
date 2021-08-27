@@ -506,6 +506,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30832573}
   m_CullTransparentMesh: 1
+--- !u!1 &33255615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 33255616}
+  - component: {fileID: 33255618}
+  - component: {fileID: 33255617}
+  m_Layer: 5
+  m_Name: CoinTxt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &33255616
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33255615}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1072831328}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 225.32632, y: 481.2}
+  m_SizeDelta: {x: 123.2647, y: 39.996}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &33255617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33255615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: d274fc8a61c495a4588c4b46d437a8b0, type: 3}
+    m_FontSize: 36
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 6
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &33255618
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33255615}
+  m_CullTransparentMesh: 1
 --- !u!1 &36219193
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +634,7 @@ GameObject:
   - component: {fileID: 66557091}
   - component: {fileID: 66557090}
   m_Layer: 5
-  m_Name: Text
+  m_Name: CoinCnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -577,8 +656,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 42.554176, y: 33.49793}
-  m_SizeDelta: {x: -149.3277, y: -199.07}
+  m_AnchoredPosition: {x: 49.6, y: 33.602}
+  m_SizeDelta: {x: -149.3277, y: -204.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &66557090
 MonoBehaviour:
@@ -601,13 +680,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 321a059668271074f908128b77698ea3, type: 3}
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 6
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2385,6 +2464,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308056846}
   m_CullTransparentMesh: 1
+--- !u!1 &335887605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335887606}
+  - component: {fileID: 335887608}
+  - component: {fileID: 335887607}
+  m_Layer: 5
+  m_Name: Coin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &335887606
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335887605}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1072831328}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 138.4, y: 481.2}
+  m_SizeDelta: {x: 40, y: 40}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &335887607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335887605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8a20efb8637b4894baa930468da71e85, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &335887608
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335887605}
+  m_CullTransparentMesh: 1
 --- !u!1 &336812085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,6 +2711,7 @@ GameObject:
   - component: {fileID: 351710418}
   - component: {fileID: 351710415}
   - component: {fileID: 351710419}
+  - component: {fileID: 351710414}
   - component: {fileID: 351710420}
   m_Layer: 0
   m_Name: GameManager
@@ -2625,6 +2780,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b102d758befc8bf49b4ef819b14f9757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &351710414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351710409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c381e0001978340ba00e080653d98b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPeriod: 3
+  coin: {fileID: 6229753288337425128, guid: 79a7d88512f6a0b43aabf3bff941ecac, type: 3}
 --- !u!114 &351710415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2861,6 +3030,7 @@ MonoBehaviour:
   InPlayUI: {fileID: 1072831327}
   scoreText: {fileID: 442616905}
   healthText: {fileID: 146017484}
+  coinText: {fileID: 33255617}
 --- !u!114 &352276163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2913,6 +3083,7 @@ MonoBehaviour:
   rankingUI: {fileID: 336812085}
   settingUI: {fileID: 2041518822}
   stageText: {fileID: 473929550}
+  coinText: {fileID: 66557090}
 --- !u!114 &352276165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4684,7 +4855,7 @@ GameObject:
   - component: {fileID: 593917545}
   - component: {fileID: 593917544}
   m_Layer: 5
-  m_Name: Image
+  m_Name: CoinImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6295,7 +6466,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 853616669
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 725137815180615252, guid: 094a44158049a7e4c9885ce4e277dcaa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7168,6 +7339,10 @@ MonoBehaviour:
   - name: Monkey_Cry
     clip: {fileID: 8300000, guid: b1d1425cd9623334db8fe84a804cc4a1, type: 3}
     volume: 0.4
+    source: {fileID: 0}
+  - name: Coin
+    clip: {fileID: 8300000, guid: 55e5c130e1772ed44b7376d3712ea78a, type: 3}
+    volume: 0.5
     source: {fileID: 0}
   bgm: {fileID: 863090761}
   sfx: {fileID: 863090764}
@@ -8501,6 +8676,8 @@ RectTransform:
   - {fileID: 1737333367}
   - {fileID: 247891256}
   - {fileID: 1693458619}
+  - {fileID: 335887606}
+  - {fileID: 33255616}
   m_Father: {fileID: 352276161}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

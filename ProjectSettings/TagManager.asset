@@ -10,6 +10,7 @@ TagManager:
   - EnemyBounce
   - Bush
   - UI_Player
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -52,6 +53,9 @@ TagManager:
     locked: 0
   - name: Wall
     uniqueID: 3846187337
+    locked: 0
+  - name: Item
+    uniqueID: 3274452749
     locked: 0
   - name: Player
     uniqueID: 853616669

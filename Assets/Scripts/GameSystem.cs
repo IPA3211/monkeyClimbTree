@@ -11,6 +11,7 @@ public class GameSystem
     public static bool playDeadUI = false;
     public static float playerHeight = 0;
     private static int score = 0;
+    private static int coin = 0;
     private static int health = 3;
     public static int playerHealth = 3;
     private static int level = 0;
@@ -23,6 +24,30 @@ public class GameSystem
     }
     public static bool getPause(){
         return isPasued;
+    }
+    public static void setCoin(int cnt)
+    {
+        if(cnt < 0)
+        {
+            coin = 0;
+        }
+        else if(cnt > 99999)
+        {
+            coin = 99999;
+        }
+        else
+        {
+            coin = cnt;
+        }
+        
+    }
+    public static int getCoin()
+    {
+        return coin;
+    }
+    public static void addCoin(int amount)
+    {
+        setCoin(getCoin() + amount);
     }
     public static void damaged(int amount){
         setHealth(getHealth() - amount);
