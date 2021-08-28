@@ -185,6 +185,13 @@ public class playerController : MonoBehaviour
         if(other.gameObject.tag == "Bush"){
             stuckBush = other.gameObject;
         }
+
+        if (other.gameObject.tag == "Coin")
+        {
+            audioManager.Play("Coin");
+            GameSystem.addCoin(1);
+            Destroy(other.gameObject);
+        }
     }
 
     public void playerHit(){

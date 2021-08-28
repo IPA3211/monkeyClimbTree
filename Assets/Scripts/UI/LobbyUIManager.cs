@@ -12,10 +12,16 @@ public class LobbyUIManager : MonoBehaviour
     public GameObject skinUI;
     public GameObject endingUI, rankingUI, settingUI;
     public Text stageText;
+    public Text coinText;
+
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+    private void OnEnable()
+    {
+        coinText.text = GameSystem.getCoin().ToString();
     }
 
     public void OnSkinBtnClicked(){

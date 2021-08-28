@@ -10,6 +10,7 @@ public class RuntimeGameManager : MonoBehaviour
     void Start()
     {
         readyUIManager = canvas.GetComponent<ReadyUIManager>();
+        GameSystem.setCoin(SecurityPlayerPrefs.GetInt("Coin", 0));
     }
 
     // Update is called once per frame
@@ -30,5 +31,6 @@ public class RuntimeGameManager : MonoBehaviour
     }
     public void playerDead(){
         canvas.GetComponent<GameoverUI>().startGameoverUI();
+        SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
     }
 }

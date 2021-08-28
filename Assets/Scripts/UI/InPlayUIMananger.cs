@@ -10,6 +10,7 @@ public class InPlayUIMananger : MonoBehaviour
     public GameObject InPlayUI;
     public Text scoreText;
     public Text healthText;
+    public Text coinText;
 
     void FixedUpdate(){
         if(GameSystem.isStarted){
@@ -17,5 +18,6 @@ public class InPlayUIMananger : MonoBehaviour
         }
         scoreText.text =  GameSystem.getScore().ToString();
         healthText.text = GameSystem.getHealth().ToString();
+        coinText.text = GameSystem.getCoin().ToString();
     }
 }
