@@ -54,12 +54,16 @@ public class EnemyWall : MonoBehaviour
 
         progress = 0;
         
+        Animator tree_anim =  tree.GetComponent<Animator>();
+
+        tree_anim.SetBool("Attacking", true);
         tree.tag = "EnemyWall";
+        //rend.color = new Color(0, 0.5f, 1f, 1f);
 
-        rend.color = new Color(0, 0.5f, 1f, 1f);
         yield return new WaitForSeconds(1f);
-        rend.color = rawColor;
 
+        rend.color = rawColor;
+        tree_anim.SetBool("Attacking", false);
         tree.tag = "Wall";
     }
 }

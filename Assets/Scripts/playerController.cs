@@ -14,6 +14,9 @@ public class playerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Vector2 saveVelo;
     public AudioManager audioManager;
+    public GameObject coinParticle;
+    public GameObject dustParticle;
+    ParticleSystem dust;
     public bool isOnRight = true;
     public bool isOnWall = false;
     bool isPaused = false;
@@ -29,6 +32,7 @@ public class playerController : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         rigied = gameObject.GetComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        dust = dustParticle.GetComponent<ParticleSystem>();
         rigied.simulated = false;
         Jump(true);
     }
@@ -49,7 +53,6 @@ public class playerController : MonoBehaviour
                 
                 isDoubleJumped = true;
                 anim.SetBool("IsDoubleJump", isDoubleJumped);
-                Debug.Log(isOnRight);
             }            
         }
     }
@@ -117,11 +120,13 @@ public class playerController : MonoBehaviour
     }
 
     void MonkeyOnWall(){
+        if(rigied.velocity.y < -9f)
+            StartDust();
         rigied.velocity = rigied.velocity * new Vector2(0,1);
         if(Input.GetMouseButton(0) && cam.transform.position.y + 8> transform.position.y){
             //터치 될때
+            StopDust();
             Jump(isOnRight);
-            anim.SetBool("IsOnWall", isOnWall);
         }
     }
 
@@ -146,6 +151,24 @@ public class playerController : MonoBehaviour
     void Jump(bool isRight){
         //미리 지정된 파워를 사용하는 Jump override 함수
         Jump(isRight, XPower, YPower);
+    }
+
+    void StartDust()
+    {
+        if(!isOnRight)
+        {
+            dustParticle.transform.localPosition = new Vector3(-0.35f, dustParticle.transform.localPosition.y, dustParticle.transform.localPosition.z);
+        }
+        else
+        {
+            dustParticle.transform.localPosition = new Vector3(0.35f, dustParticle.transform.localPosition.y, dustParticle.transform.localPosition.z);
+        }
+        
+        dust.Play();
+    }
+    void StopDust()
+    {
+        dust.Stop();
     }
 
     void OnCollisionEnter2D (Collision2D other){
@@ -188,7 +211,8 @@ public class playerController : MonoBehaviour
 
         if (other.gameObject.tag == "Coin")
         {
-            audioManager.Play("Coin");
+            audioManager.Play("Coin");            
+            Instantiate(coinParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
             GameSystem.addCoin(1);
             Destroy(other.gameObject);
         }

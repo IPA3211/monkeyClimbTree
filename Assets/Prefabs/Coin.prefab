@@ -134,3 +134,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifeTime: 5
   warningTime: 2
+  coinParticle: {fileID: 8377392564737633490, guid: 6afdd781afeb2124182ecad274e884db, type: 3}

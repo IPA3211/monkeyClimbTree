@@ -9,17 +9,20 @@ public class EnemyEagle : Enemy
     public float rushSpeed;
     public float spawnTime = 1;
     public GameObject aim;
+    AudioManager audioManager;
     GameObject cam;
     GameObject target;
     Vector2 stopPosition;
     Vector2 targetDir;
     bool isOnUpperSide;
     bool isAimfinished = false;
+    bool isAttacking = false;
     // Start is called before the first frame update
     override protected void Start()
     {
         base.Start();
         aim.SetActive(false);
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         cam = GameObject.FindGameObjectWithTag("MainCamera");
         target = GameObject.FindGameObjectWithTag("Player");
 
@@ -33,10 +36,17 @@ public class EnemyEagle : Enemy
     override protected void FixedUpdate()
     {
         if(isAimfinished){
+            
             if(isOnUpperSide)
                 gameObject.transform.Translate(-targetDir * Time.deltaTime * rushSpeed);
             else
                 gameObject.transform.Translate(targetDir * Time.deltaTime * rushSpeed);
+
+            if(!isAttacking)
+            {
+                audioManager.Play("Eagle");
+                isAttacking = true;
+            }
         }
     }
 
@@ -52,11 +62,12 @@ public class EnemyEagle : Enemy
     IEnumerator AimmingCoroutine() {
         Vector2 startPos = transform.position;
         float progress = 0;
+        float height = Random.Range(2f, 8f);
         while(progress < 1){
             if(isOnUpperSide)
-                transform.position = Vector3.Lerp(startPos, startPos + Vector2.down * 5, progress);
+                transform.position = Vector3.Lerp(startPos, startPos + Vector2.down * height, progress);
             else
-                transform.position = Vector3.Lerp(startPos, startPos + Vector2.up * 5, progress);
+                transform.position = Vector3.Lerp(startPos, startPos + Vector2.up * height, progress);
             
             progress += Time.deltaTime / spawnTime;
             
@@ -78,5 +89,6 @@ public class EnemyEagle : Enemy
         
         aim.SetActive(false);
         isAimfinished = true;
+        gameObject.tag = "Enemy";
     }
 }

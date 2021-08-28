@@ -11,6 +11,7 @@ TagManager:
   - Bush
   - UI_Player
   - Coin
+  - AudioManager
   layers:
   - Default
   - TransparentFX
