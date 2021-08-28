@@ -196,6 +196,10 @@ public class playerController : MonoBehaviour
 
     public void playerHit(){
         if(!isImmune){
+            if(GameSystem.isCanVive){
+                Handheld.Vibrate();
+                Debug.Log("Vibe");
+            }
             audioManager.Play("Monkey_Cry");
             GameSystem.damaged(1);            
             StartCoroutine("playerImmuned");

@@ -15,6 +15,7 @@ public class GameoverUI : MonoBehaviour
     public GameObject gameoverUI1, gameoverUI2, gameManager;
     public Image background;
     public List<Texts> texts;
+    public Text score;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +46,7 @@ public class GameoverUI : MonoBehaviour
         gameoverUI1.SetActive(true);
         sumTime = 0;
         background.color = Color.clear;
+        score.text = GameSystem.getScore().ToString();
         foreach(Texts t in texts){
             foreach(Text text in t.data){
                 text.color = Color.clear;
@@ -64,11 +66,13 @@ public class GameoverUI : MonoBehaviour
 
     public void exitBtnClicked(){
         GameSystem.restart();
+        GameSystem.setLevel(0);
         SceneManager.LoadScene("SampleScene");
     }
     public void restartBtnClicked(){
         gameoverUI2.SetActive(false);
         GameSystem.restart();
+        GameSystem.setLevel((int)(GameSystem.getLevel() / 3) * 3);
         gameManager.GetComponent<RuntimeGameManager>().gameStart();
     }
 }

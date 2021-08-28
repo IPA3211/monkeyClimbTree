@@ -18,6 +18,7 @@ public class GameSystem
     public static int maxLevel = 15;
     public static bool isLevelUping = false;
     public static bool isLeveluped = false;
+    public static bool isCanVive = true;
     
     public static void setPause(bool setting){
         isPasued = setting;
@@ -106,6 +107,5 @@ public class GameSystem
         isLeveluped = false;
         playerHeight = 0;
         score = 0;
-        setLevel((int)(getLevel() / 3) * 3);
     }
 }

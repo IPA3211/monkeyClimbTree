@@ -7,8 +7,7 @@ public class RuntimeGameManager : MonoBehaviour
     public GameObject canvas;
     ReadyUIManager readyUIManager;
     // Start is called before the first frame update
-    void Start()
-    {
+    void Awake(){
         readyUIManager = canvas.GetComponent<ReadyUIManager>();
         GameSystem.setCoin(SecurityPlayerPrefs.GetInt("Coin", 0));
     }
