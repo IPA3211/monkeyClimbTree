@@ -18,7 +18,7 @@ public class playerController : MonoBehaviour
     public bool isOnWall = false;
     bool isPaused = false;
     bool isLevelUped = false;
-    bool isImmune = false;
+    public bool isImmune = false;
     public bool isDoubleJumped = true;
     GameObject stuckBush;
     GameObject cam;

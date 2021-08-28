@@ -656,7 +656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 49.6, y: 33.602005}
+  m_AnchoredPosition: {x: 54.8, y: 36.602005}
   m_SizeDelta: {x: -149.3277, y: -204.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &66557090
@@ -2917,13 +2917,17 @@ MonoBehaviour:
   audioManager: {fileID: 863090762}
   spawnWall: 0
   wallAmount: 3
+  spawnSnake: 0
   snake: {fileID: 6308861721827521770, guid: 5540d8dc8e059d14ca7f293422943761, type: 3}
   snakeSpeed: 12
-  spawnSnake: 0
+  spawnPanzee: 0
   panzee: {fileID: 1254471789147839564, guid: 4d2c680a5797cea4a8f72775a8463482, type: 3}
   panzeeXPower: 12
   panzeeYPower: 15
-  spawnPanzee: 0
+  spawnApple: 0
+  apple: {fileID: 8306505804957304022, guid: bd49dedb95877874ba2e5d701463e90c, type: 3}
+  spawnEagle: 1
+  eagle: {fileID: 8056373596312713981, guid: 845e0419138e72c44a72f6cf1e9108d9, type: 3}
 --- !u!114 &351710416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5145,7 +5149,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.53681386}
-  m_AnchoredPosition: {x: -46.2, y: 29}
+  m_AnchoredPosition: {x: -41, y: 32}
   m_SizeDelta: {x: 50, y: 36.252274}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593917544
@@ -6813,6 +6817,7 @@ MonoBehaviour:
   audioManager: {fileID: 863090762}
   isOnRight: 1
   isOnWall: 0
+  isImmune: 0
   isDoubleJumped: 1
 --- !u!95 &784131750
 Animator:
@@ -14809,7 +14814,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 60
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
