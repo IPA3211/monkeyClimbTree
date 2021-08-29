@@ -120,8 +120,7 @@ public class playerController : MonoBehaviour
     }
 
     void MonkeyOnWall(){
-        if(rigied.velocity.y < -9f)
-            StartDust();
+        StartDust();
         rigied.velocity = rigied.velocity * new Vector2(0,1);
         if(Input.GetMouseButton(0) && cam.transform.position.y + 8> transform.position.y){
             //터치 될때

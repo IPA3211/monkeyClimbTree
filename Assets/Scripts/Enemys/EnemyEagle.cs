@@ -26,8 +26,10 @@ public class EnemyEagle : Enemy
         cam = GameObject.FindGameObjectWithTag("MainCamera");
         target = GameObject.FindGameObjectWithTag("Player");
 
-        if(cam.transform.position.y < transform.position.y)
+        if(cam.transform.position.y < transform.position.y){
             isOnUpperSide = true;
+            gameObject.GetComponent<SpriteRenderer>().flipY = true;
+        }
         else
             isOnUpperSide = false;
 
