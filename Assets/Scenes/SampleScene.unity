@@ -884,6 +884,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: levelUp
       objectReference: {fileID: 0}
+    - target: {fileID: 7025949370396727816, guid: 0284e9ab928c407499285ed31d8b55c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7025949370396727818, guid: 0284e9ab928c407499285ed31d8b55c4, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -7779,6 +7783,7 @@ GameObject:
   - component: {fileID: 351710414}
   - component: {fileID: 351710420}
   - component: {fileID: 351710421}
+  - component: {fileID: 351710422}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7793,7 +7798,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351710409}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edcd8bf420d46254ab25e9725d2f5026, type: 3}
   m_Name: 
@@ -7882,15 +7887,15 @@ MonoBehaviour:
   enemyLevel:
     spawnPeriod: 5
     minSpawnAmount: 2
-    maxSpawnAmount: 2
-    spawnWall: 0
+    maxSpawnAmount: 5
+    spawnWall: 1
     wallAmount: 2
-    spawnSnake: 0
+    spawnSnake: 1
     snakeSpeed: 12
-    spawnPanzee: 0
+    spawnPanzee: 1
     panzeeXPower: 12
-    panzeeYPower: 15
-    spawnApple: 0
+    panzeeYPower: 20
+    spawnApple: 1
     spawnEagle: 0
 --- !u!114 &351710416
 MonoBehaviour:
@@ -7915,7 +7920,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351710409}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d02260206aa2ef4aa5b1292f9f95d17, type: 3}
   m_Name: 
@@ -7984,7 +7989,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351710409}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2357bff2c054a143944af62a8a07a9d, type: 3}
   m_Name: 
@@ -8051,6 +8056,20 @@ MonoBehaviour:
       branchNum: 2
       spawnBush: 1
       bushNum: 10
+--- !u!114 &351710422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351710409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2357bff2c054a143944af62a8a07a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelDesignBtn: {fileID: 247891255}
+  levels: []
 --- !u!1 &352276157
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,6 @@ public class EnemySnake : Enemy
 {
     [Header("Snake Config")]
     public float speed;
-    bool isInAction = false;
     
     // Start is called before the first frame update
     override protected void FixedUpdate(){
@@ -25,7 +24,6 @@ public class EnemySnake : Enemy
     }
     
     override protected void WarnEnded(){
-        isInAction = true;
         gameObject.GetComponent<Collider2D>().enabled = true;
     }
 }

@@ -74,7 +74,8 @@ public class SpawnEnemy : MonoBehaviour
     }
 
     public void SpawnWall(){
-        wallPositionSetter.wallOnCam.GetComponent<EnemyWall>().spawn(enemyLevel.wallAmount);
+        wallPositionSetter.wall1.GetComponent<EnemyWall>().spawn(enemyLevel.wallAmount);
+        wallPositionSetter.wall2.GetComponent<EnemyWall>().spawn(enemyLevel.wallAmount);
     }
     public void SpawnSnake(){ SpawnSnake(0);}
 
