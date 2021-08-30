@@ -4,6 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class enemyPrefabs{
+    public int numEnemy = 4;
     public GameObject snake;
     public GameObject panzee;
     public GameObject apple;
@@ -15,12 +16,14 @@ public class SpawnEnemy : MonoBehaviour
     public AudioManager audioManager;
     public enemyPrefabs enemys;
     public EnemyLevel enemyLevel;
-    
 
     float timeCount;
     WallPositionSetter wallPositionSetter;
     float spawnedAmount = 0;
     Transform cam;
+    
+    delegate void FunctionPointer();
+    List<FunctionPointer> onList = new List<FunctionPointer>();
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +35,7 @@ public class SpawnEnemy : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isLevelUping && !GameSystem.isLeveluped)
+        if(GameSystem.CanTimeCount())
             timeCount += Time.deltaTime;
         else
             timeCount = 0;
@@ -40,22 +43,40 @@ public class SpawnEnemy : MonoBehaviour
 
         if(timeCount > enemyLevel.spawnPeriod && !GameSystem.isLevelUping && !GameSystem.isLeveluped){
             timeCount = 0;
+
             if(enemyLevel.spawnWall)
-                wallPositionSetter.wallOnCam.GetComponent<EnemyWall>().spawn(enemyLevel.wallAmount);
-            
+                onList.Add(SpawnWall);
+
             if(enemyLevel.spawnSnake)
-                SpawnSnake(0);
+                onList.Add(SpawnSnake);
             
             if(enemyLevel.spawnPanzee)
-                SpawnPanzee();
+                onList.Add(SpawnPanzee);
             
             if(enemyLevel.spawnApple)
-                SpawnApple(0);
+                onList.Add(SpawnApple);
             
             if(enemyLevel.spawnEagle)
-                SpawnEagle(0);
+                onList.Add(SpawnEagle);
+
+            int amount = Random.Range(enemyLevel.minSpawnAmount, enemyLevel.maxSpawnAmount + 1);
+            for(int i = 0; i < amount; i++){
+                if(onList.Count == 0)
+                    break;
+                int randomSpawn = Random.Range(0, onList.Count);
+                Debug.Log("2 : " + randomSpawn);
+                onList[randomSpawn]();
+                onList.RemoveAt(randomSpawn);
+            }
+
+            onList.Clear();
         }
     }
+
+    public void SpawnWall(){
+        wallPositionSetter.wallOnCam.GetComponent<EnemyWall>().spawn(enemyLevel.wallAmount);
+    }
+    public void SpawnSnake(){ SpawnSnake(0);}
 
     public void SpawnSnake(int spawnPoint){
         if(spawnPoint == 0)
@@ -89,6 +110,7 @@ public class SpawnEnemy : MonoBehaviour
         audioManager.Play("Chimpanzee");
     }
 
+    public void SpawnApple() { SpawnApple(0);}
     public void SpawnApple(int spawnPoint){
         if(spawnPoint == 0)
             spawnPoint = Random.Range(1, 3);
@@ -103,6 +125,7 @@ public class SpawnEnemy : MonoBehaviour
         }
     }
 
+    public void SpawnEagle() { SpawnEagle(0);}
     public void SpawnEagle(int spawnPoint){
          if(spawnPoint == 0)
             spawnPoint = Random.Range(1, 3);

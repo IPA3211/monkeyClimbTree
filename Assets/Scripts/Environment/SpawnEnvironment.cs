@@ -27,7 +27,7 @@ public class SpawnEnvironment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isLevelUping && !GameSystem.isLeveluped)
+        if(GameSystem.CanTimeCount())
             timeCount += Time.deltaTime;
         else
             timeCount = 0;

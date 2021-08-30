@@ -75,7 +75,7 @@ public class GameSystem
         score +=s;
     }
     public static int getScore(){
-        return score + (int)playerHeight;
+        return score;
     }
     public static int getLevel(){
         return level;
@@ -122,5 +122,9 @@ public class GameSystem
         else{
             return LevelUpTime;
         }
+    }
+
+    public static bool CanTimeCount(){
+        return GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isLevelUping && !GameSystem.isLeveluped;
     }
 }

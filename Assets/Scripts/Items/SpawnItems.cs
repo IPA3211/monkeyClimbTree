@@ -28,7 +28,7 @@ public class SpawnItems : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (GameSystem.isStarted && !GameSystem.isDead)
+        if (GameSystem.CanTimeCount())
             timeCount += Time.deltaTime;
         else
             timeCount = 0;

@@ -36,8 +36,23 @@ public class configUIManager : MonoBehaviour
     Rigidbody2D rigi;
     SpawnEnemy enemy;
     SpawnEnvironment envi;
-    void Start()
-    {
+
+    public void ChangePauseSetting(){
+        GameSystem.setPause(!GameSystem.getPause());
+        Time.timeScale = 0;
+        pauseMenu.SetActive(GameSystem.getPause());
+
+        if(!GameSystem.getPause()){
+            Time.timeScale = 1;
+            changeConfig();
+        }
+
+        if(GameSystem.getPause()){
+            refresh();
+        }
+    }
+
+    void refresh(){
         pctrl = player.GetComponent<playerController>();
         rigi = player.GetComponent<Rigidbody2D>();
         enemy = gameManager.GetComponent<SpawnEnemy>();
@@ -64,17 +79,6 @@ public class configUIManager : MonoBehaviour
         panzeeT.isOn = enemy.enemyLevel.spawnPanzee;
         branchT.isOn = envi.enviLevel.spawnBranch;
         bushT.isOn = envi.enviLevel.spawnBush;
-    }
-
-    public void ChangePauseSetting(){
-        GameSystem.setPause(!GameSystem.getPause());
-        Time.timeScale = 0;
-        pauseMenu.SetActive(GameSystem.getPause());
-
-        if(!GameSystem.getPause()){
-            Time.timeScale = 1;
-            changeConfig();
-        }
     }
 
     void changeConfig(){

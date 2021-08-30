@@ -213,6 +213,7 @@ public class playerController : MonoBehaviour
             audioManager.Play("Coin");            
             Instantiate(coinParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
             GameSystem.addCoin(1);
+            GameSystem.addScore(10);
             Destroy(other.gameObject);
         }
     }

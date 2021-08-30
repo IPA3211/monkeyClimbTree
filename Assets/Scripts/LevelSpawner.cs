@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gameLevelSpawner : MonoBehaviour
+public class LevelSpawner : MonoBehaviour
 {
     public GameObject levelDesignBtn;
     public List<Level> levels;
@@ -34,7 +34,7 @@ public class gameLevelSpawner : MonoBehaviour
             }
         }
 
-        if(GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isLevelUping && !GameSystem.isLeveluped)
+        if(GameSystem.CanTimeCount())
             timeCount += Time.deltaTime;
         else
             timeCount = 0;

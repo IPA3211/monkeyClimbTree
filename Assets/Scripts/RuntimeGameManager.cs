@@ -17,6 +17,15 @@ public class RuntimeGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameSystem.CanTimeCount()){
+            timeCount += Time.deltaTime;
+        }
+
+        if(timeCount > 1){
+            GameSystem.addScore(10);
+            timeCount = 0;
+        }
+
         if(GameSystem.playDeadUI){
             GameSystem.playDeadUI = false;
             playerDead();

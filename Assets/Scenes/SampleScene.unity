@@ -7799,6 +7799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioManager: {fileID: 863090762}
   enemys:
+    numEnemy: 4
     snake: {fileID: 6308861721827521770, guid: 5540d8dc8e059d14ca7f293422943761, type: 3}
     panzee: {fileID: 1254471789147839564, guid: 4d2c680a5797cea4a8f72775a8463482, type: 3}
     apple: {fileID: 8306505804957304022, guid: bd49dedb95877874ba2e5d701463e90c, type: 3}
@@ -7955,7 +7956,7 @@ MonoBehaviour:
       branchNum: 2
       spawnBush: 0
       bushNum: 10
-  - levelTime: 60
+  - levelTime: 90
     enemyLevel:
       spawnPeriod: 5
       minSpawnAmount: 1
