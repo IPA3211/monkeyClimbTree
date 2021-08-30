@@ -206,6 +206,7 @@ public class playerController : MonoBehaviour
 
         if(other.gameObject.tag == "Bush"){
             stuckBush = other.gameObject;
+            stuckBush.GetComponent<EnvironmentBush>().Monkey_Stucked();
         }
 
         if (other.gameObject.tag == "Coin")

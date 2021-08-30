@@ -11,11 +11,13 @@ public class EnvironmentBush : MonoBehaviour
     Vector3 playerVelocity;
     bool isOnWall;
     float playerGravity;
+    Animator anim;
     Rigidbody2D playerRigid;
     playerController pctrl;
     // Start is called before the first frame update
     void Start()
     {
+        anim = gameObject.GetComponent<Animator>();
         StartCoroutine("BushLife");
     }
     void Update()
@@ -36,6 +38,11 @@ public class EnvironmentBush : MonoBehaviour
     }
     void OnDestroy() {
         
+    }
+
+    public void Monkey_Stucked()
+    {
+        anim.SetBool("IsStucked", true);
     }
     
     void OnTriggerEnter2D(Collider2D other){

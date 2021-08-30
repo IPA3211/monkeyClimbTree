@@ -67,10 +67,10 @@ public class SpawnEnvironment : MonoBehaviour
 
         switch(spawnPoint){
             case 1:
-                Instantiate(envis.bush, new Vector3(4.7f, cam.position.y + Random.Range(-8, 8), 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(envis.bush, new Vector3(4.8f, cam.position.y + Random.Range(-8, 8), 0), Quaternion.Euler(0, 0, 0));
             break;
             case 2:
-                Instantiate(envis.bush, new Vector3(-4.7f, cam.position.y + Random.Range(-8, 8), 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(envis.bush, new Vector3(-4.8f, cam.position.y + Random.Range(-8, 8), 0), Quaternion.Euler(0, 0, 0));
             break;
         }
     }
