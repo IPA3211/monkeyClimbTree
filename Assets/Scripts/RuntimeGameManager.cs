@@ -5,6 +5,7 @@ using UnityEngine.Android;
 
 public class RuntimeGameManager : MonoBehaviour
 {
+    float timeCount;
     public GameObject canvas;
     ReadyUIManager readyUIManager;
     // Start is called before the first frame update
@@ -26,8 +27,10 @@ public class RuntimeGameManager : MonoBehaviour
         GameSystem.isLevelUping = true;
     }
     public void gameStart(){
-        if(!gameObject.GetComponent<CamMoveByLevel>().isMoving)
+        if(!gameObject.GetComponent<CamMoveByLevel>().isMoving){
             readyUIManager.countDown();
+            canvas.GetComponent<LobbyUIManager>().OnStartBtnClicked();
+        }
     }
     public void playerDead(){
         canvas.GetComponent<GameoverUI>().startGameoverUI();

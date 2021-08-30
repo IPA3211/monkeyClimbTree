@@ -46,10 +46,14 @@ public class LobbyUIManager : MonoBehaviour
     public void OnLeftBtnClicked(){
         GameSystem.stageDown();
         stageText.text = "Stage " + (GameSystem.getLevel() / 3 + 1); 
+        
     }
     public void OnRightBtnClicked(){
         GameSystem.stageUp();
         stageText.text = "Stage " + (GameSystem.getLevel() / 3 + 1); 
+        if(GameSystem.getLevel() == GameSystem.maxLevel){
+            stageText.text = "Debug Stage"; 
+        }
     }
     public void OnStartBtnClicked(){
         lobbyUI.SetActive(false);

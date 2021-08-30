@@ -51,19 +51,19 @@ public class configUIManager : MonoBehaviour
         immuneTime.text = pctrl.immuneTime.ToString();
         doubleJumpPower.text = pctrl.doubleJumpPower.ToString();
 
-        enemyP.text = enemy.spawnPeriod.ToString();
-        enviP.text = envi.spawnPeriod.ToString();
+        enemyP.text = enemy.enemyLevel.spawnPeriod.ToString();
+        enviP.text = envi.enviLevel.spawnPeriod.ToString();
 
-        snakeSpeed.text = enemy.snakeSpeed.ToString();
-        wallAmount.text = enemy.wallAmount.ToString();
-        panzeeX.text = enemy.panzeeXPower.ToString();
-        panzeeY.text = enemy.panzeeYPower.ToString();
+        snakeSpeed.text = enemy.enemyLevel.snakeSpeed.ToString();
+        wallAmount.text = enemy.enemyLevel.wallAmount.ToString();
+        panzeeX.text = enemy.enemyLevel.panzeeXPower.ToString();
+        panzeeY.text = enemy.enemyLevel.panzeeYPower.ToString();
         
-        wallT.isOn = enemy.spawnWall;
-        snakeT.isOn = enemy.spawnSnake;
-        panzeeT.isOn = enemy.spawnPanzee;
-        branchT.isOn = envi.spawnBranch;
-        bushT.isOn = envi.spawnBush;
+        wallT.isOn = enemy.enemyLevel.spawnWall;
+        snakeT.isOn = enemy.enemyLevel.spawnSnake;
+        panzeeT.isOn = enemy.enemyLevel.spawnPanzee;
+        branchT.isOn = envi.enviLevel.spawnBranch;
+        bushT.isOn = envi.enviLevel.spawnBush;
     }
 
     public void ChangePauseSetting(){
@@ -86,18 +86,18 @@ public class configUIManager : MonoBehaviour
         pctrl.immuneTime = float.Parse(immuneTime.text);
         pctrl.doubleJumpPower = float.Parse(doubleJumpPower.text);
         
-        enemy.spawnPeriod = float.Parse(enemyP.text);
-        envi.spawnPeriod = float.Parse(enviP.text);
+        enemy.enemyLevel.spawnPeriod = float.Parse(enemyP.text);
+        envi.enviLevel.spawnPeriod = float.Parse(enviP.text);
 
-        enemy.snakeSpeed = float.Parse(snakeSpeed.text);
-        enemy.wallAmount = int.Parse(wallAmount.text);
-        enemy.panzeeXPower = float.Parse(panzeeX.text);
-        enemy.panzeeYPower = float.Parse(panzeeY.text);
+        enemy.enemyLevel.snakeSpeed = float.Parse(snakeSpeed.text);
+        enemy.enemyLevel.wallAmount = int.Parse(wallAmount.text);
+        enemy.enemyLevel.panzeeXPower = float.Parse(panzeeX.text);
+        enemy.enemyLevel.panzeeYPower = float.Parse(panzeeY.text);
         
-        enemy.spawnWall = wallT.isOn;
-        enemy.spawnSnake = snakeT.isOn;
-        enemy.spawnPanzee = panzeeT.isOn;
-        envi.spawnBranch = branchT.isOn;
-        envi.spawnBush = bushT.isOn;
+        enemy.enemyLevel.spawnWall = wallT.isOn;
+        enemy.enemyLevel.spawnSnake = snakeT.isOn;
+        enemy.enemyLevel.spawnPanzee = panzeeT.isOn;
+        envi.enviLevel.spawnBranch = branchT.isOn;
+        envi.enviLevel.spawnBush = bushT.isOn;
     }
 }

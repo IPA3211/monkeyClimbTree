@@ -18,7 +18,10 @@ public class GameSystem
     public static int maxLevel = 15;
     public static bool isLevelUping = false;
     public static bool isLeveluped = false;
+    public static bool isLevelChanged = true;
     public static bool isCanVive = true;
+    private static float LevelUpTime = 60;
+    private static float LastLevelUpTime = 90;
     
     public static void setPause(bool setting){
         isPasued = setting;
@@ -82,7 +85,9 @@ public class GameSystem
         isLeveluped = true;
     }
     public static void stageUp(){
-        setLevel((int)(getLevel() / 3) * 3 + 3);
+        if((getLevel() / 3) * 3 + 3 <= maxLevel){
+            setLevel((int)(getLevel() / 3) * 3 + 3);
+        }
     }
     public static void stageDown(){
         setLevel((int)(getLevel() / 3) * 3 - 3);
@@ -96,6 +101,7 @@ public class GameSystem
         if (level <= 0){
             level = 0;
         }
+        isLevelChanged = true;
     }
 
     public static void restart(){
@@ -107,5 +113,14 @@ public class GameSystem
         isLeveluped = false;
         playerHeight = 0;
         score = 0;
+    }
+
+    public static float getLevelUpTime(){
+        if(level % 3 == 2){
+            return LastLevelUpTime;
+        }
+        else{
+            return LevelUpTime;
+        }
     }
 }

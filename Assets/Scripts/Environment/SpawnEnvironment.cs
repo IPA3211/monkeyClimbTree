@@ -3,22 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class EnviPrefabs{
+    public GameObject branch;
+    public GameObject bush;
+}
 public class SpawnEnvironment : MonoBehaviour
 {
     [Header ("Config")]
-    public float spawnPeriod = 30;
-    [Space (10f)]
     public GameObject warningSign;
+    public EnviPrefabs envis;
+    public EnviLevel enviLevel;
     
-    [Header ("Enemies")]
-    public GameObject branch;
-    public bool spawnBranch;
-    public int branchNum = 2;
-   
-    [Space (10f)]
-    public GameObject bush;
-    public bool spawnBush;
-    public int bushNum = 10;
+    
     Transform cam;
     float timeCount = 0;
     // Start is called before the first frame update
@@ -30,22 +27,22 @@ public class SpawnEnvironment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameSystem.isStarted && !GameSystem.isDead)
+        if(GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isLevelUping && !GameSystem.isLeveluped)
             timeCount += Time.deltaTime;
         else
             timeCount = 0;
 
-        if(timeCount > spawnPeriod && !GameSystem.isLevelUping && !GameSystem.isLeveluped){
+        if(timeCount > enviLevel.spawnPeriod && !GameSystem.isLevelUping && !GameSystem.isLeveluped){
             StartCoroutine("EnvironmentWarn");
             
-            if(spawnBranch){
-                for(int i = 0; i < branchNum; i++){
+            if(enviLevel.spawnBranch){
+                for(int i = 0; i < enviLevel.branchNum; i++){
                     SpawnBranch((i % 2) + 1);
                 }
             }
 
-            if(spawnBush)
-                StartCoroutine("SpawnBushWithTime", bushNum);
+            if(enviLevel.spawnBush)
+                StartCoroutine("SpawnBushWithTime", enviLevel.bushNum);
             timeCount = 0;
         }
     }
@@ -56,10 +53,10 @@ public class SpawnEnvironment : MonoBehaviour
 
         switch(spawnPoint){
             case 1:
-                Instantiate(branch, new Vector3(4.0f, cam.position.y + Random.Range(-9, 5), 0), Quaternion.Euler(0, 0, 90));
+                Instantiate(envis.branch, new Vector3(4.0f, cam.position.y + Random.Range(-9, 5), 0), Quaternion.Euler(0, 0, 90));
             break;
             case 2:
-                Instantiate(branch, new Vector3(-4.0f, cam.position.y + Random.Range(-9, 5), 0), Quaternion.Euler(0, 0, 90));
+                Instantiate(envis.branch, new Vector3(-4.0f, cam.position.y + Random.Range(-9, 5), 0), Quaternion.Euler(0, 0, 90));
             break;
         }
     }
@@ -70,10 +67,10 @@ public class SpawnEnvironment : MonoBehaviour
 
         switch(spawnPoint){
             case 1:
-                Instantiate(bush, new Vector3(4.7f, cam.position.y + Random.Range(-8, 8), 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(envis.bush, new Vector3(4.7f, cam.position.y + Random.Range(-8, 8), 0), Quaternion.Euler(0, 0, 0));
             break;
             case 2:
-                Instantiate(bush, new Vector3(-4.7f, cam.position.y + Random.Range(-8, 8), 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(envis.bush, new Vector3(-4.7f, cam.position.y + Random.Range(-8, 8), 0), Quaternion.Euler(0, 0, 0));
             break;
         }
     }

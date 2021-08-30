@@ -2,35 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class enemyPrefabs{
+    public GameObject snake;
+    public GameObject panzee;
+    public GameObject apple;
+    public GameObject eagle;
+}
 public class SpawnEnemy : MonoBehaviour
 {   
     [Header ("Config")]
-    public float spawnPeriod;
     public AudioManager audioManager;
-
-    [Header ("Enemies")]
-    public bool spawnWall;
-    public int wallAmount;
-
-    [Space(10f)]
-    public bool spawnSnake;
-    public GameObject snake;
-    public float snakeSpeed;
+    public enemyPrefabs enemys;
+    public EnemyLevel enemyLevel;
     
-    [Space(10f)]
-    public bool spawnPanzee;
-    public GameObject panzee;
-    public float panzeeXPower;
-    public float panzeeYPower;
-
-    [Space(10f)]
-    public bool spawnApple;
-    public GameObject apple;
-
-    [Space(10f)]
-    public bool spawnEagle;
-    public GameObject eagle;
-
 
     float timeCount;
     WallPositionSetter wallPositionSetter;
@@ -47,27 +32,27 @@ public class SpawnEnemy : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(GameSystem.isStarted && !GameSystem.isDead)
+        if(GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isLevelUping && !GameSystem.isLeveluped)
             timeCount += Time.deltaTime;
         else
             timeCount = 0;
         
 
-        if(timeCount > spawnPeriod && !GameSystem.isLevelUping && !GameSystem.isLeveluped){
+        if(timeCount > enemyLevel.spawnPeriod && !GameSystem.isLevelUping && !GameSystem.isLeveluped){
             timeCount = 0;
-            if(spawnWall)
-                wallPositionSetter.wallOnCam.GetComponent<EnemyWall>().spawn(wallAmount);
+            if(enemyLevel.spawnWall)
+                wallPositionSetter.wallOnCam.GetComponent<EnemyWall>().spawn(enemyLevel.wallAmount);
             
-            if(spawnSnake)
+            if(enemyLevel.spawnSnake)
                 SpawnSnake(0);
             
-            if(spawnPanzee)
+            if(enemyLevel.spawnPanzee)
                 SpawnPanzee();
             
-            if(spawnApple)
+            if(enemyLevel.spawnApple)
                 SpawnApple(0);
             
-            if(spawnEagle)
+            if(enemyLevel.spawnEagle)
                 SpawnEagle(0);
         }
     }
@@ -76,21 +61,21 @@ public class SpawnEnemy : MonoBehaviour
         if(spawnPoint == 0)
             spawnPoint = Random.Range(1, 5);
 
-        snake.GetComponent<EnemySnake>().speed = snakeSpeed;
+        enemys.snake.GetComponent<EnemySnake>().speed = enemyLevel.snakeSpeed;
         Debug.Log(spawnPoint);
         
         switch(spawnPoint){
             case 1:
-                Instantiate(snake, new Vector3(5.1f, cam.position.y + 11.25f, 0), Quaternion.Euler(0, 0, 180));
+                Instantiate(enemys.snake, new Vector3(5.1f, cam.position.y + 11.25f, 0), Quaternion.Euler(0, 0, 180));
             break;
             case 2:
-                Instantiate(snake, new Vector3(-5.1f, cam.position.y + 11.25f, 0), Quaternion.Euler(0, 180, 180));
+                Instantiate(enemys.snake, new Vector3(-5.1f, cam.position.y + 11.25f, 0), Quaternion.Euler(0, 180, 180));
             break;
             case 3:
-                Instantiate(snake, new Vector3(5.1f, cam.position.y - 11.25f, 0), Quaternion.Euler(0, 180, 0));
+                Instantiate(enemys.snake, new Vector3(5.1f, cam.position.y - 11.25f, 0), Quaternion.Euler(0, 180, 0));
             break;
             case 4:
-                Instantiate(snake, new Vector3(-5.1f, cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(enemys.snake, new Vector3(-5.1f, cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
             break;
         }
 
@@ -98,9 +83,9 @@ public class SpawnEnemy : MonoBehaviour
     }
 
     public void SpawnPanzee(){
-        panzee.GetComponent<EnemyPanzee>().XPower = panzeeXPower;
-        panzee.GetComponent<EnemyPanzee>().YPower = panzeeYPower;
-        Instantiate(panzee, new Vector3(Random.Range(-4f, 4f), cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
+        enemys.panzee.GetComponent<EnemyPanzee>().XPower = enemyLevel.panzeeXPower;
+        enemys.panzee.GetComponent<EnemyPanzee>().YPower = enemyLevel.panzeeYPower;
+        Instantiate(enemys.panzee, new Vector3(Random.Range(-4f, 4f), cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
         audioManager.Play("Chimpanzee");
     }
 
@@ -110,10 +95,10 @@ public class SpawnEnemy : MonoBehaviour
 
         switch(spawnPoint){
             case 1:
-                Instantiate(apple, new Vector3(4.7f, cam.position.y + 10.5f, 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(enemys.apple, new Vector3(4.7f, cam.position.y + 10.5f, 0), Quaternion.Euler(0, 0, 0));
             break;
             case 2:
-                Instantiate(apple, new Vector3(-4.7f, cam.position.y + 10.5f, 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(enemys.apple, new Vector3(-4.7f, cam.position.y + 10.5f, 0), Quaternion.Euler(0, 0, 0));
             break;
         }
     }
@@ -124,10 +109,10 @@ public class SpawnEnemy : MonoBehaviour
 
         switch(spawnPoint){
         case 1:
-            Instantiate(eagle, new Vector3(Random.Range(-4f, 4f), cam.position.y + 10.5f, 0), Quaternion.Euler(0, 0, 180));
+            Instantiate(enemys.eagle, new Vector3(Random.Range(-4f, 4f), cam.position.y + 10.5f, 0), Quaternion.Euler(0, 0, 180));
         break;
         case 2:
-            Instantiate(eagle, new Vector3(Random.Range(-4f, 4f), cam.position.y - 10.5f, 0), Quaternion.Euler(0, 0, 0));
+            Instantiate(enemys.eagle, new Vector3(Random.Range(-4f, 4f), cam.position.y - 10.5f, 0), Quaternion.Euler(0, 0, 0));
         break;
         }
     }
