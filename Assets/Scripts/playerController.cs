@@ -220,7 +220,7 @@ public class playerController : MonoBehaviour
     public void playerHit(){
         if(!isImmune){
             if(GameSystem.isCanVive){
-                Handheld.Vibrate();
+                RDG.Vibration.Vibrate((long)500);
                 Debug.Log("Vibe");
             }
             audioManager.Play("Monkey_Cry");

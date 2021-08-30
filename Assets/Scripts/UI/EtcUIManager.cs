@@ -52,4 +52,15 @@ public class EtcUIManager : MonoBehaviour
 
         SecurityPlayerPrefs.SetInt("Vive", GameSystem.isCanVive ? 1 : 0);
     }
+
+    public void testBtn(){
+        if(GameSystem.isCanVive)
+            RDG.Vibration.Vibrate(1000);
+
+        Debug.Log(RDG.Vibration.GetApiLevel());
+    }
+
+    public void ttbtn(){
+        Handheld.Vibrate();
+    }
 }
