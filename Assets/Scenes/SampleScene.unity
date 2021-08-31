@@ -7980,7 +7980,8 @@ MonoBehaviour:
   skinDatas:
   - {fileID: 2800000, guid: 094a44158049a7e4c9885ce4e277dcaa, type: 3}
   - {fileID: 2800000, guid: 1de8904630e63ab4bb57333d0bc33180, type: 3}
-  - {fileID: 2800000, guid: 41dfdfdc837fed64a9904e053fbb35ab, type: 3}
+  - {fileID: 2800000, guid: 8cb5031ae43faa9498f2801fd32197bc, type: 3}
+  - {fileID: 2800000, guid: af4d3b28ab4b5f347a77822550e6604b, type: 3}
   skinNumber: 0
 --- !u!114 &351710421
 MonoBehaviour:
@@ -8202,6 +8203,9 @@ MonoBehaviour:
   scoreText: {fileID: 442616905}
   healthText: {fileID: 146017484}
   coinText: {fileID: 33255617}
+  heart1: {fileID: 93253249}
+  heart2: {fileID: 1019359077}
+  heart3: {fileID: 330710078}
 --- !u!114 &352276163
 MonoBehaviour:
   m_ObjectHideFlags: 0

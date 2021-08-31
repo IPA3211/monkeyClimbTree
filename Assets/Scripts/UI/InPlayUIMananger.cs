@@ -11,6 +11,10 @@ public class InPlayUIMananger : MonoBehaviour
     public Text scoreText;
     public Text healthText;
     public Text coinText;
+    public GameObject heart1;
+    public GameObject heart2;
+    public GameObject heart3;
+    int health;
 
     void FixedUpdate(){
         if(GameSystem.isStarted){
@@ -18,6 +22,28 @@ public class InPlayUIMananger : MonoBehaviour
         }
         scoreText.text =  GameSystem.getScore().ToString();
         healthText.text = GameSystem.getHealth().ToString();
+        health = GameSystem.getHealth();
+        if (health == 3)
+        {
+            heart1.SetActive(true);
+            heart2.SetActive(true);
+            heart3.SetActive(true);
+        }
+        else if (health == 2)
+        {
+            heart3.SetActive(false);
+        }
+        else if (health == 1)
+        {
+            heart2.SetActive(false);
+            heart3.SetActive(false);
+        }
+        else if (health <= 0)
+        {
+            heart1.SetActive(false);
+            heart2.SetActive(false);
+            heart3.SetActive(false);
+        }
         coinText.text = GameSystem.getCoin().ToString();
     }
 }
