@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Level
 {
-    public float levelTime = 60;
+    public float LevelChangeHeight = 60;
     public EnemyLevel enemyLevel;
     public EnviLevel enviLevel;
 }

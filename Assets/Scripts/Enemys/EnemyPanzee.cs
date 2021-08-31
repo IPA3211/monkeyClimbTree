@@ -62,9 +62,10 @@ public class EnemyPanzee : Enemy
     void Jump(bool isRight){
         Jump(isRight, XPower, YPower);
     }
+    public void Jump(){
+        Jump(isOnRight, XPower, rigied.velocity.y + 1f);
+    }
 
     void OnTriggerEnter2D(Collider2D other){
-        if(other.tag == "Player" && !other.GetComponent<playerController>().isOnWall && !other.GetComponent<playerController>().isImmune)
-            Jump(isOnRight, XPower, rigied.velocity.y + 1f);
     }
 }

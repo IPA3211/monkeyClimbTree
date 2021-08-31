@@ -75,14 +75,14 @@ public class GameSystem
         score +=s;
     }
     public static int getScore(){
-        return score;
+        //return score + (int)playerHeight;
+        return (int)playerHeight;
     }
     public static int getLevel(){
         return level;
     }
     public static void levelUp(){
         setLevel(getLevel() + 1);
-        isLeveluped = true;
     }
     public static void stageUp(){
         if((getLevel() / 3) * 3 + 3 <= maxLevel){

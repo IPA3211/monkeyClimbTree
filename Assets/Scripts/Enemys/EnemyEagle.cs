@@ -10,7 +10,6 @@ public class EnemyEagle : Enemy
     public float spawnTime = 1;
     public GameObject aim;
     AudioManager audioManager;
-    GameObject cam;
     GameObject target;
     Vector2 stopPosition;
     Vector2 targetDir;
@@ -23,7 +22,6 @@ public class EnemyEagle : Enemy
         base.Start();
         aim.SetActive(false);
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
-        cam = GameObject.FindGameObjectWithTag("MainCamera");
         target = GameObject.FindGameObjectWithTag("Player");
 
         if(cam.transform.position.y < transform.position.y){
@@ -37,6 +35,7 @@ public class EnemyEagle : Enemy
     // Update is called once per frame
     override protected void FixedUpdate()
     {
+        base.FixedUpdate();
         if(isAimfinished){
             
             if(isOnUpperSide)
@@ -54,7 +53,6 @@ public class EnemyEagle : Enemy
 
     protected override void WarnEnded()
     {
-        base.WarnEnded();
         StartCoroutine("AimmingCoroutine");
     }
 
@@ -62,32 +60,46 @@ public class EnemyEagle : Enemy
         aim.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.up, target.transform.position - transform.position));
     }
     IEnumerator AimmingCoroutine() {
-        Vector2 startPos = transform.position;
+        Vector2 startPos = transform.position + new Vector3(0, 0, 10);
+        Vector2 camPos = cam.transform.position + new Vector3(0, 0, 10);
+        Vector3 diffPos = startPos - camPos;
         float progress = 0;
         float height = Random.Range(2f, 8f);
         while(progress < 1){
             if(isOnUpperSide)
-                transform.position = Vector3.Lerp(startPos, startPos + Vector2.down * height, progress);
+                transform.position = Vector3.Lerp(startPos, (cam.transform.position + new Vector3(0, 0, 10)) + diffPos + Vector3.down * height, progress);
             else
-                transform.position = Vector3.Lerp(startPos, startPos + Vector2.up * height, progress);
+                transform.position = Vector3.Lerp(startPos, (cam.transform.position + new Vector3(0, 0, 10)) + diffPos + Vector3.up * height, progress);
             
             progress += Time.deltaTime / spawnTime;
             
             yield return new WaitForFixedUpdate();
         }
 
+        startPos = transform.position;
+        camPos = cam.transform.position + new Vector3(0, 0, 10);
+        diffPos = startPos - camPos;
+
         aim.SetActive(true);
         progress = 0;
         while(progress < 1){
             Aimming();
             progress += Time.deltaTime / aimmingTime;
+            transform.position = (cam.transform.position + new Vector3(0, 0, 10)) + diffPos;
             
             yield return new WaitForFixedUpdate();
         }
+
         targetDir = target.transform.position - transform.position;
         targetDir.Normalize();
         
-        yield return new WaitForSeconds(0.5f);
+        progress = 0;
+        while(progress < 0.5){
+            progress += Time.deltaTime;
+            transform.position = (cam.transform.position + new Vector3(0, 0, 10)) + diffPos;
+            
+            yield return new WaitForFixedUpdate();
+        }
         
         aim.SetActive(false);
         isAimfinished = true;

@@ -7896,7 +7896,7 @@ MonoBehaviour:
     panzeeXPower: 12
     panzeeYPower: 20
     spawnApple: 1
-    spawnEagle: 0
+    spawnEagle: 1
 --- !u!114 &351710416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7989,14 +7989,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351710409}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2357bff2c054a143944af62a8a07a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   levelDesignBtn: {fileID: 247891255}
   levels:
-  - levelTime: 60
+  - LevelChangeHeight: 150
     enemyLevel:
       spawnPeriod: 5
       minSpawnAmount: 1
@@ -8007,7 +8007,7 @@ MonoBehaviour:
       snakeSpeed: 12
       spawnPanzee: 0
       panzeeXPower: 12
-      panzeeYPower: 15
+      panzeeYPower: 20
       spawnApple: 0
       spawnEagle: 0
     enviLevel:
@@ -8016,7 +8016,7 @@ MonoBehaviour:
       branchNum: 2
       spawnBush: 0
       bushNum: 10
-  - levelTime: 60
+  - LevelChangeHeight: 300
     enemyLevel:
       spawnPeriod: 5
       minSpawnAmount: 1
@@ -8027,7 +8027,7 @@ MonoBehaviour:
       snakeSpeed: 12
       spawnPanzee: 1
       panzeeXPower: 12
-      panzeeYPower: 15
+      panzeeYPower: 20
       spawnApple: 0
       spawnEagle: 0
     enviLevel:
@@ -8036,7 +8036,7 @@ MonoBehaviour:
       branchNum: 2
       spawnBush: 0
       bushNum: 10
-  - levelTime: 90
+  - LevelChangeHeight: 500
     enemyLevel:
       spawnPeriod: 5
       minSpawnAmount: 1
@@ -8047,7 +8047,7 @@ MonoBehaviour:
       snakeSpeed: 12
       spawnPanzee: 1
       panzeeXPower: 12
-      panzeeYPower: 15
+      panzeeYPower: 20
       spawnApple: 0
       spawnEagle: 0
     enviLevel:
@@ -8063,7 +8063,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351710409}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2357bff2c054a143944af62a8a07a9d, type: 3}
   m_Name: 

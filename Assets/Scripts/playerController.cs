@@ -129,7 +129,7 @@ public class playerController : MonoBehaviour
         }
     }
 
-    void Jump(bool isRight, float x, float y){
+    public void Jump(bool isRight, float x, float y){
         //파워를 직접 정해줄 수 있는 Jump함수
         if(rigied.constraints == RigidbodyConstraints2D.FreezeAll)
             return;
@@ -200,6 +200,7 @@ public class playerController : MonoBehaviour
         if(other.gameObject.tag == "EnemyBounce"){
             if(!isOnWall && !isImmune){
                 Jump(isOnRight, XPower, rigied.velocity.y + 1f);
+                other.GetComponent<EnemyPanzee>().Jump();
             }
             playerHit();
         }

@@ -34,14 +34,9 @@ public class LevelSpawner : MonoBehaviour
             }
         }
 
-        if(GameSystem.CanTimeCount())
-            timeCount += Time.deltaTime;
-        else
-            timeCount = 0;
-
         if(levels.Count > GameSystem.getLevel()){
-            if(timeCount > levels[GameSystem.getLevel()].levelTime){
-                    GameSystem.isLevelUping = true;
+            if(GameSystem.playerHeight > levels[GameSystem.getLevel()].LevelChangeHeight){
+                GameSystem.levelUp();
             }
         }
     }

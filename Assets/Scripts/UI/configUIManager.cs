@@ -39,7 +39,6 @@ public class configUIManager : MonoBehaviour
 
     public void ChangePauseSetting(){
         GameSystem.setPause(!GameSystem.getPause());
-        Time.timeScale = 0;
         pauseMenu.SetActive(GameSystem.getPause());
 
         if(!GameSystem.getPause()){
@@ -49,6 +48,7 @@ public class configUIManager : MonoBehaviour
 
         if(GameSystem.getPause()){
             refresh();
+            Time.timeScale = 0;
         }
     }
 
