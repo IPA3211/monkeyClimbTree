@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
+public class Stage{
+    public bool isDebugStage = false;
+    public List<Level> levels;
+}
+
+[System.Serializable]
 public class Level
 {
     public float LevelChangeHeight = 60;
+    public Color LevelbgFilterColor;
     public EnemyLevel enemyLevel;
     public EnviLevel enviLevel;
 }

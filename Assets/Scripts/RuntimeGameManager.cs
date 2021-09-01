@@ -32,9 +32,6 @@ public class RuntimeGameManager : MonoBehaviour
         }
     }
 
-    public void levelUp(){
-        GameSystem.isLevelUping = true;
-    }
     public void gameStart(){
         if(!gameObject.GetComponent<CamMoveByLevel>().isMoving){
             readyUIManager.countDown();

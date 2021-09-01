@@ -5,39 +5,60 @@ using UnityEngine;
 public class LevelSpawner : MonoBehaviour
 {
     public GameObject levelDesignBtn;
-    public List<Level> levels;
+    public List<Stage> stages;
     float timeCount = 0;
     SpawnEnemy enemySpawner;
     SpawnEnvironment enviSpawner;
-
+    BgFilterSetter bgFilterSetter;
+    BgSpriteSetter bgSpriteSetter;
     void Start()
     {
         enemySpawner = GetComponent<SpawnEnemy>();
         enviSpawner = GetComponent<SpawnEnvironment>();
+        bgFilterSetter = GetComponent<BgFilterSetter>();
+        bgSpriteSetter = GetComponent<BgSpriteSetter>();
 
-        GameSystem.maxLevel = levels.Count;
+        GameSystem.maxStage = stages.Count - 1;
     }
 
     void Update()
     {
-        if(GameSystem.isLevelChanged){
-            if(levels.Count > GameSystem.getLevel()){
-                enemySpawner.enemyLevel = levels[GameSystem.getLevel()].enemyLevel;
-                enviSpawner.enviLevel = levels[GameSystem.getLevel()].enviLevel;
+        if(!stages[GameSystem.getStage()].isDebugStage){
+            Level level = stages[GameSystem.getStage()].levels[GameSystem.getLevel()];
+            if(GameSystem.isLevelChanged){
+                enemySpawner.enemyLevel = level.enemyLevel;
+                enviSpawner.enviLevel = level.enviLevel;
+                bgFilterSetter.StartCoroutine("ChangeColor", level.LevelbgFilterColor);
+
                 GameSystem.isLevelChanged = false;
+
                 levelDesignBtn.SetActive(false);
             }
-            else{
+
+            if(stages[GameSystem.getStage()].levels.Count - 1 > GameSystem.getLevel()){
+                if(GameSystem.playerHeight > level.LevelChangeHeight){
+                    Debug.Log("levelUp");
+                    GameSystem.levelUp();
+                }
+            }
+            else {
+                if(GameSystem.playerHeight > level.LevelChangeHeight){
+                    if(!bgSpriteSetter.isEnd){
+                        Debug.Log("stageUp");
+                        bgSpriteSetter.isEnd = true;
+                    }
+                }
+            }
+        }
+
+        else{
+            if(GameSystem.isLevelChanged){
                 Debug.Log("debug Level");
                 levelDesignBtn.SetActive(true);
                 GameSystem.isLevelChanged = false;
             }
         }
-
-        if(levels.Count > GameSystem.getLevel()){
-            if(GameSystem.playerHeight > levels[GameSystem.getLevel()].LevelChangeHeight){
-                GameSystem.levelUp();
-            }
-        }
+        
+        
     }
 }

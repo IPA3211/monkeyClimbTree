@@ -15,6 +15,11 @@ public class ReadyUIManager : MonoBehaviour
     IEnumerator countDownCoroutine() {
         readyUI.SetActive(true);
         text.text = "READY...";
+
+        while(GameSystem.isRestarted){
+            yield return new WaitForFixedUpdate();
+        }
+        
         yield return new WaitForSecondsRealtime(2f);
         text.text = "START...";
         yield return new WaitForSecondsRealtime(1f);

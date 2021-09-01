@@ -72,7 +72,7 @@ public class GameoverUI : MonoBehaviour
     public void restartBtnClicked(){
         gameoverUI2.SetActive(false);
         GameSystem.restart();
-        GameSystem.setLevel((int)(GameSystem.getLevel() / 3) * 3);
+        GameSystem.setLevel(0);
         gameManager.GetComponent<RuntimeGameManager>().gameStart();
     }
 }

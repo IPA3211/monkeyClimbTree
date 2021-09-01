@@ -63,7 +63,7 @@ public class playerController : MonoBehaviour
             gameObject.transform.position = cam.transform.position + new Vector3(0, -4, 10);
         }
 
-        if(!GameSystem.getPause() && GameSystem.isStarted && !GameSystem.isDead){
+        if(!GameSystem.getPause() && GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isLeveluped){
             if(isPaused){
                 //퍼즈 되고서 돌아갈때
                 isPaused = !isPaused;
@@ -86,18 +86,7 @@ public class playerController : MonoBehaviour
                 }
             }
 
-            if(GameSystem.isLeveluped){
-                //레벨업 하는 중 일때(넝쿨 타고 올라가는 중 일때)
-                rigied.simulated = false;
-                transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 5);
-                if(GameSystem.playerHeight + 10 < gameObject.transform.position.y){
-                    rigied.simulated = true;
-                    GameSystem.isLeveluped = false;
-                }
-                return;
-            }
-            //게임 시스템에 플레이어 높이 갱신
-            //위에 레벨업 하는 중 일때 사용해서 위 if 문 보다 아래에 위치해야함
+            //게임 시스템에 플레이어 높이 갱신=
             GameSystem.playerHeight = gameObject.transform.position.y;
             
             if(isOnWall){
