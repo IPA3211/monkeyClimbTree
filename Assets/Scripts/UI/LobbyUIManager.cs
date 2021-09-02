@@ -8,8 +8,6 @@ public class LobbyUIManager : MonoBehaviour
     public GameObject lobbyUI;
 
     [Header("UIs")]
-    public GameObject skinUI;
-    public GameObject endingUI, rankingUI, settingUI;
     public Text stageText;
     public Text coinText;
 

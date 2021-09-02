@@ -8,26 +8,22 @@ public class EtcUIManager : MonoBehaviour
     // Start is called before the first frame update
     LobbyUIManager manager;
     public Button onBtn, offBtn;
+    public GameObject etcUi;
+    public List<GameObject> childUis;
+
+    void Awake(){
+        etcUi.SetActive(true);
+        for(int i = 0; i < childUis.Count; i++){
+            childUis[i].transform.localScale = Vector3.zero;
+        }
+    }
 
     void Start(){
         manager = gameObject.GetComponent<LobbyUIManager>();
         GameSystem.isCanVive = SecurityPlayerPrefs.GetInt("Vive", 1) == 1;
         OnViveSettingChanged();
-        
     }
     void Update(){
-        if(GameSystem.isStarted){
-            manager.settingUI.SetActive(false);
-            manager.endingUI.SetActive(false);
-            manager.skinUI.SetActive(false);
-            manager.rankingUI.SetActive(false);
-        }
-    }
-    public void OnConfirmBtnClicked(){
-        manager.settingUI.SetActive(false);
-        manager.endingUI.SetActive(false);
-        manager.skinUI.SetActive(false);
-        manager.rankingUI.SetActive(false);
     }
 
     public void OnViveOnBtnClicked(){
@@ -49,16 +45,5 @@ public class EtcUIManager : MonoBehaviour
         }
 
         SecurityPlayerPrefs.SetInt("Vive", GameSystem.isCanVive ? 1 : 0);
-    }
-
-    public void testBtn(){
-        if(GameSystem.isCanVive)
-            RDG.Vibration.Vibrate(1000);
-
-        Debug.Log(RDG.Vibration.GetApiLevel());
-    }
-
-    public void ttbtn(){
-        Handheld.Vibrate();
     }
 }

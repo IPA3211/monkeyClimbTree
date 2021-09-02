@@ -21,8 +21,6 @@ public class GameSystem
     public static bool isLeveluped = false;
     public static bool isLevelChanged = true;
     public static bool isCanVive = true;
-    private static float LevelUpTime = 60;
-    private static float LastLevelUpTime = 90;
     
     public static void setPause(bool setting){
         isPasued = setting;
@@ -118,20 +116,12 @@ public class GameSystem
         isPasued = false;
         isLevelUping = false;
         isLeveluped = false;
+        setLevel(0);
         playerHeight = 0;
         score = 0;
     }
 
-    public static float getLevelUpTime(){
-        if(level % 3 == 2){
-            return LastLevelUpTime;
-        }
-        else{
-            return LevelUpTime;
-        }
-    }
-
     public static bool CanTimeCount(){
-        return GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isLevelUping && !GameSystem.isLeveluped;
+        return isStarted && !isDead && !isLevelUping && !isLeveluped && !isRestarted;
     }
 }

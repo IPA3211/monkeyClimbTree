@@ -9,6 +9,7 @@ public class enemyPrefabs{
     public GameObject panzee;
     public GameObject apple;
     public GameObject eagle;
+    public GameObject dolphine;
 }
 public class SpawnEnemy : MonoBehaviour
 {   
@@ -19,7 +20,6 @@ public class SpawnEnemy : MonoBehaviour
 
     float timeCount;
     WallPositionSetter wallPositionSetter;
-    float spawnedAmount = 0;
     Transform cam;
     
     delegate void FunctionPointer();
@@ -58,6 +58,9 @@ public class SpawnEnemy : MonoBehaviour
             
             if(enemyLevel.spawnEagle)
                 onList.Add(SpawnEagle);
+            
+            if(enemyLevel.spawnDolphin)
+                onList.Add(spawnDolphin);
 
             int amount = Random.Range(enemyLevel.minSpawnAmount, enemyLevel.maxSpawnAmount + 1);
             for(int i = 0; i < amount; i++){
@@ -128,6 +131,7 @@ public class SpawnEnemy : MonoBehaviour
 
     public void SpawnEagle() { SpawnEagle(0);}
     public void SpawnEagle(int spawnPoint){
+        enemys.eagle.GetComponent<EnemyEagle>().eagleConfig = enemyLevel.eagleConfig;
          if(spawnPoint == 0)
             spawnPoint = Random.Range(1, 3);
 
@@ -139,5 +143,10 @@ public class SpawnEnemy : MonoBehaviour
             Instantiate(enemys.eagle, new Vector3(Random.Range(-4f, 4f), cam.position.y - 10.5f, 0), Quaternion.Euler(0, 0, 0));
         break;
         }
+    }
+
+    public void spawnDolphin(){
+        enemys.dolphine.GetComponent<EnemyDolphin>().dolphinConfig = enemyLevel.dolphinConfig;
+        Instantiate(enemys.dolphine, new Vector3(Random.Range(-5f, 5f), cam.position.y - 10.5f, 0), Quaternion.Euler(0, 0, 0));
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - UI_Player
   - Coin
   - AudioManager
+  - UI_Background
   layers:
   - Default
   - TransparentFX

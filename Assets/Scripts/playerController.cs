@@ -20,7 +20,6 @@ public class playerController : MonoBehaviour
     public bool isOnRight = true;
     public bool isOnWall = false;
     bool isPaused = false;
-    bool isLevelUped = false;
     public bool isImmune = false;
     public bool isDoubleJumped = true;
     GameObject stuckBush;
@@ -68,9 +67,7 @@ public class playerController : MonoBehaviour
                 //퍼즈 되고서 돌아갈때
                 isPaused = !isPaused;
                 rigied.simulated = true;
-                if(GameSystem.isRestarted){
-                    Jump(true);
-                }
+                Jump(true);
             }
             //bush 에 걸렸을 때
             if(stuckBush){
@@ -188,8 +185,10 @@ public class playerController : MonoBehaviour
 
         if(other.gameObject.tag == "EnemyBounce"){
             if(!isOnWall && !isImmune){
-                Jump(isOnRight, XPower, rigied.velocity.y + 1f);
-                other.GetComponent<EnemyPanzee>().Jump();
+                if(isOnRight != other.GetComponent<EnemyPanzee>().isJumpRight()){
+                    Jump(isOnRight, XPower, rigied.velocity.y + 1f);
+                    other.GetComponent<EnemyPanzee>().Jump();
+                }
             }
             playerHit();
         }

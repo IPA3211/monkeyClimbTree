@@ -48,6 +48,7 @@ public class SmoothCamera : MonoBehaviour
 
     void Reset(){
         maxYPos = 0;
+        limit = 10000;
         fixCam = false;
     }
 }

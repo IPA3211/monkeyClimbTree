@@ -29,7 +29,7 @@ public class EnemyApple : Enemy
     }
 
     void OnTriggerEnter2D(Collider2D other){
-        if(other.tag == "Player" && other.GetComponent<playerController>().isOnWall && !other.GetComponent<playerController>().isImmune){
+        if(other.tag == "Player" && !other.GetComponent<playerController>().isImmune){
             if(gameObject.transform.position.x > 0){
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-5, 10);
             }

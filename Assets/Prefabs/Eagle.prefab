@@ -293,12 +293,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a895021042a4144caae0b69463835e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Eagle
+  enemyName: 
   warnSprite: {fileID: 1774439776181794505}
   autoDestroyTime: 10
-  aimmingTime: 2
-  rushSpeed: 20
-  spawnTime: 1
+  eagelLevel:
+    aimmingTime: 2
+    rushSpeed: 20
+    spawnTime: 1
   aim: {fileID: 8056373594466612143}
 --- !u!61 &4207623951324012307
 BoxCollider2D:

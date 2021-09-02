@@ -6,7 +6,6 @@ public class ItemCoin : MonoBehaviour
 {
     public float LifeTime;
     public float warningTime;
-    bool playerHit = false;
 
     void Start()
     {

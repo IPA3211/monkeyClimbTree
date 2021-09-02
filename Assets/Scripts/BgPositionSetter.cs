@@ -7,8 +7,8 @@ public class BgPositionSetter : MonoBehaviour
 
 
     // Start is called before the first frame update
-    public GameObject bg1;
-    public GameObject bg2;
+    public GameObject firstBg, endBg;
+    public GameObject middleBg1, middleBg2;
     public GameObject cam;
     public Sprite nextSprite;
     public float bgOffset;
@@ -26,21 +26,21 @@ public class BgPositionSetter : MonoBehaviour
             Reset();
         }
 
-        if(cam.transform.position.y > bg1.transform.position.y + bgOffset){
-            bg1.transform.position = bg2.transform.position + new Vector3(0, bgOffset, 0);
-            changeBg(bg1);
+        if(cam.transform.position.y > middleBg1.transform.position.y + bgOffset){
+            middleBg1.transform.position = middleBg2.transform.position + new Vector3(0, bgOffset, 0);
+            changeBg(middleBg1);
         }
-        else if (cam.transform.position.y > bg2.transform.position.y + bgOffset){
-            bg2.transform.position = bg1.transform.position + new Vector3(0, bgOffset, 0);
-            changeBg(bg2);
+        else if (cam.transform.position.y > middleBg2.transform.position.y + bgOffset){
+            middleBg2.transform.position = middleBg1.transform.position + new Vector3(0, bgOffset, 0);
+            changeBg(middleBg2);
         }
-        if(cam.transform.position.y < bg1.transform.position.y - bgOffset){
-            bg1.transform.position = bg2.transform.position - new Vector3(0, bgOffset, 0);
-            changeBg(bg1);
+        if(cam.transform.position.y < middleBg1.transform.position.y - bgOffset){
+            middleBg1.transform.position = middleBg2.transform.position - new Vector3(0, bgOffset, 0);
+            changeBg(middleBg1);
         }
-        else if (cam.transform.position.y < bg2.transform.position.y - bgOffset){
-            bg2.transform.position = bg1.transform.position - new Vector3(0, bgOffset, 0);
-            changeBg(bg2);
+        else if (cam.transform.position.y < middleBg2.transform.position.y - bgOffset){
+            middleBg2.transform.position = middleBg1.transform.position - new Vector3(0, bgOffset, 0);
+            changeBg(middleBg2);
         }
     }
 
@@ -52,6 +52,8 @@ public class BgPositionSetter : MonoBehaviour
         
         if(isEnd){
             smoothCamera.limit = bg.transform.position.y;
+            endBg.transform.position = bg.transform.position;
+            endBg.SetActive(true);
             GetComponentInChildren<levelUpVine>().getDown(smoothCamera.limit);
         }
     }
@@ -62,5 +64,6 @@ public class BgPositionSetter : MonoBehaviour
 
     void Reset(){
         isEnd = false;
+        endBg.SetActive(false);
     }
 }

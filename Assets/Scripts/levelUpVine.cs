@@ -24,7 +24,7 @@ public class levelUpVine : MonoBehaviour
     public void getDown(float y){
         GameSystem.isLevelUping = true;
         GetComponent<Collider2D>().enabled = true;
-        transform.position = new Vector3(0, y + 15, 0);
+        transform.position = new Vector3(0, y + 20, 0);
     }
 
     IEnumerator getUp(GameObject obj) {

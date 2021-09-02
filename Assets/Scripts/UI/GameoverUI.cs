@@ -66,13 +66,11 @@ public class GameoverUI : MonoBehaviour
 
     public void exitBtnClicked(){
         GameSystem.restart();
-        GameSystem.setLevel(0);
         SceneManager.LoadScene("SampleScene");
     }
     public void restartBtnClicked(){
         gameoverUI2.SetActive(false);
         GameSystem.restart();
-        GameSystem.setLevel(0);
         gameManager.GetComponent<RuntimeGameManager>().gameStart();
     }
 }

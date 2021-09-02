@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class EagleConfig{
+    public float aimmingTime = 2;
+    public float rushSpeed = 20;
+    public float spawnTime = 1;
+
+}
 public class EnemyEagle : Enemy
 {
     [Header("Eagle Config")]
-    public float aimmingTime;
-    public float rushSpeed;
-    public float spawnTime = 1;
+    public EagleConfig eagleConfig;
     public GameObject aim;
     AudioManager audioManager;
     GameObject target;
@@ -39,9 +44,9 @@ public class EnemyEagle : Enemy
         if(isAimfinished){
             
             if(isOnUpperSide)
-                gameObject.transform.Translate(-targetDir * Time.deltaTime * rushSpeed);
+                gameObject.transform.Translate(-targetDir * Time.deltaTime * eagleConfig.rushSpeed);
             else
-                gameObject.transform.Translate(targetDir * Time.deltaTime * rushSpeed);
+                gameObject.transform.Translate(targetDir * Time.deltaTime * eagleConfig.rushSpeed);
 
             if(!isAttacking)
             {
@@ -76,7 +81,7 @@ public class EnemyEagle : Enemy
             else
                 transform.position = Vector3.Lerp(startPos, (cam.transform.position + new Vector3(0, 0, 10)) + diffPos + Vector3.up * height, progress);
             
-            progress += Time.deltaTime / spawnTime;
+            progress += Time.deltaTime / eagleConfig.spawnTime;
             
             yield return new WaitForFixedUpdate();
         }
@@ -89,7 +94,7 @@ public class EnemyEagle : Enemy
         progress = 0;
         while(progress < 1){
             Aimming();
-            progress += Time.deltaTime / aimmingTime;
+            progress += Time.deltaTime / eagleConfig.aimmingTime;
             transform.position = (cam.transform.position + new Vector3(0, 0, 10)) + diffPos;
             
             yield return new WaitForFixedUpdate();

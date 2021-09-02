@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Stage{
     public bool isDebugStage = false;
+    public SpriteSet spriteSet;
     public List<Level> levels;
 }
 
@@ -41,6 +42,11 @@ public class EnemyLevel{
 
     [Space(10f)]
     public bool spawnEagle = false;
+    public EagleConfig eagleConfig;
+
+    [Space(10f)]
+    public bool spawnDolphin = false;
+    public DolphinConfig dolphinConfig;
 }
 
 [System.Serializable]

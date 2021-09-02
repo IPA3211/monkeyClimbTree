@@ -6,7 +6,6 @@ public class LevelSpawner : MonoBehaviour
 {
     public GameObject levelDesignBtn;
     public List<Stage> stages;
-    float timeCount = 0;
     SpawnEnemy enemySpawner;
     SpawnEnvironment enviSpawner;
     BgFilterSetter bgFilterSetter;
@@ -19,6 +18,10 @@ public class LevelSpawner : MonoBehaviour
         bgSpriteSetter = GetComponent<BgSpriteSetter>();
 
         GameSystem.maxStage = stages.Count - 1;
+
+        if(GameSystem.isRestarted){
+            GameSystem.isLevelChanged = true;
+        }
     }
 
     void Update()
@@ -28,6 +31,7 @@ public class LevelSpawner : MonoBehaviour
             if(GameSystem.isLevelChanged){
                 enemySpawner.enemyLevel = level.enemyLevel;
                 enviSpawner.enviLevel = level.enviLevel;
+                bgSpriteSetter.ChangeSpriteSet(stages[GameSystem.getStage()].spriteSet);
                 bgFilterSetter.StartCoroutine("ChangeColor", level.LevelbgFilterColor);
 
                 GameSystem.isLevelChanged = false;
@@ -53,6 +57,7 @@ public class LevelSpawner : MonoBehaviour
 
         else{
             if(GameSystem.isLevelChanged){
+                bgSpriteSetter.ChangeSpriteSet(stages[GameSystem.getStage()].spriteSet);
                 Debug.Log("debug Level");
                 levelDesignBtn.SetActive(true);
                 GameSystem.isLevelChanged = false;

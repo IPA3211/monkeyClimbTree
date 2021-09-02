@@ -11,7 +11,6 @@ public class EnemyPanzee : Enemy
     Rigidbody2D rigied;
     SpriteRenderer spriteRenderer;
     bool isOnRight = true;
-    bool isOnWall = true;
     // Start is called before the first frame update
     override protected void FixedUpdate(){
         base.FixedUpdate();
@@ -69,6 +68,10 @@ public class EnemyPanzee : Enemy
     }
     public void Jump(){
         Jump(isOnRight, XPower, rigied.velocity.y + 1f);
+    }
+
+    public bool isJumpRight(){
+        return isOnRight;
     }
 
     void OnTriggerEnter2D(Collider2D other){
