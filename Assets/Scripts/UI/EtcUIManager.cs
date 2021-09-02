@@ -17,15 +17,13 @@ public class EtcUIManager : MonoBehaviour
     }
     void Update(){
         if(GameSystem.isStarted){
-            manager.etcUIBackground.SetActive(false);
             manager.settingUI.SetActive(false);
             manager.endingUI.SetActive(false);
             manager.skinUI.SetActive(false);
             manager.rankingUI.SetActive(false);
         }
     }
-    public void OnHomeBtnClicked(){
-        manager.etcUIBackground.SetActive(false);
+    public void OnConfirmBtnClicked(){
         manager.settingUI.SetActive(false);
         manager.endingUI.SetActive(false);
         manager.skinUI.SetActive(false);

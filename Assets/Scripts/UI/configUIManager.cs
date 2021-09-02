@@ -29,6 +29,8 @@ public class configUIManager : MonoBehaviour
     public Toggle wallT;
     public Toggle snakeT;
     public Toggle panzeeT;
+    public Toggle eagleT;
+    public Toggle appleT;
     public Toggle branchT;
     public Toggle bushT;
 
@@ -77,6 +79,8 @@ public class configUIManager : MonoBehaviour
         wallT.isOn = enemy.enemyLevel.spawnWall;
         snakeT.isOn = enemy.enemyLevel.spawnSnake;
         panzeeT.isOn = enemy.enemyLevel.spawnPanzee;
+        eagleT.isOn = enemy.enemyLevel.spawnEagle;
+        appleT.isOn = enemy.enemyLevel.spawnApple;
         branchT.isOn = envi.enviLevel.spawnBranch;
         bushT.isOn = envi.enviLevel.spawnBush;
     }
@@ -101,6 +105,8 @@ public class configUIManager : MonoBehaviour
         enemy.enemyLevel.spawnWall = wallT.isOn;
         enemy.enemyLevel.spawnSnake = snakeT.isOn;
         enemy.enemyLevel.spawnPanzee = panzeeT.isOn;
+        enemy.enemyLevel.spawnEagle = eagleT.isOn;
+        enemy.enemyLevel.spawnApple = appleT.isOn;
         envi.enviLevel.spawnBranch = branchT.isOn;
         envi.enviLevel.spawnBush = bushT.isOn;
     }

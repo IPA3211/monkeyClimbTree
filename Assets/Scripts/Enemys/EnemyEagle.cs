@@ -51,6 +51,11 @@ public class EnemyEagle : Enemy
         }
     }
 
+    public override string WhatsName()
+    {
+        return base.WhatsName();
+    }
+
     protected override void WarnEnded()
     {
         StartCoroutine("AimmingCoroutine");

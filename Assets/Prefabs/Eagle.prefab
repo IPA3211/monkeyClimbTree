@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a895021042a4144caae0b69463835e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Eagle
   warnSprite: {fileID: 1774439776181794505}
   autoDestroyTime: 10
   aimmingTime: 2

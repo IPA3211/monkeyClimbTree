@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class LobbyUIManager : MonoBehaviour
 {
     public GameObject lobbyUI;
-    [Header("Background")]
-    public GameObject etcUIBackground;
+
     [Header("UIs")]
     public GameObject skinUI;
     public GameObject endingUI, rankingUI, settingUI;
@@ -22,26 +21,6 @@ public class LobbyUIManager : MonoBehaviour
     private void OnEnable()
     {
         coinText.text = GameSystem.getCoin().ToString();
-    }
-
-    public void OnSkinBtnClicked(){
-        etcUIBackground.SetActive(true);
-        skinUI.SetActive(true);
-    }
-    public void OnEndingBtnClicked(){
-        etcUIBackground.SetActive(true);
-        endingUI.SetActive(true);
-    }
-    public void OnRankingBtnClicked(){
-        etcUIBackground.SetActive(true);
-        rankingUI.SetActive(true);
-    }
-    public void OnSettingBtnClicked(){
-        etcUIBackground.SetActive(true);
-        settingUI.SetActive(true);
-    }
-    public void OnCoinBtnClicked(){
-
     }
     public void OnLeftBtnClicked(){
         GameSystem.stageDown();

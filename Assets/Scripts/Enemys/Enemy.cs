@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Header("Enemy Config")]
+    public string enemyName;
     public GameObject warnSprite;
     public float autoDestroyTime;
     Vector3 diffPos;
@@ -27,6 +28,11 @@ public class Enemy : MonoBehaviour
         }
         if(GameSystem.isDead)
             Destroy(gameObject);
+    }
+
+    public virtual string WhatsName()
+    {
+        return name;
     }
 
     IEnumerator WarnAttack() {

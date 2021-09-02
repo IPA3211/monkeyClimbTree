@@ -19,6 +19,11 @@ public class EnemySnake : Enemy
         base.Start();
     }
 
+    public override string WhatsName()
+    {
+        return base.WhatsName();
+    }
+
     override protected void WarnStarted(){
         gameObject.GetComponent<Collider2D>().enabled = false;
     }

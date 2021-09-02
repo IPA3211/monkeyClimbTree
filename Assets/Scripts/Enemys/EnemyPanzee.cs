@@ -36,6 +36,11 @@ public class EnemyPanzee : Enemy
         Jump(isOnRight);
     }
 
+    public override string WhatsName()
+    {
+        return base.WhatsName();
+    }
+
     override protected void WarnStarted(){
         gameObject.GetComponent<Rigidbody2D>().simulated = false;
         gameObject.GetComponent<Collider2D>().enabled = false;
