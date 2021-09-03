@@ -16,6 +16,7 @@ public class playerController : MonoBehaviour
     public AudioManager audioManager;
     public GameObject coinParticle;
     public GameObject dustParticle;
+    public GameObject potionParticle;
     ParticleSystem dust;
     public bool isOnRight = true;
     public bool isOnWall = false;
@@ -198,12 +199,20 @@ public class playerController : MonoBehaviour
             stuckBush.GetComponent<EnvironmentBush>().Monkey_Stucked();
         }
 
-        if (other.gameObject.tag == "Coin")
+        if(other.gameObject.tag == "Coin")
         {
             audioManager.Play("Coin");            
             Instantiate(coinParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
             GameSystem.addCoin(1);
             GameSystem.addScore(10);
+            Destroy(other.gameObject);
+        }
+
+        if(other.gameObject.tag == "Potion")
+        {
+            audioManager.Play("Potion");
+            Instantiate(potionParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
+            GameSystem.setPotion(GameSystem.getPotion() + 1);
             Destroy(other.gameObject);
         }
     }

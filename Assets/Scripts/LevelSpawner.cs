@@ -57,6 +57,7 @@ public class LevelSpawner : MonoBehaviour
 
         else{
             if(GameSystem.isLevelChanged){
+                enemySpawner.enemyLevel = stages[0].levels[0].enemyLevel;
                 bgSpriteSetter.ChangeSpriteSet(stages[GameSystem.getStage()].spriteSet);
                 Debug.Log("debug Level");
                 levelDesignBtn.SetActive(true);

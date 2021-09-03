@@ -9,7 +9,7 @@ public class enemyPrefabs{
     public GameObject panzee;
     public GameObject apple;
     public GameObject eagle;
-    public GameObject dolphine;
+    public GameObject dolphin;
 }
 public class SpawnEnemy : MonoBehaviour
 {   
@@ -146,7 +146,7 @@ public class SpawnEnemy : MonoBehaviour
     }
 
     public void spawnDolphin(){
-        enemys.dolphine.GetComponent<EnemyDolphin>().dolphinConfig = enemyLevel.dolphinConfig;
-        Instantiate(enemys.dolphine, new Vector3(Random.Range(-5f, 5f), cam.position.y - 10.5f, 0), Quaternion.Euler(0, 0, 0));
+        enemys.dolphin.GetComponent<EnemyDolphin>().dolphinConfig = enemyLevel.dolphinConfig;
+        Instantiate(enemys.dolphin, new Vector3(Random.Range(-5f, 5f), cam.position.y - 10.5f, 0), Quaternion.Euler(0, 0, 0));
     }
 }

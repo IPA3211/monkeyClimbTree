@@ -13,6 +13,7 @@ TagManager:
   - Coin
   - AudioManager
   - UI_Background
+  - Potion
   layers:
   - Default
   - TransparentFX

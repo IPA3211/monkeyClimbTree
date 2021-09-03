@@ -13,6 +13,7 @@ public class GameSystem
     private static int score = 0;
     private static int coin = 0;
     private static int health = 3;
+    private static int potion = 0;
     public static int playerHealth = 3;
     private static int level = 0;
     private static int stage = 0;
@@ -70,6 +71,17 @@ public class GameSystem
     public static int getHealth(){
         return health;
     }
+
+    public static void setPotion(int newPotion)
+    {
+        potion = newPotion;
+    }
+
+    public static int getPotion()
+    {
+        return potion;
+    }
+
     public static void addScore(int s){
         score +=s;
     }
