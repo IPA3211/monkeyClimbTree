@@ -45,7 +45,7 @@ public class EnemyDolphin : Enemy
 
     private void Update()
     {
-        // ╫ц╫╨еш©║ ╧╚╦╝╦╕ аж╥аЁ╙?
+        // О©╫ц╫О©╫О©╫ш©О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ О©╫ж╥О©╫О©╫О©╫?
         setRoute();
 
         if(jumpStarted)

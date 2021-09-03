@@ -15,9 +15,9 @@ public class SpawnEnvironment : MonoBehaviour
     public EnviPrefabs envis;
     public EnviLevel enviLevel;
     
-    
     Transform cam;
-    float timeCount = 0;
+    float lastSpawn = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +27,17 @@ public class SpawnEnvironment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameSystem.CanTimeCount())
-            timeCount += Time.deltaTime;
-        else
-            timeCount = 0;
+        if(GameSystem.isRestarted){
+            lastSpawn = 0;
+        }
+        if(GameSystem.playerHeight % enviLevel.spawnHeight < 0.1f && GameSystem.playerHeight > 1f + lastSpawn){
+            SpawnBranch(0);
+            lastSpawn += enviLevel.spawnHeight;
+        }
+    }
 
-        if(timeCount > enviLevel.spawnPeriod && !GameSystem.isLevelUping && !GameSystem.isLeveluped){
+    public void Spawn(){
+        if(!GameSystem.isLevelUping && !GameSystem.isLeveluped){
             StartCoroutine("EnvironmentWarn");
             
             if(enviLevel.spawnBranch){
@@ -43,7 +48,6 @@ public class SpawnEnvironment : MonoBehaviour
 
             if(enviLevel.spawnBush)
                 StartCoroutine("SpawnBushWithTime", enviLevel.bushNum);
-            timeCount = 0;
         }
     }
 
@@ -53,10 +57,10 @@ public class SpawnEnvironment : MonoBehaviour
 
         switch(spawnPoint){
             case 1:
-                Instantiate(envis.branch, new Vector3(4.0f, cam.position.y + Random.Range(0, 10), 0), Quaternion.Euler(0, 0, 90));
+                Instantiate(envis.branch, new Vector3(4.0f, cam.position.y + 11, 0), Quaternion.Euler(0, 0, 90));
             break;
             case 2:
-                Instantiate(envis.branch, new Vector3(-4.0f, cam.position.y + Random.Range(0, 10), 0), Quaternion.Euler(0, 0, 90));
+                Instantiate(envis.branch, new Vector3(-4.0f, cam.position.y + 11, 0), Quaternion.Euler(0, 0, 90));
             break;
         }
     }

@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public string enemyName;
     public GameObject warnSprite;
     public float autoDestroyTime;
-    Vector3 diffPos;
+    protected Vector3 diffPos;
     protected GameObject cam;
     protected bool isInAction;
     virtual protected void WarnStarted(){}

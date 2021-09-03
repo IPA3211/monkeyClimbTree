@@ -34,7 +34,7 @@ public class RuntimeGameManager : MonoBehaviour
 
     public void gameStart(){
         if(!gameObject.GetComponent<CamMoveByLevel>().isMoving){
-            readyUIManager.countDown();
+            readyUIManager.countDown(0);
             canvas.GetComponent<LobbyUIManager>().OnStartBtnClicked();
         }
     }

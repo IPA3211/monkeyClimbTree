@@ -8,11 +8,11 @@ public class ReadyUIManager : MonoBehaviour
     public GameObject readyUI;
     public Text text;
     // Start is called before the first frame update
-    public void countDown(){
-        StartCoroutine("countDownCoroutine");
+    public void countDown(int mode){
+        StartCoroutine("countDownCoroutine", mode);
     }
 
-    IEnumerator countDownCoroutine() {
+    IEnumerator countDownCoroutine(int mode) {
         readyUI.SetActive(true);
         text.text = "READY...";
 
@@ -21,9 +21,14 @@ public class ReadyUIManager : MonoBehaviour
         }
         
         yield return new WaitForSecondsRealtime(2f);
-        text.text = "START...";
+        text.text = "START!";
         yield return new WaitForSecondsRealtime(1f);
         readyUI.SetActive(false);
-        GameSystem.isStarted = true;
+
+        if(mode == 0)
+            GameSystem.isStarted = true;
+        else if(mode == 1){
+            GameSystem.setPause(false);
+        }
     }
 }

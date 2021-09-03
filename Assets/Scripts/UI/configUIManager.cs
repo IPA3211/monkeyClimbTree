@@ -33,6 +33,7 @@ public class configUIManager : MonoBehaviour
     public Toggle appleT;
     public Toggle branchT;
     public Toggle bushT;
+    public Toggle dolphinT;
 
     playerController pctrl;
     Rigidbody2D rigi;
@@ -44,13 +45,11 @@ public class configUIManager : MonoBehaviour
         pauseMenu.SetActive(GameSystem.getPause());
 
         if(!GameSystem.getPause()){
-            Time.timeScale = 1;
             changeConfig();
         }
 
         if(GameSystem.getPause()){
             refresh();
-            Time.timeScale = 0;
         }
     }
 
@@ -62,7 +61,7 @@ public class configUIManager : MonoBehaviour
         
         xPower.text = pctrl.XPower.ToString();
         yPower.text = pctrl.YPower.ToString();
-        timeScale.text = Time.timeScale.ToString();
+        timeScale.text = GameSystem.getTimeScale().ToString();
         gravityScale.text = rigi.gravityScale.ToString();
         charScale.text = player.transform.localScale.x.ToString();
         immuneTime.text = pctrl.immuneTime.ToString();
@@ -81,6 +80,7 @@ public class configUIManager : MonoBehaviour
         panzeeT.isOn = enemy.enemyLevel.spawnPanzee;
         eagleT.isOn = enemy.enemyLevel.spawnEagle;
         appleT.isOn = enemy.enemyLevel.spawnApple;
+        dolphinT.isOn = enemy.enemyLevel.spawnDolphin;
         branchT.isOn = envi.enviLevel.spawnBranch;
         bushT.isOn = envi.enviLevel.spawnBush;
     }
@@ -88,7 +88,7 @@ public class configUIManager : MonoBehaviour
     void changeConfig(){
         pctrl.XPower = float.Parse(xPower.text);
         pctrl.YPower = float.Parse(yPower.text);
-        Time.timeScale = float.Parse(timeScale.text);
+        GameSystem.setTimeScale(float.Parse(timeScale.text));
         rigi.gravityScale = float.Parse(gravityScale.text);
         player.transform.localScale = new Vector3(float.Parse(charScale.text), float.Parse(charScale.text), 0);
         pctrl.immuneTime = float.Parse(immuneTime.text);
@@ -107,6 +107,7 @@ public class configUIManager : MonoBehaviour
         enemy.enemyLevel.spawnPanzee = panzeeT.isOn;
         enemy.enemyLevel.spawnEagle = eagleT.isOn;
         enemy.enemyLevel.spawnApple = appleT.isOn;
+        enemy.enemyLevel.spawnDolphin = dolphinT.isOn;
         envi.enviLevel.spawnBranch = branchT.isOn;
         envi.enviLevel.spawnBush = bushT.isOn;
     }

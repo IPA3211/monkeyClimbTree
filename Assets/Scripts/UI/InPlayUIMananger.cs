@@ -8,6 +8,7 @@ public class InPlayUIMananger : MonoBehaviour
     
     [Header ("In Play UI")]
     public GameObject InPlayUI;
+    public GameObject pauseMenu;
     public Text scoreText;
     public Text coinText;
     public GameObject heart1;
@@ -74,5 +75,9 @@ public class InPlayUIMananger : MonoBehaviour
         }
 
         coinText.text = GameSystem.getCoin().ToString();
+    }
+
+    public void OnPauseBtnClicked(){
+        GameSystem.setPause(!GameSystem.getPause());
     }
 }

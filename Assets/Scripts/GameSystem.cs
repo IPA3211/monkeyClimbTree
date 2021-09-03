@@ -10,6 +10,7 @@ public class GameSystem
     public static bool isDead = false;
     public static bool playDeadUI = false;
     public static float playerHeight = 0;
+    private static float timeScale = 1;
     private static int score = 0;
     private static int coin = 0;
     private static int health = 3;
@@ -21,10 +22,24 @@ public class GameSystem
     public static bool isLevelUping = false;
     public static bool isLeveluped = false;
     public static bool isLevelChanged = true;
+    public static bool isStageChanged = true;
     public static bool isCanVive = true;
     
+    public static void setTimeScale(float newScale){
+        timeScale = newScale;
+        Time.timeScale = timeScale;
+    }
+    public static float getTimeScale(){
+        return timeScale;
+    }
     public static void setPause(bool setting){
         isPasued = setting;
+        if(isPasued){
+            Time.timeScale = 0;
+        }
+        else{
+            Time.timeScale = timeScale;
+        }
     }
     public static bool getPause(){
         return isPasued;
@@ -95,19 +110,22 @@ public class GameSystem
     public static void levelUp(){
         setLevel(getLevel() + 1);
     }
-    public static void stageUp(){
-        stage++;
+    public static void Setstage(int newStage){
+        stage = newStage;
         if(stage > maxStage){
             stage = maxStage;
         }
-        setLevel(0);
-    }
-    public static void stageDown(){
-        stage--;
-        if(stage < 0){
+        else if(stage < 0){
             stage = 0;
         }
+        isStageChanged = true;
         setLevel(0);
+    }
+    public static void stageUp(){
+        Setstage(stage + 1);
+    }
+    public static void stageDown(){
+        Setstage(stage - 1);
     }
 
     public static int getStage(){

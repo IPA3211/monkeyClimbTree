@@ -60,6 +60,7 @@ public class BgSpriteSetter : MonoBehaviour
         spriteSet = sp;
 
         count = 0;
+        bgPos.nextSprite = null;
         bgPos.firstBg.GetComponent<SpriteRenderer>().sprite = spriteSet.first;
         bgPos.endBg.GetComponent<SpriteRenderer>().sprite = spriteSet.end;
         if(spriteSet.middle.Count == 0){

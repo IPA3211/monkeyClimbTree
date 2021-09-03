@@ -12,6 +12,7 @@ public class Stage{
 [System.Serializable]
 public class Level
 {
+    public float timeScale = 1;
     public float LevelChangeHeight = 60;
     public Color LevelbgFilterColor;
     public EnemyLevel enemyLevel;
@@ -56,6 +57,7 @@ public class EnviLevel{
     [Header ("Enemies")]
     public bool spawnBranch = true;
     public int branchNum = 2;
+    public float spawnHeight = 50;
    
     [Space (10f)]
     public bool spawnBush = false;

@@ -31,11 +31,15 @@ public class LevelSpawner : MonoBehaviour
             if(GameSystem.isLevelChanged){
                 enemySpawner.enemyLevel = level.enemyLevel;
                 enviSpawner.enviLevel = level.enviLevel;
+                GameSystem.setTimeScale(level.timeScale);
+
                 bgSpriteSetter.ChangeSpriteSet(stages[GameSystem.getStage()].spriteSet);
                 bgFilterSetter.StartCoroutine("ChangeColor", level.LevelbgFilterColor);
+                
+                if(GameSystem.getLevel() != 0)
+                    enviSpawner.Spawn();
 
                 GameSystem.isLevelChanged = false;
-
                 levelDesignBtn.SetActive(false);
             }
 
