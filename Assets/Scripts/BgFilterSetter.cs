@@ -21,7 +21,7 @@ public class BgFilterSetter : MonoBehaviour
         while (progress <= 1)
         {
             bgf.color = Color.Lerp(bgf.color, color, progress);
-            progress += Time.deltaTime / changeTime;
+            progress += (Time.unscaledDeltaTime / changeTime);
             yield return new WaitForFixedUpdate();
         }
     }
