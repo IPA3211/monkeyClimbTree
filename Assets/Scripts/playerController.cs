@@ -98,12 +98,21 @@ public class playerController : MonoBehaviour
             }
         }
         else{
-            if(!isPaused){
+            if(GameSystem.isDead)
+            {
+                rigied.gravityScale = 1;
+                //rigied.velocity = saveVelo;
+                //rigied.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
+
+            if(!isPaused && !GameSystem.isDead){
                 //퍼즈 될때
                 isPaused = true;
                 rigied.simulated = false;
-            }
+            }            
         }
+        anim.SetBool("isDead", GameSystem.isDead);
+        
     }
 
     void MonkeyOnWall(){
@@ -152,6 +161,7 @@ public class playerController : MonoBehaviour
         
         dust.Play();
     }
+
     void StopDust()
     {
         dust.Stop();
@@ -224,8 +234,13 @@ public class playerController : MonoBehaviour
                 Debug.Log("Vibe");
             }
             audioManager.Play("Monkey_Cry");
-            GameSystem.damaged(1);            
-            StartCoroutine("playerImmuned");
+            GameSystem.damaged(1);           
+            if(!GameSystem.isDead) 
+                StartCoroutine("playerImmuned");
+            else
+            {
+                ;
+            }
         }
     }
 

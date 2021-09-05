@@ -16690,7 +16690,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Chimpanzee
     clip: {fileID: 8300000, guid: bbd454d982a306645b24687eb8dd49fa, type: 3}
-    volume: 0.7
+    volume: 0.8
     source: {fileID: 0}
   - name: Snake
     clip: {fileID: 8300000, guid: 775d50b6f217d3d4d8a3381d92f85376, type: 3}
@@ -16710,7 +16710,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Dolphin
     clip: {fileID: 8300000, guid: 6c700ed76c3f8aa4b833e813476485ca, type: 3}
-    volume: 0.5
+    volume: 0.25
     source: {fileID: 0}
   - name: Potion
     clip: {fileID: 8300000, guid: 8510a8d40affd8d4a883f127d8c50e8b, type: 3}

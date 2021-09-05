@@ -149,6 +149,7 @@ public class GameSystem
         setLevel(0);
         playerHeight = 0;
         score = 0;
+        potion = 0;
     }
 
     public static bool CanTimeCount(){
