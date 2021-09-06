@@ -42,7 +42,7 @@ public class playerController : MonoBehaviour
         if(GameSystem.isStarted == false){
             return;
         }
-        if(Input.GetMouseButtonDown(0) && !isOnWall && !isDoubleJumped && Mathf.Abs(gameObject.transform.position.x) < 3.3f){
+        if(Input.GetMouseButtonDown(0) && !isOnWall && !isDoubleJumped && !GameSystem.isDead && Mathf.Abs(gameObject.transform.position.x) < 3.3f){
             //더블점프 사용가능 범위때문에 나누긴 했는데 결국엔 다시 돌아옴 ㅋㅋ
             if(doubleJumpPower > 1){
                 if(isOnRight)
@@ -99,9 +99,8 @@ public class playerController : MonoBehaviour
         }
         else{
             if(GameSystem.isDead){
-                GameSystem.setTimeScale(0.5f);
+                MonkeyDead();
             }
-
             else if(!isPaused){
                 //퍼즈 될때
                 isPaused = true;
@@ -109,6 +108,17 @@ public class playerController : MonoBehaviour
             }            
         }
         anim.SetBool("isDead", GameSystem.isDead);
+    }
+
+    void MonkeyDead()
+    {
+        GameSystem.setTimeScale(0.5f);
+        isOnWall = false;
+        isDoubleJumped = false;
+        if (isOnRight)
+            rigied.velocity = new Vector2(-3f, rigied.velocity.y);
+        else
+            rigied.velocity = new Vector2(3f, rigied.velocity.y);
     }
 
     void MonkeyOnWall(){
@@ -224,18 +234,16 @@ public class playerController : MonoBehaviour
     }
 
     public void playerHit(){
-        if(!isImmune){
+        if(!isImmune && !GameSystem.isDead){
             if(GameSystem.isCanVive){
                 RDG.Vibration.Vibrate((long)500);
             }
             audioManager.Play("Monkey_Cry");
-            GameSystem.damaged(1);           
-            if(!GameSystem.isDead) 
-                StartCoroutine("playerImmuned");
-            else
+            GameSystem.damaged(1);
+            if(!GameSystem.isDead)
             {
-                ;
-            }
+                StartCoroutine("playerImmuned");
+            }            
         }
     }
 

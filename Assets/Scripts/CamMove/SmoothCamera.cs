@@ -10,6 +10,8 @@ public class SmoothCamera : MonoBehaviour
     public float camOffset;
     public float limit;
     public float maxYPos;
+    float smoothY;
+    float velocityY = 0f;
     bool fixCam;
     bool isEnd;
     // Start is called before the first frame update
@@ -33,16 +35,21 @@ public class SmoothCamera : MonoBehaviour
             if(GameSystem.isRestarted){
                 Reset();
 
-                if(Mathf.Abs (0 - cam.transform.position.y) < 0.1)
+                if(Mathf.Abs (0 - cam.transform.position.y) < 0.1f)
                     GameSystem.isRestarted = false;
             }
 
             if(isEnd)
                 cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, maxYPos, -10), Time.deltaTime * camSpeed);
+            else if(GameSystem.isRestarted)
+            {
+                smoothY = Mathf.SmoothDamp(cam.transform.position.y, maxYPos, ref velocityY, 0.5f);
+                cam.transform.position = new Vector3(0, smoothY, -10);
+            }                
             else
                 cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, maxYPos - camOffset, -10), Time.deltaTime * camSpeed);
 
-            if(Mathf.Abs (limit - cam.transform.position.y) < 0.5){
+            if(Mathf.Abs (limit - cam.transform.position.y) < 0.5f){
                 if(fixCam == false){
                     fixCam = true;
                     cam.transform.position = new Vector3(0, limit, -10);
