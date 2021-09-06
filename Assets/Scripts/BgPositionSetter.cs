@@ -51,7 +51,7 @@ public class BgPositionSetter : MonoBehaviour
         nextSprite = null;
         
         if(isEnd){
-            smoothCamera.limit = bg.transform.position.y;
+            smoothCamera.ending(bg.transform.position.y);
             endBg.transform.position = bg.transform.position;
             endBg.SetActive(true);
             GetComponentInChildren<levelUpVine>().getDown(smoothCamera.limit);

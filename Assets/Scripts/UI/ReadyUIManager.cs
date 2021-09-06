@@ -20,7 +20,9 @@ public class ReadyUIManager : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         
-        yield return new WaitForSecondsRealtime(2f);
+        if(!GameSystem.isRestarted)
+            yield return new WaitForSecondsRealtime(2f);
+
         text.text = "START!";
         yield return new WaitForSecondsRealtime(1f);
         readyUI.SetActive(false);

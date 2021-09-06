@@ -28,7 +28,7 @@ public class SpawnEnvironment : MonoBehaviour
     void Update()
     {
         if(GameSystem.isRestarted){
-            lastSpawn = 0;
+            lastSpawn = enviLevel.spawnHeight;
         }
         if(GameSystem.playerHeight % enviLevel.spawnHeight < 0.1f && GameSystem.playerHeight > 1f + lastSpawn){
             SpawnBranch(0);
@@ -39,12 +39,6 @@ public class SpawnEnvironment : MonoBehaviour
     public void Spawn(){
         if(!GameSystem.isLevelUping && !GameSystem.isLeveluped){
             StartCoroutine("EnvironmentWarn");
-            
-            if(enviLevel.spawnBranch){
-                for(int i = 0; i < enviLevel.branchNum; i++){
-                    SpawnBranch((i % 2) + 1);
-                }
-            }
 
             if(enviLevel.spawnBush)
                 StartCoroutine("SpawnBushWithTime", enviLevel.bushNum);

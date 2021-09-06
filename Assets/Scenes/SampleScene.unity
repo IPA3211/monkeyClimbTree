@@ -9876,7 +9876,7 @@ MonoBehaviour:
   player: {fileID: 784131744}
   cam: {fileID: 519420028}
   camSpeed: 1
-  camOffset: 0
+  camOffset: -3
   limit: 1000
   maxYPos: 0
 --- !u!4 &351710411
@@ -10128,8 +10128,8 @@ MonoBehaviour:
         spawnHeight: 30
         spawnBush: 0
         bushNum: 5
-    - timeScale: 1.2
-      LevelChangeHeight: 200
+    - timeScale: 1.05
+      LevelChangeHeight: 205
       LevelbgFilterColor: {r: 1, g: 0, b: 0, a: 0.2}
       enemyLevel:
         spawnPeriod: 4.5
@@ -10161,8 +10161,8 @@ MonoBehaviour:
         spawnHeight: 30
         spawnBush: 1
         bushNum: 5
-    - timeScale: 1.4
-      LevelChangeHeight: 300
+    - timeScale: 1.1
+      LevelChangeHeight: 315
       LevelbgFilterColor: {r: 0, g: 0, b: 1, a: 0.2}
       enemyLevel:
         spawnPeriod: 4
@@ -10196,24 +10196,57 @@ MonoBehaviour:
         bushNum: 5
   - isDebugStage: 0
     spriteSet:
-      first: {fileID: 21300000, guid: 8c06680f47019784990e0c47cb49e998, type: 3}
+      first: {fileID: 21300000, guid: ff126559c4f605f46aca140323fd803a, type: 3}
       middle:
-      - {fileID: 21300000, guid: 8c06680f47019784990e0c47cb49e998, type: 3}
-      - {fileID: 21300000, guid: e1c89a0af1ae55c46882fc51d15f4305, type: 3}
-      end: {fileID: 21300000, guid: 8c06680f47019784990e0c47cb49e998, type: 3}
+      - {fileID: 21300000, guid: c095f8faea37f3e4d98026fa7abb35dd, type: 3}
+      - {fileID: 21300000, guid: 433eb95fec4f01c4a9b182b027ce9e25, type: 3}
+      end: {fileID: 21300000, guid: 155b835ebcbb833429be306c075848fe, type: 3}
     levels:
-    - timeScale: 1
-      LevelChangeHeight: 100
+    - timeScale: 1.05
+      LevelChangeHeight: 105
       LevelbgFilterColor: {r: 1, g: 1, b: 1, a: 0.2}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4
         minSpawnAmount: 1
         maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
         snakeSpeed: 12
-        spawnPanzee: 0
+        spawnPanzee: 1
+        panzeeXPower: 12
+        panzeeYPower: 20
+        spawnApple: 1
+        spawnEagle: 1
+        eagleConfig:
+          aimmingTime: 2
+          rushSpeed: 20
+          spawnTime: 1
+        spawnDolphin: 0
+        dolphinConfig:
+          maxYPower: 20
+          minYPower: 10
+          maxXPower: 10
+          minXPower: 4
+      enviLevel:
+        spawnPeriod: 30
+        spawnBranch: 1
+        branchNum: 2
+        spawnHeight: 30
+        spawnBush: 1
+        bushNum: 5
+    - timeScale: 1.1
+      LevelChangeHeight: 215
+      LevelbgFilterColor: {r: 1, g: 0, b: 0, a: 0.2}
+      enemyLevel:
+        spawnPeriod: 4
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 0
+        snakeSpeed: 12
+        spawnPanzee: 1
         panzeeXPower: 12
         panzeeYPower: 20
         spawnApple: 1
@@ -10232,44 +10265,11 @@ MonoBehaviour:
         spawnPeriod: 30
         spawnBranch: 1
         branchNum: 2
-        spawnHeight: 50
-        spawnBush: 0
-        bushNum: 5
-    - timeScale: 1.2
-      LevelChangeHeight: 200
-      LevelbgFilterColor: {r: 1, g: 0, b: 0, a: 0.2}
-      enemyLevel:
-        spawnPeriod: 4.5
-        minSpawnAmount: 1
-        maxSpawnAmount: 2
-        spawnWall: 1
-        wallAmount: 2
-        spawnSnake: 0
-        snakeSpeed: 12
-        spawnPanzee: 0
-        panzeeXPower: 12
-        panzeeYPower: 20
-        spawnApple: 1
-        spawnEagle: 1
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
-        spawnDolphin: 0
-        dolphinConfig:
-          maxYPower: 20
-          minYPower: 10
-          maxXPower: 10
-          minXPower: 4
-      enviLevel:
-        spawnPeriod: 30
-        spawnBranch: 1
-        branchNum: 2
-        spawnHeight: 50
+        spawnHeight: 30
         spawnBush: 1
         bushNum: 5
-    - timeScale: 1.4
-      LevelChangeHeight: 300
+    - timeScale: 1.15
+      LevelChangeHeight: 340
       LevelbgFilterColor: {r: 0, g: 0, b: 1, a: 0.2}
       enemyLevel:
         spawnPeriod: 4
@@ -10279,7 +10279,7 @@ MonoBehaviour:
         wallAmount: 2
         spawnSnake: 0
         snakeSpeed: 12
-        spawnPanzee: 0
+        spawnPanzee: 1
         panzeeXPower: 12
         panzeeYPower: 20
         spawnApple: 1
@@ -10298,16 +10298,337 @@ MonoBehaviour:
         spawnPeriod: 30
         spawnBranch: 1
         branchNum: 2
-        spawnHeight: 50
+        spawnHeight: 30
+        spawnBush: 1
+        bushNum: 5
+  - isDebugStage: 0
+    spriteSet:
+      first: {fileID: 21300000, guid: 2498500dc1eed4d44a1bf78912cf2cb9, type: 3}
+      middle:
+      - {fileID: 21300000, guid: aa0cc6d0f4b61134c86a78b0094f7017, type: 3}
+      - {fileID: 21300000, guid: c3df10ea389318d4282598086c4ba8d6, type: 3}
+      end: {fileID: 21300000, guid: b670739e8399be142898446744670dfd, type: 3}
+    levels:
+    - timeScale: 1.1
+      LevelChangeHeight: 110
+      LevelbgFilterColor: {r: 1, g: 1, b: 1, a: 0.2}
+      enemyLevel:
+        spawnPeriod: 4
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 0
+        snakeSpeed: 12
+        spawnPanzee: 1
+        panzeeXPower: 12
+        panzeeYPower: 20
+        spawnApple: 0
+        spawnEagle: 0
+        eagleConfig:
+          aimmingTime: 2
+          rushSpeed: 20
+          spawnTime: 1
+        spawnDolphin: 1
+        dolphinConfig:
+          maxYPower: 30
+          minYPower: 10
+          maxXPower: 5
+          minXPower: 4
+      enviLevel:
+        spawnPeriod: 30
+        spawnBranch: 1
+        branchNum: 2
+        spawnHeight: 30
+        spawnBush: 1
+        bushNum: 5
+    - timeScale: 1.15
+      LevelChangeHeight: 225
+      LevelbgFilterColor: {r: 1, g: 0, b: 0, a: 0.2}
+      enemyLevel:
+        spawnPeriod: 4
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 0
+        snakeSpeed: 12
+        spawnPanzee: 1
+        panzeeXPower: 12
+        panzeeYPower: 20
+        spawnApple: 0
+        spawnEagle: 0
+        eagleConfig:
+          aimmingTime: 2
+          rushSpeed: 20
+          spawnTime: 1
+        spawnDolphin: 1
+        dolphinConfig:
+          maxYPower: 30
+          minYPower: 10
+          maxXPower: 5
+          minXPower: 4
+      enviLevel:
+        spawnPeriod: 30
+        spawnBranch: 1
+        branchNum: 2
+        spawnHeight: 30
+        spawnBush: 1
+        bushNum: 5
+    - timeScale: 1.2
+      LevelChangeHeight: 360
+      LevelbgFilterColor: {r: 0, g: 0, b: 1, a: 0.2}
+      enemyLevel:
+        spawnPeriod: 4
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 0
+        snakeSpeed: 12
+        spawnPanzee: 1
+        panzeeXPower: 12
+        panzeeYPower: 20
+        spawnApple: 0
+        spawnEagle: 0
+        eagleConfig:
+          aimmingTime: 2
+          rushSpeed: 20
+          spawnTime: 1
+        spawnDolphin: 1
+        dolphinConfig:
+          maxYPower: 30
+          minYPower: 10
+          maxXPower: 5
+          minXPower: 4
+      enviLevel:
+        spawnPeriod: 30
+        spawnBranch: 1
+        branchNum: 2
+        spawnHeight: 30
+        spawnBush: 1
+        bushNum: 5
+  - isDebugStage: 0
+    spriteSet:
+      first: {fileID: 21300000, guid: beeef8a96a3e9fd4788415fb97636095, type: 3}
+      middle:
+      - {fileID: 21300000, guid: 9c1acfbb815ec004aaad9660d0ace99f, type: 3}
+      - {fileID: 21300000, guid: 549dd36ebab6311409884b5baa586c81, type: 3}
+      end: {fileID: 21300000, guid: 19d44c268f33b73489667162c2141e55, type: 3}
+    levels:
+    - timeScale: 1.15
+      LevelChangeHeight: 115
+      LevelbgFilterColor: {r: 1, g: 1, b: 1, a: 0.2}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        snakeSpeed: 12
+        spawnPanzee: 0
+        panzeeXPower: 12
+        panzeeYPower: 20
+        spawnApple: 0
+        spawnEagle: 0
+        eagleConfig:
+          aimmingTime: 2
+          rushSpeed: 20
+          spawnTime: 1
+        spawnDolphin: 0
+        dolphinConfig:
+          maxYPower: 20
+          minYPower: 10
+          maxXPower: 10
+          minXPower: 4
+      enviLevel:
+        spawnPeriod: 30
+        spawnBranch: 1
+        branchNum: 2
+        spawnHeight: 30
+        spawnBush: 0
+        bushNum: 5
+    - timeScale: 1.2
+      LevelChangeHeight: 235
+      LevelbgFilterColor: {r: 1, g: 0, b: 0, a: 0.2}
+      enemyLevel:
+        spawnPeriod: 4.5
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        snakeSpeed: 12
+        spawnPanzee: 1
+        panzeeXPower: 12
+        panzeeYPower: 20
+        spawnApple: 0
+        spawnEagle: 0
+        eagleConfig:
+          aimmingTime: 2
+          rushSpeed: 20
+          spawnTime: 1
+        spawnDolphin: 0
+        dolphinConfig:
+          maxYPower: 20
+          minYPower: 10
+          maxXPower: 10
+          minXPower: 4
+      enviLevel:
+        spawnPeriod: 30
+        spawnBranch: 1
+        branchNum: 2
+        spawnHeight: 30
+        spawnBush: 1
+        bushNum: 5
+    - timeScale: 1.25
+      LevelChangeHeight: 360
+      LevelbgFilterColor: {r: 0, g: 0, b: 1, a: 0.2}
+      enemyLevel:
+        spawnPeriod: 4
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        snakeSpeed: 12
+        spawnPanzee: 1
+        panzeeXPower: 12
+        panzeeYPower: 20
+        spawnApple: 0
+        spawnEagle: 0
+        eagleConfig:
+          aimmingTime: 2
+          rushSpeed: 20
+          spawnTime: 1
+        spawnDolphin: 0
+        dolphinConfig:
+          maxYPower: 20
+          minYPower: 10
+          maxXPower: 10
+          minXPower: 4
+      enviLevel:
+        spawnPeriod: 30
+        spawnBranch: 1
+        branchNum: 2
+        spawnHeight: 30
+        spawnBush: 1
+        bushNum: 5
+  - isDebugStage: 0
+    spriteSet:
+      first: {fileID: 21300000, guid: b342e2055a0a3124e8745e189294c558, type: 3}
+      middle:
+      - {fileID: 21300000, guid: 01f4088a777b19c4996141463e859429, type: 3}
+      - {fileID: 21300000, guid: 9d08f7a5d8e9cda4db02e71899450a06, type: 3}
+      end: {fileID: 21300000, guid: 54fd0ef033758164ab00772286add73b, type: 3}
+    levels:
+    - timeScale: 1.2
+      LevelChangeHeight: 120
+      LevelbgFilterColor: {r: 1, g: 1, b: 1, a: 0.2}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        snakeSpeed: 12
+        spawnPanzee: 0
+        panzeeXPower: 12
+        panzeeYPower: 20
+        spawnApple: 0
+        spawnEagle: 0
+        eagleConfig:
+          aimmingTime: 2
+          rushSpeed: 20
+          spawnTime: 1
+        spawnDolphin: 0
+        dolphinConfig:
+          maxYPower: 20
+          minYPower: 10
+          maxXPower: 10
+          minXPower: 4
+      enviLevel:
+        spawnPeriod: 30
+        spawnBranch: 1
+        branchNum: 2
+        spawnHeight: 30
+        spawnBush: 0
+        bushNum: 5
+    - timeScale: 1.25
+      LevelChangeHeight: 245
+      LevelbgFilterColor: {r: 1, g: 0, b: 0, a: 0.2}
+      enemyLevel:
+        spawnPeriod: 4.5
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        snakeSpeed: 12
+        spawnPanzee: 1
+        panzeeXPower: 12
+        panzeeYPower: 20
+        spawnApple: 0
+        spawnEagle: 0
+        eagleConfig:
+          aimmingTime: 2
+          rushSpeed: 20
+          spawnTime: 1
+        spawnDolphin: 0
+        dolphinConfig:
+          maxYPower: 20
+          minYPower: 10
+          maxXPower: 10
+          minXPower: 4
+      enviLevel:
+        spawnPeriod: 30
+        spawnBranch: 1
+        branchNum: 2
+        spawnHeight: 30
+        spawnBush: 1
+        bushNum: 5
+    - timeScale: 1.3
+      LevelChangeHeight: 400
+      LevelbgFilterColor: {r: 0, g: 0, b: 1, a: 0.2}
+      enemyLevel:
+        spawnPeriod: 4
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        snakeSpeed: 12
+        spawnPanzee: 1
+        panzeeXPower: 12
+        panzeeYPower: 20
+        spawnApple: 0
+        spawnEagle: 0
+        eagleConfig:
+          aimmingTime: 2
+          rushSpeed: 20
+          spawnTime: 1
+        spawnDolphin: 0
+        dolphinConfig:
+          maxYPower: 20
+          minYPower: 10
+          maxXPower: 10
+          minXPower: 4
+      enviLevel:
+        spawnPeriod: 30
+        spawnBranch: 1
+        branchNum: 2
+        spawnHeight: 30
         spawnBush: 1
         bushNum: 5
   - isDebugStage: 1
     spriteSet:
-      first: {fileID: 21300000, guid: 0efbe185ca5ecb142a86bf8506b25184, type: 3}
+      first: {fileID: 21300000, guid: b342e2055a0a3124e8745e189294c558, type: 3}
       middle:
-      - {fileID: 21300000, guid: 3825b7220e4f252428efb193b76c6a01, type: 3}
-      - {fileID: 21300000, guid: 4d61b4a2d78532443aaa3a44933a0134, type: 3}
-      end: {fileID: 21300000, guid: bd235881a82612c4c8d68ef9779e0d0a, type: 3}
+      - {fileID: 21300000, guid: 01f4088a777b19c4996141463e859429, type: 3}
+      - {fileID: 21300000, guid: 9d08f7a5d8e9cda4db02e71899450a06, type: 3}
+      end: {fileID: 21300000, guid: 54fd0ef033758164ab00772286add73b, type: 3}
     levels: []
 --- !u!114 &351710423
 MonoBehaviour:
@@ -15536,7 +15857,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784131744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 223875798}

@@ -8,11 +8,12 @@ public class EnvironmentBranch : MonoBehaviour
     public float warningTime;
     public float health = 1.5f;
     bool playerHit = false;
-
+    GameObject cam;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("BranchLifeCycle");
+        cam = GameObject.FindWithTag("MainCamera");
     }
 
     // Update is called once per frame
@@ -26,6 +27,9 @@ public class EnvironmentBranch : MonoBehaviour
         }
 
         if(GameSystem.isDead)
+            Destroy(gameObject);
+
+        if(cam.transform.position.y - 11 > gameObject.transform.position.y)
             Destroy(gameObject);
     }
     void OnCollisionEnter2D(Collision2D other){

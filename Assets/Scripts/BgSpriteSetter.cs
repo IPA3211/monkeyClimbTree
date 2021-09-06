@@ -65,7 +65,7 @@ public class BgSpriteSetter : MonoBehaviour
         bgPos.endBg.GetComponent<SpriteRenderer>().sprite = spriteSet.end;
         if(spriteSet.middle.Count == 0){
             bgPos.endBg.GetComponent<SpriteRenderer>().sprite = spriteSet.end;
-            cam.limit = bgPos.endBg.transform.position.y;
+            cam.ending(bgPos.endBg.transform.position.y);
             isEnd = true;
         }
         else 

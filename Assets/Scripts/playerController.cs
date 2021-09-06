@@ -98,21 +98,17 @@ public class playerController : MonoBehaviour
             }
         }
         else{
-            if(GameSystem.isDead)
-            {
-                rigied.gravityScale = 1;
-                //rigied.velocity = saveVelo;
-                //rigied.constraints = RigidbodyConstraints2D.FreezeRotation;
+            if(GameSystem.isDead){
+                GameSystem.setTimeScale(0.5f);
             }
 
-            if(!isPaused && !GameSystem.isDead){
+            else if(!isPaused){
                 //퍼즈 될때
                 isPaused = true;
                 rigied.simulated = false;
             }            
         }
         anim.SetBool("isDead", GameSystem.isDead);
-        
     }
 
     void MonkeyOnWall(){
@@ -231,7 +227,6 @@ public class playerController : MonoBehaviour
         if(!isImmune){
             if(GameSystem.isCanVive){
                 RDG.Vibration.Vibrate((long)500);
-                Debug.Log("Vibe");
             }
             audioManager.Play("Monkey_Cry");
             GameSystem.damaged(1);           

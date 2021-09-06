@@ -11,10 +11,11 @@ public class SmoothCamera : MonoBehaviour
     public float limit;
     public float maxYPos;
     bool fixCam;
+    bool isEnd;
     // Start is called before the first frame update
     void Start()
     {
-        
+        maxYPos = camOffset;
     }
 
     // Update is called once per frame
@@ -36,7 +37,11 @@ public class SmoothCamera : MonoBehaviour
                     GameSystem.isRestarted = false;
             }
 
-            cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, maxYPos - camOffset, -10), Time.deltaTime * camSpeed);
+            if(isEnd)
+                cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, maxYPos, -10), Time.deltaTime * camSpeed);
+            else
+                cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, maxYPos - camOffset, -10), Time.deltaTime * camSpeed);
+
             if(Mathf.Abs (limit - cam.transform.position.y) < 0.5){
                 if(fixCam == false){
                     fixCam = true;
@@ -46,9 +51,15 @@ public class SmoothCamera : MonoBehaviour
         }
     }
 
+    public void ending(float pos){
+        limit = pos;
+        isEnd = true;
+    }
+
     void Reset(){
-        maxYPos = 0;
+        maxYPos = camOffset;
         limit = 10000;
         fixCam = false;
+        isEnd = false;
     }
 }

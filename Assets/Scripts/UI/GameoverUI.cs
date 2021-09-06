@@ -38,7 +38,7 @@ public class GameoverUI : MonoBehaviour
                 }
             }
 
-            sumTime += Time.deltaTime;
+            sumTime += Time.unscaledDeltaTime;
         }
     } 
 

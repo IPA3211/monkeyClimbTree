@@ -14,10 +14,12 @@ public class EnvironmentBush : MonoBehaviour
     Animator anim;
     Rigidbody2D playerRigid;
     playerController pctrl;
+    GameObject cam;
     // Start is called before the first frame update
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
+        cam = GameObject.FindWithTag("MainCamera");
         StartCoroutine("BushLife");
     }
     void Update()
@@ -34,6 +36,9 @@ public class EnvironmentBush : MonoBehaviour
         }
 
         if(GameSystem.isDead)
+            Destroy(gameObject);
+            
+        if(cam.transform.position.y - 11 > gameObject.transform.position.y)
             Destroy(gameObject);
     }
     void OnDestroy() {
