@@ -26,6 +26,8 @@ public class configUIManager : MonoBehaviour
     public InputField wallAmount;
     public InputField panzeeX;
     public InputField panzeeY;
+    public InputField minSpawn;
+    public InputField maxSpawn;
     public Toggle wallT;
     public Toggle snakeT;
     public Toggle panzeeT;
@@ -74,6 +76,9 @@ public class configUIManager : MonoBehaviour
         wallAmount.text = enemy.enemyLevel.wallAmount.ToString();
         panzeeX.text = enemy.enemyLevel.panzeeXPower.ToString();
         panzeeY.text = enemy.enemyLevel.panzeeYPower.ToString();
+
+        minSpawn.text = enemy.enemyLevel.minSpawnAmount.ToString();
+        maxSpawn.text = enemy.enemyLevel.maxSpawnAmount.ToString();
         
         wallT.isOn = enemy.enemyLevel.spawnWall;
         snakeT.isOn = enemy.enemyLevel.spawnSnake;
