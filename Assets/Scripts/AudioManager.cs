@@ -6,6 +6,9 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
+
+    public Sound[] bgms;
     public Sound[] sounds;
     public AudioSource bgm;
     public AudioSource sfx;
@@ -17,11 +20,23 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update0
     void Awake()
     {
+        if(AudioManager.instance == null)
+        {
+            AudioManager.instance = this;
+        }
+
         foreach(Sound s in sounds)
         {
             //이거 audiosource 계속 생성하길래 바꿈
             s.source = sfx;
         }
+
+        foreach (Sound s in bgms)
+        {
+            //이거 audiosource 계속 생성하길래 바꿈
+            s.source = bgm;
+        }
+
         bgm.volume = SecurityPlayerPrefs.GetFloat("bgmVol", 1);
         sfx.volume = SecurityPlayerPrefs.GetFloat("sfxVol", 1);
         bgmVol.value = bgm.volume;
@@ -51,16 +66,39 @@ public class AudioManager : MonoBehaviour
 
         PlayerPrefs.SetInt("Hi there", 1);
         
-        /* 나중에 배경음악 음소거 버튼 생기면 이케이케 하면됨
-        if(BtnType.isSound == true)
+    }
+
+    public void ChangeBGM()
+    {
+        int statgeNum = GameSystem.getStage();
+        bgm.Stop();
+
+        switch (statgeNum)
         {
-            bgm.mute = false;
+            case 0:
+                bgm.clip = bgms[0].clip;
+                break;
+            case 1:
+                bgm.clip = bgms[1].clip;
+                break;
+            case 2:
+                bgm.clip = bgms[2].clip;
+                break;
+            case 3:
+                bgm.clip = bgms[3].clip;
+                break;
+            case 4:
+                bgm.clip = bgms[4].clip;
+                break;
+            case 5:
+                bgm.clip = bgms[4].clip;
+                break;
+            case 6:
+                bgm.clip = bgms[4].clip;
+                break;
         }
-        else
-        {
-            bgm.mute = true;
-        }
-        */    
+
+        bgm.Play();
     }
 
     // Update is called once per frame

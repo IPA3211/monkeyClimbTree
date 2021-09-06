@@ -14,7 +14,6 @@ public class EnemyEagle : Enemy
     [Header("Eagle Config")]
     public EagleConfig eagleConfig;
     public GameObject aim;
-    AudioManager audioManager;
     GameObject target;
     Vector2 stopPosition;
     Vector2 targetDir;
@@ -26,7 +25,6 @@ public class EnemyEagle : Enemy
     {
         base.Start();
         aim.SetActive(false);
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         target = GameObject.FindGameObjectWithTag("Player");
 
         if(cam.transform.position.y < transform.position.y){
@@ -50,7 +48,7 @@ public class EnemyEagle : Enemy
 
             if(!isAttacking)
             {
-                audioManager.Play("Eagle");
+                AudioManager.instance.Play("Eagle");
                 isAttacking = true;
             }
         }

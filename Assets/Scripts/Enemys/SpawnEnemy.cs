@@ -14,7 +14,6 @@ public class enemyPrefabs{
 public class SpawnEnemy : MonoBehaviour
 {   
     [Header ("Config")]
-    public AudioManager audioManager;
     public enemyPrefabs enemys;
     public EnemyLevel enemyLevel;
 
@@ -104,14 +103,14 @@ public class SpawnEnemy : MonoBehaviour
             break;
         }
 
-        audioManager.Play("Snake");
+        AudioManager.instance.Play("Snake");
     }
 
     public void SpawnPanzee(){
         enemys.panzee.GetComponent<EnemyPanzee>().XPower = enemyLevel.panzeeXPower;
         enemys.panzee.GetComponent<EnemyPanzee>().YPower = enemyLevel.panzeeYPower;
         Instantiate(enemys.panzee, new Vector3(Random.Range(-4f, 4f), cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
-        audioManager.Play("Chimpanzee");
+        AudioManager.instance.Play("Chimpanzee");
     }
 
     public void SpawnApple() { SpawnApple(0);}

@@ -13,7 +13,6 @@ public class playerController : MonoBehaviour
     Rigidbody2D rigied;
     SpriteRenderer spriteRenderer;
     Vector2 saveVelo;
-    public AudioManager audioManager;
     public GameObject coinParticle;
     public GameObject dustParticle;
     public GameObject potionParticle;
@@ -217,7 +216,7 @@ public class playerController : MonoBehaviour
 
         if(other.gameObject.tag == "Coin")
         {
-            audioManager.Play("Coin");            
+            AudioManager.instance.Play("Coin");            
             Instantiate(coinParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
             GameSystem.addCoin(1);
             GameSystem.addScore(10);
@@ -226,7 +225,7 @@ public class playerController : MonoBehaviour
 
         if(other.gameObject.tag == "Potion")
         {
-            audioManager.Play("Potion");
+            AudioManager.instance.Play("Potion");
             Instantiate(potionParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
             GameSystem.setPotion(GameSystem.getPotion() + 1);
             Destroy(other.gameObject);
@@ -238,7 +237,7 @@ public class playerController : MonoBehaviour
             if(GameSystem.isCanVive){
                 RDG.Vibration.Vibrate((long)500);
             }
-            audioManager.Play("Monkey_Cry");
+            AudioManager.instance.Play("Monkey_Cry");
             GameSystem.damaged(1);
             if(!GameSystem.isDead)
             {
