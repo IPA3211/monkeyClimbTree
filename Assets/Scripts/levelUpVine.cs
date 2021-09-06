@@ -15,7 +15,7 @@ public class levelUpVine : MonoBehaviour
     void OnTriggerEnter2D (Collider2D other){
         Debug.Log("uu");
         if(other.gameObject.tag == "Player"){
-            GameSystem.isLeveluped = true;
+            GameSystem.isStageCleared = true;
             StartCoroutine("getUp", gameObject);
             StartCoroutine("getUp", other.gameObject);
         }
@@ -36,7 +36,9 @@ public class levelUpVine : MonoBehaviour
             progress += (Time.deltaTime / 2);
             yield return new WaitForFixedUpdate();
         }
-        GameSystem.setHealth(0);
+        //GameSystem.setHealth(0);
+        GameSystem.isStageCleared = true;
+        GameSystem.playClearUI = true;
         GetComponent<Collider2D>().enabled = false;
     }
 }

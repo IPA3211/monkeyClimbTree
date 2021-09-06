@@ -9,10 +9,18 @@ public class GameSystem
     public static bool isStarted = false;
     public static bool isDead = false;
     public static bool playDeadUI = false;
+    public static bool playClearUI = false;
+
+    public static bool hasMagnetic = false;
+    public static bool hasBooster = false;
+    public static bool hasShield = false;
+
     public static float playerHeight = 0;
     private static float timeScale = 1;
+    private static int maxHeight = 0;
     private static int score = 0;
     private static int coin = 0;
+    private static int coinEarned = 0;
     private static int health = 3;
     private static int potion = 0;
     public static int playerHealth = 3;
@@ -20,11 +28,17 @@ public class GameSystem
     private static int stage = 0;
     public static int maxStage = 15;
     public static bool isLevelUping = false;
-    public static bool isLeveluped = false;
+    public static bool isStageCleared = false;
     public static bool isLevelChanged = true;
     public static bool isStageChanged = true;
     public static bool isCanVive = true;
     
+    public static void resetStartItem()
+    {
+        hasMagnetic = false;
+        hasBooster = false;
+        hasShield = false;
+    }
     public static void setTimeScale(float newScale){
         timeScale = newScale;
         Time.timeScale = timeScale;
@@ -68,6 +82,33 @@ public class GameSystem
     {
         setCoin(getCoin() + amount);
     }
+    public static void setCoinEarned(int cnt)
+    {
+        if (cnt < 0)
+        {
+            coinEarned = 0;
+        }
+        else if (cnt > 99999)
+        {
+            coinEarned = 99999;
+        }
+        else
+        {
+            coinEarned = cnt;
+        }
+
+    }    
+    public static int getCoinEarned()
+    {
+        return coinEarned;
+    }
+    public static void addCoinEarned(int amount)
+    {
+        setCoinEarned(getCoinEarned() + amount);
+    }
+
+
+
     public static void damaged(int amount){
         setHealth(getHealth() - amount);
     }
@@ -98,11 +139,15 @@ public class GameSystem
     }
 
     public static void addScore(int s){
-        score +=s;
+        score += s;
     }
     public static int getScore(){
-        //return score + (int)playerHeight;
-        return (int)playerHeight;
+        return score + maxHeight;
+    }
+    public static void setMaxHeight(int height)
+    {
+        if (height > maxHeight)
+            maxHeight = height;
     }
     public static int getLevel(){
         return level;
@@ -110,7 +155,7 @@ public class GameSystem
     public static void levelUp(){
         setLevel(getLevel() + 1);
     }
-    public static void Setstage(int newStage){
+    public static void setStage(int newStage){
         stage = newStage;
         if(stage > maxStage){
             stage = maxStage;
@@ -122,11 +167,11 @@ public class GameSystem
         setLevel(0);
     }
     public static void stageUp(){
-        Setstage(stage + 1);
+        setStage(stage + 1);
         AudioManager.instance.ChangeBGM();
     }
     public static void stageDown(){
-        Setstage(stage - 1);
+        setStage(stage - 1);
         AudioManager.instance.ChangeBGM();
     }
 
@@ -147,14 +192,30 @@ public class GameSystem
         isStarted = false;
         isPasued = false;
         isLevelUping = false;
-        isLeveluped = false;
+        isStageCleared = false;
+        setStage(0);
         setLevel(0);
-        playerHeight = 0;
+        maxHeight = 0;
+        playerHeight = 0;        
+        coinEarned = 0;
         score = 0;
         potion = 0;
     }
 
+    public static void nextStageStart(){
+        isRestarted = true;
+        isStarted = false;
+        isPasued = false;
+        isLevelUping = false;
+        isStageCleared = false;
+        setLevel(0);
+        score += maxHeight;
+        maxHeight = 0;
+        playerHeight = 0;
+        coinEarned = 0;
+    }
+
     public static bool CanTimeCount(){
-        return isStarted && !isDead && !isLevelUping && !isLeveluped && !isRestarted;
+        return isStarted && !isDead && !isLevelUping && !isStageCleared && !isRestarted;
     }
 }

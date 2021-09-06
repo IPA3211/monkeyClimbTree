@@ -24,6 +24,7 @@ public class playerController : MonoBehaviour
     public bool isDoubleJumped = true;
     GameObject stuckBush;
     GameObject cam;
+    float tempY;
 
     void Start()
     {
@@ -62,7 +63,8 @@ public class playerController : MonoBehaviour
             gameObject.transform.position = cam.transform.position + new Vector3(0, -4, 10);
         }
 
-        if(!GameSystem.getPause() && GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isLeveluped){
+        if(!GameSystem.getPause() && GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isStageCleared)
+        {
             if(isPaused){
                 //퍼즈 되고서 돌아갈때
                 isPaused = !isPaused;
@@ -83,8 +85,10 @@ public class playerController : MonoBehaviour
                 }
             }
 
-            //게임 시스템에 플레이어 높이 갱신=
-            GameSystem.playerHeight = gameObject.transform.position.y;
+            //게임 시스템에 플레이어 높이 갱신
+            tempY = gameObject.transform.position.y;
+            GameSystem.playerHeight = tempY;
+            GameSystem.setMaxHeight((int)tempY);
             
             if(isOnWall){
                 //벽에 부딪혀 있을경우
@@ -111,7 +115,12 @@ public class playerController : MonoBehaviour
 
     void MonkeyDead()
     {
-        GameSystem.setTimeScale(0.5f);
+        /*
+        GameSystem.hasMagnetic = false;
+        GameSystem.hasBooster = false;
+        GameSystem.hasShield = false;
+        */
+        GameSystem.setTimeScale(0.75f);
         isOnWall = false;
         isDoubleJumped = false;
         if (isOnRight)
@@ -121,13 +130,17 @@ public class playerController : MonoBehaviour
     }
 
     void MonkeyOnWall(){
-        StartDust();
-        rigied.velocity = rigied.velocity * new Vector2(0,1);
-        if(Input.GetMouseButton(0) && cam.transform.position.y + 8> transform.position.y){
-            //터치 될때
-            StopDust();
-            Jump(isOnRight);
-        }
+        if(!GameSystem.isDead)
+        {
+            StartDust();
+            rigied.velocity = rigied.velocity * new Vector2(0, 1);
+            if (Input.GetMouseButton(0) && cam.transform.position.y + 8 > transform.position.y)
+            {
+                //터치 될때
+                StopDust();
+                Jump(isOnRight);
+            }
+        }        
     }
 
     public void Jump(bool isRight, float x, float y){
@@ -190,18 +203,49 @@ public class playerController : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D other){
-        if (other.gameObject.tag == "EnemyWall")
+        if(!GameSystem.isDead && !GameSystem.isStageCleared)
         {
-            playerHit();
+            if (other.gameObject.tag == "EnemyWall")
+            {
+                playerHit();
+            }
+
+            if (other.gameObject.tag == "Enemy")
+            {
+                playerHit();
+            }            
+
+            if (other.gameObject.tag == "Bush")
+            {
+                stuckBush = other.gameObject;
+                stuckBush.GetComponent<EnvironmentBush>().Monkey_Stucked();
+            }
+
+            if (other.gameObject.tag == "Coin")
+            {
+                AudioManager.instance.Play("Coin");
+                Instantiate(coinParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
+                GameSystem.addCoin(1);
+                GameSystem.addCoinEarned(1);
+                GameSystem.addScore(10);
+                Destroy(other.gameObject);
+            }
+
+            if (other.gameObject.tag == "Potion")
+            {
+                AudioManager.instance.Play("Potion");
+                Instantiate(potionParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
+                GameSystem.setPotion(GameSystem.getPotion() + 1);
+                Destroy(other.gameObject);
+            }
         }
 
-        if(other.gameObject.tag == "Enemy"){
-            playerHit();
-        }
-
-        if(other.gameObject.tag == "EnemyBounce"){
-            if(!isOnWall && !isImmune){
-                if(isOnRight != other.GetComponent<EnemyPanzee>().isJumpRight()){
+        if (other.gameObject.tag == "EnemyBounce")
+        {
+            if (!isOnWall && !isImmune)
+            {
+                if (isOnRight != other.GetComponent<EnemyPanzee>().isJumpRight())
+                {
                     Jump(isOnRight, XPower, rigied.velocity.y + 1f);
                     other.GetComponent<EnemyPanzee>().Jump();
                 }
@@ -209,27 +253,6 @@ public class playerController : MonoBehaviour
             playerHit();
         }
 
-        if(other.gameObject.tag == "Bush"){
-            stuckBush = other.gameObject;
-            stuckBush.GetComponent<EnvironmentBush>().Monkey_Stucked();
-        }
-
-        if(other.gameObject.tag == "Coin")
-        {
-            AudioManager.instance.Play("Coin");            
-            Instantiate(coinParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
-            GameSystem.addCoin(1);
-            GameSystem.addScore(10);
-            Destroy(other.gameObject);
-        }
-
-        if(other.gameObject.tag == "Potion")
-        {
-            AudioManager.instance.Play("Potion");
-            Instantiate(potionParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
-            GameSystem.setPotion(GameSystem.getPotion() + 1);
-            Destroy(other.gameObject);
-        }
     }
 
     public void playerHit(){

@@ -50,13 +50,13 @@ public class SpawnItems : MonoBehaviour
         }            
 
 
-        if (coinTimeCount > coinSpawnPeriod && !GameSystem.isLevelUping && !GameSystem.isLeveluped && !isFever)
+        if (coinTimeCount > coinSpawnPeriod && !GameSystem.isLevelUping && !GameSystem.isStageCleared && !isFever)
         {
             coinTimeCount = 0;
             SpawnCoin();
         }
 
-        if (potionTimeCount > potionSpawnPeriod && !GameSystem.isLevelUping && !GameSystem.isLeveluped && !isFever)
+        if (potionTimeCount > potionSpawnPeriod && !GameSystem.isLevelUping && !GameSystem.isStageCleared && !isFever)
         {
             potionTimeCount = 0;
             SpawnPotion();

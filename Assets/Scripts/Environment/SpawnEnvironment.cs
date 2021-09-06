@@ -37,7 +37,8 @@ public class SpawnEnvironment : MonoBehaviour
     }
 
     public void Spawn(){
-        if(!GameSystem.isLevelUping && !GameSystem.isLeveluped){
+        if(!GameSystem.isLevelUping && !GameSystem.isStageCleared)
+        {
             StartCoroutine("EnvironmentWarn");
 
             if(enviLevel.spawnBush)

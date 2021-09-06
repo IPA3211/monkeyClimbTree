@@ -22,13 +22,18 @@ public class RuntimeGameManager : MonoBehaviour
         }
 
         if(timeCount > 1){
-            GameSystem.addScore(10);
+            //GameSystem.addScore(10);
             timeCount = 0;
         }
 
         if(GameSystem.playDeadUI){
             GameSystem.playDeadUI = false;
             playerDead();
+        }
+
+        if(GameSystem.playClearUI){
+            GameSystem.playClearUI = false;
+            stageClear();
         }
     }
 
@@ -38,6 +43,17 @@ public class RuntimeGameManager : MonoBehaviour
             canvas.GetComponent<LobbyUIManager>().OnStartBtnClicked();
         }
     }
+
+    public void upStage()
+    {
+        readyUIManager.countDownStageCleared();
+    }
+
+    public void stageClear(){
+        canvas.GetComponent<StageClearUI>().startStageClearUI();
+        SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
+    }
+
     public void playerDead(){
         canvas.GetComponent<GameoverUI>().startGameoverUI();
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());

@@ -40,7 +40,8 @@ public class SpawnEnemy : MonoBehaviour
             timeCount = 0;
         
 
-        if(timeCount > enemyLevel.spawnPeriod && !GameSystem.isLevelUping && !GameSystem.isLeveluped){
+        if(timeCount > enemyLevel.spawnPeriod && !GameSystem.isLevelUping && !GameSystem.isStageCleared)
+        {
             timeCount = 0;
 
             if(enemyLevel.spawnWall)

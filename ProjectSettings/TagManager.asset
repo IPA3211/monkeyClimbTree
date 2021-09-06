@@ -14,6 +14,7 @@ TagManager:
   - AudioManager
   - UI_Background
   - Potion
+  - Magnet
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6229753288337425133}
   - component: {fileID: 6229753288337425130}
   - component: {fileID: 6229753288337425131}
+  - component: {fileID: 253651962606664666}
   - component: {fileID: 6229753288337425132}
   - component: {fileID: 6229753288337425135}
   m_Layer: 0
@@ -104,6 +105,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &253651962606664666
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229753288337425128}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &6229753288337425132
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -134,4 +156,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifeTime: 5
   warningTime: 2
-  coinParticle: {fileID: 8377392564737633490, guid: 6afdd781afeb2124182ecad274e884db, type: 3}
