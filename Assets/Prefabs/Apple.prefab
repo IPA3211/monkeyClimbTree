@@ -217,6 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f07c09887d03d540ae692f29f5930e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: 
+  enemyName: Apple
   warnSprite: {fileID: 4823754758410515158}
   autoDestroyTime: 10

@@ -27,7 +27,6 @@ public class ItemCoin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("what the fuck: " + GameSystem.hasMagnetic.ToString());
         if(other.gameObject.tag.Equals("Magnet") && GameSystem.hasMagnetic)
         {
             magnetic = true;

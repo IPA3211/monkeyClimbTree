@@ -6,35 +6,72 @@ using UnityEngine.EventSystems;
 
 public class EndingUIManager : MonoBehaviour
 {
+    public GameObject gameManager;
     public GameObject endingPanel;
+    public Image endingPicture;
     public Text title;
     public Text description;
-    public Image picture;
-    Ending[] endings;
+    public Sprite frame;
+    public Sprite defaultThumbnail;
+    public List<GameObject> buttons;
+    List<Ending> endings;
+
+    private void Awake()
+    {
+        endings = gameManager.GetComponent<EndingManager>().endings;
+    }
 
     // Start is called before the first frame update
     void Start()
-    {
+    {        
         endingPanel.transform.localScale = Vector3.zero;
-        endings = GetComponent<EndingList>().endings;
+        SettingButtons();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        SettingButtons();
+    }
+
+    public void SettingButtons()
+    {
+        for(int i=0; i<endings.Count; i++)
+        {            
+            if (endings[i].CheckUnlock())
+            {
+                buttons[i].transform.GetChild(0).GetComponent<Image>().sprite = endings[i].thumbnails[0];
+                //buttons[i].transform.GetComponentInChildren<Image>().sprite = endings[i].thumbnails[0];
+                //buttons[i].GetComponentInChildren<Image>().sprite = endings[i].thumbnails[0];
+                Debug.Log("YEAHHHHHHHHH");
+            }
+                
+            else
+            {
+                buttons[i].transform.GetChild(0).GetComponent<Image>().sprite = defaultThumbnail;
+                //buttons[i].GetComponentInChildren<Image>().sprite = defaultThumbnail;
+            }
+            buttons[i].GetComponent<Image>().sprite = frame;
+        }
     }
 
     public void OpenEndingPanel()
     {
         string name = EventSystem.current.currentSelectedGameObject.name;
-        Ending ending = endings[int.Parse(name)];
+        int num = int.Parse(name);
+        Ending ending = endings[num];
 
-        // 나중에 ending.isUnlocked가 true인지 체크하고 열어보게 할 것임
+        Debug.Log(num.ToString() + ":" + ending.CheckUnlock().ToString());
+
+        if (!ending.CheckUnlock())
+        {
+            //buttons[num].transform.LeanMoveX(buttons[num].transform.position.x + 10f, 2f).setEaseInOutBounce();
+            return;
+        }        
 
         title.text = ending.endingName;
         description.text = ending.description;
-        picture.sprite = ending.thumbnail;
+        endingPicture.sprite = ending.thumbnails[0];
         endingPanel.transform.LeanScale(Vector3.one, 0.7f).setEaseOutQuad();
     }
 

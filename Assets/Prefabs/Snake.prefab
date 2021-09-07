@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef084863b829294eab918a635d5ec27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: 
+  enemyName: Snake
   warnSprite: {fileID: 6308861720060558698}
   autoDestroyTime: 10
   speed: 12

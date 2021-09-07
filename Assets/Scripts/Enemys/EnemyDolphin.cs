@@ -12,7 +12,6 @@ public class DolphinConfig{
 public class EnemyDolphin : Enemy
 {
     // Start is called before the first frame update
-    public AudioManager audioManager;
     public DolphinConfig dolphinConfig;
     float xPower = 5.0f;
     float yPower = 10.0f;
@@ -26,8 +25,6 @@ public class EnemyDolphin : Enemy
 
     protected override void Start()
     {
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
-
         base.LineStart();
         yPower = Random.Range(dolphinConfig.minYPower, dolphinConfig.maxYPower);
         xPower = Random.Range(dolphinConfig.minXPower, dolphinConfig.maxXPower);
@@ -45,7 +42,7 @@ public class EnemyDolphin : Enemy
 
     private void Update()
     {
-        // �ý��ۿ� ������ �ַ���?
+        // 왜 깨졌냐 이 주석?
         setRoute();
 
         if(jumpStarted)
@@ -60,6 +57,11 @@ public class EnemyDolphin : Enemy
             }
             
         }
+    }
+
+    public override string WhatsName()
+    {
+        return base.WhatsName();
     }
 
     override protected void WarnStarted(){
@@ -77,7 +79,7 @@ public class EnemyDolphin : Enemy
             transform.rotation = Quaternion.Euler(0, 0, -angle);
         else
             transform.rotation = Quaternion.Euler(0, 0, angle);
-        audioManager.Play("Dolphin");
+        AudioManager.instance.Play("Dolphin");
     }
 
     void setRoute(){

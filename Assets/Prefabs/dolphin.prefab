@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5958828998e7a241a67a0c9addef7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: 
+  enemyName: Dolphin
   warnSprite: {fileID: 449386586800556885}
   autoDestroyTime: 10
   audioManager: {fileID: 0}

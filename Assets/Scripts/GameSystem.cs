@@ -33,6 +33,7 @@ public class GameSystem
     public static bool isLevelChanged = true;
     public static bool isStageChanged = true;
     public static bool isCanVive = true;
+    public static string deadSign = "";
     
     public static void resetStartItem()
     {

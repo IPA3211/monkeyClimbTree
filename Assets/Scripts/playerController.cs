@@ -13,10 +13,12 @@ public class playerController : MonoBehaviour
     Rigidbody2D rigied;
     SpriteRenderer spriteRenderer;
     Vector2 saveVelo;
+
     public GameObject coinParticle;
     public GameObject dustParticle;
     public GameObject potionParticle;
     ParticleSystem dust;
+
     public bool isOnRight = true;
     public bool isOnWall = false;
     bool isPaused = false;
@@ -207,13 +209,35 @@ public class playerController : MonoBehaviour
         {
             if (other.gameObject.tag == "EnemyWall")
             {
+                GameSystem.deadSign = "EnemyWall";
+                Debug.Log("deadSign: " + GameSystem.deadSign);
                 playerHit();
             }
 
             if (other.gameObject.tag == "Enemy")
             {
+                GameSystem.deadSign = other.gameObject.GetComponent<Enemy>().WhatsName();
+                Debug.Log("deadSign: " + GameSystem.deadSign);
                 playerHit();
-            }            
+            }
+
+            if (other.gameObject.tag == "EnemyBounce")
+            {
+                if (!isOnWall && !isImmune)
+                {
+                    if (isOnRight != other.GetComponent<EnemyPanzee>().isJumpRight())
+                    {
+                        Jump(isOnRight, XPower, rigied.velocity.y + 1f);
+                        other.GetComponent<EnemyPanzee>().Jump();
+                    }
+                }
+                if(!isImmune)
+                {
+                    GameSystem.deadSign = other.gameObject.GetComponent<Enemy>().WhatsName();
+                    Debug.Log("deadSign: " + GameSystem.deadSign);
+                }
+                playerHit();
+            }
 
             if (other.gameObject.tag == "Bush")
             {
@@ -239,24 +263,10 @@ public class playerController : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
-
-        if (other.gameObject.tag == "EnemyBounce")
-        {
-            if (!isOnWall && !isImmune)
-            {
-                if (isOnRight != other.GetComponent<EnemyPanzee>().isJumpRight())
-                {
-                    Jump(isOnRight, XPower, rigied.velocity.y + 1f);
-                    other.GetComponent<EnemyPanzee>().Jump();
-                }
-            }
-            playerHit();
-        }
-
     }
 
     public void playerHit(){
-        if(!isImmune && !GameSystem.isDead){
+        if(!isImmune && !GameSystem.isDead){            
             if(GameSystem.isCanVive){
                 RDG.Vibration.Vibrate((long)500);
             }

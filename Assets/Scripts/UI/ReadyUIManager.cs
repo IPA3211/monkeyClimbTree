@@ -20,7 +20,7 @@ public class ReadyUIManager : MonoBehaviour
 
     IEnumerator countDownCoroutine(int mode) {
         readyUI.SetActive(true);
-        text.text = "???????...";
+        text.text = "재시작 중...";
 
         while(GameSystem.isRestarted){
             yield return new WaitForFixedUpdate();
@@ -28,11 +28,11 @@ public class ReadyUIManager : MonoBehaviour
 
         if (!GameSystem.isRestarted)
         {
-            text.text = "???...";
+            text.text = "준비...";
             yield return new WaitForSecondsRealtime(2f);
         }
 
-        text.text = "????!";
+        text.text = "시작!";
         yield return new WaitForSecondsRealtime(1f);
         readyUI.SetActive(false);
 
@@ -46,7 +46,7 @@ public class ReadyUIManager : MonoBehaviour
     IEnumerator countDownEndingCoroutine()
     {
         readyUI.SetActive(true);
-        text.text = "?? ???? ??...";
+        text.text = "다음 스테이지로 이동중...";
 
         while (GameSystem.isRestarted)
         {
@@ -55,11 +55,11 @@ public class ReadyUIManager : MonoBehaviour
 
         if (!GameSystem.isRestarted)
         {
-            text.text = "???...";
+            text.text = "준비...";
             yield return new WaitForSecondsRealtime(2f);
         }
 
-        text.text = "????!";
+        text.text = "시작!";
         yield return new WaitForSecondsRealtime(1f);
         readyUI.SetActive(false);
 

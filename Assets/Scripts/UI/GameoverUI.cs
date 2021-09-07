@@ -12,18 +12,26 @@ public class Texts{
 public class GameoverUI : MonoBehaviour
 {
     float sumTime;
+    EndingManager endingManager;
     public GameObject gameoverUI1, gameoverUI2, gameManager;
     public Image background;
     public Image coinSprite;
+    public Image endingSprite;
     public List<Texts> texts;
     public Text score;
     public Text coinEarned;
+    public Text endingTitle;
+    public Text endingDescription;
+    public GameObject endingEffect;
     public Toggle magnetTog, boosterTog, shieldTog;
     public int magnetCoin, boosterCoin, shieldCoin;
+    bool isUnlockedEffect = false;
+    Ending curEnding;
 
     // Start is called before the first frame update
     void Start()
-    {        
+    {
+        endingManager = gameManager.GetComponent<EndingManager>();
     }
 
     // Update is called once per frame
@@ -49,11 +57,15 @@ public class GameoverUI : MonoBehaviour
             }
 
             sumTime += Time.unscaledDeltaTime;
+
+            endingEffect.SetActive(isUnlockedEffect);
         }
 
-    } 
+    }
 
     public void startGameoverUI(){
+        setEndingUI();
+
         gameoverUI1.SetActive(true);
         sumTime = 0;
         background.color = Color.clear;
@@ -64,6 +76,22 @@ public class GameoverUI : MonoBehaviour
                 text.color = Color.clear;
             }
         }
+    }
+
+    public void setEndingUI()
+    {
+        isUnlockedEffect = endingManager.UnlockEnding(GameSystem.deadSign);
+        curEnding = endingManager.GetEnding();
+
+        if (curEnding.thumbnails.Length == 1)
+            endingSprite.sprite = curEnding.thumbnails[0];
+        else
+        {
+            // 추후에 엔딩짤이 여러개일 경우
+            endingSprite.sprite = curEnding.thumbnails[0];
+        }
+        endingTitle.text = curEnding.endingName;
+        endingDescription.text = curEnding.description;
     }
 
     public void btnClicked(){

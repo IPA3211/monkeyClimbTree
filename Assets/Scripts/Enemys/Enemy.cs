@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
 
     public virtual string WhatsName()
     {
-        return name;
+        return enemyName;
     }
 
     IEnumerator WarnAttack() {

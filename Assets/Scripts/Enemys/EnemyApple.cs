@@ -36,6 +36,7 @@ public class EnemyApple : Enemy
             else{
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 10);
             }
+            GameSystem.deadSign = "Apple";
             other.GetComponent<playerController>().playerHit();
         }
     }

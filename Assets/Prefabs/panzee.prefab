@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f2e48a581f66f4488976a5862d7fa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: 
+  enemyName: Panzee
   warnSprite: {fileID: 8909996886100178966}
   autoDestroyTime: 10
   XPower: 12
