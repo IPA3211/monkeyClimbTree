@@ -17,6 +17,7 @@ public class InPlayUIMananger : MonoBehaviour
     public GameObject potion1;
     public GameObject potion2;
     public GameObject potion3;
+    public Image progressBar;
     int health;
     int potion;
 
@@ -73,8 +74,9 @@ public class InPlayUIMananger : MonoBehaviour
             potion2.SetActive(true);
             potion3.SetActive(true);
         }
-
+        
         coinText.text = GameSystem.getCoin().ToString();
+        progressBar.fillAmount = GameSystem.playerHeight / GameSystem.stageclearHeight;
     }
 
     public void OnPauseBtnClicked(){

@@ -37,6 +37,7 @@ public class LevelSpawner : MonoBehaviour
                 
                 if(GameSystem.isStageChanged){
                     bgSpriteSetter.ChangeSpriteSet(stages[GameSystem.getStage()].spriteSet);
+                    GameSystem.stageclearHeight = stages[GameSystem.getStage()].levels[stages[GameSystem.getStage()].levels.Count - 1].LevelChangeHeight;
                     GameSystem.isStageChanged = false;
                 }
                 bgFilterSetter.StartCoroutine("ChangeColor", level.LevelbgFilterColor);

@@ -12,6 +12,8 @@ public class RuntimeGameManager : MonoBehaviour
     void Awake(){
         readyUIManager = canvas.GetComponent<ReadyUIManager>();
         GameSystem.setCoin(SecurityPlayerPrefs.GetInt("Coin", 0));
+        if(GameObject.FindWithTag("Network").GetComponent<GoogleManager>().loadingFailed)
+            JsonManager.Load();
     }
 
     // Update is called once per frame
@@ -52,10 +54,12 @@ public class RuntimeGameManager : MonoBehaviour
     public void stageClear(){
         canvas.GetComponent<StageClearUI>().startStageClearUI();
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
+        GameObject.FindWithTag("Network").GetComponent<GoogleManager>().SaveCloud();
     }
 
     public void playerDead(){
         canvas.GetComponent<GameoverUI>().startGameoverUI();
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
+        GameObject.FindWithTag("Network").GetComponent<GoogleManager>().SaveCloud();
     }
 }

@@ -14,7 +14,7 @@ public class ObjReskin : MonoBehaviour
     void Start()
     {
         sprend = target.GetComponent<SpriteRenderer>();
-        skinNumber = SecurityPlayerPrefs.GetInt("skinNum", 1);
+        skinNumber = SecurityPlayerPrefs.GetInt("skinNum", 0);
         setSkin(skinNumber);
     }
     void LateUpdate()

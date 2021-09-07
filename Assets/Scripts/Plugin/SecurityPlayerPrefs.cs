@@ -110,6 +110,8 @@ public class SecurityPlayerPrefs
         string hideKey = MakeHash(key + _saltForKey);
         string encryptValue = Encrypt(value + MakeHash(value));
 
+        JsonManager.SetValue(hideKey, encryptValue);
+        JsonManager.Save();
         PlayerPrefs.SetString(hideKey, encryptValue);
     }
 

@@ -89,8 +89,6 @@ public class StageClearUI : MonoBehaviour
     {
         StageClearUI2.SetActive(false);
         //GameSystem.restart();
-        GameSystem.stageUp();
-        GameSystem.nextStageStart();
         gameManager.GetComponent<RuntimeGameManager>().upStage();
     }
 }

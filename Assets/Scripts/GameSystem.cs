@@ -17,7 +17,8 @@ public class GameSystem
 
     public static float playerHeight = 0;
     private static float timeScale = 1;
-    private static int maxHeight = 0;
+    private static float maxHeight = 0;
+    public static float stageclearHeight;
     private static int score = 0;
     private static int coin = 0;
     private static int coinEarned = 0;
@@ -142,9 +143,9 @@ public class GameSystem
         score += s;
     }
     public static int getScore(){
-        return score + maxHeight;
+        return score + (int)maxHeight;
     }
-    public static void setMaxHeight(int height)
+    public static void setMaxHeight(float height)
     {
         if (height > maxHeight)
             maxHeight = height;
@@ -209,7 +210,7 @@ public class GameSystem
         isLevelUping = false;
         isStageCleared = false;
         setLevel(0);
-        score += maxHeight;
+        score += (int)maxHeight;
         maxHeight = 0;
         playerHeight = 0;
         coinEarned = 0;

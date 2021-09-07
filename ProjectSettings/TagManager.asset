@@ -15,6 +15,7 @@ TagManager:
   - UI_Background
   - Potion
   - Magnet
+  - Network
   layers:
   - Default
   - TransparentFX

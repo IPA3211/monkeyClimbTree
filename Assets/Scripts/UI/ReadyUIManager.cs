@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ReadyUIManager : MonoBehaviour
 {
     public GameObject readyUI;
+    public Image bg;
     public Text text;
     // Start is called before the first frame update
     public void countDown(int mode){
@@ -14,12 +15,12 @@ public class ReadyUIManager : MonoBehaviour
 
     public void countDownStageCleared()
     {
-        StartCoroutine("countDownEndingCoroutine");
+        StartCoroutine("StageCleared");
     }
 
     IEnumerator countDownCoroutine(int mode) {
         readyUI.SetActive(true);
-        text.text = "재시작중...";
+        text.text = "???????...";
 
         while(GameSystem.isRestarted){
             yield return new WaitForFixedUpdate();
@@ -27,11 +28,11 @@ public class ReadyUIManager : MonoBehaviour
 
         if (!GameSystem.isRestarted)
         {
-            text.text = "준비...";
+            text.text = "???...";
             yield return new WaitForSecondsRealtime(2f);
         }
 
-        text.text = "시작!";
+        text.text = "????!";
         yield return new WaitForSecondsRealtime(1f);
         readyUI.SetActive(false);
 
@@ -45,7 +46,7 @@ public class ReadyUIManager : MonoBehaviour
     IEnumerator countDownEndingCoroutine()
     {
         readyUI.SetActive(true);
-        text.text = "맵 옮기는 중...";
+        text.text = "?? ???? ??...";
 
         while (GameSystem.isRestarted)
         {
@@ -54,14 +55,39 @@ public class ReadyUIManager : MonoBehaviour
 
         if (!GameSystem.isRestarted)
         {
-            text.text = "준비...";
+            text.text = "???...";
             yield return new WaitForSecondsRealtime(2f);
         }
 
-        text.text = "시작!";
+        text.text = "????!";
         yield return new WaitForSecondsRealtime(1f);
         readyUI.SetActive(false);
 
         GameSystem.isStarted = true;
+    }
+    IEnumerator StageCleared()
+    {
+        readyUI.SetActive(true);
+        text.text = "";
+        
+        float progress = 0;
+        while(progress < 1){
+            bg.color = Color.Lerp(new Color(0, 0, 0, 0.5f), Color.black, progress);
+            progress += Time.unscaledDeltaTime * 2;
+            yield return new WaitForFixedUpdate();
+        }
+        GameSystem.stageUp();
+        GameSystem.nextStageStart();
+        StartCoroutine("countDownEndingCoroutine");
+        
+        while (GameSystem.isRestarted)
+            yield return new WaitForFixedUpdate();
+        
+        progress = 0;
+        while(progress < 1){
+            bg.color = Color.Lerp(Color.black, new Color(0, 0, 0, 0.5f), progress);
+            progress += Time.unscaledDeltaTime * 2;
+            yield return new WaitForFixedUpdate();
+        }
     }
 }

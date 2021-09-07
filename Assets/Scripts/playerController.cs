@@ -53,8 +53,10 @@ public class playerController : MonoBehaviour
                 
                 isDoubleJumped = true;
                 anim.SetBool("IsDoubleJump", isDoubleJumped);
-            }            
+            }
         }
+        
+        
     }
 
     void FixedUpdate()
@@ -84,12 +86,10 @@ public class playerController : MonoBehaviour
                     rigied.constraints = RigidbodyConstraints2D.FreezeRotation;
                 }
             }
-
             //게임 시스템에 플레이어 높이 갱신
             tempY = gameObject.transform.position.y;
             GameSystem.playerHeight = tempY;
-            GameSystem.setMaxHeight((int)tempY);
-            
+            GameSystem.setMaxHeight(tempY);
             if(isOnWall){
                 //벽에 부딪혀 있을경우
                 MonkeyOnWall();
