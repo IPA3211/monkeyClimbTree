@@ -8,16 +8,39 @@ public class RuntimeGameManager : MonoBehaviour
     float timeCount;
     public GameObject canvas;
     EndingManager endingManger;
-    ReadyUIManager readyUIManager;    
+    ReadyUIManager readyUIManager;
+    GoogleManager netManager = null;
     // Start is called before the first frame update
     void Awake(){
+        
+        PlayerPrefs.DeleteAll();
         endingManger = GetComponent<EndingManager>();
         readyUIManager = canvas.GetComponent<ReadyUIManager>();
+        GameObject temp = GameObject.FindWithTag("Network");
+        
+        if(temp != null){
+            netManager = temp.GetComponent<GoogleManager>();
+        }
+        else
+            JsonManager.Load();
+        
+        if(netManager != null && netManager.loadingFailed){
+            JsonManager.Load();
+            // 네트워크에서 불러오는데에 실패했을 때
+            if(netManager.CheckLogin()){
+                // 네트워크에 연결된 상태라면
+                if(SecurityPlayerPrefs.GetString("UserID", "").Equals(Social.localUser.id) || SecurityPlayerPrefs.GetString("UserID", "").Equals(""))
+                    // 현재 네트워크에 연결된 ID 와 로컬에 있는 ID 가 같거나 UserID 가 적혀있지 않다면
+                    netManager.SaveCloud();
+                else{
+                    // 로컬에 적혀있는 ID 가 현재 연결된 ID 와 다르다면
+                    SecurityPlayerPrefs.DeleteAll();
+                    SecurityPlayerPrefs.SetString("UserID", Social.localUser.id);
+                }
+            }
+        }
+        
         GameSystem.setCoin(SecurityPlayerPrefs.GetInt("Coin", 0));
-        /*
-        if(GameObject.FindWithTag("Network").GetComponent<GoogleManager>().loadingFailed)
-            JsonManager.Load();        
-        */
     }
 
     // Update is called once per frame
@@ -59,14 +82,16 @@ public class RuntimeGameManager : MonoBehaviour
         canvas.GetComponent<StageClearUI>().startStageClearUI();
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
         endingsSave();
-        GameObject.FindWithTag("Network").GetComponent<GoogleManager>().SaveCloud();
+        if(netManager != null)
+            netManager.SaveCloud();
     }
 
     public void playerDead(){
         canvas.GetComponent<GameoverUI>().startGameoverUI();
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
         endingsSave();
-        GameObject.FindWithTag("Network").GetComponent<GoogleManager>().SaveCloud();
+        if(netManager != null)
+            netManager.SaveCloud();
     }
 
     public void endingsSave()

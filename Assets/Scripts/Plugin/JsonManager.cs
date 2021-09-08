@@ -32,7 +32,7 @@ public class JsonManager {
 
     public static void Save()
     {
-        Debug.Log("저장하기");
+        //Debug.Log("저장하기");
 
         JsonData ItemJson = JsonMapper.ToJson(ItemList);
 
@@ -52,17 +52,24 @@ public class JsonManager {
     {
         Debug.Log("불러오기");
         string Jsonstring;
-        if(Application.platform == RuntimePlatform.WindowsEditor){
-            Jsonstring = File.ReadAllText(Application.dataPath
-                                                    + "/ItemData.json");
-        }
-        else {
-            Jsonstring = File.ReadAllText(Application.persistentDataPath
-                                                    + "/ItemData.json");
-        }
-        Debug.Log(Jsonstring);
+        try{
+            if(Application.platform == RuntimePlatform.WindowsEditor){
+                Jsonstring = File.ReadAllText(Application.dataPath
+                                                        + "/ItemData.json");
+            }
+            else {
+                Jsonstring = File.ReadAllText(Application.persistentDataPath
+                                                        + "/ItemData.json");
+            }
+            Debug.Log(Jsonstring);
 
-        LoadDataFromString(Jsonstring);
+            LoadDataFromString(Jsonstring);
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("저장된 로컬 파일이 없습니다.");
+            throw;
+        }
     }
 
     public static void LoadDataFromString(string Jsonstring){
@@ -72,7 +79,10 @@ public class JsonManager {
         for(int i = 0; i < itemData.Count; i++)
         {
             ItemList.Add(new Data(itemData[i]["key"].ToString(), itemData[i]["value"].ToString()));
+            JsonManager.SetValue(itemData[i]["key"].ToString(), itemData[i]["value"].ToString());
             PlayerPrefs.SetString(itemData[i]["key"].ToString(), itemData[i]["value"].ToString());
         }
+        
+        JsonManager.Save();
     }
 }

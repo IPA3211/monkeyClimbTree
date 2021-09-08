@@ -40,6 +40,7 @@ public class GoogleManager : MonoBehaviour
         Social.localUser.Authenticate((bool success) =>{
             if(success) {
                 NetStatusText.text = Social.localUser.id + " " + Social.localUser.userName;
+                SecurityPlayerPrefs.SetString("UserID", Social.localUser.id);
                 LoadCloud();
             }
             else {
@@ -47,6 +48,10 @@ public class GoogleManager : MonoBehaviour
                 LoadingCompelete();
             };
         });
+    }
+
+    public bool CheckLogin(){
+        return Social.localUser.authenticated;
     }
 
     public void LogOut(){
@@ -87,7 +92,7 @@ public class GoogleManager : MonoBehaviour
             }
             catch (System.Exception)
             {
-                NetStatusText.text = "로드 실패";
+                NetStatusText.text = "로드 실패 : 서버에 저장된 데이터가 없습니다.";
                 LoadingCompelete();
                 throw;
             }
@@ -106,10 +111,12 @@ public class GoogleManager : MonoBehaviour
 
     public void SaveCloud()
     {
+        if(CheckLogin()){
         SavingText.SetActive(true);
         Debug.Log("save start");
         SavedGame().OpenWithAutomaticConflictResolution("mysave",
             DataSource.ReadCacheOrNetwork, ConflictResolutionStrategy.UseLastKnownGood, SaveGame);
+        }
     }
 
     public void SaveGame(SavedGameRequestStatus status, ISavedGameMetadata game) 
