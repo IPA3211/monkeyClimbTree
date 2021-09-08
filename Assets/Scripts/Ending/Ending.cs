@@ -30,4 +30,9 @@ public class Ending
     {
         isUnlocked = true;
     }
+
+    public void Lock()
+    {
+        isUnlocked = false;
+    }
 }

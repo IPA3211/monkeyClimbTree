@@ -32,7 +32,7 @@ public class EnemyPanzee : Enemy
         }
         rigied = gameObject.GetComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        Jump(isOnRight);
+        Jump(isOnRight);        
     }
 
     public override string WhatsName()
@@ -48,6 +48,7 @@ public class EnemyPanzee : Enemy
     override protected void WarnEnded(){
         gameObject.GetComponent<Rigidbody2D>().simulated = true;
         gameObject.GetComponent<Collider2D>().enabled = true;
+        AudioManager.instance.Play("Chimpanzee");
     }
 
     void Jump(bool isRight, float x, float y){

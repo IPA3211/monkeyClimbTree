@@ -14,10 +14,10 @@ public class RuntimeGameManager : MonoBehaviour
         endingManger = GetComponent<EndingManager>();
         readyUIManager = canvas.GetComponent<ReadyUIManager>();
         GameSystem.setCoin(SecurityPlayerPrefs.GetInt("Coin", 0));
-        
+        /*
         if(GameObject.FindWithTag("Network").GetComponent<GoogleManager>().loadingFailed)
             JsonManager.Load();        
-        
+        */
     }
 
     // Update is called once per frame

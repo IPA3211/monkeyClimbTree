@@ -28,6 +28,10 @@ public class EnvironmentBush : MonoBehaviour
             health -= Time.deltaTime;
             if(Input.GetMouseButtonDown(0)){
                 touchHealth--;
+                if (touchHealth == 4 || touchHealth == 2 || touchHealth == 0)
+                    AudioManager.instance.Play("Bush1");
+                else if (touchHealth == 3 || touchHealth == 1)
+                    AudioManager.instance.Play("Bush2");
             }
         }
 

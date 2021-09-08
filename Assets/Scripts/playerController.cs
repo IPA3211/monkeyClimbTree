@@ -243,25 +243,27 @@ public class playerController : MonoBehaviour
             {
                 stuckBush = other.gameObject;
                 stuckBush.GetComponent<EnvironmentBush>().Monkey_Stucked();
-            }
+            }            
+        }
 
-            if (other.gameObject.tag == "Coin")
-            {
-                AudioManager.instance.Play("Coin");
-                Instantiate(coinParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
-                GameSystem.addCoin(1);
-                GameSystem.addCoinEarned(1);
-                GameSystem.addScore(10);
-                Destroy(other.gameObject);
-            }
+        if (other.gameObject.tag == "Coin")
+        {
+            AudioManager.instance.Play("Coin");
+            Instantiate(coinParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
+            GameSystem.addCoin(1);
+            GameSystem.addCoinEarned(1);
+            GameSystem.addScore(10);
+            Destroy(other.gameObject);
+            GameSystem.deadSign = "Coin";
+        }
 
-            if (other.gameObject.tag == "Potion")
-            {
-                AudioManager.instance.Play("Potion");
-                Instantiate(potionParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
-                GameSystem.setPotion(GameSystem.getPotion() + 1);
-                Destroy(other.gameObject);
-            }
+        if (other.gameObject.tag == "Potion")
+        {
+            AudioManager.instance.Play("Potion");
+            Instantiate(potionParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
+            GameSystem.setPotion(GameSystem.getPotion() + 1);
+            Destroy(other.gameObject);
+            GameSystem.deadSign = "Potion";
         }
     }
 

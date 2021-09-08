@@ -48,6 +48,15 @@ public class EndingManager : MonoBehaviour
         return endings[curEndingNum];
     }
 
+    public void EndingReset()
+    {
+        for (int i = 0; i < endings.Count; i++)
+        {
+            endings[i].Lock();
+            SecurityPlayerPrefs.SetInt("Ending" + i.ToString(), 0);
+        }
+    }
+
     public bool UnlockEnding(string requirement)
     {
         for(int i = 0; i<endings.Count; i++)

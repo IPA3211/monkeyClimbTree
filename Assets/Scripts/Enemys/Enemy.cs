@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [Header("Enemy Config")]
     public string enemyName;
     public GameObject warnSprite;
+    public GameObject warnIconSprite;
     public float autoDestroyTime;
     protected Vector3 diffPos;
     protected GameObject cam;
@@ -45,25 +46,30 @@ public class Enemy : MonoBehaviour
         WarnStarted();
         isInAction = false;
         SpriteRenderer rend = warnSprite.GetComponent<SpriteRenderer>();
+        SpriteRenderer rend2 = warnIconSprite.GetComponent<SpriteRenderer>();
+
         float progress = 0;
         for (int i = 0; i < 2; i++)
         {
             progress = 0;
             while (progress < 1)
             {
-                rend.color = Color.Lerp(new Color(1, 0, 0, 0), new Color(1, 0, 0, 0.5f), progress);
+                rend.color = Color.Lerp(new Color(1, 0, 0, 0), new Color(1, 0, 0, 0.75f), progress);
+                rend2.color = Color.Lerp(new Color(1, 1, 1, 0), new Color(1, 1, 1, 0.75f), progress);
                 progress += Time.deltaTime;
                 yield return new WaitForFixedUpdate();
             }
             progress = 0;
             while (progress < 1)
             {
-                rend.color = Color.Lerp(new Color(1, 0, 0, 0.5f), new Color(1, 0, 0, 0), progress);
+                rend.color = Color.Lerp(new Color(1, 0, 0, 0.75f), new Color(1, 0, 0, 0), progress);
+                rend2.color = Color.Lerp(new Color(1, 1, 1, 0.75f), new Color(1, 1, 1, 0), progress);
                 progress += Time.deltaTime;
                 yield return new WaitForFixedUpdate();
             }
         }
         rend.color = new Color(1, 0, 0, 0);
+        rend2.color = new Color(1, 1, 1, 0);
         isInAction = true;
         WarnEnded();
     }
@@ -72,6 +78,7 @@ public class Enemy : MonoBehaviour
         WarnStarted();
         isInAction = false;
         LineRenderer rend = warnSprite.GetComponent<LineRenderer>();
+        SpriteRenderer rend2 = warnIconSprite.GetComponent<SpriteRenderer>();
         float progress = 0;
         for (int i = 0; i < 2; i++)
         {
@@ -80,6 +87,7 @@ public class Enemy : MonoBehaviour
             {
                 rend.endColor = Color.Lerp(new Color(1, 0, 0, 0), new Color(1, 0, 0, 0.5f), progress);
                 rend.startColor = Color.Lerp(new Color(1, 0, 0, 0), new Color(1, 0, 0, 0.5f), progress);
+                rend2.color = Color.Lerp(new Color(1, 1, 1, 0), new Color(1, 1, 1, 0.5f), progress);
                 progress += Time.deltaTime;
                 yield return new WaitForFixedUpdate();
             }
@@ -88,12 +96,14 @@ public class Enemy : MonoBehaviour
             {
                 rend.endColor = Color.Lerp(new Color(1, 0, 0, 0.5f), new Color(1, 0, 0, 0), progress);
                 rend.startColor = Color.Lerp(new Color(1, 0, 0, 0.5f), new Color(1, 0, 0, 0), progress);
+                rend2.color = Color.Lerp(new Color(1, 1, 1, 0.5f), new Color(1, 1, 1, 0), progress);
                 progress += Time.deltaTime;
                 yield return new WaitForFixedUpdate();
             }
         }
         rend.startColor = new Color(1, 0, 0, 0);
         rend.endColor = new Color(1, 0, 0, 0);
+        rend2.color = new Color(1, 1, 1, 0);
         isInAction = true;
         WarnEnded();
     }

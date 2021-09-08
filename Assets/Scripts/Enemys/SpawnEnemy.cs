@@ -102,16 +102,13 @@ public class SpawnEnemy : MonoBehaviour
             case 4:
                 Instantiate(enemys.snake, new Vector3(-5.1f, cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
             break;
-        }
-
-        AudioManager.instance.Play("Snake");
+        }        
     }
 
     public void SpawnPanzee(){
         enemys.panzee.GetComponent<EnemyPanzee>().XPower = enemyLevel.panzeeXPower;
         enemys.panzee.GetComponent<EnemyPanzee>().YPower = enemyLevel.panzeeYPower;
         Instantiate(enemys.panzee, new Vector3(Random.Range(-4f, 4f), cam.position.y - 11.25f, 0), Quaternion.Euler(0, 0, 0));
-        AudioManager.instance.Play("Chimpanzee");
     }
 
     public void SpawnApple() { SpawnApple(0);}

@@ -37,20 +37,18 @@ public class EndingUIManager : MonoBehaviour
     public void SettingButtons()
     {
         for(int i=0; i<endings.Count; i++)
-        {            
+        {
+            if (i >= buttons.Count)
+                return;
             if (endings[i].CheckUnlock())
             {
                 buttons[i].transform.GetChild(0).GetComponent<Image>().sprite = endings[i].thumbnails[0];
-                //buttons[i].transform.GetComponentInChildren<Image>().sprite = endings[i].thumbnails[0];
-                //buttons[i].GetComponentInChildren<Image>().sprite = endings[i].thumbnails[0];
-                Debug.Log("YEAHHHHHHHHH");
-            }
-                
+            }                
             else
             {
                 buttons[i].transform.GetChild(0).GetComponent<Image>().sprite = defaultThumbnail;
-                //buttons[i].GetComponentInChildren<Image>().sprite = defaultThumbnail;
             }
+
             buttons[i].GetComponent<Image>().sprite = frame;
         }
     }

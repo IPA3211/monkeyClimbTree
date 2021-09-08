@@ -197,6 +197,7 @@ public class GameSystem
         isStageCleared = false;
         setStage(0);
         setLevel(0);
+        AudioManager.instance.ChangeBGM();
         maxHeight = 0;
         playerHeight = 0;        
         coinEarned = 0;

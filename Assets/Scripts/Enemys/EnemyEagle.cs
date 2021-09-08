@@ -11,6 +11,7 @@ public class EagleConfig{
 }
 public class EnemyEagle : Enemy
 {
+    public GameObject warnIcon;
     [Header("Eagle Config")]
     public EagleConfig eagleConfig;
     public GameObject aim;
@@ -30,6 +31,7 @@ public class EnemyEagle : Enemy
         if(cam.transform.position.y < transform.position.y){
             isOnUpperSide = true;
             gameObject.GetComponent<SpriteRenderer>().flipY = true;
+            warnIcon.GetComponent<SpriteRenderer>().flipY = true;
         }
         else
             isOnUpperSide = false;

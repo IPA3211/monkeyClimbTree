@@ -20,12 +20,13 @@ public class EnemyApple : Enemy
 
     override protected void WarnStarted(){
         gameObject.GetComponent<Rigidbody2D>().simulated = false;
-        gameObject.GetComponent<Collider2D>().enabled = false;
+        gameObject.GetComponent<Collider2D>().enabled = false;        
     }
     
     override protected void WarnEnded(){
         gameObject.GetComponent<Rigidbody2D>().simulated = true;
         gameObject.GetComponent<Collider2D>().enabled = true;
+        AudioManager.instance.Play("Apple");
     }
 
     void OnTriggerEnter2D(Collider2D other){

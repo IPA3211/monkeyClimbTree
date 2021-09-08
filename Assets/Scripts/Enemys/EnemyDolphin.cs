@@ -12,6 +12,7 @@ public class DolphinConfig{
 public class EnemyDolphin : Enemy
 {
     // Start is called before the first frame update
+    public GameObject warnIcon;
     public DolphinConfig dolphinConfig;
     float xPower = 5.0f;
     float yPower = 10.0f;
@@ -92,6 +93,8 @@ public class EnemyDolphin : Enemy
         for (float t = 0.0f; t < maxTime; t += timeResolution) {
             
             lineRender.SetPosition (index, currentPosition);
+            if(index == 7)
+                warnIcon.transform.position = currentPosition;
                 
             currentPosition += velocityVector * timeResolution; 
             velocityVector += Physics.gravity * timeResolution;

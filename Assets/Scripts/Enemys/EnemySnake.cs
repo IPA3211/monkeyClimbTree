@@ -30,5 +30,6 @@ public class EnemySnake : Enemy
     
     override protected void WarnEnded(){
         gameObject.GetComponent<Collider2D>().enabled = true;
+        AudioManager.instance.Play("Snake");
     }
 }
