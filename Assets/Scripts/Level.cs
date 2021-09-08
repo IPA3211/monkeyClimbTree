@@ -48,6 +48,16 @@ public class EnemyLevel{
     [Space(10f)]
     public bool spawnDolphin = false;
     public DolphinConfig dolphinConfig;
+    [Space(10f)]
+    public bool spawnJellyfish = false;
+    [Space(10f)]
+    public bool spawnPlane = false;
+    [Space(10f)]
+    public bool spawnThunder = false;
+    [Space(10f)]
+    public bool spawnUFO = false;
+    [Space(10f)]
+    public bool spawnSatellite = false;
 }
 
 [System.Serializable]

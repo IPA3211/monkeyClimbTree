@@ -10651,6 +10651,11 @@ MonoBehaviour:
     apple: {fileID: 8306505804957304022, guid: bd49dedb95877874ba2e5d701463e90c, type: 3}
     eagle: {fileID: 8056373596312713981, guid: 845e0419138e72c44a72f6cf1e9108d9, type: 3}
     dolphin: {fileID: 449386587004828441, guid: feb9945e28f254845ab4bbb3afc84254, type: 3}
+    jellyfish: {fileID: 8974886412764252652, guid: b8085c9f9aa6dbb4b88ca84c156e48c0, type: 3}
+    plane: {fileID: 8855844325442158452, guid: 2b23f65a68ce9b24bb95d40cba5848a9, type: 3}
+    thunder: {fileID: 5665657737687581941, guid: d295759d73009a147bef6daccc455bf1, type: 3}
+    UFO: {fileID: 3600196420420631954, guid: c0276ce92e201074fbdb993df32c569e, type: 3}
+    satellite: {fileID: 7013371700790875767, guid: 5c4f29fd4e39c4d429e287e6db3c948f, type: 3}
   enemyLevel:
     spawnPeriod: 5
     minSpawnAmount: 2
@@ -10674,6 +10679,11 @@ MonoBehaviour:
       minYPower: 10
       maxXPower: 10
       minXPower: 4
+    spawnJellyfish: 0
+    spawnPlane: 0
+    spawnThunder: 0
+    spawnUFO: 0
+    spawnSatellite: 0
 --- !u!114 &351710416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10825,6 +10835,11 @@ MonoBehaviour:
           minYPower: 10
           maxXPower: 10
           minXPower: 4
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -10858,6 +10873,11 @@ MonoBehaviour:
           minYPower: 10
           maxXPower: 10
           minXPower: 4
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -10891,6 +10911,11 @@ MonoBehaviour:
           minYPower: 10
           maxXPower: 10
           minXPower: 4
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -10932,6 +10957,11 @@ MonoBehaviour:
           minYPower: 10
           maxXPower: 10
           minXPower: 4
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -10965,6 +10995,11 @@ MonoBehaviour:
           minYPower: 10
           maxXPower: 10
           minXPower: 4
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -10998,6 +11033,11 @@ MonoBehaviour:
           minYPower: 10
           maxXPower: 10
           minXPower: 4
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -11036,9 +11076,14 @@ MonoBehaviour:
         spawnDolphin: 1
         dolphinConfig:
           maxYPower: 30
-          minYPower: 10
+          minYPower: 20
           maxXPower: 5
           minXPower: 4
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -11069,9 +11114,14 @@ MonoBehaviour:
         spawnDolphin: 1
         dolphinConfig:
           maxYPower: 30
-          minYPower: 10
+          minYPower: 20
           maxXPower: 5
           minXPower: 4
+        spawnJellyfish: 1
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -11102,9 +11152,14 @@ MonoBehaviour:
         spawnDolphin: 1
         dolphinConfig:
           maxYPower: 30
-          minYPower: 10
+          minYPower: 20
           maxXPower: 5
           minXPower: 4
+        spawnJellyfish: 1
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -11129,9 +11184,9 @@ MonoBehaviour:
         maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
-        spawnSnake: 1
+        spawnSnake: 0
         snakeSpeed: 12
-        spawnPanzee: 0
+        spawnPanzee: 1
         panzeeXPower: 12
         panzeeYPower: 20
         spawnApple: 0
@@ -11146,6 +11201,11 @@ MonoBehaviour:
           minYPower: 10
           maxXPower: 10
           minXPower: 4
+        spawnJellyfish: 0
+        spawnPlane: 1
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -11162,7 +11222,7 @@ MonoBehaviour:
         maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
-        spawnSnake: 1
+        spawnSnake: 0
         snakeSpeed: 12
         spawnPanzee: 1
         panzeeXPower: 12
@@ -11179,6 +11239,11 @@ MonoBehaviour:
           minYPower: 10
           maxXPower: 10
           minXPower: 4
+        spawnJellyfish: 0
+        spawnPlane: 1
+        spawnThunder: 1
+        spawnUFO: 0
+        spawnSatellite: 0
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -11195,7 +11260,7 @@ MonoBehaviour:
         maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
-        spawnSnake: 1
+        spawnSnake: 0
         snakeSpeed: 12
         spawnPanzee: 1
         panzeeXPower: 12
@@ -11212,6 +11277,11 @@ MonoBehaviour:
           minYPower: 10
           maxXPower: 10
           minXPower: 4
+        spawnJellyfish: 0
+        spawnPlane: 1
+        spawnThunder: 1
+        spawnUFO: 0
+        spawnSatellite: 0
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -11236,9 +11306,9 @@ MonoBehaviour:
         maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
-        spawnSnake: 1
+        spawnSnake: 0
         snakeSpeed: 12
-        spawnPanzee: 0
+        spawnPanzee: 1
         panzeeXPower: 12
         panzeeYPower: 20
         spawnApple: 0
@@ -11253,6 +11323,11 @@ MonoBehaviour:
           minYPower: 10
           maxXPower: 10
           minXPower: 4
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 1
+        spawnSatellite: 0
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -11269,7 +11344,7 @@ MonoBehaviour:
         maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
-        spawnSnake: 1
+        spawnSnake: 0
         snakeSpeed: 12
         spawnPanzee: 1
         panzeeXPower: 12
@@ -11286,6 +11361,11 @@ MonoBehaviour:
           minYPower: 10
           maxXPower: 10
           minXPower: 4
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 1
+        spawnSatellite: 1
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1
@@ -11302,7 +11382,7 @@ MonoBehaviour:
         maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
-        spawnSnake: 1
+        spawnSnake: 0
         snakeSpeed: 12
         spawnPanzee: 1
         panzeeXPower: 12
@@ -11319,6 +11399,11 @@ MonoBehaviour:
           minYPower: 10
           maxXPower: 10
           minXPower: 4
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 1
+        spawnSatellite: 1
       enviLevel:
         spawnPeriod: 30
         spawnBranch: 1

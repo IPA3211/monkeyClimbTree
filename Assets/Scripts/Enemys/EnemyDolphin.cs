@@ -44,7 +44,8 @@ public class EnemyDolphin : Enemy
     private void Update()
     {
         // 왜 깨졌냐 이 주석?
-        setRoute();
+        if(!isInAction)
+            setRoute();
 
         if(jumpStarted)
         {
