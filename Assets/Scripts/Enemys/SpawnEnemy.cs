@@ -198,12 +198,14 @@ public class SpawnEnemy : MonoBehaviour
         if(spawnPoint == 0)
             spawnPoint = Random.Range(1, 3);
 
+        float randomY = Random.Range(5f, 7.5f);
+
         switch(spawnPoint){
         case 1:
-            Instantiate(enemys.plane, new Vector3(-11, cam.position.y + 6f, 0), Quaternion.Euler(0, 0, 270));
+            Instantiate(enemys.plane, new Vector3(-11.8f, cam.position.y + randomY, 0), Quaternion.Euler(0, 0, 270));
         break;
         case 2:
-            Instantiate(enemys.plane, new Vector3(11, cam.position.y + 6f, 0), Quaternion.Euler(0, 0, 90));
+            Instantiate(enemys.plane, new Vector3(11.8f, cam.position.y + randomY, 0), Quaternion.Euler(0, 0, 90));
         break;
         }
     }

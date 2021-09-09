@@ -10,6 +10,7 @@ public class EtcUIManager : MonoBehaviour
     public Button onBtn, offBtn;
     public GameObject etcUi;
     public List<GameObject> childUis;
+    public GameObject heartImage;
 
     void Awake(){
         etcUi.SetActive(true);
@@ -24,6 +25,32 @@ public class EtcUIManager : MonoBehaviour
         OnViveSettingChanged();
     }
     void Update(){
+    }
+
+    private void FixedUpdate()
+    {
+        if (GameSystem.hasHeartDoublePlus)
+        {
+            heartImage.SetActive(true);
+        }            
+        else
+        {
+            heartImage.SetActive(false);
+        }
+            
+    }
+
+    public void HeartDoublePlusBtn()
+    {
+        GameSystem.hasHeartDoublePlus = !GameSystem.hasHeartDoublePlus;
+        if (GameSystem.hasHeartDoublePlus)
+        {
+            GameSystem.setHealth(4);
+        }
+        else
+        {
+            GameSystem.setHealth(3);
+        }
     }
 
     public void OnViveOnBtnClicked(){

@@ -100,6 +100,7 @@ public class playerController : MonoBehaviour
             if(transform.position.y < cam.transform.position.y - 15f){
                 //원숭이가 카메라 아래 5지점에 있을경우
                 GameSystem.setHealth(0);
+                GameSystem.deadSign = "EnemyWall";
             }
         }
         else{

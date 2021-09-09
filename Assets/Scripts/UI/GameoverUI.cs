@@ -23,8 +23,8 @@ public class GameoverUI : MonoBehaviour
     public Text endingTitle;
     public Text endingDescription;
     public GameObject endingEffect;
-    public Toggle magnetTog, boosterTog, shieldTog, earnTog;
-    public int magnetCoin, boosterCoin, shieldCoin;
+    public Toggle magnetTog, heartPlusTog, boosterTog, earnTog;
+    public int magnetCoin, heartPlusCoin, boosterCoin;
     bool isUnlockedEffect = false;
     bool isUsingToggle = true;
     public int usedCoin = 0;
@@ -63,6 +63,24 @@ public class GameoverUI : MonoBehaviour
             endingEffect.SetActive(isUnlockedEffect);
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        if (GameSystem.getCoin() < magnetCoin && !magnetTog.isOn)
+            magnetTog.interactable = false;
+        else
+            magnetTog.interactable = true;
+
+        if (GameSystem.getCoin() < heartPlusCoin && !heartPlusTog.isOn)
+            heartPlusTog.interactable = false;
+        else
+            heartPlusTog.interactable = true;
+
+        if (GameSystem.getCoin() < boosterCoin && !boosterTog.isOn)
+            boosterTog.interactable = false;
+        else
+            boosterTog.interactable = true;        
     }
 
     public void startGameoverUI(){
@@ -130,6 +148,30 @@ public class GameoverUI : MonoBehaviour
         }        
     }
 
+    public void heartPlusToggled()
+    {
+        if (GameSystem.getCoin() < heartPlusCoin)
+            heartPlusTog.interactable = false;
+        else
+            heartPlusTog.interactable = true;
+
+        if (isUsingToggle)
+        {
+            if (heartPlusTog.isOn && GameSystem.getCoin() >= heartPlusCoin)
+            {
+                usedCoin += heartPlusCoin;
+                GameSystem.addCoin(-heartPlusCoin);
+                GameSystem.hasHeartPlus = true;
+            }
+            else if (!heartPlusTog.isOn)
+            {
+                usedCoin -= heartPlusCoin;
+                GameSystem.addCoin(heartPlusCoin);
+                GameSystem.hasHeartPlus = false;
+            }
+        }
+    }
+
     public void boosterToggled()
     {
         if (GameSystem.getCoin() < boosterCoin)
@@ -154,31 +196,7 @@ public class GameoverUI : MonoBehaviour
             }
         }        
     }
-
-    public void shieldToggled()
-    {
-        if (GameSystem.getCoin() < shieldCoin)
-            shieldTog.interactable = false;
-        else
-            shieldTog.interactable = true;
-
-        if (isUsingToggle)
-        {
-            if (shieldTog.isOn && GameSystem.getCoin() >= shieldCoin)
-            {
-                usedCoin += shieldCoin;
-                GameSystem.addCoin(-shieldCoin);
-                GameSystem.hasShield = true;                
-            }
-            else if (!shieldTog.isOn)
-            {
-                usedCoin -= shieldCoin;
-                GameSystem.addCoin(shieldCoin);
-                GameSystem.hasShield = false;
-            }
-        }        
-    }
-
+        
     public void earnCoin()
     {
         if(earnTog.isOn)
@@ -190,7 +208,7 @@ public class GameoverUI : MonoBehaviour
         isUsingToggle = false;
         magnetTog.isOn = false;
         boosterTog.isOn = false;
-        shieldTog.isOn = false;
+        heartPlusTog.isOn = false;
         isUsingToggle = true;
         GameSystem.addCoin(usedCoin);
         usedCoin = 0;
@@ -204,7 +222,7 @@ public class GameoverUI : MonoBehaviour
         isUsingToggle = false;
         magnetTog.isOn = false;
         boosterTog.isOn = false;
-        shieldTog.isOn = false;
+        heartPlusTog.isOn = false;
         isUsingToggle = true;
         usedCoin = 0;
 

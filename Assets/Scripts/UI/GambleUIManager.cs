@@ -23,7 +23,7 @@ public class GambleUIManager : MonoBehaviour
     ObjReskin skinManager;
     Skin skinEarned;
 
-    public float shakeAmount = 4000f;
+    public float shakeAmount = 1500f;
     int gamblePrice = 100;
     int normalWeight = 60;
     int rareWeight = 30;

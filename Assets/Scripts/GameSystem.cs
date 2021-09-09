@@ -12,8 +12,9 @@ public class GameSystem
     public static bool playClearUI = false;
 
     public static bool hasMagnetic = false;
-    public static bool hasBooster = false;
-    public static bool hasShield = false;
+    public static bool hasHeartPlus = false;
+    public static bool hasHeartDoublePlus = false;
+    public static bool hasBooster = false;    
 
     public static float playerHeight = 0;
     private static float timeScale = 1;
@@ -39,8 +40,8 @@ public class GameSystem
     public static void resetStartItem()
     {
         hasMagnetic = false;
-        hasBooster = false;
-        hasShield = false;
+        hasHeartPlus = false; 
+        hasBooster = false;        
     }
     public static void setTimeScale(float newScale){
         timeScale = newScale;
@@ -195,15 +196,28 @@ public class GameSystem
     }
 
     public static void restart(){
+        if (hasHeartPlus && hasHeartDoublePlus)
+            playerHealth = 5;
+        else if (hasHeartPlus)
+            playerHealth = 4;
+        else if (hasHeartDoublePlus)
+        {
+            hasHeartPlus = false;
+            playerHealth = 4;
+        }
+        else
+        {
+            playerHealth = 3;
+        }
         setHealth(playerHealth);
         isRestarted = true;
         isStarted = false;
         isPasued = false;
         isLevelUping = false;
         isStageCleared = false;
-        setStage(0);
+        setStage(getStage());
         setLevel(0);
-        AudioManager.instance.ChangeBGM();
+        //AudioManager.instance.ChangeBGM();
         maxHeight = 0;
         playerHeight = 0;        
         coinEarned = 0;
@@ -212,6 +226,21 @@ public class GameSystem
     }
 
     public static void nextStageStart(){
+        if (hasHeartPlus && hasHeartDoublePlus)
+            playerHealth = 5;
+        else if (hasHeartPlus)
+            playerHealth = 4;
+        else if (hasHeartDoublePlus)
+        {
+            hasHeartPlus = false;
+            playerHealth = 4;
+        }            
+        else
+        {
+            playerHealth = 3;
+        }
+            
+        setHealth(playerHealth);
         isRestarted = true;
         isStarted = false;
         isPasued = false;

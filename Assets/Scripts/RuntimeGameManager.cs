@@ -93,6 +93,7 @@ public class RuntimeGameManager : MonoBehaviour
     }
 
     public void playerDead(){
+        GameSystem.resetStartItem();
         canvas.GetComponent<GameoverUI>().startGameoverUI();
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
         endingsSave();

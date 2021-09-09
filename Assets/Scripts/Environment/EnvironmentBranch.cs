@@ -12,6 +12,10 @@ public class EnvironmentBranch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(transform.position.x > 0)
+        {
+            transform.localScale = new Vector3(transform.localScale.x, - transform.localScale.y, transform.localScale.z);
+        }
         StartCoroutine("BranchLifeCycle");
         cam = GameObject.FindWithTag("MainCamera");
     }
