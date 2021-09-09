@@ -48,7 +48,7 @@ public class ObjReskin : MonoBehaviour
     void setSkin(int num){
         skinNumber = num;
         SecurityPlayerPrefs.SetInt("skinNum", skinNumber);
-        sprites = Resources.LoadAll<Sprite>("Sprites/" + skinDatas[skinNumber].texture.name);
+        sprites = Resources.LoadAll<Sprite>("Sprites/Skin/" + skinDatas[skinNumber].texture.name);
     }
 
     public (Sprite, string) setUISkin(int num){
@@ -61,7 +61,7 @@ public class ObjReskin : MonoBehaviour
         }
     }
 
-    public float getPersent(){
+    public float getPercent(){
         int sum = 0;
         for(int i = 0; i < getMaxSize(); i++){
             if(skinDatas[i].isUnlocked){

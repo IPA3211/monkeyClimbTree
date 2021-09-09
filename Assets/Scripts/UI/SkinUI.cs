@@ -48,6 +48,6 @@ public class SkinUI : MonoBehaviour
         UIPlayer.sprite = skin.skin;
         UIName.text = skin.text;
         skinNumText.text = (skinNum + 1) + " / " + skinManager.getMaxSize();
-        persentText.text = string.Format("{0:0#}", skinManager.getPersent()) + "%";
+        persentText.text = string.Format("{0:0#}", skinManager.getPercent()) + "%";
     }
 }

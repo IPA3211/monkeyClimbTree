@@ -17,6 +17,10 @@ public class LobbyUIManager : MonoBehaviour
         coinText.text = GameSystem.getCoin().ToString();
         StageTextChange();
     }
+    private void FixedUpdate()
+    {
+        coinText.text = GameSystem.getCoin().ToString();
+    }
     private void OnEnable()
     {
         coinText.text = GameSystem.getCoin().ToString();
