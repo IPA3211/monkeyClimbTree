@@ -12,15 +12,16 @@ public class EndingManager : MonoBehaviour
 
     private void Awake()
     {
-        for(int i = 0; i<endings.Count; i++)
-        {
-            if (SecurityPlayerPrefs.GetInt("Ending" + i.ToString(), 0) == 1)
-                endings[i].Unlock();            
-        }        
+               
     }
 
     private void Start()
     {        
+        for(int i = 0; i<endings.Count; i++)
+        {
+            if (SecurityPlayerPrefs.GetInt("Ending" + i.ToString(), 0) == 1)
+                endings[i].Unlock();            
+        } 
         /*
         for (int i = 0; i < endings.Length; i++)
         {

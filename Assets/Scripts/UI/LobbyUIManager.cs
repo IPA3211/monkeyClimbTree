@@ -10,6 +10,8 @@ public class LobbyUIManager : MonoBehaviour
     [Header("UIs")]
     public Text stageText;
     public Text coinText;
+    public GameObject rightBtn, leftBtn;
+    public GameObject rocket;
 
     // Start is called before the first frame update
     void Start()
@@ -40,9 +42,28 @@ public class LobbyUIManager : MonoBehaviour
     }
 
     void StageTextChange(){
+        if(GameSystem.getStage() == GameSystem.maxStage || GameSystem.getStage() == GameSystem.playerClearedStage)
+            rightBtn.SetActive(false);
+        else
+            rightBtn.SetActive(true);
+    
+        if(GameSystem.getStage() == 0){
+            leftBtn.SetActive(false);
+            rocket.SetActive(false);
+        }
+        else{
+            leftBtn.SetActive(true);
+            rocket.SetActive(true);
+        }
+
         stageText.text = "Stage " + (GameSystem.getStage() + 1); 
         if(GameSystem.getStage() == GameSystem.maxStage){
             stageText.text = "Debug Stage"; 
         }
+    }
+
+    public void DebugLevelBtn(){
+        GameSystem.playerClearedStage = GameSystem.maxStage;
+        StageTextChange();
     }
 }

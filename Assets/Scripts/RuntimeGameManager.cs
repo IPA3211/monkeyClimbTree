@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.SceneManagement;
 
 public class RuntimeGameManager : MonoBehaviour
 {
@@ -12,8 +13,6 @@ public class RuntimeGameManager : MonoBehaviour
     GoogleManager netManager = null;
     // Start is called before the first frame update
     void Awake(){
-        
-        PlayerPrefs.DeleteAll();
         endingManger = GetComponent<EndingManager>();
         readyUIManager = canvas.GetComponent<ReadyUIManager>();
         GameObject temp = GameObject.FindWithTag("Network");
@@ -41,6 +40,7 @@ public class RuntimeGameManager : MonoBehaviour
         }
         
         GameSystem.setCoin(SecurityPlayerPrefs.GetInt("Coin", 0));
+        GameSystem.playerClearedStage = SecurityPlayerPrefs.GetInt("playerClearedStage", 0);
     }
 
     // Update is called once per frame
@@ -79,8 +79,14 @@ public class RuntimeGameManager : MonoBehaviour
     }
 
     public void stageClear(){
+        if(GameSystem.playerClearedStage < GameSystem.getStage() + 1)
+            GameSystem.playerClearedStage = GameSystem.getStage() + 1;
+
         canvas.GetComponent<StageClearUI>().startStageClearUI();
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
+        SecurityPlayerPrefs.SetInt("playerClearedStage", GameSystem.playerClearedStage);
+
+        
         endingsSave();
         if(netManager != null)
             netManager.SaveCloud();
@@ -104,5 +110,17 @@ public class RuntimeGameManager : MonoBehaviour
             else
                 SecurityPlayerPrefs.SetInt("Ending" + i.ToString(), 0);
         }
+    }
+
+    public void debugDelData(){
+        SecurityPlayerPrefs.DeleteAll();
+        if(netManager != null)
+            netManager.DeleteCloud();
+
+        JsonManager.DeleteAll();
+
+        GameSystem.resetStartItem();
+        GameSystem.restart();
+        SceneManager.LoadScene("SampleScene");
     }
 }

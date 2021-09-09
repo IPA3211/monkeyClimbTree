@@ -44,6 +44,10 @@ public class SkinUI : MonoBehaviour
         changeUI(skinManager.setUISkin(skinNum));
     }
 
+    public void refreshSkinUI(){
+        changeUI(skinManager.setUISkin(skinNum));
+    }
+
     void changeUI((Sprite skin, string text) skin){
         UIPlayer.sprite = skin.skin;
         UIName.text = skin.text;

@@ -36,7 +36,9 @@ public class AudioManager : MonoBehaviour
             //이거 audiosource 계속 생성하길래 바꿈
             s.source = bgm;
         }
-
+    }
+    
+    void Start(){
         bgm.volume = SecurityPlayerPrefs.GetFloat("bgmVol", 1);
         sfx.volume = SecurityPlayerPrefs.GetFloat("sfxVol", 1);
         bgmVol.value = bgm.volume;
@@ -65,7 +67,6 @@ public class AudioManager : MonoBehaviour
         }
 
         PlayerPrefs.SetInt("Hi there", 1);
-        
     }
 
     public void ChangeBGM()

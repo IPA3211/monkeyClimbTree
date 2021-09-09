@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d3fb3d65ea5b6479dcaba87df8e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: 
+  enemyName: Thunder
   warnSprite: {fileID: 5665657736593674691}
   warnIconSprite: {fileID: 5665657737054114810}
   autoDestroyTime: 10

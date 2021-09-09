@@ -94,7 +94,6 @@ public class GoogleManager : MonoBehaviour
             {
                 NetStatusText.text = "로드 실패 : 서버에 저장된 데이터가 없습니다.";
                 LoadingCompelete();
-                throw;
             }
             
         }

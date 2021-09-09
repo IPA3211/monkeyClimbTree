@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ce33bc86854a045a50fc5e39907c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: 
+  enemyName: Plane
   warnSprite: {fileID: 8855844324581507869}
   warnIconSprite: {fileID: 8855844324532507066}
   autoDestroyTime: 10

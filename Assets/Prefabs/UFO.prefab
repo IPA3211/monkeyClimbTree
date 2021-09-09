@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7b3965b93031546bfbbfd941679de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: 
+  enemyName: UFO
   warnSprite: {fileID: 3600196419005153784}
   warnIconSprite: {fileID: 3600196418959262493}
   autoDestroyTime: 10

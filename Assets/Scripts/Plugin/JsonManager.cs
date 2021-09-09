@@ -68,7 +68,6 @@ public class JsonManager {
         catch (System.Exception)
         {
             Debug.Log("저장된 로컬 파일이 없습니다.");
-            throw;
         }
     }
 
@@ -84,5 +83,10 @@ public class JsonManager {
         }
         
         JsonManager.Save();
+    }
+
+    public static void DeleteAll(){
+        ItemList.Clear();
+        Save();
     }
 }

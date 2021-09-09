@@ -28,6 +28,7 @@ public class GameSystem
     private static int level = 0;
     private static int stage = 0;
     public static int maxStage = 15;
+    public static int playerClearedStage = 0;
     public static bool isLevelUping = false;
     public static bool isStageCleared = false;
     public static bool isLevelChanged = true;
@@ -159,6 +160,11 @@ public class GameSystem
     }
     public static void setStage(int newStage){
         stage = newStage;
+        
+        if(stage > playerClearedStage){
+            stage = playerClearedStage;
+        }
+
         if(stage > maxStage){
             stage = maxStage;
         }

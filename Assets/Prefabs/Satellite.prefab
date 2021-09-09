@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df5c6ed51ee05545b7d8a350cff0c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: 
+  enemyName: Satellite
   warnSprite: {fileID: 7013371700323423039}
   warnIconSprite: {fileID: 7013371701708346806}
   autoDestroyTime: 20
@@ -355,8 +355,8 @@ MonoBehaviour:
   config:
     aimmingTime: 2
     spawnTime: 1
-    shootTime: 0.5
-    shootAmount: 3
+    shootTime: 0.3
+    shootAmount: 2
 --- !u!61 &226135121
 BoxCollider2D:
   m_ObjectHideFlags: 0

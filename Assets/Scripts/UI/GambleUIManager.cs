@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class GambleUIManager : MonoBehaviour
 {
     public GameObject gameManager;    
-    public GameObject boxImage1;    // 나뉘는 박스
-    public GameObject boxImage2;    // 합쳐진 박스
+    public GameObject boxImage1;    // ?????? ???
+    public GameObject boxImage2;    // ?????? ???
     public GameObject boxCover;
     public Image skinPreview;
     public Button buyBtn;
@@ -50,26 +50,6 @@ public class GambleUIManager : MonoBehaviour
         }
         else
             JsonManager.Load();
-
-        if (netManager != null && netManager.loadingFailed)
-        {
-            JsonManager.Load();
-            // 네트워크에서 불러오는데에 실패했을 때
-            if (netManager.CheckLogin())
-            {
-                // 네트워크에 연결된 상태라면
-                if (SecurityPlayerPrefs.GetString("UserID", "").Equals(Social.localUser.id) || SecurityPlayerPrefs.GetString("UserID", "").Equals(""))
-                    // 현재 네트워크에 연결된 ID 와 로컬에 있는 ID 가 같거나 UserID 가 적혀있지 않다면
-                    netManager.SaveCloud();
-                else
-                {
-                    // 로컬에 적혀있는 ID 가 현재 연결된 ID 와 다르다면
-                    SecurityPlayerPrefs.DeleteAll();
-                    SecurityPlayerPrefs.SetString("UserID", Social.localUser.id);
-                }
-            }
-        }
-
     }
 
     // Update is called once per frame
@@ -178,9 +158,6 @@ public class GambleUIManager : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
 
         boxImage1.SetActive(false);
-        confirmBtn.gameObject.SetActive(true);
-        buyBtn.gameObject.SetActive(true);
-        buyBtn.interactable = true;
 
         previewName.text = skinEarned.skinName.ToString();
         sprites = Resources.LoadAll<Sprite>("Sprites/Skin/" + skinEarned.texture.name);
@@ -211,6 +188,11 @@ public class GambleUIManager : MonoBehaviour
         previewName.gameObject.SetActive(true);
 
         isPrivewing = true;
+
+        confirmBtn.gameObject.SetActive(true);
+        buyBtn.gameObject.SetActive(true);
+        buyBtn.interactable = true;
+        
         while(isPrivewing)
         {
             for (int i = 0; i < sprites.Length; i++)
@@ -221,8 +203,9 @@ public class GambleUIManager : MonoBehaviour
                 yield return new WaitForSeconds(0.3f);
             }
         }
-
         
+
+        GetComponent<SkinUI>().refreshSkinUI();
     }
 
     private void GambleSkin()
@@ -233,7 +216,7 @@ public class GambleUIManager : MonoBehaviour
         List<int> weights = new List<int>();
         weights.Add(0);        
 
-        // 가중치 합 구하는 거
+        // ????? ?? ????? ??
         for(int i = 1; i<skinList.Count; i++)
         {
             if(skinList[i].rareNum == rare.Normal)
@@ -254,7 +237,7 @@ public class GambleUIManager : MonoBehaviour
         }
         randomNum = Random.Range(0, total);
 
-        // 뭐가 뽑혔는지 확인하는 과정
+        // ???? ???????? ?????? ????
         for(int i = 1; i<skinList.Count; i++)
         {
             if(randomNum < weights[i])
