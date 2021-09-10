@@ -21614,7 +21614,7 @@ MonoBehaviour:
   gradeText: {fileID: 1543244650}
   moneyText: {fileID: 241703807}
   previewName: {fileID: 481156918}
-  shakeAmount: 4000
+  shakeAmount: 2000
 --- !u!1 &357937080
 GameObject:
   m_ObjectHideFlags: 0

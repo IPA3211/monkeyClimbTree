@@ -13,7 +13,6 @@ public class levelUpVine : MonoBehaviour
 
     // Update is called once per frame
     void OnTriggerEnter2D (Collider2D other){
-        Debug.Log("uu");
         if(other.gameObject.tag == "Player"){
             GameSystem.isStageCleared = true;
             StartCoroutine("getUp", gameObject);

@@ -50,7 +50,7 @@ public class JsonManager {
 
     public static void Load()
     {
-        Debug.Log("불러오기");
+        //Debug.Log("불러오기");
         string Jsonstring;
         try{
             if(Application.platform == RuntimePlatform.WindowsEditor){
@@ -61,7 +61,7 @@ public class JsonManager {
                 Jsonstring = File.ReadAllText(Application.persistentDataPath
                                                         + "/ItemData.json");
             }
-            Debug.Log(Jsonstring);
+            //Debug.Log(Jsonstring);
 
             LoadDataFromString(Jsonstring);
         }

@@ -53,7 +53,7 @@ public class GambleUIManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         moneyText.text = GameSystem.getCoin().ToString();
         if (GameSystem.getCoin() < gamblePrice)
@@ -164,17 +164,17 @@ public class GambleUIManager : MonoBehaviour
 
         if(skinEarned.rareNum == rare.Normal)
         {
-            gradeText.text = "³ë¸» µî±Þ";
+            gradeText.text = "ë…¸ë§ ë“±ê¸‰";
             gradeText.color = Color.gray;
         }
         else if(skinEarned.rareNum == rare.Rare)
         {
-            gradeText.text = "·¹¾î µî±Þ!";
+            gradeText.text = "ë ˆì–´ ë“±ê¸‰!";
             gradeText.color = new Color32(0, 186, 155, 255);
         }
         else if (skinEarned.rareNum == rare.Hard)
         {
-            gradeText.text = "Àü¼³ µî±Þ!?!";
+            gradeText.text = "ì „ì„¤ ë“±ê¸‰!?!";
             gradeText.color = new Color32(255, 0, 108, 255);
         }
 

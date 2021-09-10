@@ -72,13 +72,13 @@ public class SpawnItems : MonoBehaviour
 
     void SpawnCoin()
     {
-        Instantiate(coin, new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(0.5f,  9.5f) + cam.position.y, 0), Quaternion.Euler(0, 0, 0));
+        Instantiate(coin, new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(3f,  9.5f) + cam.position.y, 0), Quaternion.Euler(0, 0, 0));
     }
 
 
     void SpawnPotion()
     {
-        Instantiate(potion, new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(0.5f, 9.5f) + cam.position.y, 0), potion.transform.rotation);
+        Instantiate(potion, new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(3f, 9.5f) + cam.position.y, 0), potion.transform.rotation);
     }
 
     IEnumerator FeverTime()

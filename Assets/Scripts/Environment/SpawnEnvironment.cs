@@ -22,15 +22,16 @@ public class SpawnEnvironment : MonoBehaviour
     void Start()
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        lastSpawn = enviLevel.spawnHeight;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(GameSystem.isRestarted){
             lastSpawn = enviLevel.spawnHeight;
         }
-        if(GameSystem.playerHeight % enviLevel.spawnHeight < 0.1f && GameSystem.playerHeight > 1f + lastSpawn){
+        if((GameSystem.playerHeight % enviLevel.spawnHeight < 1f) && (GameSystem.playerHeight > (1f + lastSpawn))){
+            Debug.LogWarning("branch" + lastSpawn);
             SpawnBranch(0);
             lastSpawn += enviLevel.spawnHeight;
         }
@@ -66,10 +67,10 @@ public class SpawnEnvironment : MonoBehaviour
 
         switch(spawnPoint){
             case 1:
-                Instantiate(envis.bush, new Vector3(4.8f, cam.position.y + Random.Range(0, 10), 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(envis.bush, new Vector3(4.8f, cam.position.y + Random.Range(5, 15), 0), Quaternion.Euler(0, 0, 0));
             break;
             case 2:
-                Instantiate(envis.bush, new Vector3(-4.8f, cam.position.y + Random.Range(0, 10), 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(envis.bush, new Vector3(-4.8f, cam.position.y + Random.Range(5, 15), 0), Quaternion.Euler(0, 0, 0));
             break;
         }
     }

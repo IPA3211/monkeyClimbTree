@@ -56,7 +56,6 @@ public class BgSpriteSetter : MonoBehaviour
     }
 
     public void ChangeSpriteSet(SpriteSet sp){
-        Debug.Log("changed");
         spriteSet = sp;
 
         count = 0;

@@ -23,10 +23,10 @@ public class RocketCtrl : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(!GameSystem.isStarted){
-            transform.position = Vector3.Lerp(transform.position, player.transform.position, 0.01f);
+            transform.position = Vector3.Lerp(transform.position, player.transform.position, 0.05f);
             player.GetComponent<SpriteRenderer>().color = Color.clear;
         }
         else{
