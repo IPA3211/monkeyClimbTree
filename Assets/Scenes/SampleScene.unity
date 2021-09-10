@@ -20892,7 +20892,7 @@ MonoBehaviour:
       LevelChangeHeight: 105
       LevelbgFilterColor: {r: 1, g: 1, b: 1, a: 0.2}
       enemyLevel:
-        spawnPeriod: 4
+        spawnPeriod: 5
         minSpawnAmount: 1
         maxSpawnAmount: 2
         spawnWall: 1
@@ -20930,9 +20930,9 @@ MonoBehaviour:
       LevelChangeHeight: 215
       LevelbgFilterColor: {r: 1, g: 0.44561177, b: 0.10849059, a: 0.2}
       enemyLevel:
-        spawnPeriod: 3.8
+        spawnPeriod: 4.5
         minSpawnAmount: 1
-        maxSpawnAmount: 3
+        maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
@@ -20968,9 +20968,9 @@ MonoBehaviour:
       LevelChangeHeight: 340
       LevelbgFilterColor: {r: 0.1462264, g: 0.8382351, b: 1, a: 0.2}
       enemyLevel:
-        spawnPeriod: 3.6
-        minSpawnAmount: 2
-        maxSpawnAmount: 3
+        spawnPeriod: 4
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
