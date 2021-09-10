@@ -123,6 +123,12 @@ public class playerController : MonoBehaviour
         GameSystem.hasBooster = false;
         GameSystem.hasShield = false;
         */
+        if (rigied.constraints == RigidbodyConstraints2D.FreezeAll)
+        {
+            rigied.velocity = saveVelo;
+            rigied.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+
         GameSystem.setTimeScale(0.75f);
         isOnWall = false;
         isDoubleJumped = false;
@@ -264,7 +270,7 @@ public class playerController : MonoBehaviour
         {
             AudioManager.instance.Play("Potion");
             Instantiate(potionParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
-            GameSystem.setPotion(GameSystem.getPotion() + 1);
+            GameSystem.setBanana(GameSystem.getBanana() + 1);
             Destroy(other.gameObject);
             GameSystem.deadSign = "Potion";
         }

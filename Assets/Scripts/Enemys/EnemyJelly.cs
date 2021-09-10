@@ -22,6 +22,7 @@ public class EnemyJelly : Enemy
     override protected void WarnEnded(){
         base.WarnEnded();
         velocity = maxSpeed;
+        AudioManager.instance.Play("Jellyfish");
         StartCoroutine("JellyFishMove");
     }
     

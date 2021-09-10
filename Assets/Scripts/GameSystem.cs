@@ -24,7 +24,7 @@ public class GameSystem
     private static int coin = 0;
     private static int coinEarned = 0;
     private static int health = 3;
-    private static int potion = 0;
+    private static int banana = 0;
     public static int playerHealth = 3;
     private static int level = 0;
     private static int stage = 0;
@@ -131,14 +131,14 @@ public class GameSystem
         return health;
     }
 
-    public static void setPotion(int newPotion)
+    public static void setBanana(int newbanana)
     {
-        potion = newPotion;
+        banana = newbanana;
     }
 
-    public static int getPotion()
+    public static int getBanana()
     {
-        return potion;
+        return banana;
     }
 
     public static void addScore(int s){
@@ -221,7 +221,7 @@ public class GameSystem
         playerHeight = 0;        
         coinEarned = 0;
         score = 0;
-        potion = 0;
+        banana = 0;
     }
 
     public static void nextStageStart(){

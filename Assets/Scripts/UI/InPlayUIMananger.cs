@@ -16,12 +16,12 @@ public class InPlayUIMananger : MonoBehaviour
     public GameObject heart3;
     public GameObject heart4;
     public GameObject heart5;
-    public GameObject potion1;
-    public GameObject potion2;
-    public GameObject potion3;
+    public GameObject banana1;
+    public GameObject banana2;
+    public GameObject banana3;
     public Image progressBar;
     int health;
-    int potion;
+    int banana;
 
 
     void FixedUpdate(){
@@ -30,7 +30,7 @@ public class InPlayUIMananger : MonoBehaviour
         }
         scoreText.text =  GameSystem.getScore().ToString();
         health = GameSystem.getHealth();
-        potion = GameSystem.getPotion();
+        banana = GameSystem.getBanana();
 
         if (health == 5)
         {
@@ -83,28 +83,26 @@ public class InPlayUIMananger : MonoBehaviour
 
 
 
-
-
-        if (potion == 0)
+        if (banana == 0)
         {
-            potion1.SetActive(false);
-            potion2.SetActive(false);
-            potion3.SetActive(false);
+            banana1.SetActive(false);
+            banana2.SetActive(false);
+            banana3.SetActive(false);
         }
-        else if (potion == 1)
+        else if (banana == 1)
         {
-            potion1.SetActive(true);
+            banana1.SetActive(true);
         }
-        else if (potion == 2)
+        else if (banana == 2)
         {
-            potion1.SetActive(true);
-            potion2.SetActive(true);
+            banana1.SetActive(true);
+            banana2.SetActive(true);
         }
-        else if (potion >= 3)
+        else if (banana >= 3)
         {
-            potion1.SetActive(true);
-            potion2.SetActive(true);
-            potion3.SetActive(true);
+            banana1.SetActive(true);
+            banana2.SetActive(true);
+            banana3.SetActive(true);
         }
         
         coinText.text = GameSystem.getCoin().ToString();

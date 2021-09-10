@@ -62,7 +62,7 @@ public class SpawnItems : MonoBehaviour
             SpawnPotion();
         }
 
-        if (GameSystem.getPotion() >= 3 && !fevering)
+        if (GameSystem.getBanana() >= 3 && !fevering)
         {
             isFever = true;
             StartCoroutine("FeverTime");
@@ -89,7 +89,7 @@ public class SpawnItems : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }        
 
-        GameSystem.setPotion(0);
+        GameSystem.setBanana(0);
         isFever = false;
         fevering = false;
         potionTimeCount = 0;

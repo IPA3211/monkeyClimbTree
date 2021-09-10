@@ -29,7 +29,7 @@ public class ReadyUIManager : MonoBehaviour
         if (!GameSystem.isRestarted)
         {
             text.text = "준비...";
-            yield return new WaitForSecondsRealtime(2f);
+            yield return new WaitForSecondsRealtime(1f);
         }
 
         text.text = "시작!";

@@ -137,6 +137,7 @@ public class GambleUIManager : MonoBehaviour
 
     IEnumerator GambleEffect()
     {
+        AudioManager.instance.Play("GambleMusic");
         Sprite[] sprites = null;
         buyBtn.gameObject.SetActive(false);
         confirmBtn.gameObject.SetActive(false);

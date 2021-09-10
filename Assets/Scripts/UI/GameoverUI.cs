@@ -59,7 +59,6 @@ public class GameoverUI : MonoBehaviour
             }
 
             sumTime += Time.unscaledDeltaTime;
-
             endingEffect.SetActive(isUnlockedEffect);
         }
 
@@ -122,6 +121,11 @@ public class GameoverUI : MonoBehaviour
             gameoverUI1.SetActive(false);
             gameoverUI2.SetActive(true);
         }
+    }
+
+    public void setDeadSign()
+    {
+
     }
 
     public void magnetToggled()

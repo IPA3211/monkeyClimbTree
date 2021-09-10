@@ -69,7 +69,7 @@ public class EnvironmentBush : MonoBehaviour
         {
             gameObject.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 1), new Vector3(1, 1, 1), progress);
             progress += 0.01f;
-            yield return new WaitForSeconds(0.005f);
+            yield return new WaitForSeconds(0.01f);
         }
         
         
@@ -80,7 +80,7 @@ public class EnvironmentBush : MonoBehaviour
         {
             gameObject.transform.localScale = Vector3.Lerp(new Vector3(1, 1, 1), new Vector3(0, 0, 1), progress);
             progress += 0.01f;
-            yield return new WaitForSeconds(0.005f);
+            yield return new WaitForSeconds(0.01f);
         }
         
         Destroy(gameObject);
