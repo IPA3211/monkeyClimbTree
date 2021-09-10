@@ -76,7 +76,6 @@ public class GameSystem
         {
             coin = cnt;
         }
-        
     }
     public static int getCoin()
     {

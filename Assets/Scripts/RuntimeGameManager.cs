@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class RuntimeGameManager : MonoBehaviour
 {
+    public static GameObject gameManager;
     float timeCount;
     public GameObject canvas;
     EndingManager endingManger;
@@ -13,6 +14,7 @@ public class RuntimeGameManager : MonoBehaviour
     GoogleManager netManager = null;
     // Start is called before the first frame update
     void Awake(){
+        gameManager = gameObject;
         endingManger = GetComponent<EndingManager>();
         readyUIManager = canvas.GetComponent<ReadyUIManager>();
         GameObject temp = GameObject.FindWithTag("Network");
@@ -93,6 +95,7 @@ public class RuntimeGameManager : MonoBehaviour
     }
 
     public void playerDead(){
+        GetComponent<AchievementManager>().refreshAchieve();
         GameSystem.resetStartItem();
         canvas.GetComponent<GameoverUI>().startGameoverUI();
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());

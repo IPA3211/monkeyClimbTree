@@ -142,6 +142,8 @@ public class playerController : MonoBehaviour
                 //터치 될때
                 StopDust();
                 Jump(isOnRight);
+                Counts.jumpCount++;
+                
             }
         }        
     }
