@@ -176,11 +176,9 @@ public class GameSystem
     }
     public static void stageUp(){
         setStage(stage + 1);
-        AudioManager.instance.ChangeBGM();
     }
     public static void stageDown(){
         setStage(stage - 1);
-        AudioManager.instance.ChangeBGM();
     }
 
     public static int getStage(){

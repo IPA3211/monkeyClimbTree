@@ -43,11 +43,11 @@ public class EnemyLevel{
 
     [Space(10f)]
     public bool spawnEagle = false;
-    public EagleConfig eagleConfig;
+    //public EagleConfig eagleConfig;
 
     [Space(10f)]
     public bool spawnDolphin = false;
-    public DolphinConfig dolphinConfig;
+    //public DolphinConfig dolphinConfig;
     [Space(10f)]
     public bool spawnJellyfish = false;
     [Space(10f)]

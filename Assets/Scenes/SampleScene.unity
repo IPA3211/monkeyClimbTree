@@ -19866,8 +19866,8 @@ RectTransform:
   - {fileID: 1649236845}
   - {fileID: 28347345}
   - {fileID: 545034643}
-  - {fileID: 2041518823}
   - {fileID: 802886325}
+  - {fileID: 2041518823}
   m_Father: {fileID: 1868260630}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20611,16 +20611,7 @@ MonoBehaviour:
     panzeeYPower: 20
     spawnApple: 1
     spawnEagle: 1
-    eagleConfig:
-      aimmingTime: 2
-      rushSpeed: 20
-      spawnTime: 1
     spawnDolphin: 1
-    dolphinConfig:
-      maxYPower: 20
-      minYPower: 10
-      maxXPower: 10
-      minXPower: 4
     spawnJellyfish: 0
     spawnPlane: 0
     spawnThunder: 0
@@ -20767,16 +20758,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 0
-        dolphinConfig:
-          maxYPower: 20
-          minYPower: 10
-          maxXPower: 10
-          minXPower: 4
         spawnJellyfish: 0
         spawnPlane: 0
         spawnThunder: 0
@@ -20805,16 +20787,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 0
-        dolphinConfig:
-          maxYPower: 20
-          minYPower: 10
-          maxXPower: 10
-          minXPower: 4
         spawnJellyfish: 0
         spawnPlane: 0
         spawnThunder: 0
@@ -20843,16 +20816,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 0
-        dolphinConfig:
-          maxYPower: 20
-          minYPower: 10
-          maxXPower: 10
-          minXPower: 4
         spawnJellyfish: 0
         spawnPlane: 0
         spawnThunder: 0
@@ -20889,16 +20853,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 1
         spawnEagle: 1
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 0
-        dolphinConfig:
-          maxYPower: 20
-          minYPower: 10
-          maxXPower: 10
-          minXPower: 4
         spawnJellyfish: 0
         spawnPlane: 0
         spawnThunder: 0
@@ -20927,16 +20882,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 1
         spawnEagle: 0
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 0
-        dolphinConfig:
-          maxYPower: 20
-          minYPower: 10
-          maxXPower: 10
-          minXPower: 4
         spawnJellyfish: 0
         spawnPlane: 0
         spawnThunder: 0
@@ -20965,16 +20911,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 1
         spawnEagle: 1
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 0
-        dolphinConfig:
-          maxYPower: 20
-          minYPower: 10
-          maxXPower: 10
-          minXPower: 4
         spawnJellyfish: 0
         spawnPlane: 0
         spawnThunder: 0
@@ -21011,16 +20948,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 1
-        dolphinConfig:
-          maxYPower: 30
-          minYPower: 20
-          maxXPower: 5
-          minXPower: 4
         spawnJellyfish: 0
         spawnPlane: 0
         spawnThunder: 0
@@ -21049,16 +20977,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 1
-        dolphinConfig:
-          maxYPower: 30
-          minYPower: 20
-          maxXPower: 5
-          minXPower: 4
         spawnJellyfish: 1
         spawnPlane: 0
         spawnThunder: 0
@@ -21087,16 +21006,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 1
-        dolphinConfig:
-          maxYPower: 30
-          minYPower: 20
-          maxXPower: 5
-          minXPower: 4
         spawnJellyfish: 1
         spawnPlane: 0
         spawnThunder: 0
@@ -21133,16 +21043,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 0
-        dolphinConfig:
-          maxYPower: 20
-          minYPower: 10
-          maxXPower: 10
-          minXPower: 4
         spawnJellyfish: 0
         spawnPlane: 1
         spawnThunder: 0
@@ -21171,16 +21072,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 0
-        dolphinConfig:
-          maxYPower: 20
-          minYPower: 10
-          maxXPower: 10
-          minXPower: 4
         spawnJellyfish: 0
         spawnPlane: 1
         spawnThunder: 1
@@ -21209,16 +21101,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 0
-        dolphinConfig:
-          maxYPower: 20
-          minYPower: 10
-          maxXPower: 10
-          minXPower: 4
         spawnJellyfish: 0
         spawnPlane: 1
         spawnThunder: 1
@@ -21255,16 +21138,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 0
-        dolphinConfig:
-          maxYPower: 20
-          minYPower: 10
-          maxXPower: 10
-          minXPower: 4
         spawnJellyfish: 0
         spawnPlane: 0
         spawnThunder: 0
@@ -21293,16 +21167,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 0
-        dolphinConfig:
-          maxYPower: 20
-          minYPower: 10
-          maxXPower: 10
-          minXPower: 4
         spawnJellyfish: 0
         spawnPlane: 0
         spawnThunder: 0
@@ -21331,16 +21196,7 @@ MonoBehaviour:
         panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
-        eagleConfig:
-          aimmingTime: 2
-          rushSpeed: 20
-          spawnTime: 1
         spawnDolphin: 0
-        dolphinConfig:
-          maxYPower: 20
-          minYPower: 10
-          maxXPower: 10
-          minXPower: 4
         spawnJellyfish: 0
         spawnPlane: 0
         spawnThunder: 0
@@ -29240,7 +29096,7 @@ RectTransform:
   - {fileID: 356557943}
   - {fileID: 1801097372}
   m_Father: {fileID: 320729684}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -43558,8 +43414,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.24994, y: -340.81128}
-  m_SizeDelta: {x: 572.5, y: 1024.5131}
+  m_AnchoredPosition: {x: -89.75, y: -604.04}
+  m_SizeDelta: {x: 392.5, y: 498.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1481858407
 MonoBehaviour:
@@ -58091,7 +57947,7 @@ RectTransform:
   - {fileID: 813248896}
   - {fileID: 718442674}
   m_Father: {fileID: 320729684}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -59498,6 +59354,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1729341696086085317, guid: 10ef439bfb265f9459802d6a32fda759, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729341696086085317, guid: 10ef439bfb265f9459802d6a32fda759, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729341696086085317, guid: 10ef439bfb265f9459802d6a32fda759, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729341696086085317, guid: 10ef439bfb265f9459802d6a32fda759, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729341696086085317, guid: 10ef439bfb265f9459802d6a32fda759, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1729341696433240713, guid: 10ef439bfb265f9459802d6a32fda759, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -59573,6 +59449,10 @@ PrefabInstance:
     - target: {fileID: 3180544791147244073, guid: 10ef439bfb265f9459802d6a32fda759, type: 3}
       propertyPath: m_LocalScale.x
       value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288154136430382767, guid: 10ef439bfb265f9459802d6a32fda759, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10ef439bfb265f9459802d6a32fda759, type: 3}

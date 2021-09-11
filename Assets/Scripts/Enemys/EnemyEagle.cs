@@ -74,7 +74,7 @@ public class EnemyEagle : Enemy
         Vector2 camPos = cam.transform.position + new Vector3(0, 0, 10);
         Vector3 diffPos = startPos - camPos;
         float progress = 0;
-        float height = Random.Range(2f, 8f);
+        float height = Random.Range(2f, 3f);
         while(progress < 1){
             if(isOnUpperSide)
                 transform.position = Vector3.Lerp(startPos, (cam.transform.position + new Vector3(0, 0, 10)) + diffPos + Vector3.down * height, progress);

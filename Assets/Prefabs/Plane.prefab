@@ -174,8 +174,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8855844325442158449}
   - component: {fileID: 8855844325442158450}
-  - component: {fileID: 3027561648568572175}
   - component: {fileID: 8855844325442158451}
+  - component: {fileID: 439149455674836318}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Enemy
@@ -250,60 +250,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &3027561648568572175
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8855844325442158452}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.97, y: 1.98}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.3224184, y: -0.55285287}
-      - {x: 0.40014225, y: -0.276337}
-      - {x: 0.4540253, y: -0.034678325}
-      - {x: 0.4618085, y: 0.24568641}
-      - {x: 0.4224196, y: 0.5579109}
-      - {x: 0.3242092, y: 0.7866522}
-      - {x: 0.22258064, y: 0.8867504}
-      - {x: 0.12193305, y: 0.94796926}
-      - {x: 0.030742198, y: 0.9898363}
-      - {x: -0.17240883, y: 0.8795746}
-      - {x: -0.25997758, y: 0.7879397}
-      - {x: -0.29317603, y: 0.7378806}
-      - {x: -0.35550168, y: 0.57921755}
-      - {x: -0.3897339, y: 0.5781564}
-      - {x: -0.45642468, y: 0.5187344}
-      - {x: -0.48322713, y: 0.51923937}
-      - {x: -0.48366234, y: 0.062256657}
-      - {x: -0.3978794, y: -0.015993051}
-      - {x: -0.3159487, y: -0.3690091}
-      - {x: -0.2602153, y: -0.55283403}
-      - {x: -0.4530488, y: -0.7408896}
-      - {x: -0.45239878, y: -0.8794097}
-      - {x: -0.085199155, y: -0.8792512}
-      - {x: -0.021786872, y: -0.95835567}
-      - {x: 0.035198316, y: -0.98950857}
-      - {x: 0.15042438, y: -0.8792699}
-      - {x: 0.48396927, y: -0.8764231}
-      - {x: 0.48535696, y: -0.73217314}
-      - {x: 0.48521098, y: -0.71154493}
 --- !u!114 &8855844325442158451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,3 +268,19 @@ MonoBehaviour:
   autoDestroyTime: 10
   speed: 5
   warnIcon: {fileID: 8855844324532507066}
+--- !u!70 &439149455674836318
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8855844325442158452}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03, y: 0.16}
+  m_Size: {x: 0.75, y: 1.35}
+  m_Direction: 0

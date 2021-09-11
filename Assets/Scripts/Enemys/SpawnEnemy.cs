@@ -139,17 +139,18 @@ public class SpawnEnemy : MonoBehaviour
 
         switch(spawnPoint){
             case 1:
-                Instantiate(enemys.apple, new Vector3(4.7f, cam.position.y + 11f, 0), Quaternion.Euler(0, 0, 0));
+                //Instantiate(enemys.apple, new Vector3(4.7f, cam.position.y + 11f, 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(enemys.apple, new Vector3(Random.Range(-4.7f, 4.7f), cam.position.y + 11f, 0), Quaternion.Euler(0, 0, 0));
             break;
             case 2:
-                Instantiate(enemys.apple, new Vector3(-4.7f, cam.position.y + 11f, 0), Quaternion.Euler(0, 0, 0));
+                //Instantiate(enemys.apple, new Vector3(-4.7f, cam.position.y + 11f, 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(enemys.apple, new Vector3(Random.Range(-4.7f, 4.7f), cam.position.y + 11f, 0), Quaternion.Euler(0, 0, 0));
             break;
         }
     }
 
     public void SpawnEagle() { SpawnEagle(0);}
     public void SpawnEagle(int spawnPoint){
-        enemys.eagle.GetComponent<EnemyEagle>().eagleConfig = enemyLevel.eagleConfig;
         if(spawnPoint == 0)
             spawnPoint = Random.Range(1, 3);
 
@@ -164,7 +165,6 @@ public class SpawnEnemy : MonoBehaviour
     }
 
     public void spawnDolphin(){
-        enemys.dolphin.GetComponent<EnemyDolphin>().dolphinConfig = enemyLevel.dolphinConfig;
         Instantiate(enemys.dolphin, new Vector3(Random.Range(-5f, 5f), cam.position.y - 11f, 0), Quaternion.Euler(0, 0, 0));
     }
 
@@ -173,20 +173,17 @@ public class SpawnEnemy : MonoBehaviour
     }
     public void spawnJellyfish(int spawnPoint){
         if(spawnPoint == 0)
-            spawnPoint = Random.Range(1, 5);
+            spawnPoint = Random.Range(1, 4);
 
         switch(spawnPoint){
             case 1:
                 Instantiate(enemys.jellyfish, new Vector3(Random.Range(-6.5f, 6.5f), cam.position.y + 11f, 0), Quaternion.Euler(0, 0, 180));
             break;
             case 2:
-                Instantiate(enemys.jellyfish, new Vector3(Random.Range(-6.5f, 6.5f), cam.position.y - 11f, 0), Quaternion.Euler(0, 180, 180));
+                Instantiate(enemys.jellyfish, new Vector3(-6.5f, cam.position.y + Random.Range(5f, 11f), 0), Quaternion.Euler(0, 180, 0));
             break;
             case 3:
-                Instantiate(enemys.jellyfish, new Vector3(-6.5f, cam.position.y - Random.Range(-11f, 11f), 0), Quaternion.Euler(0, 180, 0));
-            break;
-            case 4:
-                Instantiate(enemys.jellyfish, new Vector3(6.5f, cam.position.y - Random.Range(-11f, 11f), 0), Quaternion.Euler(0, 0, 0));
+                Instantiate(enemys.jellyfish, new Vector3(6.5f, cam.position.y + Random.Range(5f, 11f), 0), Quaternion.Euler(0, 0, 0));
             break;
         }    
     }
@@ -195,7 +192,6 @@ public class SpawnEnemy : MonoBehaviour
         spawnPlane(0);
     }
     public void spawnPlane(int spawnPoint){
-        enemys.eagle.GetComponent<EnemyEagle>().eagleConfig = enemyLevel.eagleConfig;
         if(spawnPoint == 0)
             spawnPoint = Random.Range(1, 3);
 

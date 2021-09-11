@@ -64,6 +64,7 @@ public class LobbyUIManager : MonoBehaviour
 
     public void DebugLevelBtn(){
         GameSystem.playerClearedStage = GameSystem.maxStage;
+        SecurityPlayerPrefs.SetInt("playerClearedStage", GameSystem.playerClearedStage);
         StageTextChange();
     }
 }

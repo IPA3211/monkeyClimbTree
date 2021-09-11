@@ -44,6 +44,11 @@ public class playerController : MonoBehaviour
         if(GameSystem.isStarted == false){
             return;
         }
+
+        if(stuckBush && Input.GetMouseButtonDown(0)){
+            stuckBush.GetComponent<EnvironmentBush>().damaged();
+        }
+
         if(Input.GetMouseButtonDown(0) && !isOnWall && !isDoubleJumped && !GameSystem.isDead && Mathf.Abs(gameObject.transform.position.x) < 3.3f){
             //더블점프 사용가능 범위때문에 나누긴 했는데 결국엔 다시 돌아옴 ㅋㅋ
             if(doubleJumpPower > 1){
@@ -69,12 +74,6 @@ public class playerController : MonoBehaviour
 
         if(!GameSystem.getPause() && GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isStageCleared)
         {
-            if(isPaused){
-                //퍼즈 되고서 돌아갈때
-                isPaused = !isPaused;
-                rigied.simulated = true;
-                Jump(true);
-            }
             //bush 에 걸렸을 때
             if(stuckBush){
                 if(rigied.constraints == RigidbodyConstraints2D.FreezeRotation){
@@ -88,10 +87,19 @@ public class playerController : MonoBehaviour
                     rigied.constraints = RigidbodyConstraints2D.FreezeRotation;
                 }
             }
+
+            //퍼즈 되고서 돌아갈때
+            if(isPaused){
+                isPaused = !isPaused;
+                rigied.simulated = true;
+                Jump(true);
+            }
+            
             //게임 시스템에 플레이어 높이 갱신
             tempY = gameObject.transform.position.y;
             GameSystem.playerHeight = tempY;
             GameSystem.setMaxHeight(tempY);
+            
             if(isOnWall){
                 //벽에 부딪혀 있을경우
                 MonkeyOnWall();

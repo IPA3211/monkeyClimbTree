@@ -24,8 +24,6 @@ public class AchievementManager : MonoBehaviour
         }
         
         loadActivedAchieve();
-        makeAchieveNode();
-        refreshAchieve();
     }
 
     // Update is called once per frame
@@ -33,13 +31,18 @@ public class AchievementManager : MonoBehaviour
     {
         
     }
-    
 
     void loadActivedAchieve(){
         long tmp = System.Convert.ToInt64(SecurityPlayerPrefs.GetString("DRT", System.DateTime.MinValue.ToBinary().ToString()));
 		dailyRefreshedTime = System.DateTime.FromBinary(tmp);
 
         activedDailyAchievements.Clear();
+
+        if(dailyRefreshedTime.AddDays(1) < UnbiasedTime.Instance.Now()){
+            renewDailyAchieve();
+            return;
+        }
+
         activedDailyAchievements = dailyAchievements.ToList();
 
         for(int i = 0; i < activedDailyAchievements.Count; i++){
@@ -51,10 +54,9 @@ public class AchievementManager : MonoBehaviour
             else
                 activedDailyAchievements[i].setScore(SecurityPlayerPrefs.GetInt("Dachieve" + i, 0));
         }
-
-        if(dailyRefreshedTime.AddDays(1) < UnbiasedTime.Instance.Now()){
-            renewDailyAchieve();
-        }
+        
+        makeAchieveNode();
+        refreshAchieve();
     }
     
     public void saveActivedAchieve(){
@@ -74,20 +76,33 @@ public class AchievementManager : MonoBehaviour
             activedDailyAchievements[i].uiNode = achievementUI.makeDailyNode().GetComponent<AchievementNode>();
         }
     }
+    void DestroyAchieveNode(){
+        for(int i = 0; i < activedDailyAchievements.Count; i++){
+            activedDailyAchievements[i].uiNode.Destroy();
+        }
+    }
     public void refreshAchieve(){
         for(int i = 0; i < activedDailyAchievements.Count; i++){
             activedDailyAchievements[i].refresh();
         }
+        
         Counts.clear();
         saveActivedAchieve();
     }
 
     void renewDailyAchieve(){
-        dailyRefreshedTime = UnbiasedTime.Instance.Now().Date.AddHours(5); // 05:00 기준으로 갱신
-        activedDailyAchievements.Clear();
+        if(UnbiasedTime.Instance.Now().Date.AddHours(5) < UnbiasedTime.Instance.Now()){
+            dailyRefreshedTime = UnbiasedTime.Instance.Now().Date.AddHours(5); // 05:00 기준으로 갱신
+        }
+        else{
+            dailyRefreshedTime = UnbiasedTime.Instance.Now().Date.AddHours(5);
+            dailyRefreshedTime = dailyRefreshedTime.AddDays(-1);
+        }
+
         activedDailyAchievements = dailyAchievements.ToList();
-        Counts.clear();
-        saveActivedAchieve();
+
+        makeAchieveNode();
+        refreshAchieve();
     }
 
     void renewWeeklyAchieve(){

@@ -29,7 +29,7 @@ public class EnemyWall : MonoBehaviour
     }
 
     IEnumerator TreeAttack(GameObject tree) {
-        SpriteRenderer rend = tree.GetComponent<SpriteRenderer>();
+        SpriteRenderer rend = tree.GetComponentInChildren<SpriteRenderer>();
         Color rawColor = rend.material.color;
         float progress = 0;
         for (int i = 0; i < 2; i++)
@@ -54,7 +54,7 @@ public class EnemyWall : MonoBehaviour
 
         progress = 0;
         
-        Animator tree_anim =  tree.GetComponent<Animator>();
+        Animator tree_anim =  tree.GetComponentInChildren<Animator>();
 
         tree_anim.SetBool("Attacking", true);
         tree.tag = "EnemyWall";

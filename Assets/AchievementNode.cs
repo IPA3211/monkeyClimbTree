@@ -11,7 +11,7 @@ public class AchievementNode : MonoBehaviour
     Achievement owner;
     AchievementManager achievementManager;
 
-    void Enabled(){
+    void Start(){
         achievementManager = RuntimeGameManager.gameManager.GetComponent<AchievementManager>();
     }
     public void refresh(Achievement achieveInfo){
@@ -27,6 +27,10 @@ public class AchievementNode : MonoBehaviour
         else{
             btn.interactable = false;
         }
+    }
+
+    public void Destroy(){
+        Destroy(gameObject);
     }
 
     public void OnBtnClicked(){

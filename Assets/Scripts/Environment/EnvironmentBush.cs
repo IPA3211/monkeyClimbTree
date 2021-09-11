@@ -26,13 +26,6 @@ public class EnvironmentBush : MonoBehaviour
     {
         if(playerHit){
             health -= Time.deltaTime;
-            if(Input.GetMouseButtonDown(0)){
-                touchHealth--;
-                if (touchHealth == 4 || touchHealth == 2 || touchHealth == 0)
-                    AudioManager.instance.Play("Bush1");
-                else if (touchHealth == 3 || touchHealth == 1)
-                    AudioManager.instance.Play("Bush2");
-            }
         }
 
         if(touchHealth == 0 || health < 0){
@@ -48,7 +41,13 @@ public class EnvironmentBush : MonoBehaviour
     void OnDestroy() {
         
     }
-
+    public void damaged(){
+        touchHealth--;
+        if (touchHealth == 4 || touchHealth == 2 || touchHealth == 0)
+            AudioManager.instance.Play("Bush1");
+        else if (touchHealth == 3 || touchHealth == 1)
+            AudioManager.instance.Play("Bush2");
+    }
     public void Monkey_Stucked()
     {
         anim.SetBool("IsStucked", true);
@@ -68,8 +67,8 @@ public class EnvironmentBush : MonoBehaviour
         while (progress <= 1)
         {
             gameObject.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 1), new Vector3(1, 1, 1), progress);
-            progress += 0.01f;
-            yield return new WaitForSeconds(0.01f);
+            progress += Time.deltaTime;
+            yield return new WaitForFixedUpdate();
         }
         
         
@@ -79,8 +78,8 @@ public class EnvironmentBush : MonoBehaviour
         while (progress <= 1)
         {
             gameObject.transform.localScale = Vector3.Lerp(new Vector3(1, 1, 1), new Vector3(0, 0, 1), progress);
-            progress += 0.01f;
-            yield return new WaitForSeconds(0.01f);
+            progress += Time.deltaTime;
+            yield return new WaitForFixedUpdate();
         }
         
         Destroy(gameObject);
