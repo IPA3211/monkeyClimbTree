@@ -94,14 +94,14 @@ public class SpawnEnvironment : MonoBehaviour
             while (progress <= 1)
             {
                 rend.color = Color.Lerp(new Color(1, 1, 1, 0), new Color(1, 1, 1, 1), progress);
-                progress += Time.deltaTime;
+                progress += (Time.deltaTime * 2);
                 yield return new WaitForFixedUpdate();
             }
             progress = 0;
             while (progress <= 1)
             {
                 rend.color = Color.Lerp(new Color(1, 1, 1, 1), new Color(1, 1, 1, 0), progress);
-                progress += Time.deltaTime;
+                progress += (Time.deltaTime * 2);
                 yield return new WaitForFixedUpdate();
             }
         }
