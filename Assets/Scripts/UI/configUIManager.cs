@@ -11,21 +11,15 @@ public class configUIManager : MonoBehaviour
     public GameObject gameManager;
     public GameObject pauseMenu;
     [Space (10f)]
-    public InputField xPower;
-    public InputField yPower;
     public InputField timeScale;
-    public InputField gravityScale;
-    public InputField charScale;
-    public InputField immuneTime;
-    public InputField doubleJumpPower;
+    
+    [Space (10f)]
+    public Dropdown mapDropdown;
 
-        [Space (10f)]
+    [Space (10f)]
     public InputField enemyP;
     public InputField enviP;
-    public InputField snakeSpeed;
     public InputField wallAmount;
-    public InputField panzeeX;
-    public InputField panzeeY;
     public InputField minSpawn;
     public InputField maxSpawn;
     public Toggle wallT;
@@ -36,11 +30,17 @@ public class configUIManager : MonoBehaviour
     public Toggle branchT;
     public Toggle bushT;
     public Toggle dolphinT;
+    public Toggle jellyT;
+    public Toggle planeT;
+    public Toggle ThunderT;
+    public Toggle UFOT;
+    public Toggle satelliteT;
 
     playerController pctrl;
     Rigidbody2D rigi;
     SpawnEnemy enemy;
     SpawnEnvironment envi;
+    LevelSpawner levelSpawner;
 
     public void ChangePauseSetting(){
         GameSystem.setPause(!GameSystem.getPause());
@@ -60,22 +60,24 @@ public class configUIManager : MonoBehaviour
         rigi = player.GetComponent<Rigidbody2D>();
         enemy = gameManager.GetComponent<SpawnEnemy>();
         envi = gameManager.GetComponent<SpawnEnvironment>();
-        
-        xPower.text = pctrl.XPower.ToString();
-        yPower.text = pctrl.YPower.ToString();
+        levelSpawner = gameManager.GetComponent<LevelSpawner>();
         timeScale.text = GameSystem.getTimeScale().ToString();
-        gravityScale.text = rigi.gravityScale.ToString();
-        charScale.text = player.transform.localScale.x.ToString();
-        immuneTime.text = pctrl.immuneTime.ToString();
-        doubleJumpPower.text = pctrl.doubleJumpPower.ToString();
+
+        mapDropdown.ClearOptions();
+        for(int i = 0; i < levelSpawner.stages.Count; i++){
+            for(int j = 0; j < levelSpawner.stages[i].levels.Count; j++){
+                Dropdown.OptionData optionData = new Dropdown.OptionData();
+                optionData.text = (i+1) + " - " + (j+1);
+                mapDropdown.options.Add(optionData);
+            }
+        }
+        
+        mapDropdown.onValueChanged.AddListener(delegate {onDropdownChanged();});
 
         enemyP.text = enemy.enemyLevel.spawnPeriod.ToString();
         enviP.text = envi.enviLevel.spawnPeriod.ToString();
 
-        snakeSpeed.text = enemy.enemyLevel.snakeSpeed.ToString();
         wallAmount.text = enemy.enemyLevel.wallAmount.ToString();
-        panzeeX.text = enemy.enemyLevel.panzeeXPower.ToString();
-        panzeeY.text = enemy.enemyLevel.panzeeYPower.ToString();
 
         minSpawn.text = enemy.enemyLevel.minSpawnAmount.ToString();
         maxSpawn.text = enemy.enemyLevel.maxSpawnAmount.ToString();
@@ -86,26 +88,68 @@ public class configUIManager : MonoBehaviour
         eagleT.isOn = enemy.enemyLevel.spawnEagle;
         appleT.isOn = enemy.enemyLevel.spawnApple;
         dolphinT.isOn = enemy.enemyLevel.spawnDolphin;
+        jellyT.isOn = enemy.enemyLevel.spawnJellyfish;
+        planeT.isOn = enemy.enemyLevel.spawnPlane;
+        ThunderT.isOn = enemy.enemyLevel.spawnThunder;
+        UFOT.isOn = enemy.enemyLevel.spawnUFO;
+        satelliteT.isOn = enemy.enemyLevel.spawnSatellite;
+
+
         branchT.isOn = envi.enviLevel.spawnBranch;
         bushT.isOn = envi.enviLevel.spawnBush;
     }
 
+    public void onDropdownChanged(){
+        int checker = mapDropdown.value;
+        int a = 0, b = 0;
+        for(a = 0; a < levelSpawner.stages.Count; a++){
+            for(b = 0; b < levelSpawner.stages[a].levels.Count; b++){
+                if(checker == 0){
+                    enemy.enemyLevel = levelSpawner.stages[a].levels[b].enemyLevel;
+                    envi.enviLevel = levelSpawner.stages[a].levels[b].enviLevel;
+
+                    timeScale.text = levelSpawner.stages[a].levels[b].timeScale.ToString();
+
+                    enemyP.text = enemy.enemyLevel.spawnPeriod.ToString();
+                    enviP.text = envi.enviLevel.spawnPeriod.ToString();
+
+                    wallAmount.text = enemy.enemyLevel.wallAmount.ToString();
+
+                    minSpawn.text = enemy.enemyLevel.minSpawnAmount.ToString();
+                    maxSpawn.text = enemy.enemyLevel.maxSpawnAmount.ToString();
+                    
+                    wallT.isOn = enemy.enemyLevel.spawnWall;
+                    snakeT.isOn = enemy.enemyLevel.spawnSnake;
+                    panzeeT.isOn = enemy.enemyLevel.spawnPanzee;
+                    eagleT.isOn = enemy.enemyLevel.spawnEagle;
+                    appleT.isOn = enemy.enemyLevel.spawnApple;
+                    dolphinT.isOn = enemy.enemyLevel.spawnDolphin;
+                    jellyT.isOn = enemy.enemyLevel.spawnJellyfish;
+                    planeT.isOn = enemy.enemyLevel.spawnPlane;
+                    ThunderT.isOn = enemy.enemyLevel.spawnThunder;
+                    UFOT.isOn = enemy.enemyLevel.spawnUFO;
+                    satelliteT.isOn = enemy.enemyLevel.spawnSatellite;
+
+
+                    branchT.isOn = envi.enviLevel.spawnBranch;
+                    bushT.isOn = envi.enviLevel.spawnBush;
+                    return;
+                }
+                checker--;
+            }
+        }
+    }
+
     void changeConfig(){
-        pctrl.XPower = float.Parse(xPower.text);
-        pctrl.YPower = float.Parse(yPower.text);
         GameSystem.setTimeScale(float.Parse(timeScale.text));
-        rigi.gravityScale = float.Parse(gravityScale.text);
-        player.transform.localScale = new Vector3(float.Parse(charScale.text), float.Parse(charScale.text), 0);
-        pctrl.immuneTime = float.Parse(immuneTime.text);
-        pctrl.doubleJumpPower = float.Parse(doubleJumpPower.text);
         
         enemy.enemyLevel.spawnPeriod = float.Parse(enemyP.text);
         envi.enviLevel.spawnPeriod = float.Parse(enviP.text);
 
-        enemy.enemyLevel.snakeSpeed = float.Parse(snakeSpeed.text);
         enemy.enemyLevel.wallAmount = int.Parse(wallAmount.text);
-        enemy.enemyLevel.panzeeXPower = float.Parse(panzeeX.text);
-        enemy.enemyLevel.panzeeYPower = float.Parse(panzeeY.text);
+
+        enemy.enemyLevel.minSpawnAmount = int.Parse(minSpawn.text);
+        enemy.enemyLevel.minSpawnAmount = int.Parse(maxSpawn.text);
         
         enemy.enemyLevel.spawnWall = wallT.isOn;
         enemy.enemyLevel.spawnSnake = snakeT.isOn;
@@ -113,6 +157,12 @@ public class configUIManager : MonoBehaviour
         enemy.enemyLevel.spawnEagle = eagleT.isOn;
         enemy.enemyLevel.spawnApple = appleT.isOn;
         enemy.enemyLevel.spawnDolphin = dolphinT.isOn;
+        enemy.enemyLevel.spawnJellyfish = jellyT.isOn;
+        enemy.enemyLevel.spawnPlane = planeT.isOn;
+        enemy.enemyLevel.spawnThunder = ThunderT.isOn;
+        enemy.enemyLevel.spawnUFO = UFOT.isOn;
+        enemy.enemyLevel.spawnSatellite = satelliteT.isOn;
+
         envi.enviLevel.spawnBranch = branchT.isOn;
         envi.enviLevel.spawnBush = bushT.isOn;
     }
