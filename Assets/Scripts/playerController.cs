@@ -52,12 +52,17 @@ public class playerController : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && !isOnWall && !isDoubleJumped && !GameSystem.isDead && Mathf.Abs(gameObject.transform.position.x) < 3.3f){
             //더블점프 사용가능 범위때문에 나누긴 했는데 결국엔 다시 돌아옴 ㅋㅋ
             if(doubleJumpPower > 1){
-                if(isOnRight)
+                if (isOnRight)
                     rigied.velocity = new Vector2(7f, doubleJumpPower);
-                
+
                 else
                     rigied.velocity = new Vector2(-7f, doubleJumpPower);
-                
+
+                int randNum = Random.Range(0, 2);
+                if(randNum == 0)
+                    AudioManager.instance.Play("DoubleJump1");
+                else
+                    AudioManager.instance.Play("DoubleJump2");
                 isDoubleJumped = true;
                 anim.SetBool("IsDoubleJump", isDoubleJumped);
             }
@@ -153,6 +158,11 @@ public class playerController : MonoBehaviour
             rigied.velocity = rigied.velocity * new Vector2(0, 1);
             if (Input.GetMouseButton(0) && cam.transform.position.y + 8 > transform.position.y)
             {
+                int randNum = Random.Range(0, 2);
+                if(randNum == 0)
+                    AudioManager.instance.Play("Jump1");
+                else
+                    AudioManager.instance.Play("Jump2");
                 //터치 될때
                 StopDust();
                 Jump(isOnRight);

@@ -29336,6 +29336,22 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 04ede00051560b54ea458a262d1270c2, type: 3}
     volume: 0.5
     source: {fileID: 0}
+  - name: Jump1
+    clip: {fileID: 8300000, guid: 19c1156d5b743bf40bd763fc7cefc0e8, type: 3}
+    volume: 0.3
+    source: {fileID: 0}
+  - name: Jump2
+    clip: {fileID: 8300000, guid: 8e7462f3560666c44af9e815b4e24d2d, type: 3}
+    volume: 0.3
+    source: {fileID: 0}
+  - name: DoubleJump1
+    clip: {fileID: 8300000, guid: 4e50f9f575fb4704a8de82811f2c9e27, type: 3}
+    volume: 0.3
+    source: {fileID: 0}
+  - name: DoubleJump2
+    clip: {fileID: 8300000, guid: ffa67ffcf3e698f49978174685673e61, type: 3}
+    volume: 0.3
+    source: {fileID: 0}
   bgm: {fileID: 863090761}
   sfx: {fileID: 863090764}
   bgmVol: {fileID: 840697456}
