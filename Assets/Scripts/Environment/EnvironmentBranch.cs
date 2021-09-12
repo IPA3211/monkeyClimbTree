@@ -6,7 +6,7 @@ public class EnvironmentBranch : MonoBehaviour
 {
     public float LifeTime;
     public float warningTime;
-    public float health = 1.5f;
+    //public float health = 1.5f;
     bool playerHit = false;
     GameObject cam;
     // Start is called before the first frame update
@@ -23,12 +23,14 @@ public class EnvironmentBranch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(playerHit)
             health -= Time.deltaTime;
 
         if(health < 0){
             Destroy(gameObject);
         }
+        */
 
         if(GameSystem.isDead)
             Destroy(gameObject);

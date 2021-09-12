@@ -51,6 +51,18 @@ public class SkinUI : MonoBehaviour
     void changeUI((Sprite skin, string text) skin){
         UIPlayer.sprite = skin.skin;
         UIName.text = skin.text;
+        if (skinManager.skinDatas[skinNum].rareNum == rare.Normal)
+        {
+            UIName.color = Color.gray;
+        }
+        else if (skinManager.skinDatas[skinNum].rareNum == rare.Rare)
+        {
+            UIName.color = new Color32(0, 186, 155, 255);
+        }
+        else if (skinManager.skinDatas[skinNum].rareNum == rare.Hard)
+        {
+            UIName.color = new Color32(255, 0, 108, 255);
+        }
         skinNumText.text = (skinNum + 1) + " / " + skinManager.getMaxSize();
         persentText.text = string.Format("{0:0#}", skinManager.getPercent()) + "%";
     }

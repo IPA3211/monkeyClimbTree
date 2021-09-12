@@ -42,7 +42,14 @@ public class playerController : MonoBehaviour
     void Update(){
         //FixedUpdate 에서는 GetMouseButtonDown 인식이 정확하지 않아서 Update 문으로 왔음
         if(GameSystem.isStarted == false){
+            anim.SetBool("isRestarted", true);
+            isOnRight = false;
+            anim.SetBool("IsDoubleJump", false);
             return;
+        }
+        else
+        {
+            anim.SetBool("isRestarted", false);
         }
 
         if(stuckBush && Input.GetMouseButtonDown(0)){
@@ -74,7 +81,7 @@ public class playerController : MonoBehaviour
     void FixedUpdate()
     {
         if(!GameSystem.isStarted){
-            gameObject.transform.position = cam.transform.position + new Vector3(0, -4, 10);
+            gameObject.transform.position = cam.transform.position + new Vector3(0, -9.415f, 10f);
         }
 
         if(!GameSystem.getPause() && GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isStageCleared)
@@ -197,16 +204,19 @@ public class playerController : MonoBehaviour
 
     void StartDust()
     {
-        if(!isOnRight)
+        if (Mathf.Abs(rigied.velocity.y) > 1f)
         {
-            dustParticle.transform.localPosition = new Vector3(-0.35f, dustParticle.transform.localPosition.y, dustParticle.transform.localPosition.z);
-        }
-        else
-        {
-            dustParticle.transform.localPosition = new Vector3(0.35f, dustParticle.transform.localPosition.y, dustParticle.transform.localPosition.z);
-        }
-        
-        dust.Play();
+            if (!isOnRight)
+            {
+                dustParticle.transform.localPosition = new Vector3(-0.35f, dustParticle.transform.localPosition.y, dustParticle.transform.localPosition.z);
+            }
+            else
+            {
+                dustParticle.transform.localPosition = new Vector3(0.35f, dustParticle.transform.localPosition.y, dustParticle.transform.localPosition.z);
+            }
+
+            dust.Play();
+        }        
     }
 
     void StopDust()

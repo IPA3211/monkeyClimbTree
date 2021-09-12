@@ -14,23 +14,26 @@ public class EnemyThunder : Enemy
         col = gameObject.GetComponent<Collider2D>();
         col.enabled = false;
         spriteRenderer.color = new Color(1,1,1,0);
+
+        AudioManager.instance.Play("ThunderStart");
     }
 
     protected override void WarnEnded()
     {
+        AudioManager.instance.Play("ThunderAgain1");
         base.WarnEnded();
-        StartCoroutine("thunderCoru");
+        StartCoroutine("thunderCoru");        
     }
 
     IEnumerator thunderCoru(){
-        spriteRenderer.color = new Color(1,1,1,1);
-        col.enabled = true;
+        AudioManager.instance.Play("ThunderAgain2");
 
+        spriteRenderer.color = new Color(1,1,1,1);
+        col.enabled = true;        
         yield return new WaitForSeconds(thunderTime);
         
         spriteRenderer.color = new Color(1,1,1,0);
-        col.enabled = false;
-
+        col.enabled = false;        
         yield return new WaitForSeconds(thunderTime / 2);
 
         spriteRenderer.color = new Color(1,1,1,1);

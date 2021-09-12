@@ -37,6 +37,7 @@ public class EnemyUFO : Enemy
     }
     protected override void WarnEnded()
     {
+        AudioManager.instance.Play("UFOStand");
         StartCoroutine("AimmingCoroutine");
     }
     void Aimming(){
@@ -73,10 +74,11 @@ public class EnemyUFO : Enemy
         }
 
         targetDir = target.transform.position - transform.position;
-        targetDir.Normalize();
-        
+        targetDir.Normalize();        
         progress = 0;
-        while(progress < 0.5){
+        AudioManager.instance.Play("UFOMove");
+
+        while (progress < 0.5){
             progress += Time.deltaTime;
             transform.position = (cam.transform.position + new Vector3(0, 0, 10)) + diffPos;
             
@@ -84,7 +86,7 @@ public class EnemyUFO : Enemy
         }
         
         aim.SetActive(false);
-        isAimfinished = true;
+        isAimfinished = true;        
         gameObject.tag = "Enemy";
     }
 }
