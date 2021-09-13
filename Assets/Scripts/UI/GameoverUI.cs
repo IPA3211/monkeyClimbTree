@@ -106,7 +106,7 @@ public class GameoverUI : MonoBehaviour
             endingSprite.sprite = curEnding.thumbnails[0];
         else
         {
-            // ÃßÈÄ¿¡ ¿£µùÂ©ÀÌ ¿©·¯°³ÀÏ °æ¿ì
+            // ï¿½ï¿½ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½ï¿½Â©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             endingSprite.sprite = curEnding.thumbnails[0];
         }
         endingTitle.text = curEnding.endingName;
@@ -141,12 +141,14 @@ public class GameoverUI : MonoBehaviour
             {
                 usedCoin += magnetCoin;
                 GameSystem.addCoin(-magnetCoin);
+                Counts.buyItemCount++;
                 GameSystem.hasMagnetic = true;                
             }
             else if (!magnetTog.isOn)
             {
                 usedCoin -= magnetCoin;
                 GameSystem.addCoin(magnetCoin);
+                Counts.buyItemCount--;
                 GameSystem.hasMagnetic = false;
             }
         }        
@@ -165,12 +167,14 @@ public class GameoverUI : MonoBehaviour
             {
                 usedCoin += heartPlusCoin;
                 GameSystem.addCoin(-heartPlusCoin);
+                Counts.buyItemCount++;
                 GameSystem.hasHeartPlus = true;
             }
             else if (!heartPlusTog.isOn)
             {
                 usedCoin -= heartPlusCoin;
                 GameSystem.addCoin(heartPlusCoin);
+                Counts.buyItemCount--;
                 GameSystem.hasHeartPlus = false;
             }
         }
@@ -189,12 +193,14 @@ public class GameoverUI : MonoBehaviour
             {
                 usedCoin += boosterCoin;
                 GameSystem.addCoin(-boosterCoin);
+                Counts.buyItemCount++;
                 GameSystem.hasBooster = true;                
             }
             else if (!boosterTog.isOn)
             {
                 usedCoin -= boosterCoin;
                 GameSystem.addCoin(boosterCoin);
+                Counts.buyItemCount--;
                 GameSystem.hasBooster = false;
                 Debug.Log("canceled!");
             }

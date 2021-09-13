@@ -10,4 +10,8 @@ public class AchievementUI : MonoBehaviour
     public GameObject makeDailyNode(){
         return Instantiate(achieveUI, dailyPanel.transform);
     }
+
+    public GameObject makeWeeklyNode(){
+        return Instantiate(achieveUI, weeklyPanel.transform);
+    }
 }

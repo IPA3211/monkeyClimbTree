@@ -6138,6 +6138,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0284e9ab928c407499285ed31d8b55c4, type: 3}
+--- !u!1 &86570249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 86570250}
+  m_Layer: 5
+  m_Name: unFortune
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &86570250
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86570249}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1798810074}
+  - {fileID: 433297403}
+  m_Father: {fileID: 545034643}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &92389187
 GameObject:
   m_ObjectHideFlags: 0
@@ -19573,9 +19610,9 @@ RectTransform:
   - {fileID: 336812086}
   - {fileID: 1649236845}
   - {fileID: 28347345}
-  - {fileID: 545034643}
   - {fileID: 2041518823}
   - {fileID: 802886325}
+  - {fileID: 545034643}
   m_Father: {fileID: 1868260630}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20201,7 +20238,7 @@ MonoBehaviour:
   coinSpawnPeriod: 5
   potionSpawnPeriod: 15
   feverTimePeriod: 5
-  coin: {fileID: 6229753288337425128, guid: 79a7d88512f6a0b43aabf3bff941ecac, type: 3}
+  coin: {fileID: 6282582751130997419, guid: 731b357c681838d4aade64a7810145ef, type: 3}
   potion: {fileID: 3328838799770556936, guid: 5ad9856ed343499419cb4fa4f71a5550, type: 3}
 --- !u!114 &351710415
 MonoBehaviour:
@@ -20234,10 +20271,7 @@ MonoBehaviour:
     spawnWall: 1
     wallAmount: 2
     spawnSnake: 1
-    snakeSpeed: 12
     spawnPanzee: 1
-    panzeeXPower: 12
-    panzeeYPower: 20
     spawnApple: 1
     spawnEagle: 1
     spawnDolphin: 1
@@ -20381,10 +20415,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
-        snakeSpeed: 12
         spawnPanzee: 0
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 0
@@ -20410,10 +20441,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 0
@@ -20439,10 +20467,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 0
@@ -20476,10 +20501,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 1
         spawnEagle: 1
         spawnDolphin: 0
@@ -20505,10 +20527,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 1
         spawnEagle: 0
         spawnDolphin: 0
@@ -20534,10 +20553,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 1
         spawnEagle: 1
         spawnDolphin: 0
@@ -20571,10 +20587,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 1
@@ -20600,10 +20613,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 1
@@ -20629,10 +20639,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 1
@@ -20666,10 +20673,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 0
@@ -20695,10 +20699,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 0
@@ -20724,10 +20725,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 0
@@ -20761,10 +20759,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 0
@@ -20790,10 +20785,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 0
@@ -20819,10 +20811,7 @@ MonoBehaviour:
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 0
-        snakeSpeed: 12
         spawnPanzee: 1
-        panzeeXPower: 12
-        panzeeYPower: 20
         spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 0
@@ -20838,6 +20827,105 @@ MonoBehaviour:
         spawnHeight: 30
         spawnBush: 1
         bushNum: 5
+  - isDebugStage: 0
+    spriteSet:
+      first: {fileID: 21300000, guid: 4f3fd4b34c6f4db4280250f2d98fd9ef, type: 3}
+      middle:
+      - {fileID: 21300000, guid: f18e1d6c8c6bc1744b9874c696243ad2, type: 3}
+      - {fileID: 21300000, guid: 366e86a2a7d2ae54db6875792ff4ab5e, type: 3}
+      - {fileID: 21300000, guid: 1dbd21fd1a845bc4facf2d59fc91fad7, type: 3}
+      - {fileID: 21300000, guid: 9e04af48e1e2dc044a98599159a298ca, type: 3}
+      - {fileID: 21300000, guid: a7057199480f17c498ed2dd480f05bde, type: 3}
+      - {fileID: 21300000, guid: 68240cffd514b254fa023745708b966a, type: 3}
+      - {fileID: 21300000, guid: 7c50243c53a28764d81a5325b0b4c317, type: 3}
+      - {fileID: 21300000, guid: 145f489a47fb78245b097010193da568, type: 3}
+      - {fileID: 21300000, guid: 330dc18df8f050d4c963d2cd32146942, type: 3}
+      - {fileID: 21300000, guid: 615d006d80ae3f743b55b5a91e449261, type: 3}
+      - {fileID: 21300000, guid: 6c132329d78df454bb7ad63f26c2f7ef, type: 3}
+      - {fileID: 21300000, guid: 90d60dc39925b544f8f9733a68b29cd5, type: 3}
+      - {fileID: 21300000, guid: f1f47aa08ff6b984191e7c3528b3b4cb, type: 3}
+      - {fileID: 21300000, guid: 6184d498cbd5a754dbe6ed3d695038cc, type: 3}
+      - {fileID: 21300000, guid: 4f3fd4b34c6f4db4280250f2d98fd9ef, type: 3}
+      end: {fileID: 21300000, guid: 6184d498cbd5a754dbe6ed3d695038cc, type: 3}
+    levels:
+    - timeScale: 1.1
+      LevelChangeHeight: 110
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 0
+        spawnEagle: 1
+        spawnDolphin: 0
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 40
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.15
+      LevelChangeHeight: 225
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 0
+        spawnEagle: 1
+        spawnDolphin: 0
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.15
+      LevelChangeHeight: 2.1e+9
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 1
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 0
+        spawnEagle: 1
+        spawnDolphin: 0
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
   - isDebugStage: 1
     spriteSet:
       first: {fileID: 21300000, guid: b342e2055a0a3124e8745e189294c558, type: 3}
@@ -20860,22 +20948,106 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dailyAchievements:
   - name: "\uB098\uB294\uC57C \uC810\uD504\uC655"
-    describe: "\uC810\uD504 150 \uD68C \uB2EC\uC131"
-    toClear: 150
-    clearCoin: 50
+    describe: "\uC810\uD504 111 \uD68C \uB2EC\uC131"
+    toClear: 111
     isCleared: 0
     isReceived: 0
     questType: 0
+    rewardType: 0
+    clearCoin: 10
     uiNode: {fileID: 0}
-  - name: "\uC6A9\uAC10\uBB34\uC30D \uC6D0\uC22D\uC774"
-    describe: "\uCE68\uD32C\uC9C0 3\uBC88 \uD53C\uD558\uAE30"
-    toClear: 3
-    clearCoin: 30
+    isDaily: 0
+  - name: "\uC815\uAE00\uC758\uBC95\uCE59"
+    describe: "\uC815\uAE00\uB9F5 200\uC810 \uB2EC\uC131 1\uD68C"
+    toClear: 1
     isCleared: 0
     isReceived: 0
     questType: 1
+    rewardType: 0
+    clearCoin: 10
     uiNode: {fileID: 0}
-  weeklyAchievements: []
+    isDaily: 0
+  - name: "\uBC31\uB9CC\uC7A5\uC790"
+    describe: "\uD53C\uBC84\uD0C0\uC784 1\uD68C \uB2EC\uC131"
+    toClear: 1
+    isCleared: 0
+    isReceived: 0
+    questType: 2
+    rewardType: 0
+    clearCoin: 10
+    uiNode: {fileID: 0}
+    isDaily: 0
+  - name: "\uC7A5\uBE44\uBE68"
+    describe: "\uC544\uC774\uD15C \uAD6C\uB9E4 1\uD68C"
+    toClear: 1
+    isCleared: 0
+    isReceived: 0
+    questType: 3
+    rewardType: 0
+    clearCoin: 10
+    uiNode: {fileID: 0}
+    isDaily: 0
+  - name: "\uBCF4\uB108\uC2A4"
+    describe: "\uC704\uC758 4\uAC00\uC9C0 \uBAA8\uB450 \uB2EC\uC131"
+    toClear: 4
+    isCleared: 0
+    isReceived: 0
+    questType: 4
+    rewardType: 0
+    clearCoin: 20
+    uiNode: {fileID: 0}
+    isDaily: 0
+  weeklyAchievements:
+  - name: "\uBAA8\uBC94\uC0DD"
+    describe: "\uC77C\uC77C\uACFC\uC81C 20\uAC1C \uB2EC\uC131\t\t"
+    toClear: 20
+    isCleared: 0
+    isReceived: 0
+    questType: 5
+    rewardType: 3
+    clearCoin: 0
+    uiNode: {fileID: 0}
+    isDaily: 0
+  - name: "\uD328\uC154\uB2C8\uC2A4\uD0C0"
+    describe: "\uC2A4\uD0A8\uBF51\uAE30 7\uD68C \uC774\uC0C1"
+    toClear: 7
+    isCleared: 0
+    isReceived: 0
+    questType: 6
+    rewardType: 2
+    clearCoin: 0
+    uiNode: {fileID: 0}
+    isDaily: 0
+  - name: "\uBD88\uD589\uC6B4\uC544"
+    describe: "\uC704\uB85C\uAE08 60\uCF54\uC778\uB2EC\uC131"
+    toClear: 60
+    isCleared: 0
+    isReceived: 0
+    questType: 7
+    rewardType: 1
+    clearCoin: 0
+    uiNode: {fileID: 0}
+    isDaily: 0
+  - name: "\uD6C4\uC6D0\uC655"
+    describe: "\uAD11\uACE0 5\uD68C \uC774\uC0C1 \uC2DC\uCCAD"
+    toClear: 5
+    isCleared: 0
+    isReceived: 0
+    questType: 8
+    rewardType: 4
+    clearCoin: 0
+    uiNode: {fileID: 0}
+    isDaily: 0
+  - name: "\uAC1C\uADFC\uC0C1"
+    describe: "\uCD9C\uC11D 7\uC77C\uCC28"
+    toClear: 7
+    isCleared: 0
+    isReceived: 0
+    questType: 9
+    rewardType: 0
+    clearCoin: 100
+    uiNode: {fileID: 0}
+    isDaily: 0
   achievementUI: {fileID: 352276172}
   activedDailyAchievements: []
   activedWeeklyAchievements: []
@@ -21256,6 +21428,7 @@ MonoBehaviour:
   boxImage1: {fileID: 2045263302}
   boxImage2: {fileID: 301721320}
   boxCover: {fileID: 2016522882}
+  unfortuneUI: {fileID: 86570249}
   skinPreview: {fileID: 824121065}
   buyBtn: {fileID: 891801142}
   confirmBtn: {fileID: 873105491}
@@ -22664,6 +22837,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432309430}
+  m_CullTransparentMesh: 1
+--- !u!1 &433297402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 433297403}
+  - component: {fileID: 433297405}
+  - component: {fileID: 433297404}
+  m_Layer: 5
+  m_Name: CoinTxt (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &433297403
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433297402}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 86570250}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -20, y: -104}
+  m_SizeDelta: {x: 161.85, y: 45.551}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &433297404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433297402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 321a059668271074f908128b77698ea3, type: 3}
+    m_FontSize: 42
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 42
+    m_Alignment: 6
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\uC704\uB85C\uAE08 20"
+--- !u!222 &433297405
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433297402}
   m_CullTransparentMesh: 1
 --- !u!1 &441097581
 GameObject:
@@ -24204,7 +24456,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.13333334, g: 0.4627451, b: 0.8301887, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -24592,8 +24844,9 @@ RectTransform:
   - {fileID: 301721321}
   - {fileID: 873105490}
   - {fileID: 965919789}
+  - {fileID: 86570250}
   m_Father: {fileID: 320729684}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -28319,7 +28572,7 @@ RectTransform:
   - {fileID: 356557943}
   - {fileID: 1801097372}
   m_Father: {fileID: 320729684}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -47433,6 +47686,81 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10ef439bfb265f9459802d6a32fda759, type: 3}
+--- !u!1 &1798810073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1798810074}
+  - component: {fileID: 1798810076}
+  - component: {fileID: 1798810075}
+  m_Layer: 5
+  m_Name: Coin (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1798810074
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798810073}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 86570250}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 287, y: -103.99998}
+  m_SizeDelta: {x: 45.5555, y: 45.5555}
+  m_Pivot: {x: 4.987703, y: 0.5}
+--- !u!114 &1798810075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798810073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8a20efb8637b4894baa930468da71e85, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1798810076
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798810073}
+  m_CullTransparentMesh: 1
 --- !u!1 &1799609587
 GameObject:
   m_ObjectHideFlags: 0
@@ -56685,7 +57013,7 @@ RectTransform:
   - {fileID: 813248896}
   - {fileID: 718442674}
   m_Father: {fileID: 320729684}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

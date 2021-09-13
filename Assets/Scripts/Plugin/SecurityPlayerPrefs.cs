@@ -170,6 +170,7 @@ public class SecurityPlayerPrefs
     public static void SetString(string key, string value)
     {
         SetSecurityValue(key, key + value);
+        Debug.LogWarning(key + value);
     }
 
     // 위에 저렇게 해놔서 Get하는 부분도 변경

@@ -106,7 +106,6 @@ public class SpawnEnemy : MonoBehaviour
         if(spawnPoint == 0)
             spawnPoint = Random.Range(1, 5);
 
-        enemys.snake.GetComponent<EnemySnake>().speed = enemyLevel.snakeSpeed;
         Debug.Log(spawnPoint);
         
         switch(spawnPoint){
@@ -126,10 +125,7 @@ public class SpawnEnemy : MonoBehaviour
     }
 
     public void SpawnPanzee(){
-        enemys.panzee.GetComponent<EnemyPanzee>().XPower = enemyLevel.panzeeXPower;
-        enemys.panzee.GetComponent<EnemyPanzee>().YPower = enemyLevel.panzeeYPower;
         Instantiate(enemys.panzee, new Vector3(Random.Range(-4f, 4f), cam.position.y - 11f, 0), Quaternion.Euler(0, 0, 0));
-        Counts.panzeeCount++;
     }
 
     public void SpawnApple() { SpawnApple(0);}

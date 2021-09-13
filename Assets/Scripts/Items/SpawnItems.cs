@@ -83,6 +83,7 @@ public class SpawnItems : MonoBehaviour
 
     IEnumerator FeverTime()
     {
+        Counts.feverCount++;
         for(int i = 0; i< feverTimePeriod * 10; i++)
         {
             SpawnCoin();

@@ -9,6 +9,7 @@ public class GambleUIManager : MonoBehaviour
     public GameObject boxImage1;    // ?????? ???
     public GameObject boxImage2;    // ?????? ???
     public GameObject boxCover;
+    public GameObject unfortuneUI;
     public Image skinPreview;
     public Button buyBtn;
     public Button confirmBtn;
@@ -28,6 +29,7 @@ public class GambleUIManager : MonoBehaviour
     int normalWeight = 60;
     int rareWeight = 30;
     int hardWeight = 10;
+    bool isAlreadyEarned = false;
     bool isShaking = false;
     bool isPrivewing = false;
     Vector3 defaultBox = new Vector3();
@@ -41,6 +43,7 @@ public class GambleUIManager : MonoBehaviour
         buyText = buyBtn.gameObject.transform.GetChild(0).GetComponent<Text>();
         skinManager = gameManager.GetComponent<ObjReskin>();
         skinList = skinManager.skinDatas;
+        buyText.text = gamblePrice.ToString();
 
         GameObject temp = GameObject.FindWithTag("Network");
 
@@ -56,13 +59,20 @@ public class GambleUIManager : MonoBehaviour
     void FixedUpdate()
     {
         moneyText.text = GameSystem.getCoin().ToString();
-        if (GameSystem.getCoin() < gamblePrice)
+        if (GameSystem.getCoin() < gamblePrice && !GameSystem.hasFreeSkin)
         {
+            buyText.text = gamblePrice.ToString();
             buyText.color = Color.red;
             buyBtn.interactable = false;
         }            
-        else
+        else if(GameSystem.hasFreeSkin){
+            buyText.color = new Color32(34, 118, 212, 255);
+            buyText.text = "공짜";
+        }
+        else{
+            buyText.text = gamblePrice.ToString();
             buyText.color = new Color(0.2f, 0.2f, 0.2f);
+        }
 
 
         if (isShaking)
@@ -89,6 +99,7 @@ public class GambleUIManager : MonoBehaviour
         gradeText.gameObject.SetActive(false);
         skinPreview.gameObject.SetActive(false);
         previewName.gameObject.SetActive(false);
+        unfortuneUI.SetActive(false);
 
         boxImage1.transform.LeanMoveLocalY(55f, 1f).setEaseOutBounce();
         boxImage2.transform.LeanMoveLocalY(55f, 1f).setEaseOutBounce();
@@ -101,7 +112,13 @@ public class GambleUIManager : MonoBehaviour
 
     public void GambleBtnOnClick()
     {
-        GameSystem.addCoin(-gamblePrice);
+        Counts.skinGambleCount++;
+        if(!GameSystem.hasFreeSkin){
+            GameSystem.addCoin(-gamblePrice);
+        }
+        else{
+            GameSystem.hasFreeSkin = false;
+        }
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
 
         if (!isPrivewing)
@@ -142,6 +159,7 @@ public class GambleUIManager : MonoBehaviour
         buyBtn.gameObject.SetActive(false);
         confirmBtn.gameObject.SetActive(false);
         titleText.gameObject.SetActive(false);
+        unfortuneUI.SetActive(false);
 
         Vector3 originalPos = boxImage1.transform.localPosition;
         if(isShaking == false)
@@ -179,6 +197,11 @@ public class GambleUIManager : MonoBehaviour
             gradeText.color = new Color32(255, 0, 108, 255);
         }
 
+        if(isAlreadyEarned){
+            gradeText.text = "중복...";
+            gradeText.color = Color.gray;
+        }
+
         skinPreview.sprite = sprites[0];
         skinPreview.transform.localScale = new Vector3(0, 0, 0);
         skinPreview.gameObject.SetActive(true);
@@ -191,8 +214,17 @@ public class GambleUIManager : MonoBehaviour
         isPrivewing = true;
 
         confirmBtn.gameObject.SetActive(true);
+        
         buyBtn.gameObject.SetActive(true);
         buyBtn.interactable = true;
+
+        if(isAlreadyEarned){
+            unfortuneUI.SetActive(true);
+            
+            GameSystem.addCoin(20);
+            Counts.unfortuneCount += 20;
+            SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
+        }
         
         while(isPrivewing)
         {
@@ -213,6 +245,7 @@ public class GambleUIManager : MonoBehaviour
     {
         int total = 0;
         int randomNum;
+        isAlreadyEarned = false;
         skinEarned = null;
         List<int> weights = new List<int>();
         weights.Add(0);        
@@ -243,6 +276,9 @@ public class GambleUIManager : MonoBehaviour
         {
             if(randomNum < weights[i])
             {
+                if(skinList[i].isUnlocked == true){
+                    isAlreadyEarned = true;
+                }
                 skinList[i].isUnlocked = true;
                 skinEarned = skinList[i];
                 break;

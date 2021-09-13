@@ -31,12 +31,9 @@ public class EnemyLevel{
 
     [Space(10f)]
     public bool spawnSnake = false;
-    public float snakeSpeed = 12f;
     
     [Space(10f)]
     public bool spawnPanzee = false;
-    public float panzeeXPower = 12f;
-    public float panzeeYPower = 15f;
 
     [Space(10f)]
     public bool spawnApple = false;

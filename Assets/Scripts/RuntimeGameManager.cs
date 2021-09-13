@@ -81,20 +81,28 @@ public class RuntimeGameManager : MonoBehaviour
     }
 
     public void stageClear(){
+        if(GameSystem.getStage() == 0){
+            if(GameSystem.getScore() >= 200)
+                Counts.jungleScore++;
+        }
         if(GameSystem.playerClearedStage < GameSystem.getStage() + 1)
             GameSystem.playerClearedStage = GameSystem.getStage() + 1;
 
         canvas.GetComponent<StageClearUI>().startStageClearUI();
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
         SecurityPlayerPrefs.SetInt("playerClearedStage", GameSystem.playerClearedStage);
+        GetComponent<AchievementManager>().refreshAchieve();
 
-        
         endingsSave();
         if(netManager != null)
             netManager.SaveCloud();
     }
 
     public void playerDead(){
+        if(GameSystem.getStage() == 0){
+            if(GameSystem.getScore() >= 200)
+                Counts.jungleScore++;
+        }
         GetComponent<AchievementManager>().refreshAchieve();
         GameSystem.resetStartItem();
         canvas.GetComponent<GameoverUI>().startGameoverUI();

@@ -15,6 +15,7 @@ public class GameSystem
     public static bool hasHeartPlus = false;
     public static bool hasHeartDoublePlus = false;
     public static bool hasBooster = false;    
+    public static bool hasFreeSkin = false;
 
     public static float playerHeight = 0;
     private static float timeScale = 1;
