@@ -70,8 +70,8 @@ public class Achievement{
         if(toClear <= score){
             if(isCleared == false){
                 isCleared = true;
-                score = toClear;
             }
+            score = toClear;
         }
     }
     public void addScore(int newScore){
@@ -122,7 +122,6 @@ public class Achievement{
             break;
 
             case QuestType.LOGIN_QUEST :
-                Debug.LogWarning("wowwowowo" + Counts.logInCount);
                 addScore(Counts.logInCount);
             break;
 

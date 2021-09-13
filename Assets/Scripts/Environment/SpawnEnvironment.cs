@@ -31,7 +31,6 @@ public class SpawnEnvironment : MonoBehaviour
             lastSpawn = enviLevel.spawnHeight;
         }
         if((GameSystem.playerHeight % enviLevel.spawnHeight < 1f) && (GameSystem.playerHeight > (1f + lastSpawn))){
-            Debug.LogWarning("branch" + lastSpawn);
             SpawnBranch(0);
             lastSpawn += enviLevel.spawnHeight;
         }

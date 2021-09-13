@@ -45,8 +45,6 @@ public class AchievementManager : MonoBehaviour
 
         activedDailyAchievements.Clear();
 
-        Debug.LogWarning("load" + dailyRefreshedTime);
-
         if(dailyRefreshedTime.AddDays(1) < UnbiasedTime.Instance.Now()){
             renewDailyAchieve();
             return;
@@ -74,7 +72,6 @@ public class AchievementManager : MonoBehaviour
 
         activedWeeklyAchievements.Clear();
 
-        Debug.LogWarning("load" + weeklyRefreshedTime);
         if(weeklyRefreshedTime.AddDays(7) < UnbiasedTime.Instance.Now()){
             renewWeeklyAchieve();
             return;
