@@ -54,10 +54,20 @@ public class LevelSpawner : MonoBehaviour
                 if(GameSystem.playerHeight > level.LevelChangeHeight){
                     Debug.Log("levelUp");
                     GameSystem.levelUp();
+                    
+                    if(stages[GameSystem.getStage()].isInfStage){
+                        Stage tt = stages[GameSystem.getStage()];
+                        Level tempLevel = tt.levels[tt.levels.Count - 1];
+                        tempLevel.LevelChangeHeight = tempLevel.LevelChangeHeight + 150;
+                        stages[GameSystem.getStage()].levels.Add(tempLevel);
+                    }
                 }
+
+                
             }
             else {
                 if(GameSystem.playerHeight > level.LevelChangeHeight){
+                    
                     if(!bgSpriteSetter.isEnd){
                         Debug.Log("stageUp");
                         bgSpriteSetter.isEnd = true;

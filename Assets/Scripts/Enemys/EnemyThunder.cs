@@ -32,14 +32,6 @@ public class EnemyThunder : Enemy
         col.enabled = true;        
         yield return new WaitForSeconds(thunderTime);
         
-        spriteRenderer.color = new Color(1,1,1,0);
-        col.enabled = false;        
-        yield return new WaitForSeconds(thunderTime / 2);
-
-        spriteRenderer.color = new Color(1,1,1,1);
-        col.enabled = true;
-
-        yield return new WaitForSeconds(thunderTime);
         Destroy(gameObject);
     }
 }

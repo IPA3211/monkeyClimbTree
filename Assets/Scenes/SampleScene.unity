@@ -7678,6 +7678,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152029073}
   m_CullTransparentMesh: 1
+--- !u!1 &153706051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 153706052}
+  - component: {fileID: 153706054}
+  - component: {fileID: 153706053}
+  m_Layer: 5
+  m_Name: Warn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &153706052
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153706051}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1165622194}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20, y: 15}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &153706053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153706051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 54808b1b1f9eb4842a36e67eb2570b36, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &153706054
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153706051}
+  m_CullTransparentMesh: 1
 --- !u!1 &154481023
 GameObject:
   m_ObjectHideFlags: 0
@@ -12940,6 +13015,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169661972}
+  m_CullTransparentMesh: 1
+--- !u!1 &179629525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 179629526}
+  - component: {fileID: 179629528}
+  - component: {fileID: 179629527}
+  m_Layer: 5
+  m_Name: Warn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &179629526
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179629525}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 768029552}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20, y: 15}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &179629527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179629525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 54808b1b1f9eb4842a36e67eb2570b36, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &179629528
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179629525}
   m_CullTransparentMesh: 1
 --- !u!1 &183546425
 GameObject:
@@ -20235,7 +20385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c381e0001978340ba00e080653d98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSpawnPeriod: 5
+  coinSpawnPeriod: 10
   potionSpawnPeriod: 15
   feverTimePeriod: 5
   coin: {fileID: 6282582751130997419, guid: 731b357c681838d4aade64a7810145ef, type: 3}
@@ -20414,6 +20564,7 @@ MonoBehaviour:
   levelDesignBtn: {fileID: 247891255}
   stages:
   - isDebugStage: 0
+    isInfStage: 0
     spriteSet:
       first: {fileID: 21300000, guid: 0efbe185ca5ecb142a86bf8506b25184, type: 3}
       middle:
@@ -20500,6 +20651,7 @@ MonoBehaviour:
         spawnBush: 1
         bushNum: 5
   - isDebugStage: 0
+    isInfStage: 0
     spriteSet:
       first: {fileID: 21300000, guid: ff126559c4f605f46aca140323fd803a, type: 3}
       middle:
@@ -20586,6 +20738,7 @@ MonoBehaviour:
         spawnBush: 1
         bushNum: 5
   - isDebugStage: 0
+    isInfStage: 0
     spriteSet:
       first: {fileID: 21300000, guid: 2498500dc1eed4d44a1bf78912cf2cb9, type: 3}
       middle:
@@ -20672,6 +20825,7 @@ MonoBehaviour:
         spawnBush: 1
         bushNum: 5
   - isDebugStage: 0
+    isInfStage: 0
     spriteSet:
       first: {fileID: 21300000, guid: beeef8a96a3e9fd4788415fb97636095, type: 3}
       middle:
@@ -20758,6 +20912,7 @@ MonoBehaviour:
         spawnBush: 1
         bushNum: 5
   - isDebugStage: 0
+    isInfStage: 0
     spriteSet:
       first: {fileID: 21300000, guid: b342e2055a0a3124e8745e189294c558, type: 3}
       middle:
@@ -20844,6 +20999,7 @@ MonoBehaviour:
         spawnBush: 1
         bushNum: 5
   - isDebugStage: 0
+    isInfStage: 1
     spriteSet:
       first: {fileID: 21300000, guid: 4f3fd4b34c6f4db4280250f2d98fd9ef, type: 3}
       middle:
@@ -20864,7 +21020,7 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 4f3fd4b34c6f4db4280250f2d98fd9ef, type: 3}
       end: {fileID: 21300000, guid: 6184d498cbd5a754dbe6ed3d695038cc, type: 3}
     levels:
-    - timeScale: 1.1
+    - timeScale: 1.12
       LevelChangeHeight: 110
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
@@ -20876,7 +21032,7 @@ MonoBehaviour:
         spawnSnake: 1
         spawnPanzee: 1
         spawnApple: 0
-        spawnEagle: 1
+        spawnEagle: 0
         spawnDolphin: 0
         spawnJellyfish: 0
         spawnPlane: 0
@@ -20890,7 +21046,7 @@ MonoBehaviour:
         spawnHeight: 40
         spawnBush: 1
         bushNum: 3
-    - timeScale: 1.15
+    - timeScale: 1.14
       LevelChangeHeight: 225
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
@@ -20902,7 +21058,7 @@ MonoBehaviour:
         spawnSnake: 1
         spawnPanzee: 1
         spawnApple: 0
-        spawnEagle: 1
+        spawnEagle: 0
         spawnDolphin: 0
         spawnJellyfish: 0
         spawnPlane: 0
@@ -20916,8 +21072,8 @@ MonoBehaviour:
         spawnHeight: 45
         spawnBush: 1
         bushNum: 3
-    - timeScale: 1.15
-      LevelChangeHeight: 2.1e+9
+    - timeScale: 1.16
+      LevelChangeHeight: 340
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
         spawnPeriod: 5
@@ -20927,8 +21083,8 @@ MonoBehaviour:
         wallAmount: 2
         spawnSnake: 1
         spawnPanzee: 1
-        spawnApple: 0
-        spawnEagle: 1
+        spawnApple: 1
+        spawnEagle: 0
         spawnDolphin: 0
         spawnJellyfish: 0
         spawnPlane: 0
@@ -20942,7 +21098,476 @@ MonoBehaviour:
         spawnHeight: 45
         spawnBush: 1
         bushNum: 3
+    - timeScale: 1.18
+      LevelChangeHeight: 460
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.2
+      LevelChangeHeight: 580
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.22
+      LevelChangeHeight: 705
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.24
+      LevelChangeHeight: 830
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.26
+      LevelChangeHeight: 960
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.28
+      LevelChangeHeight: 1090
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.3
+      LevelChangeHeight: 1220
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.32
+      LevelChangeHeight: 1350
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.34
+      LevelChangeHeight: 1485
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.36
+      LevelChangeHeight: 1620
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.38
+      LevelChangeHeight: 1755
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.4
+      LevelChangeHeight: 1890
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.42
+      LevelChangeHeight: 2030
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.44
+      LevelChangeHeight: 2170
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.46
+      LevelChangeHeight: 2315
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.48
+      LevelChangeHeight: 2460
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.5
+      LevelChangeHeight: 2610
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 1
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 0
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 0
+        spawnSatellite: 0
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 45
+        spawnBush: 1
+        bushNum: 3
+    - timeScale: 1.5
+      LevelChangeHeight: 2760
+      LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
+      enemyLevel:
+        spawnPeriod: 5
+        minSpawnAmount: 2
+        maxSpawnAmount: 2
+        spawnWall: 1
+        wallAmount: 2
+        spawnSnake: 1
+        spawnPanzee: 1
+        spawnApple: 0
+        spawnEagle: 0
+        spawnDolphin: 1
+        spawnJellyfish: 1
+        spawnPlane: 0
+        spawnThunder: 0
+        spawnUFO: 1
+        spawnSatellite: 1
+      enviLevel:
+        spawnPeriod: 0
+        spawnBranch: 1
+        branchNum: 0
+        spawnHeight: 40
+        spawnBush: 1
+        bushNum: 3
   - isDebugStage: 1
+    isInfStage: 0
     spriteSet:
       first: {fileID: 21300000, guid: b342e2055a0a3124e8745e189294c558, type: 3}
       middle:
@@ -21283,6 +21908,11 @@ MonoBehaviour:
   rightBtn: {fileID: 2016121625}
   leftBtn: {fileID: 1681510635}
   rocket: {fileID: 1751395399}
+  coin: {fileID: 1889367333}
+  skin: {fileID: 2003236950}
+  ending: {fileID: 1339857779}
+  ranking: {fileID: 179629525}
+  achieve: {fileID: 153706051}
 --- !u!114 &352276165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27884,6 +28514,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 387691387}
+  - {fileID: 179629526}
   m_Father: {fileID: 548066361}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27936,22 +28567,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 352276168}
-        m_TargetAssemblyTypeName: TweenUI, Assembly-CSharp
-        m_MethodName: OpenTween
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 336812085}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 755988269}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
+      - m_Target: {fileID: 352276164}
+        m_TargetAssemblyTypeName: LobbyUIManager, Assembly-CSharp
+        m_MethodName: onRankingBtnClicked
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -28239,7 +28858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784131744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.415, z: 0}
+  m_LocalPosition: {x: 0, y: -7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 223875798}
@@ -29955,6 +30574,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 351710422}
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: refreshAchieve
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &873105492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31591,6 +32222,7 @@ RectTransform:
   m_Children:
   - {fileID: 66557089}
   - {fileID: 593917543}
+  - {fileID: 1889367334}
   m_Father: {fileID: 1176456150}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33287,6 +33919,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1136600114}
+  - {fileID: 153706052}
   m_Father: {fileID: 548066361}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41020,6 +41653,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334694642}
   m_CullTransparentMesh: 1
+--- !u!1 &1339857779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1339857780}
+  - component: {fileID: 1339857782}
+  - component: {fileID: 1339857781}
+  m_Layer: 5
+  m_Name: Warn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1339857780
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339857779}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1413856532}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20, y: 15}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1339857781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339857779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 54808b1b1f9eb4842a36e67eb2570b36, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1339857782
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339857779}
+  m_CullTransparentMesh: 1
 --- !u!1 &1341251684
 GameObject:
   m_ObjectHideFlags: 0
@@ -41767,6 +42475,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 614748080}
+  - {fileID: 1339857780}
   m_Father: {fileID: 548066361}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49467,6 +50176,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1889367333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889367334}
+  - component: {fileID: 1889367336}
+  - component: {fileID: 1889367335}
+  m_Layer: 5
+  m_Name: Warn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1889367334
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889367333}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 993910146}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -21, y: 53}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1889367335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889367333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 54808b1b1f9eb4842a36e67eb2570b36, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1889367336
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889367333}
+  m_CullTransparentMesh: 1
 --- !u!1 &1892092411
 GameObject:
   m_ObjectHideFlags: 0
@@ -56265,6 +57049,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001320857}
   m_CullTransparentMesh: 1
+--- !u!1 &2003236950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003236951}
+  - component: {fileID: 2003236953}
+  - component: {fileID: 2003236952}
+  m_Layer: 5
+  m_Name: Warn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2003236951
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003236950}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2098056857}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20, y: 15}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2003236952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003236950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 54808b1b1f9eb4842a36e67eb2570b36, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2003236953
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003236950}
+  m_CullTransparentMesh: 1
 --- !u!1 &2008561674
 GameObject:
   m_ObjectHideFlags: 0
@@ -57683,6 +58542,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1941172519}
+  - {fileID: 2003236951}
   m_Father: {fileID: 548066361}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

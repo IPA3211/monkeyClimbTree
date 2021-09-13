@@ -7,7 +7,7 @@ public class AchievementNode : MonoBehaviour
 {
     // Start is called before the first frame update
     public Text title, describe, count, btnText;
-    public GameObject coinUI, MagnetUI, BoosterUI, SkinUI, HeartUI;
+    public GameObject coinUI, MagnetUI, BoosterUI, SkinUI, HeartUI, clearUI;
     public Button btn;
     Achievement owner;
     AchievementManager achievementManager;
@@ -20,6 +20,7 @@ public class AchievementNode : MonoBehaviour
         title.text = achieveInfo.name;
         describe.text = achieveInfo.describe;
         setRewardUI(achieveInfo.rewardType);
+        clearUI.SetActive(achieveInfo.isReceived);
         count.text = achieveInfo.getScore() + " / " + achieveInfo.toClear;
         btnText.text = achieveInfo.clearCoin.ToString();
 

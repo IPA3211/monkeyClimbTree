@@ -181,6 +181,8 @@ public class GambleUIManager : MonoBehaviour
         previewName.text = skinEarned.skinName.ToString();
         sprites = Resources.LoadAll<Sprite>("Sprites/Skin/" + skinEarned.texture.name);
 
+        GameSystem.warnSkin = true;
+
         if(skinEarned.rareNum == rare.Normal)
         {
             gradeText.text = "노말 등급";
@@ -199,6 +201,7 @@ public class GambleUIManager : MonoBehaviour
 
         if(isAlreadyEarned){
             gradeText.text = "중복...";
+            GameSystem.warnSkin = false;
             gradeText.color = Color.gray;
         }
 

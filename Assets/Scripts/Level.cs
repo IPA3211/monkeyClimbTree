@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Stage{
     public bool isDebugStage = false;
+    public bool isInfStage = false;
     public SpriteSet spriteSet;
     public List<Level> levels;
 }

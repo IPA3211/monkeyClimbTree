@@ -12,16 +12,29 @@ public class LobbyUIManager : MonoBehaviour
     public Text coinText;
     public GameObject rightBtn, leftBtn;
     public GameObject rocket;
+    [Header("Warns")]
+    public GameObject coin, skin, ending, ranking, achieve;
+
+    GoogleManager netManager = null;
 
     // Start is called before the first frame update
     void Start()
     {
         coinText.text = GameSystem.getCoin().ToString();
         StageTextChange();
+
+        GameObject temp = GameObject.FindWithTag("Network");
+        setWarning();
+        if(temp != null){
+            netManager = temp.GetComponent<GoogleManager>();
+        }
+        else
+            JsonManager.Load();
     }
     private void FixedUpdate()
     {
         coinText.text = GameSystem.getCoin().ToString();
+        setWarning();
     }
     private void OnEnable()
     {
@@ -57,8 +70,36 @@ public class LobbyUIManager : MonoBehaviour
         }
 
         stageText.text = "Stage " + (GameSystem.getStage() + 1); 
+        if(GameSystem.getStage() == GameSystem.maxStage - 1){
+            stageText.text = "무한 모드"; 
+        }
         if(GameSystem.getStage() == GameSystem.maxStage){
             stageText.text = "Debug Stage"; 
+        }
+    }
+
+    void setWarning(){
+        coin.SetActive(false);
+        skin.SetActive(false);
+        ranking.SetActive(false);
+        achieve.SetActive(false);
+        ending.SetActive(false);
+
+        if(GameSystem.getCoin() > 100 || GameSystem.hasFreeSkin){
+            coin.SetActive(true);
+        }
+
+        if(GameSystem.warnAchieve){
+            achieve.SetActive(true);
+        }
+        if(GameSystem.warnEnding){
+            ending.SetActive(true);
+        }
+        if(GameSystem.warnRanking){
+            ranking.SetActive(true);
+        }
+        if(GameSystem.warnSkin){
+            skin.SetActive(true);
         }
     }
 
@@ -66,5 +107,10 @@ public class LobbyUIManager : MonoBehaviour
         GameSystem.playerClearedStage = GameSystem.maxStage;
         SecurityPlayerPrefs.SetInt("playerClearedStage", GameSystem.playerClearedStage);
         StageTextChange();
+    }
+
+    public void onRankingBtnClicked(){
+        if(netManager != null)
+            netManager.ShowinfLeaderboardUI();
     }
 }

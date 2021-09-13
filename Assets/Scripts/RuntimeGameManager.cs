@@ -103,6 +103,12 @@ public class RuntimeGameManager : MonoBehaviour
             if(GameSystem.getScore() >= 200)
                 Counts.jungleScore++;
         }
+
+        if(GameSystem.getStage() == 5){
+            if(netManager != null){
+                netManager.addInfLeaderboard(GameSystem.getScore());
+            }
+        }
         GetComponent<AchievementManager>().refreshAchieve();
         GameSystem.resetStartItem();
         canvas.GetComponent<GameoverUI>().startGameoverUI();

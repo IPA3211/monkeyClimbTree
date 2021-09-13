@@ -163,6 +163,9 @@ public class Achievement{
 
     public void refresh(){
         countScore();
+        if(isReceived == false && isCleared == true){
+            GameSystem.warnAchieve = true;
+        }
         uiNode.refresh(this);
     }
 }

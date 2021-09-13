@@ -17,6 +17,11 @@ public class GameSystem
     public static bool hasBooster = false;    
     public static bool hasFreeSkin = false;
 
+    public static bool warnSkin = false;
+    public static bool warnEnding = false;
+    public static bool warnRanking = false;
+    public static bool warnAchieve = false;
+
     public static float playerHeight = 0;
     private static float timeScale = 1;
     private static float maxHeight = 0;

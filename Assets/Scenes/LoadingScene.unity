@@ -130,6 +130,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 82705931, guid: fe81ee535545a4e4d8d09fe7619e7c1b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 101683144212072976, guid: fe81ee535545a4e4d8d09fe7619e7c1b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 101683144212072976, guid: fe81ee535545a4e4d8d09fe7619e7c1b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 101683144212072976, guid: fe81ee535545a4e4d8d09fe7619e7c1b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4716981
+      objectReference: {fileID: 0}
     - target: {fileID: 8289528893005504376, guid: fe81ee535545a4e4d8d09fe7619e7c1b, type: 3}
       propertyPath: m_Name
       value: NetworkManager

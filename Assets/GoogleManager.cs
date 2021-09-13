@@ -157,6 +157,10 @@ public class GoogleManager : MonoBehaviour
         else Debug.Log("삭제 실패");
     }
 
+    public void ShowLeaderboardUI() => Social.ShowLeaderboardUI();
+    public void ShowinfLeaderboardUI() => ((PlayGamesPlatform)Social.Active).ShowLeaderboardUI(GPGSIds.leaderboard);
+    public void addInfLeaderboard(int a) => Social.ReportScore(a, GPGSIds.leaderboard, (bool success) => {});
+
     #endregion
 
     

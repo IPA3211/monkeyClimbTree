@@ -23,6 +23,16 @@ public class TweenUI : MonoBehaviour
 
     public void OpenTween(GameObject other)
     {
+        if(other.name.Equals("SkinUI")){
+            GameSystem.warnSkin = false;
+        }
+        else if(other.name.Equals("EndingUI")){
+            GameSystem.warnEnding = false;
+        }
+        else if(other.name.Equals("AchievementUI")){
+            GameSystem.warnAchieve = false;
+        }
+
         opend.Add(other);
         if(opend.Count >= 1){
             background.SetActive(true);

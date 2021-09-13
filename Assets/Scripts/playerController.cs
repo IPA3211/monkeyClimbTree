@@ -81,7 +81,7 @@ public class playerController : MonoBehaviour
     void FixedUpdate()
     {
         if(!GameSystem.isStarted){
-            gameObject.transform.position = cam.transform.position + new Vector3(0, -9.415f, 10f);
+            gameObject.transform.position = cam.transform.position + new Vector3(0, -7f, 10f);
         }
 
         if(!GameSystem.getPause() && GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isStageCleared)
