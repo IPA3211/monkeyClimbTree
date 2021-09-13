@@ -20379,6 +20379,22 @@ MonoBehaviour:
     isUnlocked: 0
   - texture: {fileID: 2800000, guid: af4d3b28ab4b5f347a77822550e6604b, type: 3}
     skinName: "\uD638\uB791\uC774 \uC6D0\uC22D\uC774"
+    rareNum: 1
+    isUnlocked: 0
+  - texture: {fileID: 2800000, guid: 4f763b246ec8d2d45a585f5d1466c9a7, type: 3}
+    skinName: "\uC0C1\uC5B4 \uC6D0\uC22D\uC774"
+    rareNum: 1
+    isUnlocked: 0
+  - texture: {fileID: 2800000, guid: ef43ac72fa4e81b488d48e18b1d72931, type: 3}
+    skinName: "\uAFC0\uBC8C \uC6D0\uC22D\uC774"
+    rareNum: 1
+    isUnlocked: 0
+  - texture: {fileID: 2800000, guid: 18b8f57e32ca6974fab889d9bd006b92, type: 3}
+    skinName: "\uB9C8\uB9B0 \uC6D0\uC22D\uC774"
+    rareNum: 1
+    isUnlocked: 0
+  - texture: {fileID: 2800000, guid: 3fb36d3773ccff74fadf309d2bc98b85, type: 3}
+    skinName: "\uCC9C\uC0AC \uC6D0\uC22D\uC774"
     rareNum: 2
     isUnlocked: 0
   skinNumber: 0

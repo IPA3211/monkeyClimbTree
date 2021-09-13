@@ -50,6 +50,27 @@ TextureImporter:
   - first:
       213: -6775097961101524405
     second: tiger_sprite_15
+  - first:
+      213: 2683791360106628551
+    second: tiger_sprite_16
+  - first:
+      213: -3993090187583913196
+    second: tiger_sprite_17
+  - first:
+      213: -5025080356639143437
+    second: tiger_sprite_18
+  - first:
+      213: -5798027524773952365
+    second: tiger_sprite_19
+  - first:
+      213: 2968495785312682428
+    second: tiger_sprite_20
+  - first:
+      213: 372085820369818310
+    second: tiger_sprite_21
+  - first:
+      213: -1004197194558726007
+    second: tiger_sprite_22
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -482,6 +503,153 @@ TextureImporter:
       bones: []
       spriteID: b420216ec440af1a0800000000000000
       internalID: -6775097961101524405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c50b6ec50ebe3520800000000000000
+      internalID: 2683791360106628551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41386f471a1b598c0800000000000000
+      internalID: -3993090187583913196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f90bb62a04534ab0800000000000000
+      internalID: -5025080356639143437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_sprite_19
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39449eb7fa4498fa0800000000000000
+      internalID: -5798027524773952365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_sprite_20
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb18ec06037323920800000000000000
+      internalID: 2968495785312682428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c25a1d051ae92500800000000000000
+      internalID: 372085820369818310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiger_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98022e5d8ff5012f0800000000000000
+      internalID: -1004197194558726007
       vertices: []
       indices: 
       edges: []

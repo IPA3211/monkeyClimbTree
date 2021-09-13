@@ -50,6 +50,27 @@ TextureImporter:
   - first:
       213: -6984873370849174070
     second: monkey_legend_all_green_15
+  - first:
+      213: 7542934090055472933
+    second: monkey_legend_all_green_16
+  - first:
+      213: 8625434591690166218
+    second: monkey_legend_all_green_17
+  - first:
+      213: 4856741059889479804
+    second: monkey_legend_all_green_18
+  - first:
+      213: -5763010700694572592
+    second: monkey_legend_all_green_19
+  - first:
+      213: -4559652105166525126
+    second: monkey_legend_all_green_20
+  - first:
+      213: -5089359856272038335
+    second: monkey_legend_all_green_21
+  - first:
+      213: -1159785471824798952
+    second: monkey_legend_all_green_22
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -482,6 +503,153 @@ TextureImporter:
       bones: []
       spriteID: acd13793daeb01f90800000000000000
       internalID: -6984873370849174070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_legend_all_green_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 527d0f93792eda860800000000000000
+      internalID: 7542934090055472933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_legend_all_green_17
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf0f07cf03b3b770800000000000000
+      internalID: 8625434591690166218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_legend_all_green_18
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7044c8034c966340800000000000000
+      internalID: 4856741059889479804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_legend_all_green_19
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d1335c2d4ca500b0800000000000000
+      internalID: -5763010700694572592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_legend_all_green_20
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3def24819cd8b0c0800000000000000
+      internalID: -4559652105166525126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_legend_all_green_21
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 146a5c0ec26fe59b0800000000000000
+      internalID: -5089359856272038335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monkey_legend_all_green_22
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81b5938124d97efe0800000000000000
+      internalID: -1159785471824798952
       vertices: []
       indices: 
       edges: []
