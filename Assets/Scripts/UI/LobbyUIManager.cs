@@ -13,6 +13,7 @@ public class LobbyUIManager : MonoBehaviour
     public GameObject rightBtn, leftBtn;
     public GameObject rocket;
     [Header("Warns")]
+    public GameObject infWarnText;
     public GameObject coin, skin, ending, ranking, achieve;
 
     GoogleManager netManager = null;
@@ -33,6 +34,9 @@ public class LobbyUIManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if(GameSystem.hasBooster){
+            rocket.SetActive(true);
+        }
         coinText.text = GameSystem.getCoin().ToString();
         setWarning();
     }
@@ -52,6 +56,9 @@ public class LobbyUIManager : MonoBehaviour
     }
     public void OnStartBtnClicked(){
         lobbyUI.SetActive(false);
+        if(GameSystem.getStage() == GameSystem.maxStage -1){
+            GameSystem.resetStartItem();
+        }
     }
 
     void StageTextChange(){
@@ -68,9 +75,12 @@ public class LobbyUIManager : MonoBehaviour
             leftBtn.SetActive(true);
             rocket.SetActive(true);
         }
+        
+        infWarnText.SetActive(false);
 
         stageText.text = "Stage " + (GameSystem.getStage() + 1); 
         if(GameSystem.getStage() == GameSystem.maxStage - 1){
+            infWarnText.SetActive(true);
             stageText.text = "무한 모드"; 
         }
         if(GameSystem.getStage() == GameSystem.maxStage){

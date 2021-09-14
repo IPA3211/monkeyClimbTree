@@ -9,6 +9,7 @@ public class RuntimeGameManager : MonoBehaviour
     public static GameObject gameManager;
     float timeCount;
     public GameObject canvas;
+    public GameObject rocket;
     EndingManager endingManger;
     ReadyUIManager readyUIManager;
     GoogleManager netManager = null;
@@ -48,6 +49,11 @@ public class RuntimeGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameSystem.isRestarted){
+            if(GameSystem.hasBooster)
+                rocket.SetActive(true);
+        }
+
         if(GameSystem.CanTimeCount()){
             timeCount += Time.deltaTime;
         }
@@ -87,6 +93,8 @@ public class RuntimeGameManager : MonoBehaviour
         }
         if(GameSystem.playerClearedStage < GameSystem.getStage() + 1)
             GameSystem.playerClearedStage = GameSystem.getStage() + 1;
+
+        GameSystem.resetStartItem();
 
         canvas.GetComponent<StageClearUI>().startStageClearUI();
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());

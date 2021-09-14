@@ -5797,11 +5797,10 @@ RectTransform:
   - {fileID: 184284506}
   - {fileID: 624281426}
   - {fileID: 496795351}
-  - {fileID: 860199644}
-  - {fileID: 285683587}
-  - {fileID: 552538797}
   - {fileID: 1712282821}
   - {fileID: 2020521635}
+  - {fileID: 578099694}
+  - {fileID: 1726322002}
   m_Father: {fileID: 1562864347}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19434,8 +19433,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 70506355}
-  m_RootOrder: 7
+  m_Father: {fileID: 1726322002}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20693,6 +20692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 352276157}
+  rocket: {fileID: 1751395399}
 --- !u!114 &351710419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21364,7 +21364,7 @@ MonoBehaviour:
         spawnPeriod: 0
         spawnBranch: 1
         branchNum: 0
-        spawnHeight: 45
+        spawnHeight: 50
         spawnBush: 1
         bushNum: 3
     - timeScale: 1.2
@@ -21390,14 +21390,14 @@ MonoBehaviour:
         spawnPeriod: 0
         spawnBranch: 1
         branchNum: 0
-        spawnHeight: 45
+        spawnHeight: 50
         spawnBush: 1
         bushNum: 3
     - timeScale: 1.22
       LevelChangeHeight: 705
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4.5
         minSpawnAmount: 2
         maxSpawnAmount: 2
         spawnWall: 1
@@ -21405,7 +21405,7 @@ MonoBehaviour:
         spawnSnake: 1
         spawnPanzee: 1
         spawnApple: 1
-        spawnEagle: 0
+        spawnEagle: 1
         spawnDolphin: 1
         spawnJellyfish: 0
         spawnPlane: 0
@@ -21416,14 +21416,14 @@ MonoBehaviour:
         spawnPeriod: 0
         spawnBranch: 1
         branchNum: 0
-        spawnHeight: 45
+        spawnHeight: 50
         spawnBush: 1
         bushNum: 3
     - timeScale: 1.24
       LevelChangeHeight: 830
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4.5
         minSpawnAmount: 2
         maxSpawnAmount: 2
         spawnWall: 1
@@ -21431,9 +21431,9 @@ MonoBehaviour:
         spawnSnake: 1
         spawnPanzee: 1
         spawnApple: 1
-        spawnEagle: 0
+        spawnEagle: 1
         spawnDolphin: 1
-        spawnJellyfish: 0
+        spawnJellyfish: 1
         spawnPlane: 0
         spawnThunder: 0
         spawnUFO: 0
@@ -21442,14 +21442,14 @@ MonoBehaviour:
         spawnPeriod: 0
         spawnBranch: 1
         branchNum: 0
-        spawnHeight: 45
+        spawnHeight: 50
         spawnBush: 1
         bushNum: 3
     - timeScale: 1.26
       LevelChangeHeight: 960
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4.5
         minSpawnAmount: 2
         maxSpawnAmount: 2
         spawnWall: 1
@@ -21457,9 +21457,9 @@ MonoBehaviour:
         spawnSnake: 1
         spawnPanzee: 1
         spawnApple: 1
-        spawnEagle: 0
+        spawnEagle: 1
         spawnDolphin: 1
-        spawnJellyfish: 0
+        spawnJellyfish: 1
         spawnPlane: 0
         spawnThunder: 0
         spawnUFO: 0
@@ -21468,14 +21468,14 @@ MonoBehaviour:
         spawnPeriod: 0
         spawnBranch: 1
         branchNum: 0
-        spawnHeight: 45
+        spawnHeight: 55
         spawnBush: 1
         bushNum: 3
     - timeScale: 1.28
       LevelChangeHeight: 1090
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4.5
         minSpawnAmount: 2
         maxSpawnAmount: 2
         spawnWall: 1
@@ -21483,10 +21483,10 @@ MonoBehaviour:
         spawnSnake: 1
         spawnPanzee: 1
         spawnApple: 1
-        spawnEagle: 0
-        spawnDolphin: 1
-        spawnJellyfish: 0
-        spawnPlane: 0
+        spawnEagle: 1
+        spawnDolphin: 0
+        spawnJellyfish: 1
+        spawnPlane: 1
         spawnThunder: 0
         spawnUFO: 0
         spawnSatellite: 0
@@ -21494,14 +21494,14 @@ MonoBehaviour:
         spawnPeriod: 0
         spawnBranch: 1
         branchNum: 0
-        spawnHeight: 45
+        spawnHeight: 55
         spawnBush: 1
         bushNum: 3
     - timeScale: 1.3
       LevelChangeHeight: 1220
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4.5
         minSpawnAmount: 2
         maxSpawnAmount: 2
         spawnWall: 1
@@ -21509,169 +21509,169 @@ MonoBehaviour:
         spawnSnake: 1
         spawnPanzee: 1
         spawnApple: 1
-        spawnEagle: 0
-        spawnDolphin: 1
-        spawnJellyfish: 0
-        spawnPlane: 0
-        spawnThunder: 0
+        spawnEagle: 1
+        spawnDolphin: 0
+        spawnJellyfish: 1
+        spawnPlane: 1
+        spawnThunder: 1
         spawnUFO: 0
         spawnSatellite: 0
       enviLevel:
         spawnPeriod: 0
         spawnBranch: 1
         branchNum: 0
-        spawnHeight: 45
+        spawnHeight: 55
         spawnBush: 1
         bushNum: 3
     - timeScale: 1.32
       LevelChangeHeight: 1350
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4
         minSpawnAmount: 2
         maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
         spawnPanzee: 1
-        spawnApple: 1
-        spawnEagle: 0
-        spawnDolphin: 1
-        spawnJellyfish: 0
-        spawnPlane: 0
-        spawnThunder: 0
+        spawnApple: 0
+        spawnEagle: 1
+        spawnDolphin: 0
+        spawnJellyfish: 1
+        spawnPlane: 1
+        spawnThunder: 1
         spawnUFO: 0
         spawnSatellite: 0
       enviLevel:
         spawnPeriod: 0
         spawnBranch: 1
         branchNum: 0
-        spawnHeight: 45
+        spawnHeight: 40
         spawnBush: 1
         bushNum: 3
     - timeScale: 1.34
       LevelChangeHeight: 1485
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4
         minSpawnAmount: 2
         maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
         spawnPanzee: 1
-        spawnApple: 1
-        spawnEagle: 0
-        spawnDolphin: 1
-        spawnJellyfish: 0
-        spawnPlane: 0
-        spawnThunder: 0
+        spawnApple: 0
+        spawnEagle: 1
+        spawnDolphin: 0
+        spawnJellyfish: 1
+        spawnPlane: 1
+        spawnThunder: 1
         spawnUFO: 0
         spawnSatellite: 0
       enviLevel:
         spawnPeriod: 0
         spawnBranch: 1
         branchNum: 0
-        spawnHeight: 45
+        spawnHeight: 40
         spawnBush: 1
         bushNum: 3
     - timeScale: 1.36
       LevelChangeHeight: 1620
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4
         minSpawnAmount: 2
         maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
         spawnPanzee: 1
-        spawnApple: 1
-        spawnEagle: 0
-        spawnDolphin: 1
-        spawnJellyfish: 0
-        spawnPlane: 0
-        spawnThunder: 0
+        spawnApple: 0
+        spawnEagle: 1
+        spawnDolphin: 0
+        spawnJellyfish: 1
+        spawnPlane: 1
+        spawnThunder: 1
         spawnUFO: 0
         spawnSatellite: 0
       enviLevel:
         spawnPeriod: 0
         spawnBranch: 1
         branchNum: 0
-        spawnHeight: 45
+        spawnHeight: 40
         spawnBush: 1
         bushNum: 3
     - timeScale: 1.38
       LevelChangeHeight: 1755
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4
         minSpawnAmount: 2
         maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
         spawnPanzee: 1
-        spawnApple: 1
-        spawnEagle: 0
-        spawnDolphin: 1
-        spawnJellyfish: 0
-        spawnPlane: 0
-        spawnThunder: 0
+        spawnApple: 0
+        spawnEagle: 1
+        spawnDolphin: 0
+        spawnJellyfish: 1
+        spawnPlane: 1
+        spawnThunder: 1
         spawnUFO: 0
         spawnSatellite: 0
       enviLevel:
         spawnPeriod: 0
         spawnBranch: 1
         branchNum: 0
-        spawnHeight: 45
+        spawnHeight: 40
         spawnBush: 1
         bushNum: 3
     - timeScale: 1.4
       LevelChangeHeight: 1890
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4
         minSpawnAmount: 2
         maxSpawnAmount: 2
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
         spawnPanzee: 1
-        spawnApple: 1
-        spawnEagle: 0
-        spawnDolphin: 1
-        spawnJellyfish: 0
-        spawnPlane: 0
-        spawnThunder: 0
+        spawnApple: 0
+        spawnEagle: 1
+        spawnDolphin: 0
+        spawnJellyfish: 1
+        spawnPlane: 1
+        spawnThunder: 1
         spawnUFO: 0
         spawnSatellite: 0
       enviLevel:
         spawnPeriod: 0
         spawnBranch: 1
         branchNum: 0
-        spawnHeight: 45
+        spawnHeight: 40
         spawnBush: 1
         bushNum: 3
     - timeScale: 1.42
       LevelChangeHeight: 2030
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4
         minSpawnAmount: 2
-        maxSpawnAmount: 2
+        maxSpawnAmount: 3
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
         spawnPanzee: 1
-        spawnApple: 1
+        spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 1
-        spawnJellyfish: 0
+        spawnJellyfish: 1
         spawnPlane: 0
         spawnThunder: 0
-        spawnUFO: 0
-        spawnSatellite: 0
+        spawnUFO: 1
+        spawnSatellite: 1
       enviLevel:
         spawnPeriod: 0
         spawnBranch: 1
@@ -21683,21 +21683,21 @@ MonoBehaviour:
       LevelChangeHeight: 2170
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4
         minSpawnAmount: 2
-        maxSpawnAmount: 2
+        maxSpawnAmount: 3
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
         spawnPanzee: 1
-        spawnApple: 1
+        spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 1
-        spawnJellyfish: 0
+        spawnJellyfish: 1
         spawnPlane: 0
         spawnThunder: 0
-        spawnUFO: 0
-        spawnSatellite: 0
+        spawnUFO: 1
+        spawnSatellite: 1
       enviLevel:
         spawnPeriod: 0
         spawnBranch: 1
@@ -21709,21 +21709,21 @@ MonoBehaviour:
       LevelChangeHeight: 2315
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
+        spawnPeriod: 4
         minSpawnAmount: 2
-        maxSpawnAmount: 2
+        maxSpawnAmount: 3
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
         spawnPanzee: 1
-        spawnApple: 1
+        spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 1
-        spawnJellyfish: 0
+        spawnJellyfish: 1
         spawnPlane: 0
         spawnThunder: 0
-        spawnUFO: 0
-        spawnSatellite: 0
+        spawnUFO: 1
+        spawnSatellite: 1
       enviLevel:
         spawnPeriod: 0
         spawnBranch: 1
@@ -21735,21 +21735,21 @@ MonoBehaviour:
       LevelChangeHeight: 2460
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
-        minSpawnAmount: 2
-        maxSpawnAmount: 2
+        spawnPeriod: 4
+        minSpawnAmount: 3
+        maxSpawnAmount: 3
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
         spawnPanzee: 1
-        spawnApple: 1
+        spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 1
-        spawnJellyfish: 0
+        spawnJellyfish: 1
         spawnPlane: 0
         spawnThunder: 0
-        spawnUFO: 0
-        spawnSatellite: 0
+        spawnUFO: 1
+        spawnSatellite: 1
       enviLevel:
         spawnPeriod: 0
         spawnBranch: 1
@@ -21761,21 +21761,21 @@ MonoBehaviour:
       LevelChangeHeight: 2610
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
-        minSpawnAmount: 2
-        maxSpawnAmount: 2
+        spawnPeriod: 4
+        minSpawnAmount: 3
+        maxSpawnAmount: 3
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
         spawnPanzee: 1
-        spawnApple: 1
+        spawnApple: 0
         spawnEagle: 0
         spawnDolphin: 1
-        spawnJellyfish: 0
+        spawnJellyfish: 1
         spawnPlane: 0
         spawnThunder: 0
-        spawnUFO: 0
-        spawnSatellite: 0
+        spawnUFO: 1
+        spawnSatellite: 1
       enviLevel:
         spawnPeriod: 0
         spawnBranch: 1
@@ -21787,19 +21787,19 @@ MonoBehaviour:
       LevelChangeHeight: 2760
       LevelbgFilterColor: {r: 0, g: 0, b: 0, a: 0}
       enemyLevel:
-        spawnPeriod: 5
-        minSpawnAmount: 2
-        maxSpawnAmount: 2
+        spawnPeriod: 4
+        minSpawnAmount: 3
+        maxSpawnAmount: 3
         spawnWall: 1
         wallAmount: 2
         spawnSnake: 1
         spawnPanzee: 1
-        spawnApple: 0
-        spawnEagle: 0
+        spawnApple: 1
+        spawnEagle: 1
         spawnDolphin: 1
         spawnJellyfish: 1
-        spawnPlane: 0
-        spawnThunder: 0
+        spawnPlane: 1
+        spawnThunder: 1
         spawnUFO: 1
         spawnSatellite: 1
       enviLevel:
@@ -22151,6 +22151,7 @@ MonoBehaviour:
   rightBtn: {fileID: 2016121625}
   leftBtn: {fileID: 1681510635}
   rocket: {fileID: 1751395399}
+  infWarnText: {fileID: 1538648536}
   coin: {fileID: 1889367333}
   skin: {fileID: 2003236950}
   ending: {fileID: 1339857779}
@@ -22215,6 +22216,8 @@ MonoBehaviour:
   endingDescription: {fileID: 624281427}
   curCoin: {fileID: 285683589}
   endingEffect: {fileID: 496795350}
+  infWarning: {fileID: 578099693}
+  shop: {fileID: 1726322001}
   magnetTog: {fileID: 1622660597}
   heartPlusTog: {fileID: 139309693}
   boosterTog: {fileID: 1350074281}
@@ -25948,15 +25951,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552538796}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1509107116}
   - {fileID: 70706555}
   - {fileID: 1524752059}
-  m_Father: {fileID: 70506355}
-  m_RootOrder: 8
+  m_Father: {fileID: 1726322002}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -26195,6 +26198,86 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576014356}
+  m_CullTransparentMesh: 1
+--- !u!1 &578099693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 578099694}
+  - component: {fileID: 578099696}
+  - component: {fileID: 578099695}
+  m_Layer: 5
+  m_Name: infWarning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &578099694
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578099693}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 70506355}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.004496, y: -145}
+  m_SizeDelta: {x: 371.59, y: 145.5789}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &578099695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578099693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: d274fc8a61c495a4588c4b46d437a8b0, type: 3}
+    m_FontSize: 35
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 45
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1.5
+  m_Text: "\uBB34\uD55C\uB7F0 \uBAA8\uB4DC\uC5D0\uC11C\uB294 \uC544\uC774\uD15C\uC744
+    \uC0AC\uC6A9\uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."
+--- !u!222 &578099696
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578099693}
   m_CullTransparentMesh: 1
 --- !u!1 &588349955
 GameObject:
@@ -30297,8 +30380,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 70506355}
-  m_RootOrder: 6
+  m_Father: {fileID: 1726322002}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -34635,6 +34718,7 @@ RectTransform:
   - {fileID: 1681510636}
   - {fileID: 2016121626}
   - {fileID: 548066361}
+  - {fileID: 1538648537}
   m_Father: {fileID: 834875640}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44595,6 +44679,86 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1538648536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1538648537}
+  - component: {fileID: 1538648539}
+  - component: {fileID: 1538648538}
+  m_Layer: 5
+  m_Name: infWarning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1538648537
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538648536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1176456150}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -440}
+  m_SizeDelta: {x: 358.1, y: 98.2608}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1538648538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538648536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: d274fc8a61c495a4588c4b46d437a8b0, type: 3}
+    m_FontSize: 37
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 78
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\uBB34\uD55C \uBAA8\uB4DC\uC5D0\uC11C\uB294 \uC544\uC774\uD15C\uC744 \uC0AC\uC6A9\uD560
+    \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."
+--- !u!222 &1538648539
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538648536}
+  m_CullTransparentMesh: 1
 --- !u!1 &1539950482
 GameObject:
   m_ObjectHideFlags: 0
@@ -47577,7 +47741,7 @@ RectTransform:
   m_Children:
   - {fileID: 1800640599}
   m_Father: {fileID: 70506355}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -47918,6 +48082,44 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!1 &1726322001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1726322002}
+  m_Layer: 5
+  m_Name: shop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1726322002
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726322001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 860199644}
+  - {fileID: 285683587}
+  - {fileID: 552538797}
+  m_Father: {fileID: 70506355}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1728414347
 GameObject:
   m_ObjectHideFlags: 0
@@ -48452,6 +48654,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  lifeTime: 1.5
+  camSpeed: 5
+  height: 100
 --- !u!1 &1754557782
 GameObject:
   m_ObjectHideFlags: 0
@@ -58063,7 +58268,7 @@ RectTransform:
   m_Children:
   - {fileID: 488631425}
   m_Father: {fileID: 70506355}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

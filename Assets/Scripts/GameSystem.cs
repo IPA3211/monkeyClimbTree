@@ -257,6 +257,6 @@ public class GameSystem
     }
 
     public static bool CanTimeCount(){
-        return isStarted && !isDead && !isLevelUping && !isStageCleared && !isRestarted;
+        return isStarted && !isDead && !isLevelUping && !isStageCleared && !isRestarted && !hasBooster;
     }
 }

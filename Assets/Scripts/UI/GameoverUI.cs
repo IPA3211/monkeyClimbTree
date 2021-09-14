@@ -24,6 +24,7 @@ public class GameoverUI : MonoBehaviour
     public Text endingDescription;
     public Text curCoin;
     public GameObject endingEffect;
+    public GameObject infWarning, shop;
     public Toggle magnetTog, heartPlusTog, boosterTog, earnTog;
     public int heartPlusCoin, magnetCoin, boosterCoin;
     bool isUnlockedEffect = false;
@@ -124,6 +125,15 @@ public class GameoverUI : MonoBehaviour
         else{
             gameoverUI1.SetActive(false);
             gameoverUI2.SetActive(true);
+
+            if(GameSystem.getStage() == GameSystem.maxStage -1){
+                infWarning.SetActive(true);
+                shop.SetActive(false);
+            }
+            else{
+                infWarning.SetActive(false);
+                shop.SetActive(true);
+            }
         }
     }
 

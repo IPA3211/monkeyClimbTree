@@ -83,7 +83,7 @@ public class playerController : MonoBehaviour
         if(!GameSystem.isStarted){
             gameObject.transform.position = cam.transform.position + new Vector3(0, -7f, 10f);
         }
-
+        
         if(!GameSystem.getPause() && GameSystem.isStarted && !GameSystem.isDead && !GameSystem.isStageCleared)
         {
             //bush 에 걸렸을 때
@@ -131,7 +131,7 @@ public class playerController : MonoBehaviour
                 //퍼즈 될때
                 isPaused = true;
                 rigied.simulated = false;
-            }            
+            }
         }
         anim.SetBool("isDead", GameSystem.isDead);
     }
@@ -197,7 +197,7 @@ public class playerController : MonoBehaviour
         anim.SetBool("IsOnWall", isOnWall);
     }
 
-    void Jump(bool isRight){
+    public void Jump(bool isRight){
         //미리 지정된 파워를 사용하는 Jump override 함수
         Jump(isRight, XPower, YPower);
     }
@@ -289,7 +289,7 @@ public class playerController : MonoBehaviour
             Instantiate(coinParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
             GameSystem.addCoin(1);
             GameSystem.addCoinEarned(1);
-            GameSystem.addScore(10);
+            GameSystem.addScore(3);
             Destroy(other.gameObject);
             GameSystem.deadSign = "Coin";
         }
