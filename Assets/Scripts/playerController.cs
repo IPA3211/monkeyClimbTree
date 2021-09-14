@@ -56,7 +56,7 @@ public class playerController : MonoBehaviour
             stuckBush.GetComponent<EnvironmentBush>().damaged();
         }
 
-        if(Input.GetMouseButtonDown(0) && !isOnWall && !isDoubleJumped && !GameSystem.isDead && Mathf.Abs(gameObject.transform.position.x) < 3.3f){
+        if(Input.GetMouseButtonDown(0) && !isOnWall && !isDoubleJumped && !GameSystem.isDead && Mathf.Abs(gameObject.transform.position.x) < 4f){
             //더블점프 사용가능 범위때문에 나누긴 했는데 결국엔 다시 돌아옴 ㅋㅋ
             if(doubleJumpPower > 1){
                 if (isOnRight)

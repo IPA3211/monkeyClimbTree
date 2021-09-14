@@ -154,6 +154,7 @@ public class GambleUIManager : MonoBehaviour
 
     IEnumerator GambleEffect()
     {
+        AudioManager.instance.bgm.Pause();
         AudioManager.instance.Play("GambleMusic");
         Sprite[] sprites = null;
         buyBtn.gameObject.SetActive(false);
@@ -228,8 +229,10 @@ public class GambleUIManager : MonoBehaviour
             Counts.unfortuneCount += 20;
             SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
         }
-        
-        while(isPrivewing)
+        yield return new WaitForSeconds(0.5f);
+        AudioManager.instance.bgm.Play();
+
+        while (isPrivewing)
         {
             for (int i = 0; i < sprites.Length; i++)
             {

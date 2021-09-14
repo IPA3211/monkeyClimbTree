@@ -8,6 +8,7 @@ public class StageClearUI : MonoBehaviour
 {
     float sumTime;
     public GameObject StageClearUI1, StageClearUI2, gameManager;
+    public Button nextStageBtn;
     public Image background;
     public Image coinSprite;
     public List<Texts> texts;
@@ -24,6 +25,10 @@ public class StageClearUI : MonoBehaviour
     {
         if (GameSystem.isStageCleared)
         {
+            if(GameSystem.getStage() == 4)
+            {
+                nextStageBtn.gameObject.SetActive(false);
+            }
 
             if (sumTime < 1)
             {
@@ -52,7 +57,6 @@ public class StageClearUI : MonoBehaviour
 
     public void startStageClearUI()
     {
-        Debug.Log("HOLY SHIT!!!!!");
         StageClearUI1.SetActive(true);
         sumTime = 0;
         background.color = Color.clear;
@@ -90,5 +94,10 @@ public class StageClearUI : MonoBehaviour
         StageClearUI2.SetActive(false);
         //GameSystem.restart();
         gameManager.GetComponent<RuntimeGameManager>().upStage();
+    }
+
+    public void endingBtnClicked()
+    {
+        StageClearUI2.SetActive(false);
     }
 }

@@ -11,6 +11,7 @@ public class SpawnItems : MonoBehaviour
 
     [Header("Items")]
     public GameObject coin;
+    public GameObject coins;
     public GameObject potion;
 
     [Space(10f)]
@@ -72,7 +73,12 @@ public class SpawnItems : MonoBehaviour
 
     void SpawnCoin()
     {
-        Instantiate(coin, new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(3f,  9.5f) + cam.position.y, 0), Quaternion.Euler(0, 0, 0));
+        Instantiate(coins, new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(3f,  9.5f) + cam.position.y, 0), Quaternion.Euler(0, 0, 0));
+    }
+
+    void SpawnFeverCoin()
+    {
+        Instantiate(coin, new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(3f, 9.5f) + cam.position.y, 0), Quaternion.Euler(0, 0, 0));
     }
 
 
@@ -86,7 +92,7 @@ public class SpawnItems : MonoBehaviour
         Counts.feverCount++;
         for(int i = 0; i< feverTimePeriod * 10; i++)
         {
-            SpawnCoin();
+            SpawnFeverCoin();
             yield return new WaitForSeconds(0.1f);
         }        
 

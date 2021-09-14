@@ -19,12 +19,13 @@ public class GameoverUI : MonoBehaviour
     public Image endingSprite;
     public List<Texts> texts;
     public Text score;
-    public Text coinEarned;
+    public Text coinEarned;    
     public Text endingTitle;
     public Text endingDescription;
+    public Text curCoin;
     public GameObject endingEffect;
     public Toggle magnetTog, heartPlusTog, boosterTog, earnTog;
-    public int magnetCoin, heartPlusCoin, boosterCoin;
+    public int heartPlusCoin, magnetCoin, boosterCoin;
     bool isUnlockedEffect = false;
     bool isUsingToggle = true;
     public int usedCoin = 0;
@@ -60,12 +61,14 @@ public class GameoverUI : MonoBehaviour
 
             sumTime += Time.unscaledDeltaTime;
             endingEffect.SetActive(isUnlockedEffect);
-        }
+        }       
 
     }
 
     private void FixedUpdate()
     {
+        curCoin.text = GameSystem.getCoin().ToString();
+
         if (GameSystem.getCoin() < magnetCoin && !magnetTog.isOn)
             magnetTog.interactable = false;
         else
