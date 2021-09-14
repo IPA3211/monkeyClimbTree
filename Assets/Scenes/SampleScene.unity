@@ -20586,13 +20586,6 @@ MonoBehaviour:
     requirement: Jellyfish
     thumbnails:
     - {fileID: 21300000, guid: e225bf8539185744aa8bf334d4d1ffc5, type: 3}
-  - endingName: "\uBAA8\uD5D8\uC758 \uC2DC\uC791"
-    type: 2
-    description: "\uD574\uD30C\uB9AC\uAC00 \uC9C0\uB098\uAC04 \uC790\uB9AC,\n\n\uADC0\uC5EC\uC6C0\uC5D0
-      \uC9DC\uB9BF\uC9DC\uB9BF"
-    requirement: Jellyfish
-    thumbnails:
-    - {fileID: 21300000, guid: e225bf8539185744aa8bf334d4d1ffc5, type: 3}
   curEndingNum: 0
 --- !u!114 &351710414
 MonoBehaviour:
@@ -22276,7 +22269,7 @@ MonoBehaviour:
   StageClearUI1: {fileID: 1144977357}
   StageClearUI2: {fileID: 1262920751}
   gameManager: {fileID: 351710409}
-  nextStageBtn: {fileID: 0}
+  nextStageBtn: {fileID: 588349957}
   background: {fileID: 1827080403}
   coinSprite: {fileID: 1446498682}
   texts:
