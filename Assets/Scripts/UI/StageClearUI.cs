@@ -7,17 +7,23 @@ using UnityEngine.SceneManagement;
 public class StageClearUI : MonoBehaviour
 {
     float sumTime;
+    EndingManager endingManager;
     public GameObject StageClearUI1, StageClearUI2, gameManager;
     public Button nextStageBtn;
     public Image background;
     public Image coinSprite;
+    public Image endingSprite;
     public List<Texts> texts;
     public Text score;
     public Text coinEarned;
+    public Text endingTitle;
+    public Text endingDescription;
+    Ending curEnding;
 
     // Start is called before the first frame update
     void Start()
     {
+        endingManager = gameManager.GetComponent<EndingManager>();
     }
 
     // Update is called once per frame
@@ -29,6 +35,8 @@ public class StageClearUI : MonoBehaviour
             {
                 nextStageBtn.gameObject.SetActive(false);
             }
+            GameSystem.deadSign = GameSystem.getStage().ToString() + "StageClear";
+            Debug.Log("ddd " + GameSystem.deadSign);
 
             if (sumTime < 1)
             {
@@ -57,6 +65,7 @@ public class StageClearUI : MonoBehaviour
 
     public void startStageClearUI()
     {
+        setEndingUI();
         StageClearUI1.SetActive(true);
         sumTime = 0;
         background.color = Color.clear;
@@ -69,6 +78,20 @@ public class StageClearUI : MonoBehaviour
                 text.color = Color.clear;
             }
         }
+    }
+    public void setEndingUI()
+    {
+        GameSystem.deadSign = GameSystem.getStage().ToString() + "StageClear";
+        curEnding = endingManager.GetEnding();
+
+        if (curEnding.thumbnails.Length == 1)
+            endingSprite.sprite = curEnding.thumbnails[0];
+        else
+        {
+            endingSprite.sprite = curEnding.thumbnails[0];
+        }
+        endingTitle.text = curEnding.endingName;
+        endingDescription.text = curEnding.description;
     }
 
     public void btnClicked()

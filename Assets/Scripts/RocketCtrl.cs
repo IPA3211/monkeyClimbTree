@@ -35,10 +35,14 @@ public class RocketCtrl : MonoBehaviour
     void FixedUpdate()
     {
         if(!GameSystem.isStarted || GameSystem.isDead){
-            transform.position = Vector3.Lerp(transform.position, player.transform.position, 0.05f);
+            //transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x - 0.08f, 
+            //                                    player.transform.position.y -0.043f, player.transform.position.z), 0.2f);
+            transform.position = new Vector3(player.transform.position.x - 0.08f, player.transform.position.y -0.043f, player.transform.position.z);
             player.GetComponent<SpriteRenderer>().color = Color.clear;
         }
-        else if(GameSystem.hasBooster){
+        else if(GameSystem.hasBooster && !GameSystem.isDead)
+        {
+            player.GetComponent<SpriteRenderer>().color = Color.white;
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             cam.camSpeed = camSpeed;
             transform.Translate(Vector3.up * Time.deltaTime * speed);
@@ -51,7 +55,8 @@ public class RocketCtrl : MonoBehaviour
                 player.GetComponent<playerController>().Jump(true);
             }
         }
-        else{
+        else
+        {
             if(sumTime > lifeTime){
                 gameObject.SetActive(false);
             }
