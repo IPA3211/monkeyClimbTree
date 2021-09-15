@@ -69,11 +69,9 @@ public class LobbyUIManager : MonoBehaviour
     
         if(GameSystem.getStage() == 0){
             leftBtn.SetActive(false);
-            rocket.SetActive(false);
         }
         else{
             leftBtn.SetActive(true);
-            rocket.SetActive(true);
         }
         
         infWarnText.SetActive(false);

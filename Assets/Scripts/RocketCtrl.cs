@@ -35,9 +35,7 @@ public class RocketCtrl : MonoBehaviour
     void FixedUpdate()
     {
         if(!GameSystem.isStarted || GameSystem.isDead){
-            //transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x - 0.08f, 
-            //                                    player.transform.position.y -0.043f, player.transform.position.z), 0.2f);
-            transform.position = new Vector3(player.transform.position.x - 0.08f, player.transform.position.y -0.043f, player.transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(0, -7, 0), 0.2f);
             player.GetComponent<SpriteRenderer>().color = Color.clear;
         }
         else if(GameSystem.hasBooster && !GameSystem.isDead)
