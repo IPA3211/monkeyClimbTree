@@ -36,9 +36,10 @@ public class ReadyUIManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         readyUI.SetActive(false);
 
-        if(mode == 0)
-            GameSystem.isStarted = true;            
-        else if(mode == 1){
+        if (mode == 0)
+            GameSystem.isStarted = true;
+        else if (mode == 1)
+        {
             GameSystem.setPause(false);
         }
     }

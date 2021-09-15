@@ -8,7 +8,8 @@ public class TweenUI : MonoBehaviour
     public float openTweenTime;
     public float closeTweenTime;
     public int openedUIs = 0;
-    HashSet<GameObject> opend;
+    
+    public HashSet<GameObject> opend;
 
     // Start is called before the first frame update
     // Update is called once per frame
@@ -18,7 +19,7 @@ public class TweenUI : MonoBehaviour
     }
     void Update()
     {
-        
+        openedUIs = opend.Count;
     }
 
     public void OpenTween(GameObject other)

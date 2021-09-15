@@ -111,7 +111,6 @@ public class GameoverUI : MonoBehaviour
             endingSprite.sprite = curEnding.thumbnails[0];
         else
         {
-            // ���Ŀ� ����©�� �������� ���
             endingSprite.sprite = curEnding.thumbnails[0];
         }
         endingTitle.text = curEnding.endingName;
@@ -155,14 +154,12 @@ public class GameoverUI : MonoBehaviour
             {
                 usedCoin += magnetCoin;
                 GameSystem.addCoin(-magnetCoin);
-                Counts.buyItemCount++;
                 GameSystem.hasMagnetic = true;                
             }
             else if (!magnetTog.isOn)
             {
                 usedCoin -= magnetCoin;
                 GameSystem.addCoin(magnetCoin);
-                Counts.buyItemCount--;
                 GameSystem.hasMagnetic = false;
             }
         }        
@@ -181,14 +178,12 @@ public class GameoverUI : MonoBehaviour
             {
                 usedCoin += heartPlusCoin;
                 GameSystem.addCoin(-heartPlusCoin);
-                Counts.buyItemCount++;
                 GameSystem.hasHeartPlus = true;
             }
             else if (!heartPlusTog.isOn)
             {
                 usedCoin -= heartPlusCoin;
                 GameSystem.addCoin(heartPlusCoin);
-                Counts.buyItemCount--;
                 GameSystem.hasHeartPlus = false;
             }
         }
@@ -207,14 +202,12 @@ public class GameoverUI : MonoBehaviour
             {
                 usedCoin += boosterCoin;
                 GameSystem.addCoin(-boosterCoin);
-                Counts.buyItemCount++;
                 GameSystem.hasBooster = true;                
             }
             else if (!boosterTog.isOn)
             {
                 usedCoin -= boosterCoin;
                 GameSystem.addCoin(boosterCoin);
-                Counts.buyItemCount--;
                 GameSystem.hasBooster = false;
                 Debug.Log("canceled!");
             }
@@ -242,6 +235,7 @@ public class GameoverUI : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
     public void restartBtnClicked(){
+        AchievementCheck();
         gameoverUI2.SetActive(false);
         isUsingToggle = false;
         magnetTog.isOn = false;
@@ -253,5 +247,24 @@ public class GameoverUI : MonoBehaviour
         GameSystem.restart();
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
         gameManager.GetComponent<RuntimeGameManager>().gameStart();
+    }
+
+    void AchievementCheck()
+    {
+        if(GameSystem.hasHeartPlus)
+        {
+            Counts.extraHeartCount++;
+            Counts.buyItemCount++;
+        }
+        if(GameSystem.hasMagnetic)
+        {
+            Counts.magnetCount++;
+            Counts.buyItemCount++;
+        }
+        if(GameSystem.hasBooster)
+        {
+            Counts.boosterCount++;
+            Counts.buyItemCount++;
+        }
     }
 }

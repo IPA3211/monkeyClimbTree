@@ -5,30 +5,47 @@ using UnityEngine;
 public class EnemyThunder : Enemy
 {
     public float thunderTime;
+    public float delayTime;
+    Animator anim;
     SpriteRenderer spriteRenderer;
     Collider2D col;
     protected override void Start()
     {
+        anim = GetComponent<Animator>();
+        anim.SetFloat("Speed", Random.Range(1f, 2f));
         base.Start();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         col = gameObject.GetComponent<Collider2D>();
         col.enabled = false;
-        spriteRenderer.color = new Color32(255,252,26,0);
+        spriteRenderer.color = new Color32(241, 255, 0,0);
 
         AudioManager.instance.Play("ThunderStart");
     }
 
+    protected override void WarnStarted()
+    {
+        base.WarnStarted();
+        StartCoroutine("delaySound");
+    }
+
     protected override void WarnEnded()
     {
-        AudioManager.instance.Play("ThunderAgain1");
+        
         base.WarnEnded();
         StartCoroutine("thunderCoru");        
     }
 
-    IEnumerator thunderCoru(){
+    IEnumerator delaySound()
+    {
+        yield return new WaitForSeconds(delayTime);
+        AudioManager.instance.Play("ThunderAgain1");
         AudioManager.instance.Play("ThunderAgain2");
+    }
 
-        spriteRenderer.color = new Color32(255, 252, 26, 200);
+    IEnumerator thunderCoru(){
+        
+
+        spriteRenderer.color = new Color32(241, 255, 0, 255);
         col.enabled = true;        
         yield return new WaitForSeconds(thunderTime);
         

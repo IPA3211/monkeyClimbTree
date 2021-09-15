@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Counts{
     public static int jumpCount = 0;
+    public static int doubleJumpCount = 0;
     public static int jungleScore = 0;
     public static int feverCount = 0;
     public static int buyItemCount = 0;
@@ -13,9 +14,14 @@ public class Counts{
     public static int unfortuneCount = 0;
     public static int watchADCount = 0;
     public static int logInCount = 0;
+    public static int bananaCount = 0;
+    public static int extraHeartCount = 0;
+    public static int magnetCount = 0;
+    public static int boosterCount = 0;
 
     public static void clear(){
         jumpCount = 0;
+        doubleJumpCount = 0;
         jungleScore = 0;
         feverCount = 0;
         buyItemCount = 0;
@@ -25,6 +31,10 @@ public class Counts{
         unfortuneCount = 0;
         watchADCount = 0;
         logInCount = 0;
+        bananaCount = 0;
+        extraHeartCount = 0;
+        magnetCount = 0;
+        boosterCount = 0;
     }
 }
 
@@ -39,8 +49,12 @@ public enum QuestType
     GAMBLE_QUEST,
     UNFORTUNE_QUEST,
     AD_QUEST,
-    LOGIN_QUEST
-
+    LOGIN_QUEST,
+    BANANA_QUEST,
+    EXTRAHEART_QUEST,
+    MAGNET_QUEST,
+    BOOSTER_QUEST,
+    DOUBLEJUMP_QUEST
 }
 
 public enum RewardType{
@@ -87,7 +101,11 @@ public class Achievement{
             case QuestType.JUMP_QUEST:
                 addScore(Counts.jumpCount);
                 break;
-            
+
+            case QuestType.DOUBLEJUMP_QUEST:
+                addScore(Counts.doubleJumpCount);
+                break;
+
             case QuestType.JUNGLE_QUEST :
                 addScore(Counts.jungleScore);
                 break;
@@ -123,6 +141,22 @@ public class Achievement{
 
             case QuestType.LOGIN_QUEST :
                 addScore(Counts.logInCount);
+            break;
+
+            case QuestType.BANANA_QUEST :
+                addScore(Counts.bananaCount);
+            break;
+
+            case QuestType.EXTRAHEART_QUEST:
+                addScore(Counts.extraHeartCount);
+            break;
+
+            case QuestType.MAGNET_QUEST:
+                addScore(Counts.magnetCount);
+            break;
+
+            case QuestType.BOOSTER_QUEST:
+                addScore(Counts.boosterCount);
             break;
 
         }

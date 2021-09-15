@@ -9,7 +9,8 @@ public class playerController : MonoBehaviour
     public float YPower;
     public float doubleJumpPower;
     public float immuneTime;
-    Animator anim;
+    [HideInInspector]
+    public Animator anim;
     Rigidbody2D rigied;
     SpriteRenderer spriteRenderer;
     Vector2 saveVelo;
@@ -72,6 +73,7 @@ public class playerController : MonoBehaviour
                     AudioManager.instance.Play("DoubleJump2");
                 isDoubleJumped = true;
                 anim.SetBool("IsDoubleJump", isDoubleJumped);
+                Counts.doubleJumpCount++;
             }
         }
         
@@ -299,6 +301,7 @@ public class playerController : MonoBehaviour
             AudioManager.instance.Play("Potion");
             Instantiate(potionParticle, other.gameObject.transform.position, other.gameObject.transform.rotation);
             GameSystem.setBanana(GameSystem.getBanana() + 1);
+            Counts.bananaCount++;
             Destroy(other.gameObject);
             GameSystem.deadSign = "Potion";
         }

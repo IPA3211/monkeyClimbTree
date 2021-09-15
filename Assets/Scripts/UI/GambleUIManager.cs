@@ -229,7 +229,7 @@ public class GambleUIManager : MonoBehaviour
             Counts.unfortuneCount += 20;
             SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.75f);
         AudioManager.instance.bgm.Play();
 
         while (isPrivewing)

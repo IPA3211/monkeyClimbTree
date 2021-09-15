@@ -17,6 +17,7 @@ public class SpawnEnvironment : MonoBehaviour
     
     Transform cam;
     float lastSpawn = 0;
+    Color[] colors = { Color.red, Color.magenta, Color.blue, new Color32(0, 255, 255, 255), Color.green, Color.yellow, Color.red };
     
     // Start is called before the first frame update
     void Start()
@@ -83,28 +84,64 @@ public class SpawnEnvironment : MonoBehaviour
 
     IEnumerator EnvironmentWarn() {
         warningSign.SetActive(true);
-        RawImage rend = warningSign.GetComponent<RawImage>();
-        Color rawColor = rend.material.color;
+        StartCoroutine("colorChange");
+
+        Image rend = warningSign.GetComponent<Image>();
         float progress = 0;
-        
-        for (int i = 0; i < 3; i++)
+        float speed = 1.3f;
+        warningSign.gameObject.transform.localScale = new Vector3(0, 0, 0);        
+        warningSign.gameObject.transform.LeanScale(new Vector3(1, 1, 1), 1.5f).setEaseOutCubic();
+
+        yield return new WaitForSeconds(0.2f);
+        AudioManager.instance.Play("LevelUp");
+        /*
+        for (int i = 0; i < 1; i++)
         {
             progress = 0;
             while (progress <= 1)
             {
-                rend.color = Color.Lerp(new Color(1, 1, 1, 0), new Color(1, 1, 1, 1), progress);
-                progress += (Time.deltaTime * 2);
+                rend.color = Color.Lerp(new Color(rend.color.r, rend.color.g, rend.color.b, 0), new Color32(255, 87, 0, 255), progress);
+                progress += (Time.deltaTime * speed);
                 yield return new WaitForFixedUpdate();
             }
             progress = 0;
+            yield return new WaitForSeconds(1f);
             while (progress <= 1)
             {
-                rend.color = Color.Lerp(new Color(1, 1, 1, 1), new Color(1, 1, 1, 0), progress);
-                progress += (Time.deltaTime * 2);
+                
+                rend.color = Color.Lerp(new Color32(255, 87, 0, 255), new Color32(253, 87, 0, 0), progress);
+                progress += (Time.deltaTime * speed / 1.5f);
+                //if (progress > 1)
+                //    rend.color = Color.Lerp(new Color32(253, 251, 0, 0), new Color32(255, 160, 100, 0), progress);
                 yield return new WaitForFixedUpdate();
             }
         }
-        
+        */
+        //rend.color = Color.Lerp(new Color32(255, 160, 100, 40), new Color32(255, 160, 100, 0), 0.3f);
+        //yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(2.5f);
+        warningSign.gameObject.transform.LeanScale(new Vector3(0, 0, 0), 1.25f).setEaseInOutCubic();
+        yield return new WaitForSeconds(1.25f);
+        StopCoroutine("colorChange");
         warningSign.SetActive(false);
+    }
+
+    IEnumerator colorChange()
+    {
+        Image rend = warningSign.GetComponent<Image>();
+        int colorIdx = 0;
+        while (true)
+        {            
+            for (float i = 0; i <= 1; i+= Time.deltaTime * 3f)
+            {
+                rend.color = Color.Lerp(colors[colorIdx], colors[colorIdx + 1], i);
+                yield return new WaitForFixedUpdate();
+            }
+            if (colorIdx == colors.Length - 2)
+                colorIdx = 0;
+            else
+                colorIdx++;
+        }
+        
     }
 }

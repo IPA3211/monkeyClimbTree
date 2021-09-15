@@ -94,6 +94,7 @@ public class LobbyUIManager : MonoBehaviour
         ending.SetActive(false);
 
         if(GameSystem.getCoin() > 100 || GameSystem.hasFreeSkin){
+            skin.SetActive(true);
             coin.SetActive(true);
         }
 
