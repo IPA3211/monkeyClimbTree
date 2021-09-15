@@ -8,6 +8,7 @@ public class EtcUIManager : MonoBehaviour
     // Start is called before the first frame update
     LobbyUIManager manager;
     public Button onBtn, offBtn;
+    public Button hOnBtn, hOffBtn, rightBtn, leftBtn, bothBtn;
     public GameObject etcUi;
     public List<GameObject> childUis;
     public GameObject heartImage;
@@ -22,6 +23,8 @@ public class EtcUIManager : MonoBehaviour
     void Start(){
         manager = gameObject.GetComponent<LobbyUIManager>();
         GameSystem.isCanVive = SecurityPlayerPrefs.GetInt("Vive", 1) == 1;
+        GameSystem.whichHand = (handPos)SecurityPlayerPrefs.GetInt("Hand", 0);
+        OnHandSettingChanged();
         OnViveSettingChanged();
     }
     void Update(){
@@ -61,6 +64,26 @@ public class EtcUIManager : MonoBehaviour
         GameSystem.isCanVive = false;
         OnViveSettingChanged();
     }
+    public void OnHandOnBtnClicked(){
+        GameSystem.whichHand = handPos.PLAYER_HAND_RIGHT;
+        OnHandSettingChanged();
+    }
+    public void OnHandOffBtnClicked(){
+        GameSystem.whichHand = handPos.PLAYER_HAND_NULL;
+        OnHandSettingChanged();
+    }
+    public void OnHandRightBtnClicked(){
+        GameSystem.whichHand = handPos.PLAYER_HAND_RIGHT;
+        OnHandSettingChanged();
+    }
+    public void OnHandLeftBtnClicked(){
+        GameSystem.whichHand = handPos.PLAYER_HAND_LEFT;
+        OnHandSettingChanged();
+    }
+    public void OnHandBothBtnClicked(){
+        GameSystem.whichHand = handPos.PLAYER_HAND_BOTH;
+        OnHandSettingChanged();
+    }
     private void OnViveSettingChanged(){
         if(GameSystem.isCanVive){
             onBtn.interactable = false;
@@ -72,5 +95,36 @@ public class EtcUIManager : MonoBehaviour
         }
 
         SecurityPlayerPrefs.SetInt("Vive", GameSystem.isCanVive ? 1 : 0);
+    }
+
+    private void OnHandSettingChanged(){
+        hOnBtn.interactable = true;
+        hOffBtn.interactable = true;
+        rightBtn.interactable = true;
+        leftBtn.interactable = true;
+        bothBtn.interactable = true;
+
+        switch(GameSystem.whichHand){
+            case handPos.PLAYER_HAND_NULL :
+                hOffBtn.interactable = false;
+                rightBtn.interactable = false;
+                leftBtn.interactable = false;
+                bothBtn.interactable = false;
+            break;
+            case handPos.PLAYER_HAND_RIGHT : 
+                hOnBtn.interactable = false;
+                rightBtn.interactable = false;
+            break;
+            case handPos.PLAYER_HAND_LEFT : 
+                hOnBtn.interactable = false;
+                leftBtn.interactable = false;
+            break;
+            case handPos.PLAYER_HAND_BOTH : 
+                hOnBtn.interactable = false;
+                bothBtn.interactable = false;
+            break;
+        }
+
+        SecurityPlayerPrefs.SetInt("Hand", (int)GameSystem.whichHand);
     }
 }

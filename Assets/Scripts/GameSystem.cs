@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum handPos
+{
+    PLAYER_HAND_NULL,
+    PLAYER_HAND_RIGHT,
+    PLAYER_HAND_LEFT,
+    PLAYER_HAND_BOTH
+}
+
 public class GameSystem
 {
     public static bool isRestarted = false;
@@ -41,6 +49,9 @@ public class GameSystem
     public static bool isLevelChanged = true;
     public static bool isStageChanged = true;
     public static bool isCanVive = true;
+
+    public static handPos whichHand = handPos.PLAYER_HAND_NULL;
+
     public static string deadSign = "";
     
     public static void resetStartItem()

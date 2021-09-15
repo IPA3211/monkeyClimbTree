@@ -7,15 +7,19 @@ public class AchievementNode : MonoBehaviour
 {
     // Start is called before the first frame update
     public Text title, describe, count, btnText;
-    public GameObject coinUI, MagnetUI, BoosterUI, SkinUI, HeartUI, clearUI;
+    public GameObject coinUI, itemUI, clearUI;
+    public ParticleSystem particle;
+    Image itemUIImage;
+    public Sprite magnet, booster, heart, skin;
     public Button btn;
     Achievement owner;
     AchievementManager achievementManager;
 
-    void Start(){
+    void OnEnable(){
         achievementManager = RuntimeGameManager.gameManager.GetComponent<AchievementManager>();
     }
     public void refresh(Achievement achieveInfo){
+        itemUIImage = itemUI.GetComponent<Image>();
         owner = achieveInfo;
         title.text = achieveInfo.name;
         describe.text = achieveInfo.describe;
@@ -33,41 +37,35 @@ public class AchievementNode : MonoBehaviour
     }
 
     public void setRewardUI(RewardType rewardType){
+        var tt = particle.textureSheetAnimation;
         switch(rewardType){
             case RewardType.COIN :
                 coinUI.SetActive(true);
-                MagnetUI.SetActive(false);
-                BoosterUI.SetActive(false);
-                SkinUI.SetActive(false);
-                HeartUI.SetActive(false);
+                itemUI.SetActive(false);
             break;
             case RewardType.MAGNET :
                 coinUI.SetActive(false);
-                MagnetUI.SetActive(true);
-                BoosterUI.SetActive(false);
-                SkinUI.SetActive(false);
-                HeartUI.SetActive(false);
+                itemUI.SetActive(true);
+                itemUIImage.sprite = magnet;
+                tt.SetSprite(0, magnet);
             break;
             case RewardType.HEART :
                 coinUI.SetActive(false);
-                MagnetUI.SetActive(false);
-                BoosterUI.SetActive(false);
-                SkinUI.SetActive(false);
-                HeartUI.SetActive(true);
+                itemUI.SetActive(true);
+                itemUIImage.sprite = heart;
+                tt.SetSprite(0, heart);
             break;
             case RewardType.SKIN :
                 coinUI.SetActive(false);
-                MagnetUI.SetActive(false);
-                BoosterUI.SetActive(false);
-                SkinUI.SetActive(true);
-                HeartUI.SetActive(false);
+                itemUI.SetActive(true);
+                itemUIImage.sprite = skin;
+                tt.SetSprite(0, skin);
             break;
             case RewardType.BOOSTER :
                 coinUI.SetActive(false);
-                MagnetUI.SetActive(false);
-                BoosterUI.SetActive(true);
-                SkinUI.SetActive(false);
-                HeartUI.SetActive(false);
+                itemUI.SetActive(true);
+                itemUIImage.sprite = booster;
+                tt.SetSprite(0, booster);
             break;
         }
     }
@@ -81,5 +79,6 @@ public class AchievementNode : MonoBehaviour
         achievementManager.refreshDailyAchieve();
         achievementManager.refreshWeeklyAchieve();
         achievementManager.saveActivedAchieve();
+        particle.Play();
     }
 }

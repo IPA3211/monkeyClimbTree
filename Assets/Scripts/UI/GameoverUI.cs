@@ -19,7 +19,7 @@ public class GameoverUI : MonoBehaviour
     public Image endingSprite;
     public List<Texts> texts;
     public Text score;
-    public Text coinEarned;    
+    public Text coinEarned;
     public Text endingTitle;
     public Text endingDescription;
     public Text curCoin;

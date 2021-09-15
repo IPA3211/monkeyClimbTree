@@ -12,12 +12,37 @@ public class Enemy : MonoBehaviour
     protected Vector3 diffPos;
     protected GameObject cam;
     protected bool isInAction;
+    
+    private void handCheck(){
+        switch(GameSystem.whichHand){
+            case handPos.PLAYER_HAND_RIGHT:
+                if(transform.position.x > 1 && transform.position.y - cam.transform.position.y < -10){
+                    warnSprite.transform.localPosition = warnSprite.transform.localPosition + new Vector3(0, 5, 0);
+                    warnIconSprite.transform.localPosition = warnIconSprite.transform.localPosition + new Vector3(0, 5, 0);
+                }
+            break;
+            case handPos.PLAYER_HAND_LEFT:
+                if(transform.position.x < -1 && transform.position.y - cam.transform.position.y < -10){
+                    warnSprite.transform.localPosition = warnSprite.transform.localPosition + new Vector3(0, 5, 0);
+                    warnIconSprite.transform.localPosition = warnIconSprite.transform.localPosition + new Vector3(0, 5, 0);
+                }
+            break;
+            case handPos.PLAYER_HAND_BOTH:
+                if(transform.position.y < -10){
+                    warnSprite.transform.localPosition = warnSprite.transform.localPosition + new Vector3(0, 5, 0);
+                    warnIconSprite.transform.localPosition = warnIconSprite.transform.localPosition + new Vector3(0, 5, 0);
+                }
+            break;
+        }
+    }
+
     virtual protected void WarnStarted(){}
     virtual protected void WarnEnded(){}
     
     protected virtual void Start(){
         cam = GameObject.FindGameObjectWithTag("MainCamera");
         diffPos = transform.position - (cam.transform.position - new Vector3(0, 0, 10));
+        handCheck();
         StartCoroutine("WarnAttack");
         Destroy(gameObject, autoDestroyTime);
     }

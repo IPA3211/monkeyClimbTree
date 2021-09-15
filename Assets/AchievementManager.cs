@@ -8,6 +8,7 @@ public class AchievementManager : MonoBehaviour
     public List<Achievement> dailyAchievements;
     public List<Achievement> weeklyAchievements;
     public AchievementUI achievementUI;
+    public GameObject dailyScroll, weeklyScroll;
 
     public List<Achievement> activedDailyAchievements;
     public List<Achievement> activedWeeklyAchievements;

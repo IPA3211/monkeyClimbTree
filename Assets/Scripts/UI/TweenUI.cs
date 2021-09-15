@@ -48,6 +48,9 @@ public class TweenUI : MonoBehaviour
         if(opend.Count == 0){
             background.SetActive(false);
         }
+        if(other.name.Equals("AchievementUI")){
+            GameSystem.warnAchieve = false;
+        }
         other.transform.LeanScale(Vector3.zero, closeTweenTime).setEaseInBack();
         //LeanTween.scale(gameObject, new Vector3(0, 0, 0), closeTweenTime).setEasePunch();
     }
