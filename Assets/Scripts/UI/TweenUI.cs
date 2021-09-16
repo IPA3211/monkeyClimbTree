@@ -45,13 +45,28 @@ public class TweenUI : MonoBehaviour
     public void CloseTween(GameObject other)
     {
         opend.Remove(other);
-        if(opend.Count == 0){
+        if (opend.Count == 0)
+        {
             background.SetActive(false);
         }
-        if(other.name.Equals("AchievementUI")){
+        if (other.name.Equals("AchievementUI"))
+        {
             GameSystem.warnAchieve = false;
         }
         other.transform.LeanScale(Vector3.zero, closeTweenTime).setEaseInBack();
         //LeanTween.scale(gameObject, new Vector3(0, 0, 0), closeTweenTime).setEasePunch();
     }
+
+    public void OpenPauseTween(GameObject other)
+    {
+        other.transform.localScale = new Vector3(1, 1, 1);
+        other.transform.localPosition = new Vector3(other.transform.localPosition.x, 909f, other.transform.localPosition.z);
+        other.transform.LeanMoveLocalY(0, openTweenTime).setEaseOutBack();
+    }
+
+    public void ClosePauseTween(GameObject other)
+    {        
+        other.transform.LeanMoveLocalY(909f, closeTweenTime).setEaseInBack();
+    }
+    
 }

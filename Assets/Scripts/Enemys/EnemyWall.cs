@@ -6,8 +6,9 @@ public class EnemyWall : MonoBehaviour
 {
     public List<GameObject> walls;
     private List<GameObject> tempWalls = new List<GameObject>();
-
     public int amount;
+    Color prettyRed = new Color32(255, 40, 40, 255);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,14 +38,14 @@ public class EnemyWall : MonoBehaviour
             progress = 0;
             while (progress <= 1)
             {
-                rend.color = Color.Lerp(rawColor, Color.red, progress);
+                rend.color = Color.Lerp(rawColor, prettyRed, progress);
                 progress += 0.1f;
                 yield return new WaitForSeconds(0.05f);
             }
             progress = 0;
             while (progress <= 1)
             {
-                rend.color = Color.Lerp(Color.red, rawColor, progress);
+                rend.color = Color.Lerp(prettyRed, rawColor, progress);
                 progress += 0.1f;
                 yield return new WaitForSeconds(0.05f);
             }
@@ -53,7 +54,7 @@ public class EnemyWall : MonoBehaviour
         progress = 0;
         while (progress <= 1)
         {
-            rend.color = Color.Lerp(rawColor, Color.red, progress);
+            rend.color = Color.Lerp(rawColor, prettyRed, progress);
             progress += 0.1f;
             yield return new WaitForSeconds(0.05f);
         }

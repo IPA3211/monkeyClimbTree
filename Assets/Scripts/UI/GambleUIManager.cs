@@ -32,6 +32,7 @@ public class GambleUIManager : MonoBehaviour
     bool isAlreadyEarned = false;
     bool isShaking = false;
     bool isPrivewing = false;
+    bool isGambling = false;
     Vector3 defaultBox = new Vector3();
     Vector3 defaultCover = new Vector3();
 
@@ -154,6 +155,7 @@ public class GambleUIManager : MonoBehaviour
 
     IEnumerator GambleEffect()
     {
+        isGambling = true;
         AudioManager.instance.bgm.Pause();
         AudioManager.instance.Play("GambleMusic");
         Sprite[] sprites = null;
@@ -229,8 +231,10 @@ public class GambleUIManager : MonoBehaviour
             Counts.unfortuneCount += 20;
             SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
         }
+        isGambling = false;
         yield return new WaitForSeconds(1.75f);
-        AudioManager.instance.bgm.Play();
+        if(!isGambling)
+            AudioManager.instance.bgm.UnPause();
 
         while (isPrivewing)
         {
