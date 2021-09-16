@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
                 }
             break;
             case handPos.PLAYER_HAND_BOTH:
-                if(transform.position.y < -10){
+                if(transform.position.y - cam.transform.position.y < -10){
                     warnSprite.transform.localPosition = warnSprite.transform.localPosition + new Vector3(0, 5, 0);
                     warnIconSprite.transform.localPosition = warnIconSprite.transform.localPosition + new Vector3(0, 5, 0);
                 }

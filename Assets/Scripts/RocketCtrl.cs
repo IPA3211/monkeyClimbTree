@@ -10,6 +10,7 @@ public class RocketCtrl : MonoBehaviour
     public float height;
     float sumTime;
     float tempCamSpeed;
+    bool hasSoundPlayed = false;
     GameObject player;
     SmoothCamera cam;
 
@@ -46,21 +47,33 @@ public class RocketCtrl : MonoBehaviour
             transform.Translate(Vector3.up * Time.deltaTime * speed);
             player.transform.Translate(Vector3.up * Time.deltaTime * speed);
 
+            if(!hasSoundPlayed)
+            {
+                hasSoundPlayed = true;
+                AudioManager.instance.Play("Rocket");
+            }
             if(GameSystem.playerHeight > height){
                 GameSystem.hasBooster = false;
                 cam.camSpeed = tempCamSpeed;
                 player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                 player.GetComponent<playerController>().Jump(true);
             }
-        }
+        }        
         else
         {
-            if(sumTime > lifeTime){
+            hasSoundPlayed = false;
+            if (sumTime > lifeTime){
                 gameObject.SetActive(false);
             }
             transform.Translate(Vector3.up * Time.deltaTime * speed);   
             player.GetComponent<SpriteRenderer>().color = Color.white;
             sumTime += Time.deltaTime;
+        }
+
+        if (!GameSystem.hasBooster && GameSystem.isDead)
+        {
+            Debug.Log("why");
+            gameObject.SetActive(false);
         }
     }
 }

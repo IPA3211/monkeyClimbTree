@@ -75,6 +75,7 @@ public class AchievementNode : MonoBehaviour
     }
 
     public void OnBtnClicked(){
+        AudioManager.instance.Play("AchieveClear");
         owner.AchievementCleared();
         achievementManager.refreshDailyAchieve();
         achievementManager.refreshWeeklyAchieve();

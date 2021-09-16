@@ -104,7 +104,8 @@ public class GameoverUI : MonoBehaviour
     public void setEndingUI()
     {
         isUnlockedEffect = endingManager.UnlockEnding(GameSystem.deadSign);
-        GameSystem.warnEnding = true;
+        if(isUnlockedEffect)
+            GameSystem.warnEnding = true;
         curEnding = endingManager.GetEnding();
 
         if (curEnding.thumbnails.Length == 1)

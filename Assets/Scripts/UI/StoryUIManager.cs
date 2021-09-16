@@ -10,10 +10,10 @@ public class StoryUIManager : MonoBehaviour
     public Image displayImg;
     public Sprite[] openingSprites;
     public Sprite[] closingSprites;
-    public bool isOpening;
-    public bool isClosingStart = false;
-    public bool hasClosingRead = false;
-    public int index = 0;
+    bool isOpening;
+    bool isClosingStart = false;
+    bool hasClosingRead = false;
+    int index = 0;
 
     // Start is called before the first frame update
     void Start()

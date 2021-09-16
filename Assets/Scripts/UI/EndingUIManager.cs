@@ -65,8 +65,11 @@ public class EndingUIManager : MonoBehaviour
         {
             //buttons[num].transform.LeanMoveX(buttons[num].transform.position.x + 10f, 2f).setEaseInOutBounce();
             return;
-        }        
-
+        }
+        if (ending.type == Ending.EndingType.Enemy)
+            title.color = new Color32(253, 144, 145, 255);
+        else if(ending.type == Ending.EndingType.StageClear)
+            title.color = new Color32(144, 183, 253, 255);
         title.text = ending.endingName;
         description.text = ending.description;
         endingPicture.sprite = ending.thumbnails[0];

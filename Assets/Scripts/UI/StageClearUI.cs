@@ -82,7 +82,8 @@ public class StageClearUI : MonoBehaviour
     public void setEndingUI()
     {
         GameSystem.deadSign = GameSystem.getStage().ToString() + "StageClear";
-        endingManager.UnlockEnding(GameSystem.deadSign);
+        if(endingManager.UnlockEnding(GameSystem.deadSign))
+            GameSystem.warnEnding = true;
         curEnding = endingManager.GetEnding();
 
         if (curEnding.thumbnails.Length == 1)

@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     public Slider sfxVol;
     public Toggle bgmMuteToggle;
     public Toggle sfxMuteToggle;
+    Sound btnSound;
 
     // Start is called before the first frame update0
     void Awake()
@@ -39,6 +40,8 @@ public class AudioManager : MonoBehaviour
     }
     
     void Start(){
+        btnSound = Array.Find(sounds, Sound => Sound.name == "Button");
+
         bgm.volume = SecurityPlayerPrefs.GetFloat("bgmVol", 1);
         sfx.volume = SecurityPlayerPrefs.GetFloat("sfxVol", 1);
         bgmVol.value = bgm.volume;
@@ -108,6 +111,11 @@ public class AudioManager : MonoBehaviour
         //이거 find로 하는거 보다 Enum으로 하는게 나을듯
         Sound s = Array.Find(sounds, Sound => Sound.name == name);
         s.source.PlayOneShot(s.clip, s.volume * sfxVol.value);
+    }
+
+    public void ButtonSoundPlay()
+    {
+        btnSound.source.PlayOneShot(btnSound.clip, btnSound.volume * sfxVol.value);
     }
 
     public void changeBGMVolume(){
