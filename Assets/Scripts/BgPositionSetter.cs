@@ -28,29 +28,30 @@ public class BgPositionSetter : MonoBehaviour
 
         if(cam.transform.position.y > middleBg1.transform.position.y + bgOffset){
             middleBg1.transform.position = middleBg2.transform.position + new Vector3(0, bgOffset, 0);
-            changeBg(middleBg1);
+            changeBg(middleBg1, true);
         }
         else if (cam.transform.position.y > middleBg2.transform.position.y + bgOffset){
             middleBg2.transform.position = middleBg1.transform.position + new Vector3(0, bgOffset, 0);
-            changeBg(middleBg2);
+            changeBg(middleBg2, true);
         }
+        
         if(cam.transform.position.y < middleBg1.transform.position.y - bgOffset){
             middleBg1.transform.position = middleBg2.transform.position - new Vector3(0, bgOffset, 0);
-            changeBg(middleBg1);
+            changeBg(middleBg1, false);
         }
         else if (cam.transform.position.y < middleBg2.transform.position.y - bgOffset){
             middleBg2.transform.position = middleBg1.transform.position - new Vector3(0, bgOffset, 0);
-            changeBg(middleBg2);
+            changeBg(middleBg2, false);
         }
     }
 
-    void changeBg(GameObject bg){
+    void changeBg(GameObject bg, bool canBeEnd){
         if(nextSprite != null)
             bg.GetComponent<SpriteRenderer>().sprite = nextSprite;
         
         nextSprite = null;
         
-        if(isEnd){
+        if(isEnd && canBeEnd){
             smoothCamera.ending(bg.transform.position.y);
             endBg.transform.position = bg.transform.position;
             endBg.SetActive(true);

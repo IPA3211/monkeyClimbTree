@@ -120,6 +120,6 @@ public class LobbyUIManager : MonoBehaviour
 
     public void onRankingBtnClicked(){
         if(netManager != null)
-            netManager.ShowinfLeaderboardUI();
+            netManager.ShowLeaderboardUI();
     }
 }

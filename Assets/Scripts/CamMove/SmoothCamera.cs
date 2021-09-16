@@ -46,7 +46,7 @@ public class SmoothCamera : MonoBehaviour
             }
 
             if (isEnd)
-                cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, maxYPos, -10), Time.deltaTime * camSpeed);
+                cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, maxYPos, -10), Time.deltaTime * camSpeed * 2);
             else
                 cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, maxYPos - camOffset, -10), Time.deltaTime * camSpeed);
 

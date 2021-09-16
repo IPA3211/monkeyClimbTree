@@ -159,7 +159,11 @@ public class GoogleManager : MonoBehaviour
 
     public void ShowLeaderboardUI() => Social.ShowLeaderboardUI();
     public void ShowinfLeaderboardUI() => ((PlayGamesPlatform)Social.Active).ShowLeaderboardUI(GPGSIds.leaderboard);
-    public void addInfLeaderboard(int a) => Social.ReportScore(a, GPGSIds.leaderboard, (bool success) => {});
+    public void addInfLeaderboard(int a) => Social.ReportScore(a, GPGSIds.leaderboard, (bool success) => {
+        if(success)
+            Debug.Log("리더보드 성공");
+        else
+            Debug.Log("리더보드 실패");});
 
     #endregion
 

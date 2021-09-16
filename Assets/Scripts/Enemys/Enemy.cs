@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public GameObject warnSprite;
     public GameObject warnIconSprite;
     public float autoDestroyTime;
+    public float warnAlpha = 0.75f;
     protected Vector3 diffPos;
     protected GameObject cam;
     protected bool isInAction;
@@ -79,16 +80,16 @@ public class Enemy : MonoBehaviour
             progress = 0;
             while (progress < 1)
             {
-                rend.color = Color.Lerp(new Color(1, 0, 0, 0), new Color(1, 0, 0, 0.75f), progress);
-                rend2.color = Color.Lerp(new Color(1, 1, 1, 0), new Color(1, 1, 1, 0.75f), progress);
+                rend.color = Color.Lerp(new Color(1, 0, 0, 0), new Color(1, 0, 0, warnAlpha), progress);
+                rend2.color = Color.Lerp(new Color(1, 1, 1, 0), new Color(1, 1, 1, warnAlpha), progress);
                 progress += Time.deltaTime;
                 yield return new WaitForFixedUpdate();
             }
             progress = 0;
             while (progress < 1)
             {
-                rend.color = Color.Lerp(new Color(1, 0, 0, 0.75f), new Color(1, 0, 0, 0), progress);
-                rend2.color = Color.Lerp(new Color(1, 1, 1, 0.75f), new Color(1, 1, 1, 0), progress);
+                rend.color = Color.Lerp(new Color(1, 0, 0, warnAlpha), new Color(1, 0, 0, 0), progress);
+                rend2.color = Color.Lerp(new Color(1, 1, 1, warnAlpha), new Color(1, 1, 1, 0), progress);
                 progress += Time.deltaTime;
                 yield return new WaitForFixedUpdate();
             }

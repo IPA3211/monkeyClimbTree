@@ -17,7 +17,7 @@ public class EnemyThunder : Enemy
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         col = gameObject.GetComponent<Collider2D>();
         col.enabled = false;
-        spriteRenderer.color = new Color32(241, 255, 0,0);
+        spriteRenderer.color = new Color32(255, 255, 255,0);
 
         AudioManager.instance.Play("ThunderStart");
     }
@@ -45,7 +45,7 @@ public class EnemyThunder : Enemy
     IEnumerator thunderCoru(){
         
 
-        spriteRenderer.color = new Color32(241, 255, 0, 255);
+        spriteRenderer.color = new Color32(255, 255, 255, 255);
         col.enabled = true;        
         yield return new WaitForSeconds(thunderTime);
         

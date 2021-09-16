@@ -32,7 +32,7 @@ public class EnemyWall : MonoBehaviour
         SpriteRenderer rend = tree.GetComponentInChildren<SpriteRenderer>();
         Color rawColor = rend.material.color;
         float progress = 0;
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 1; i++)
         {
             progress = 0;
             while (progress <= 1)
@@ -49,9 +49,18 @@ public class EnemyWall : MonoBehaviour
                 yield return new WaitForSeconds(0.05f);
             }
         }
+        
+        progress = 0;
+        while (progress <= 1)
+        {
+            rend.color = Color.Lerp(rawColor, Color.red, progress);
+            progress += 0.1f;
+            yield return new WaitForSeconds(0.05f);
+        }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
+        rend.color = rawColor;
         progress = 0;
         
         Animator tree_anim =  tree.GetComponentInChildren<Animator>();
@@ -62,7 +71,6 @@ public class EnemyWall : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        rend.color = rawColor;
         tree_anim.SetBool("Attacking", false);
         tree.tag = "Wall";
     }

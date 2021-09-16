@@ -149,7 +149,7 @@ public class configUIManager : MonoBehaviour
         enemy.enemyLevel.wallAmount = int.Parse(wallAmount.text);
 
         enemy.enemyLevel.minSpawnAmount = int.Parse(minSpawn.text);
-        enemy.enemyLevel.minSpawnAmount = int.Parse(maxSpawn.text);
+        enemy.enemyLevel.maxSpawnAmount = int.Parse(maxSpawn.text);
         
         enemy.enemyLevel.spawnWall = wallT.isOn;
         enemy.enemyLevel.spawnSnake = snakeT.isOn;
