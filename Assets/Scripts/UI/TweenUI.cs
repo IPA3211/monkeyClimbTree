@@ -62,11 +62,20 @@ public class TweenUI : MonoBehaviour
         other.transform.localScale = new Vector3(1, 1, 1);
         other.transform.localPosition = new Vector3(other.transform.localPosition.x, 909f, other.transform.localPosition.z);
         other.transform.LeanMoveLocalY(0, openTweenTime).setEaseOutBack();
+        opend.Add(other);
+        if(opend.Count >= 1){
+            background.SetActive(true);
+        }
     }
 
     public void ClosePauseTween(GameObject other)
     {        
         other.transform.LeanMoveLocalY(909f, closeTweenTime).setEaseInBack();
+        opend.Remove(other);
+        if (opend.Count == 0)
+        {
+            background.SetActive(false);
+        }
     }
     
 }
