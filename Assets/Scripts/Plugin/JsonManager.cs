@@ -38,13 +38,13 @@ public class JsonManager {
 
         if(Application.platform == RuntimePlatform.WindowsEditor){
             File.WriteAllText(Application.dataPath 
-                                + "/ItemData.json"
-                                , ItemJson.ToString());
+                                + "/ItemData"
+                                , SecurityPlayerPrefs.Encrypt(ItemJson.ToString()));
         }
         else {
             File.WriteAllText(Application.persistentDataPath 
-                                + "/ItemData.json"
-                                , ItemJson.ToString());
+                                + "/ItemData"
+                                , SecurityPlayerPrefs.Encrypt(ItemJson.ToString()));
         }
     }
 
@@ -54,12 +54,12 @@ public class JsonManager {
         string Jsonstring;
         try{
             if(Application.platform == RuntimePlatform.WindowsEditor){
-                Jsonstring = File.ReadAllText(Application.dataPath
-                                                        + "/ItemData.json");
+                Jsonstring = SecurityPlayerPrefs.Decrypt(File.ReadAllText(Application.dataPath
+                                                        + "/ItemData"));
             }
             else {
-                Jsonstring = File.ReadAllText(Application.persistentDataPath
-                                                        + "/ItemData.json");
+                Jsonstring = SecurityPlayerPrefs.Decrypt(File.ReadAllText(Application.persistentDataPath
+                                                        + "/ItemData"));
             }
             //Debug.Log(Jsonstring);
 

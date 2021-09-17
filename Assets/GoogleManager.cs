@@ -68,7 +68,7 @@ public class GoogleManager : MonoBehaviour
 
     public void LoadCloud() 
 	{
-        SavedGame().OpenWithAutomaticConflictResolution("mysave",
+        SavedGame().OpenWithAutomaticConflictResolution("MySave",
             DataSource.ReadCacheOrNetwork, ConflictResolutionStrategy.UseLastKnownGood, LoadGame);
     }
 
@@ -113,7 +113,7 @@ public class GoogleManager : MonoBehaviour
         if(CheckLogin()){
         SavingText.SetActive(true);
         Debug.Log("save start");
-        SavedGame().OpenWithAutomaticConflictResolution("mysave",
+        SavedGame().OpenWithAutomaticConflictResolution("MySave",
             DataSource.ReadCacheOrNetwork, ConflictResolutionStrategy.UseLastKnownGood, SaveGame);
         }
     }
@@ -143,7 +143,7 @@ public class GoogleManager : MonoBehaviour
 
     public void DeleteCloud()
     {
-        SavedGame().OpenWithAutomaticConflictResolution("mysave", 
+        SavedGame().OpenWithAutomaticConflictResolution("MySave", 
             DataSource.ReadCacheOrNetwork, ConflictResolutionStrategy.UseLongestPlaytime, DeleteGame);
     }
 

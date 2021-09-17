@@ -97,35 +97,18 @@ public class RuntimeGameManager : MonoBehaviour
 
         GameSystem.resetStartItem();
 
-        GameSystem.timeToAd--;
-        if(GameSystem.timeToAd <= 0){
-            GameSystem.timeToAd = Random.Range(4, 7);
-            canvas.GetComponent<PopUpUIManager>().setPopUpSelectMsgUI("저희 게임을 친구들에게 공유하고 30코인의 보상을 받아보세요!", 
-            () => {
-                canvas.GetComponent<StageClearUI>().startStageClearUI();
-                canvas.GetComponent<PopUpUIManager>().clear();
-            }, 
-            () => {
-                
-                shareLink("몽키키와 함께 전설의 바나나를 찾으러 떠나지 않을래?");
-                canvas.GetComponent<StageClearUI>().startStageClearUI();
-                canvas.GetComponent<PopUpUIManager>().clear();
-                canvas.GetComponent<PopUpUIManager>().compo.btnL.GetComponentInChildren<ParticleSystem>().Play();
-                GameSystem.addCoin(30);
-            });
-        }
-        else
+        checkedAD(() => {
             canvas.GetComponent<StageClearUI>().startStageClearUI();
+            SecurityPlayerPrefs.SetInt("timeToAd", GameSystem.timeToAd);
+            SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
+            SecurityPlayerPrefs.SetInt("playerClearedStage", GameSystem.playerClearedStage);
+            GetComponent<AchievementManager>().refreshAchieve();
 
-        canvas.GetComponent<StageClearUI>().startStageClearUI();
-        SecurityPlayerPrefs.SetInt("timeToAd", GameSystem.timeToAd);
-        SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
-        SecurityPlayerPrefs.SetInt("playerClearedStage", GameSystem.playerClearedStage);
-        GetComponent<AchievementManager>().refreshAchieve();
+            endingsSave();
+            if(netManager != null)
+                netManager.SaveCloud();
+        });
 
-        endingsSave();
-        if(netManager != null)
-            netManager.SaveCloud();
     }
 
     public void playerDead(){
@@ -143,32 +126,39 @@ public class RuntimeGameManager : MonoBehaviour
         GetComponent<AchievementManager>().refreshAchieve();
         GameSystem.resetStartItem();
 
+        checkedAD(() => {
+            canvas.GetComponent<GameoverUI>().startGameoverUI();
+            SecurityPlayerPrefs.SetInt("timeToAd", GameSystem.timeToAd);
+            SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
+            GetComponent<AchievementManager>().refreshAchieve();
+            
+            endingsSave();
+            if(netManager != null)
+                netManager.SaveCloud();
+        });
+    }
+
+    public void checkedAD(System.Action callBack){
         GameSystem.timeToAd--;
         if(GameSystem.timeToAd <= 0){
             GameSystem.timeToAd = Random.Range(4, 7);
-            canvas.GetComponent<PopUpUIManager>().setPopUpSelectMsgUI("저희 게임을 친구들에게 공유하고 30코인의 보상을 받아보세요!", 
+            canvas.GetComponent<PopUpUIManager>().setPopUpSelectMsgUI("저희 게임을 친구들에게 공유하고 10코인의 보상을 받아보세요!", 
             () => {
-                canvas.GetComponent<GameoverUI>().startGameoverUI();
                 canvas.GetComponent<PopUpUIManager>().clear();
+                callBack();
             }, 
             () => {
                 shareLink("몽키키와 함께 전설의 바나나를 찾으러 떠나지 않을래?");
-                canvas.GetComponent<PopUpUIManager>().setPopUpMsgUI("30 코인을 받으세요!", () => {
-                    GameSystem.addCoin(30);
-                    canvas.GetComponent<GameoverUI>().startGameoverUI();
+                canvas.GetComponent<PopUpUIManager>().setPopUpMsgUI("10 코인을 받으세요!", () => {
                     canvas.GetComponent<PopUpUIManager>().compo.btnR.GetComponentInChildren<ParticleSystem>().Play();
                     canvas.GetComponent<PopUpUIManager>().clear();
+                    GameSystem.addCoin(10);
+                    callBack();
                 });
             });
         }
         else
-            canvas.GetComponent<GameoverUI>().startGameoverUI();
-
-        SecurityPlayerPrefs.SetInt("timeToAd", GameSystem.timeToAd);
-        SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
-        endingsSave();
-        if(netManager != null)
-            netManager.SaveCloud();
+            callBack();
     }
 
     public void endingsSave()
@@ -210,6 +200,7 @@ public class RuntimeGameManager : MonoBehaviour
 		AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity");
 		AndroidJavaObject jChooser = intentClass.CallStatic<AndroidJavaObject>("createChooser", intentObject, "Share Via");
 		currentActivity.Call("startActivity", jChooser);
+        Counts.watchADCount++;
 #endif
     }
 }
