@@ -12,6 +12,8 @@ public enum rare
 
 [System.Serializable]
 public class Skin{
+    [HideInInspector]
+    public int index;
     public Texture2D texture;
     public string skinName;
     public rare rareNum;
@@ -99,10 +101,12 @@ public class ObjReskin : MonoBehaviour
             else{
                 skinDatas[i].isUnlocked = false;
             }
+            skinDatas[i].index = i;
         }
 
         for(; i < skinDatas.Count; i++){
             skinDatas[i].isUnlocked = false;
+            skinDatas[i].index = i;
         }
     }
 

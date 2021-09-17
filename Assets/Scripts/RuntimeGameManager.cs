@@ -44,6 +44,7 @@ public class RuntimeGameManager : MonoBehaviour
         
         GameSystem.setCoin(SecurityPlayerPrefs.GetInt("Coin", 0));
         GameSystem.playerClearedStage = SecurityPlayerPrefs.GetInt("playerClearedStage", 0);
+        GameSystem.timeToAd = SecurityPlayerPrefs.GetInt("timeToAd", 3);
     }
 
     // Update is called once per frame
@@ -96,7 +97,28 @@ public class RuntimeGameManager : MonoBehaviour
 
         GameSystem.resetStartItem();
 
+        GameSystem.timeToAd--;
+        if(GameSystem.timeToAd <= 0){
+            GameSystem.timeToAd = Random.Range(4, 7);
+            canvas.GetComponent<PopUpUIManager>().setPopUpSelectMsgUI("저희 게임을 친구들에게 공유하고 30코인의 보상을 받아보세요!", 
+            () => {
+                canvas.GetComponent<StageClearUI>().startStageClearUI();
+                canvas.GetComponent<PopUpUIManager>().clear();
+            }, 
+            () => {
+                
+                shareLink("몽키키와 함께 전설의 바나나를 찾으러 떠나지 않을래?");
+                canvas.GetComponent<StageClearUI>().startStageClearUI();
+                canvas.GetComponent<PopUpUIManager>().clear();
+                canvas.GetComponent<PopUpUIManager>().compo.btnL.GetComponentInChildren<ParticleSystem>().Play();
+                GameSystem.addCoin(30);
+            });
+        }
+        else
+            canvas.GetComponent<StageClearUI>().startStageClearUI();
+
         canvas.GetComponent<StageClearUI>().startStageClearUI();
+        SecurityPlayerPrefs.SetInt("timeToAd", GameSystem.timeToAd);
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
         SecurityPlayerPrefs.SetInt("playerClearedStage", GameSystem.playerClearedStage);
         GetComponent<AchievementManager>().refreshAchieve();
@@ -120,7 +142,29 @@ public class RuntimeGameManager : MonoBehaviour
         
         GetComponent<AchievementManager>().refreshAchieve();
         GameSystem.resetStartItem();
-        canvas.GetComponent<GameoverUI>().startGameoverUI();
+
+        GameSystem.timeToAd--;
+        if(GameSystem.timeToAd <= 0){
+            GameSystem.timeToAd = Random.Range(4, 7);
+            canvas.GetComponent<PopUpUIManager>().setPopUpSelectMsgUI("저희 게임을 친구들에게 공유하고 30코인의 보상을 받아보세요!", 
+            () => {
+                canvas.GetComponent<GameoverUI>().startGameoverUI();
+                canvas.GetComponent<PopUpUIManager>().clear();
+            }, 
+            () => {
+                shareLink("몽키키와 함께 전설의 바나나를 찾으러 떠나지 않을래?");
+                canvas.GetComponent<PopUpUIManager>().setPopUpMsgUI("30 코인을 받으세요!", () => {
+                    GameSystem.addCoin(30);
+                    canvas.GetComponent<GameoverUI>().startGameoverUI();
+                    canvas.GetComponent<PopUpUIManager>().compo.btnR.GetComponentInChildren<ParticleSystem>().Play();
+                    canvas.GetComponent<PopUpUIManager>().clear();
+                });
+            });
+        }
+        else
+            canvas.GetComponent<GameoverUI>().startGameoverUI();
+
+        SecurityPlayerPrefs.SetInt("timeToAd", GameSystem.timeToAd);
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
         endingsSave();
         if(netManager != null)
@@ -149,5 +193,23 @@ public class RuntimeGameManager : MonoBehaviour
         GameSystem.resetStartItem();
         GameSystem.restart();
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void shareLink(string msg){
+        string subject = msg;
+	    string body = "https://play.google.com/store/apps/details?id=com.MonkeyClimbtheTree.BananaofLegend";
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+		AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent");
+		AndroidJavaObject intentObject = new AndroidJavaObject("android.content.Intent");
+		intentObject.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND"));
+		intentObject.Call<AndroidJavaObject>("setType", "text/plain");
+		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_SUBJECT"), subject);
+		intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), body);
+		AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+		AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity");
+		AndroidJavaObject jChooser = intentClass.CallStatic<AndroidJavaObject>("createChooser", intentObject, "Share Via");
+		currentActivity.Call("startActivity", jChooser);
+#endif
     }
 }

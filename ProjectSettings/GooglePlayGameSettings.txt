@@ -1,9 +1,9 @@
 lastUpgrade=01012
 proj.pluginVersion=0.10.12
-proj.AppId=957122397309
-and.BundleId=com.fourthteam.JM2d
+proj.AppId=389317648654
+and.BundleId=com.MonkeyClimbtheTree.BananaofLegend
 proj.classDir=Assets
 proj.ConstantsClassName=GPGSIds
-and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--Google+Play+game+services+IDs.+Save+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.--%3e%0d%0a%3cresources%3e%0d%0a++%3c%21--app_id--%3e%0d%0a++%3cstring+name%3d%22app_id%22+translatable%3d%22false%22%3e957122397309%3c%2fstring%3e%0d%0a++%3c%21--package_name--%3e%0d%0a++%3cstring+name%3d%22package_name%22+translatable%3d%22false%22%3ecom.fourthteam.JM2d%3c%2fstring%3e%0d%0a++%3c%21--leaderboard+%eb%ac%b4%ed%95%9c+%eb%aa%a8%eb%93%9c+%ec%88%9c%ec%9c%84--%3e%0d%0a++%3cstring+name%3d%22leaderboard%22+translatable%3d%22false%22%3eCgkI_YjDx-0bEAIQBA%3c%2fstring%3e%0d%0a%3c%2fresources%3e
-and.ClientId=957122397309-disitaseqidsh4pt332srcor84ejcete.apps.googleusercontent.com
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--Google+Play+game+services+IDs.+Save+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.--%3e%0d%0a%3cresources%3e%0d%0a++%3c%21--app_id--%3e%0d%0a++%3cstring+name%3d%22app_id%22+translatable%3d%22false%22%3e389317648654%3c%2fstring%3e%0d%0a++%3c%21--package_name--%3e%0d%0a++%3cstring+name%3d%22package_name%22+translatable%3d%22false%22%3ecom.MonkeyClimbtheTree.BananaofLegend%3c%2fstring%3e%0d%0a++%3c%21--leaderboard+Banana+of+Legend--%3e%0d%0a++%3cstring+name%3d%22leaderboard_banana_of_legend%22+translatable%3d%22false%22%3eCgkIjsKPqaoLEAIQAQ%3c%2fstring%3e%0d%0a%3c%2fresources%3e
+and.ClientId=389317648654-7ttqlt9m5ug31d804eks8sqjg34dsmn6.apps.googleusercontent.com
 android.SetupDone=true

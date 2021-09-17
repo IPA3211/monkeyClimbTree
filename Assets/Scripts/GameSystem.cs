@@ -50,6 +50,8 @@ public class GameSystem
     public static bool isStageChanged = true;
     public static bool isCanVive = true;
 
+    public static int timeToAd = 0;
+
     public static handPos whichHand = handPos.PLAYER_HAND_NULL;
 
     public static string deadSign = "";

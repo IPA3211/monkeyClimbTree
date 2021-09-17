@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class SkinUI : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class SkinUI : MonoBehaviour
     public Text skinNumText;
     public Text persentText;
     public int skinNum;
+    
+    List<Skin> sortedSkins;
 
     ObjReskin skinManager;
     
@@ -18,8 +21,25 @@ public class SkinUI : MonoBehaviour
     void Start()
     {
         skinManager = gameManager.GetComponent<ObjReskin>();
-        skinNum = skinManager.skinNumber;
-        changeUI(skinManager.setUISkin(skinNum));
+        sortedSkins = skinManager.skinDatas.ToList();
+        sortedSkins.Sort((a, b) => {
+            if(a.rareNum < b.rareNum){
+                return -1;
+            }
+            else if(a.rareNum > b.rareNum){
+                return 1;
+            }
+            else
+                return a.index.CompareTo(b.index);
+        });
+
+        for(int i = 0; i < sortedSkins.Count; i++){
+            if(sortedSkins[i].index == skinManager.skinNumber){
+                skinNum = i;
+                break;
+            }
+        }
+        changeUI(skinManager.setUISkin(sortedSkins[skinNum].index));
     }
 
     // Update is called once per frame
@@ -33,7 +53,7 @@ public class SkinUI : MonoBehaviour
         if(skinNum == skinManager.getMaxSize()){
             skinNum = 0;
         }
-        changeUI(skinManager.setUISkin(skinNum));
+        changeUI(skinManager.setUISkin(sortedSkins[skinNum].index));
     }
     
     public void OnPrevBtnClicked(){
@@ -41,25 +61,25 @@ public class SkinUI : MonoBehaviour
         if(skinNum == -1){
             skinNum = skinManager.getMaxSize() - 1;
         }
-        changeUI(skinManager.setUISkin(skinNum));
+        changeUI(skinManager.setUISkin(sortedSkins[skinNum].index));
     }
 
     public void refreshSkinUI(){
-        changeUI(skinManager.setUISkin(skinNum));
+        changeUI(skinManager.setUISkin(sortedSkins[skinNum].index));
     }
 
     void changeUI((Sprite skin, string text) skin){
         UIPlayer.sprite = skin.skin;
         UIName.text = skin.text;
-        if (skinManager.skinDatas[skinNum].rareNum == rare.Normal)
+        if (sortedSkins[skinNum].rareNum == rare.Normal)
         {
             UIName.color = Color.gray;
         }
-        else if (skinManager.skinDatas[skinNum].rareNum == rare.Rare)
+        else if (sortedSkins[skinNum].rareNum == rare.Rare)
         {
             UIName.color = new Color32(0, 186, 155, 255);
         }
-        else if (skinManager.skinDatas[skinNum].rareNum == rare.Hard)
+        else if (sortedSkins[skinNum].rareNum == rare.Hard)
         {
             UIName.color = new Color32(255, 0, 108, 255);
         }

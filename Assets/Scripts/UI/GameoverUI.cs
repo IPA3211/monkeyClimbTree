@@ -249,7 +249,10 @@ public class GameoverUI : MonoBehaviour
         SecurityPlayerPrefs.SetInt("Coin", GameSystem.getCoin());
         gameManager.GetComponent<RuntimeGameManager>().gameStart();
     }
-
+    public void shareBtnClicked(){
+        gameManager.GetComponent<RuntimeGameManager>().shareLink(
+            "Banana of legend에서 무한런 " + GameSystem.getScore() + "점에 도달했어 너도 도전해봐!");
+    }
     void AchievementCheck()
     {
         if(GameSystem.hasHeartPlus)
