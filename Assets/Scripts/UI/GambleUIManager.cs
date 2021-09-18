@@ -26,9 +26,9 @@ public class GambleUIManager : MonoBehaviour
 
     public float shakeAmount = 1500f;
     int gamblePrice = 100;
-    int normalWeight = 60;
-    int rareWeight = 30;
-    int hardWeight = 10;
+    int normalWeight = 50;
+    int rareWeight = 35;
+    int hardWeight = 15;
     bool isAlreadyEarned = false;
     bool isShaking = false;
     bool isPrivewing = false;

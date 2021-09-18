@@ -1,76 +1,76 @@
 fileFormatVersion: 2
-guid: 595f17b991965584ab02d7b45e73393f
+guid: 955e6123be0861b4191c99d3a5227a6e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4965590184663474172
-    second: dino_sprite_0
+      213: -870764279841663593
+    second: cat_sprite_0
   - first:
-      213: 6650810983936277311
-    second: dino_sprite_1
+      213: -7518538587120783125
+    second: cat_sprite_1
   - first:
-      213: -7323952480904269743
-    second: dino_sprite_2
+      213: -6948938603242394022
+    second: cat_sprite_2
   - first:
-      213: -4498199897404361121
-    second: dino_sprite_3
+      213: 623122565197524157
+    second: cat_sprite_3
   - first:
-      213: -7994241815243528168
-    second: dino_sprite_4
+      213: -6747805032855364344
+    second: cat_sprite_4
   - first:
-      213: -5163356254816270366
-    second: dino_sprite_5
+      213: -8591525150653840551
+    second: cat_sprite_5
   - first:
-      213: 8407572654137001835
-    second: dino_sprite_6
+      213: -4334505809070395912
+    second: cat_sprite_6
   - first:
-      213: 4136162852434196315
-    second: dino_sprite_7
+      213: 3320455850070999749
+    second: cat_sprite_7
   - first:
-      213: 5051121109482562711
-    second: dino_sprite_8
+      213: -3953252563936193858
+    second: cat_sprite_8
   - first:
-      213: 3029043946052829196
-    second: dino_sprite_9
+      213: -8321096969637883702
+    second: cat_sprite_9
   - first:
-      213: 4852658339147248613
-    second: dino_sprite_10
+      213: 9046504805201747122
+    second: cat_sprite_10
   - first:
-      213: 4676390539231093989
-    second: dino_sprite_11
+      213: 6137243663991672252
+    second: cat_sprite_11
   - first:
-      213: 3420631265676548671
-    second: dino_sprite_12
+      213: 3527227260901201282
+    second: cat_sprite_12
   - first:
-      213: 8560165203792352345
-    second: dino_sprite_13
+      213: 5781488022552080265
+    second: cat_sprite_13
   - first:
-      213: -7630030558693951121
-    second: dino_sprite_14
+      213: 3137807702667015281
+    second: cat_sprite_14
   - first:
-      213: -1676603971875571085
-    second: dino_sprite_15
+      213: 2281219421205701060
+    second: cat_sprite_15
   - first:
-      213: 5343802649499248287
-    second: dino_sprite_16
+      213: -2475580836820835526
+    second: cat_sprite_16
   - first:
-      213: -8022324447410877101
-    second: dino_sprite_17
+      213: -6094636040317442502
+    second: cat_sprite_17
   - first:
-      213: 1803950200813434115
-    second: dino_sprite_18
+      213: -4067802349596917742
+    second: cat_sprite_18
   - first:
-      213: -4978826718063904741
-    second: dino_sprite_19
+      213: -5948253209373937924
+    second: cat_sprite_19
   - first:
-      213: -7141017856583416314
-    second: dino_sprite_20
+      213: -8171400964897208118
+    second: cat_sprite_20
   - first:
-      213: 6912681693859793444
-    second: dino_sprite_21
+      213: -8381285637270955187
+    second: cat_sprite_21
   - first:
-      213: 2456247788279740709
-    second: dino_sprite_22
+      213: 2504689206334370510
+    second: cat_sprite_22
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -172,7 +172,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dino_sprite_0
+      name: cat_sprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -186,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cff5801d6f159e440800000000000000
-      internalID: 4965590184663474172
+      spriteID: 79550f0408c6ae3f0800000000000000
+      internalID: -870764279841663593
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_1
+      name: cat_sprite_1
       rect:
         serializedVersion: 2
         x: 80
@@ -207,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3bb9c53a5d6c4c50800000000000000
-      internalID: 6650810983936277311
+      spriteID: be0399c6df8c8a790800000000000000
+      internalID: -7518538587120783125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_2
+      name: cat_sprite_2
       rect:
         serializedVersion: 2
         x: 160
@@ -228,14 +228,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1503cd7c5081c5a90800000000000000
-      internalID: -7323952480904269743
+      spriteID: a5eecbb4829609f90800000000000000
+      internalID: -6948938603242394022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_3
+      name: cat_sprite_3
       rect:
         serializedVersion: 2
         x: 240
@@ -249,14 +249,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f56b38a960f2391c0800000000000000
-      internalID: -4498199897404361121
+      spriteID: dbce02eeba6c5a800800000000000000
+      internalID: 623122565197524157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_4
+      name: cat_sprite_4
       rect:
         serializedVersion: 2
         x: 320
@@ -270,14 +270,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 818e5d1ac6fbe0190800000000000000
-      internalID: -7994241815243528168
+      spriteID: 80d1013f21bfa52a0800000000000000
+      internalID: -6747805032855364344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_5
+      name: cat_sprite_5
       rect:
         serializedVersion: 2
         x: 400
@@ -291,14 +291,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e782e6c7d21858b0800000000000000
-      internalID: -5163356254816270366
+      spriteID: 95381743565c4c880800000000000000
+      internalID: -8591525150653840551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_6
+      name: cat_sprite_6
       rect:
         serializedVersion: 2
         x: 480
@@ -312,14 +312,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b67cf11a8c2bda470800000000000000
-      internalID: 8407572654137001835
+      spriteID: 8fded7d8eedb8d3c0800000000000000
+      internalID: -4334505809070395912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_7
+      name: cat_sprite_7
       rect:
         serializedVersion: 2
         x: 560
@@ -333,14 +333,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b57b180333a966930800000000000000
-      internalID: 4136162852434196315
+      spriteID: 5c289dbc001a41e20800000000000000
+      internalID: 3320455850070999749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_8
+      name: cat_sprite_8
       rect:
         serializedVersion: 2
         x: 640
@@ -354,14 +354,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7946f2813ef291640800000000000000
-      internalID: 5051121109482562711
+      spriteID: eb25e230db93329c0800000000000000
+      internalID: -3953252563936193858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_9
+      name: cat_sprite_9
       rect:
         serializedVersion: 2
         x: 720
@@ -375,14 +375,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c00c68d9b63590a20800000000000000
-      internalID: 3029043946052829196
+      spriteID: ac09727a466858c80800000000000000
+      internalID: -8321096969637883702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_10
+      name: cat_sprite_10
       rect:
         serializedVersion: 2
         x: 800
@@ -396,14 +396,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e375398c0b185340800000000000000
-      internalID: 4852658339147248613
+      spriteID: 2bc1aec9034ab8d70800000000000000
+      internalID: 9046504805201747122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_11
+      name: cat_sprite_11
       rect:
         serializedVersion: 2
         x: 880
@@ -417,14 +417,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e4edd93b60e5e040800000000000000
-      internalID: 4676390539231093989
+      spriteID: cbd8d3c889edb2550800000000000000
+      internalID: 6137243663991672252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_12
+      name: cat_sprite_12
       rect:
         serializedVersion: 2
         x: 960
@@ -438,14 +438,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3ade3a4306887f20800000000000000
-      internalID: 3420631265676548671
+      spriteID: 2851718718a33f030800000000000000
+      internalID: 3527227260901201282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_13
+      name: cat_sprite_13
       rect:
         serializedVersion: 2
         x: 1040
@@ -459,14 +459,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 954d3be26e0dbc670800000000000000
-      internalID: 8560165203792352345
+      spriteID: 98f646199b8fb3050800000000000000
+      internalID: 5781488022552080265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_14
+      name: cat_sprite_14
       rect:
         serializedVersion: 2
         x: 1120
@@ -480,14 +480,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f69fbabe1afac1690800000000000000
-      internalID: -7630030558693951121
+      spriteID: 174b3f21b7bbb8b20800000000000000
+      internalID: 3137807702667015281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_15
+      name: cat_sprite_15
       rect:
         serializedVersion: 2
         x: 1200
@@ -501,14 +501,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37af85312918bb8e0800000000000000
-      internalID: -1676603971875571085
+      spriteID: 4c120b72af488af10800000000000000
+      internalID: 2281219421205701060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_16
+      name: cat_sprite_16
       rect:
         serializedVersion: 2
         x: 1280
@@ -522,14 +522,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f96a1317230092a40800000000000000
-      internalID: 5343802649499248287
+      spriteID: a33a7885858f4add0800000000000000
+      internalID: -2475580836820835526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_17
+      name: cat_sprite_17
       rect:
         serializedVersion: 2
         x: 1360
@@ -543,14 +543,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35d842f4b6afaa090800000000000000
-      internalID: -8022324447410877101
+      spriteID: a36e595efc08b6ba0800000000000000
+      internalID: -6094636040317442502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_18
+      name: cat_sprite_18
       rect:
         serializedVersion: 2
         x: 1440
@@ -564,14 +564,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 305baff562be80910800000000000000
-      internalID: 1803950200813434115
+      spriteID: 210c6cfa0534c87c0800000000000000
+      internalID: -4067802349596917742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_19
+      name: cat_sprite_19
       rect:
         serializedVersion: 2
         x: 1520
@@ -585,14 +585,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b18b3979a77a7eab0800000000000000
-      internalID: -4978826718063904741
+      spriteID: cfe6035a83f837da0800000000000000
+      internalID: -5948253209373937924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_20
+      name: cat_sprite_20
       rect:
         serializedVersion: 2
         x: 1600
@@ -606,14 +606,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 606cf9b181206ec90800000000000000
-      internalID: -7141017856583416314
+      spriteID: ac8840acd1a599e80800000000000000
+      internalID: -8171400964897208118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_21
+      name: cat_sprite_21
       rect:
         serializedVersion: 2
         x: 1680
@@ -627,14 +627,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42acbd72067ceef50800000000000000
-      internalID: 6912681693859793444
+      spriteID: d4b916d6e11bfab80800000000000000
+      internalID: -8381285637270955187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_22
+      name: cat_sprite_22
       rect:
         serializedVersion: 2
         x: 1760
@@ -648,8 +648,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 529b0c48958561220800000000000000
-      internalID: 2456247788279740709
+      spriteID: ec2b050109172c220800000000000000
+      internalID: 2504689206334370510
       vertices: []
       indices: 
       edges: []

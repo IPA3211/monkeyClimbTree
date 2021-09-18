@@ -12,6 +12,7 @@ public class RocketCtrl : MonoBehaviour
     float tempCamSpeed;
     bool hasSoundPlayed = false;
     GameObject player;
+    public GameObject magnet_icon;
     SmoothCamera cam;
 
     // Start is called before the first frame update
@@ -38,10 +39,14 @@ public class RocketCtrl : MonoBehaviour
         if(!GameSystem.isStarted || GameSystem.isDead){
             transform.position = Vector3.Lerp(transform.position, new Vector3(0, -7, 0), 0.2f);
             player.GetComponent<SpriteRenderer>().color = Color.clear;
+            if(GameSystem.hasMagnetic)
+                magnet_icon.GetComponent<SpriteRenderer>().color = Color.clear;
         }
         else if(GameSystem.hasBooster && !GameSystem.isDead)
         {
             player.GetComponent<SpriteRenderer>().color = Color.white;
+            if (GameSystem.hasMagnetic)
+                magnet_icon.GetComponent<SpriteRenderer>().color = Color.white;
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             cam.camSpeed = camSpeed;
             transform.Translate(Vector3.up * Time.deltaTime * speed);

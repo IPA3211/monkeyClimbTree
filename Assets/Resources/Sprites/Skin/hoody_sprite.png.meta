@@ -1,76 +1,76 @@
 fileFormatVersion: 2
-guid: 595f17b991965584ab02d7b45e73393f
+guid: 0df097a47d4dd53479062cf8c8589526
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4965590184663474172
-    second: dino_sprite_0
+      213: 1930089839107524298
+    second: hoody_sprite_0
   - first:
-      213: 6650810983936277311
-    second: dino_sprite_1
+      213: 1323895682883717584
+    second: hoody_sprite_1
   - first:
-      213: -7323952480904269743
-    second: dino_sprite_2
+      213: -4247729053371054317
+    second: hoody_sprite_2
   - first:
-      213: -4498199897404361121
-    second: dino_sprite_3
+      213: -8944192508724033295
+    second: hoody_sprite_3
   - first:
-      213: -7994241815243528168
-    second: dino_sprite_4
+      213: -4508319847093381231
+    second: hoody_sprite_4
   - first:
-      213: -5163356254816270366
-    second: dino_sprite_5
+      213: 3685251993449179904
+    second: hoody_sprite_5
   - first:
-      213: 8407572654137001835
-    second: dino_sprite_6
+      213: -1308527561019512900
+    second: hoody_sprite_6
   - first:
-      213: 4136162852434196315
-    second: dino_sprite_7
+      213: -1775308451576008599
+    second: hoody_sprite_7
   - first:
-      213: 5051121109482562711
-    second: dino_sprite_8
+      213: -3956566167170060436
+    second: hoody_sprite_8
   - first:
-      213: 3029043946052829196
-    second: dino_sprite_9
+      213: -520577868089255997
+    second: hoody_sprite_9
   - first:
-      213: 4852658339147248613
-    second: dino_sprite_10
+      213: -1233232626993334665
+    second: hoody_sprite_10
   - first:
-      213: 4676390539231093989
-    second: dino_sprite_11
+      213: -6126611104797635700
+    second: hoody_sprite_11
   - first:
-      213: 3420631265676548671
-    second: dino_sprite_12
+      213: -2794982830123591808
+    second: hoody_sprite_12
   - first:
-      213: 8560165203792352345
-    second: dino_sprite_13
+      213: -4056499791805805052
+    second: hoody_sprite_13
   - first:
-      213: -7630030558693951121
-    second: dino_sprite_14
+      213: 5984595961234819272
+    second: hoody_sprite_14
   - first:
-      213: -1676603971875571085
-    second: dino_sprite_15
+      213: -7519673961624899535
+    second: hoody_sprite_15
   - first:
-      213: 5343802649499248287
-    second: dino_sprite_16
+      213: 3383939076734582691
+    second: hoody_sprite_16
   - first:
-      213: -8022324447410877101
-    second: dino_sprite_17
+      213: -7111656791167028350
+    second: hoody_sprite_17
   - first:
-      213: 1803950200813434115
-    second: dino_sprite_18
+      213: -8808029228433099478
+    second: hoody_sprite_18
   - first:
-      213: -4978826718063904741
-    second: dino_sprite_19
+      213: 7730009236072532531
+    second: hoody_sprite_19
   - first:
-      213: -7141017856583416314
-    second: dino_sprite_20
+      213: -276485883926339965
+    second: hoody_sprite_20
   - first:
-      213: 6912681693859793444
-    second: dino_sprite_21
+      213: 5054746795024470337
+    second: hoody_sprite_21
   - first:
-      213: 2456247788279740709
-    second: dino_sprite_22
+      213: -6134853554731124791
+    second: hoody_sprite_22
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -172,7 +172,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dino_sprite_0
+      name: hoody_sprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -186,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cff5801d6f159e440800000000000000
-      internalID: 4965590184663474172
+      spriteID: ac6489c8b7e09ca10800000000000000
+      internalID: 1930089839107524298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_1
+      name: hoody_sprite_1
       rect:
         serializedVersion: 2
         x: 80
@@ -207,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3bb9c53a5d6c4c50800000000000000
-      internalID: 6650810983936277311
+      spriteID: 0d905f9fb1c6f5210800000000000000
+      internalID: 1323895682883717584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_2
+      name: hoody_sprite_2
       rect:
         serializedVersion: 2
         x: 160
@@ -228,14 +228,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1503cd7c5081c5a90800000000000000
-      internalID: -7323952480904269743
+      spriteID: 31746bf6ee80d05c0800000000000000
+      internalID: -4247729053371054317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_3
+      name: hoody_sprite_3
       rect:
         serializedVersion: 2
         x: 240
@@ -249,14 +249,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f56b38a960f2391c0800000000000000
-      internalID: -4498199897404361121
+      spriteID: 1f84bca3d48dfd380800000000000000
+      internalID: -8944192508724033295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_4
+      name: hoody_sprite_4
       rect:
         serializedVersion: 2
         x: 320
@@ -270,14 +270,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 818e5d1ac6fbe0190800000000000000
-      internalID: -7994241815243528168
+      spriteID: 197d7243cfa3f61c0800000000000000
+      internalID: -4508319847093381231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_5
+      name: hoody_sprite_5
       rect:
         serializedVersion: 2
         x: 400
@@ -291,14 +291,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e782e6c7d21858b0800000000000000
-      internalID: -5163356254816270366
+      spriteID: 00ba659a925a42330800000000000000
+      internalID: 3685251993449179904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_6
+      name: hoody_sprite_6
       rect:
         serializedVersion: 2
         x: 480
@@ -312,14 +312,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b67cf11a8c2bda470800000000000000
-      internalID: 8407572654137001835
+      spriteID: cb7af9abd1d27dde0800000000000000
+      internalID: -1308527561019512900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_7
+      name: hoody_sprite_7
       rect:
         serializedVersion: 2
         x: 560
@@ -333,14 +333,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b57b180333a966930800000000000000
-      internalID: 4136162852434196315
+      spriteID: 96030198e56dc57e0800000000000000
+      internalID: -1775308451576008599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_8
+      name: hoody_sprite_8
       rect:
         serializedVersion: 2
         x: 640
@@ -354,14 +354,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7946f2813ef291640800000000000000
-      internalID: 5051121109482562711
+      spriteID: c6fef73a8047719c0800000000000000
+      internalID: -3956566167170060436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_9
+      name: hoody_sprite_9
       rect:
         serializedVersion: 2
         x: 720
@@ -375,14 +375,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c00c68d9b63590a20800000000000000
-      internalID: 3029043946052829196
+      spriteID: 3c71c96ef2986c8f0800000000000000
+      internalID: -520577868089255997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_10
+      name: hoody_sprite_10
       rect:
         serializedVersion: 2
         x: 800
@@ -396,14 +396,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e375398c0b185340800000000000000
-      internalID: 4852658339147248613
+      spriteID: 776f3aea57da2eee0800000000000000
+      internalID: -1233232626993334665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_11
+      name: hoody_sprite_11
       rect:
         serializedVersion: 2
         x: 880
@@ -417,14 +417,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e4edd93b60e5e040800000000000000
-      internalID: 4676390539231093989
+      spriteID: c8bc29d09a7e9faa0800000000000000
+      internalID: -6126611104797635700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_12
+      name: hoody_sprite_12
       rect:
         serializedVersion: 2
         x: 960
@@ -438,14 +438,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3ade3a4306887f20800000000000000
-      internalID: 3420631265676548671
+      spriteID: 087da29ace93639d0800000000000000
+      internalID: -2794982830123591808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_13
+      name: hoody_sprite_13
       rect:
         serializedVersion: 2
         x: 1040
@@ -459,14 +459,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 954d3be26e0dbc670800000000000000
-      internalID: 8560165203792352345
+      spriteID: 40e08fd7eea64b7c0800000000000000
+      internalID: -4056499791805805052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_14
+      name: hoody_sprite_14
       rect:
         serializedVersion: 2
         x: 1120
@@ -480,14 +480,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f69fbabe1afac1690800000000000000
-      internalID: -7630030558693951121
+      spriteID: 8c883a9a15e8d0350800000000000000
+      internalID: 5984595961234819272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_15
+      name: hoody_sprite_15
       rect:
         serializedVersion: 2
         x: 1200
@@ -501,14 +501,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37af85312918bb8e0800000000000000
-      internalID: -1676603971875571085
+      spriteID: 130f7927f50c4a790800000000000000
+      internalID: -7519673961624899535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_16
+      name: hoody_sprite_16
       rect:
         serializedVersion: 2
         x: 1280
@@ -522,14 +522,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f96a1317230092a40800000000000000
-      internalID: 5343802649499248287
+      spriteID: 3aff35259aa26fe20800000000000000
+      internalID: 3383939076734582691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_17
+      name: hoody_sprite_17
       rect:
         serializedVersion: 2
         x: 1360
@@ -543,14 +543,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35d842f4b6afaa090800000000000000
-      internalID: -8022324447410877101
+      spriteID: 283befdd3d15e4d90800000000000000
+      internalID: -7111656791167028350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_18
+      name: hoody_sprite_18
       rect:
         serializedVersion: 2
         x: 1440
@@ -564,14 +564,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 305baff562be80910800000000000000
-      internalID: 1803950200813434115
+      spriteID: a25bcfb651893c580800000000000000
+      internalID: -8808029228433099478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_19
+      name: hoody_sprite_19
       rect:
         serializedVersion: 2
         x: 1520
@@ -585,14 +585,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b18b3979a77a7eab0800000000000000
-      internalID: -4978826718063904741
+      spriteID: 33a8792e172864b60800000000000000
+      internalID: 7730009236072532531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_20
+      name: hoody_sprite_20
       rect:
         serializedVersion: 2
         x: 1600
@@ -606,14 +606,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 606cf9b181206ec90800000000000000
-      internalID: -7141017856583416314
+      spriteID: 38e192fad89b92cf0800000000000000
+      internalID: -276485883926339965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_21
+      name: hoody_sprite_21
       rect:
         serializedVersion: 2
         x: 1680
@@ -627,14 +627,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42acbd72067ceef50800000000000000
-      internalID: 6912681693859793444
+      spriteID: 1415afacd61162640800000000000000
+      internalID: 5054746795024470337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dino_sprite_22
+      name: hoody_sprite_22
       rect:
         serializedVersion: 2
         x: 1760
@@ -648,8 +648,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 529b0c48958561220800000000000000
-      internalID: 2456247788279740709
+      spriteID: 9c77531223f9cdaa0800000000000000
+      internalID: -6134853554731124791
       vertices: []
       indices: 
       edges: []
