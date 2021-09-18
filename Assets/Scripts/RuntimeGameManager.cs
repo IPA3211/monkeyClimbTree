@@ -15,6 +15,7 @@ public class RuntimeGameManager : MonoBehaviour
     GoogleManager netManager = null;
     // Start is called before the first frame update
     void Awake(){
+        SecurityPlayerPrefs.SetString("Version", Application.version);
         gameManager = gameObject;
         endingManger = GetComponent<EndingManager>();
         readyUIManager = canvas.GetComponent<ReadyUIManager>();
@@ -139,20 +140,21 @@ public class RuntimeGameManager : MonoBehaviour
     }
 
     public void checkedAD(System.Action callBack){
+        int coin = 10;
         GameSystem.timeToAd--;
         if(GameSystem.timeToAd <= 0){
             GameSystem.timeToAd = Random.Range(4, 7);
-            canvas.GetComponent<PopUpUIManager>().setPopUpSelectMsgUI("저희 게임을 친구들에게 공유하고 10코인의 보상을 받아보세요!", 
+            canvas.GetComponent<PopUpUIManager>().setPopUpSelectMsgUI("저희 게임을 친구들에게 공유하고 " + coin + "코인의 보상을 받아보세요!", 
             () => {
                 canvas.GetComponent<PopUpUIManager>().clear();
                 callBack();
             }, 
             () => {
                 shareLink("몽키키와 함께 전설의 바나나를 찾으러 떠나지 않을래?");
-                canvas.GetComponent<PopUpUIManager>().setPopUpMsgUI("10 코인을 받으세요!", () => {
+                canvas.GetComponent<PopUpUIManager>().setPopUpCoinUI(coin, () => {
                     canvas.GetComponent<PopUpUIManager>().compo.btnR.GetComponentInChildren<ParticleSystem>().Play();
                     canvas.GetComponent<PopUpUIManager>().clear();
-                    GameSystem.addCoin(10);
+                    GameSystem.addCoin(coin);
                     callBack();
                 });
             });
@@ -200,7 +202,7 @@ public class RuntimeGameManager : MonoBehaviour
 		AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity");
 		AndroidJavaObject jChooser = intentClass.CallStatic<AndroidJavaObject>("createChooser", intentObject, "Share Via");
 		currentActivity.Call("startActivity", jChooser);
-        Counts.watchADCount++;
 #endif
+        Counts.watchADCount++;
     }
 }

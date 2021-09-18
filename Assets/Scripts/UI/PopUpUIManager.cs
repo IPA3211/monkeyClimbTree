@@ -23,6 +23,10 @@ public class PopUpUIManager : MonoBehaviour
     public void setPopUpMsgUI(string describe, System.Action Raction, string btnDescribe = "확인"){
         compo.PopUpMsgUI(describe, Raction, btnDescribe);
     }
+
+    public void setPopUpCoinUI(int coin, System.Action Raction, string btnDescribe = "받기"){
+        compo.PopUpCoinUI(coin, Raction, btnDescribe);
+    }
     public void clear(){
         compo.DestroyThis();
     }
