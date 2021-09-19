@@ -5267,7 +5267,7 @@ RectTransform:
   - {fileID: 623052118}
   - {fileID: 357985822}
   m_Father: {fileID: 320729684}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20681,10 +20681,10 @@ RectTransform:
   - {fileID: 1282520736}
   - {fileID: 336812086}
   - {fileID: 1649236845}
-  - {fileID: 28347345}
   - {fileID: 802886325}
   - {fileID: 545034643}
   - {fileID: 2041518823}
+  - {fileID: 28347345}
   m_Father: {fileID: 1868260630}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27133,7 +27133,7 @@ RectTransform:
   - {fileID: 965919789}
   - {fileID: 86570250}
   m_Father: {fileID: 320729684}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -31365,7 +31365,7 @@ RectTransform:
   - {fileID: 1801097372}
   - {fileID: 246022597}
   m_Father: {fileID: 320729684}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -31603,7 +31603,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: d274fc8a61c495a4588c4b46d437a8b0, type: 3}
     m_FontSize: 30
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
@@ -63993,7 +63993,7 @@ RectTransform:
   - {fileID: 1794683941}
   - {fileID: 1565046069}
   m_Father: {fileID: 320729684}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
