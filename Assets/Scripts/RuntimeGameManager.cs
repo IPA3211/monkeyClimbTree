@@ -176,15 +176,23 @@ public class RuntimeGameManager : MonoBehaviour
     }
 
     public void debugDelData(){
-        SecurityPlayerPrefs.DeleteAll();
-        if(netManager != null)
-            netManager.DeleteCloud();
 
-        JsonManager.DeleteAll();
+        canvas.GetComponent<PopUpUIManager>().setPopUpSelectMsgUI("정말 리셋 하시겠습니까? 스킨, 코인, 진행상황이 모두 삭제됩니다.", 
+            () => {
+                canvas.GetComponent<PopUpUIManager>().clear();
+            }, 
+            () => {
+                SecurityPlayerPrefs.DeleteAll();
+                if(netManager != null)
+                    netManager.DeleteCloud();
 
-        GameSystem.resetStartItem();
-        GameSystem.restart();
-        SceneManager.LoadScene("SampleScene");
+                JsonManager.DeleteAll();
+
+                GameSystem.resetStartItem();
+                GameSystem.restart();
+                SceneManager.LoadScene("SampleScene");
+                canvas.GetComponent<PopUpUIManager>().clear();
+            });
     }
 
     public void shareLink(string msg){
