@@ -54,12 +54,12 @@ public class JsonManager {
         string Jsonstring;
         try{
             if(Application.platform == RuntimePlatform.WindowsEditor){
-                Jsonstring = SecurityPlayerPrefs.Decrypt(File.ReadAllText(Application.dataPath
-                                                        + "/ItemData"));
+                Jsonstring = File.ReadAllText(Application.dataPath
+                                                        + "/ItemData");
             }
             else {
-                Jsonstring = SecurityPlayerPrefs.Decrypt(File.ReadAllText(Application.persistentDataPath
-                                                        + "/ItemData"));
+                Jsonstring = File.ReadAllText(Application.persistentDataPath
+                                                        + "/ItemData");
             }
             //Debug.Log(Jsonstring);
 
@@ -73,7 +73,7 @@ public class JsonManager {
 
     public static void LoadDataFromString(string Jsonstring){
         ItemList.Clear();        
-        JsonData itemData = JsonMapper.ToObject(Jsonstring);
+        JsonData itemData = JsonMapper.ToObject(SecurityPlayerPrefs.Decrypt(Jsonstring));
 
         for(int i = 0; i < itemData.Count; i++)
         {

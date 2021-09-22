@@ -125,7 +125,7 @@ public class GoogleManager : MonoBehaviour
             var update = new SavedGameMetadataUpdate.Builder().Build();
             byte[] bytes = System.Text.Encoding.UTF8.GetBytes(
                 File.ReadAllText(Application.persistentDataPath
-                                                    + "/ItemData.json"));
+                                                    + "/ItemData"));
             SavedGame().CommitUpdate(game, update, bytes, SaveData);
         }
     }
