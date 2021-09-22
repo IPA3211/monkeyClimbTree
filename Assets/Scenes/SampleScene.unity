@@ -21636,6 +21636,11 @@ MonoBehaviour:
     skinName: "\uD6C4\uB514 \uBABD\uD0A4\uD0A4"
     rareNum: 1
     isUnlocked: 0
+  - index: 0
+    texture: {fileID: 2800000, guid: d264801c87a299048baed52ee10496ed, type: 3}
+    skinName: "\uC545\uB9C8 \uBABD\uD0A4\uD0A4"
+    rareNum: 2
+    isUnlocked: 0
   skinNumber: 0
   lockSprite: {fileID: 21300000, guid: 0b84883abbe04c84cb25e6d08ae98f0c, type: 3}
 --- !u!114 &351710421
