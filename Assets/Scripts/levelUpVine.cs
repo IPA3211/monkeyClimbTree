@@ -10,10 +10,11 @@ public class levelUpVine : MonoBehaviour
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera");
     }
+    
 
     // Update is called once per frame
     void OnTriggerEnter2D (Collider2D other){
-        if(other.gameObject.tag == "Player"){
+        if(other.gameObject.tag == "Player" && !GameSystem.isDead){
             playerController pc = other.gameObject.GetComponent<playerController>();
             pc.anim.SetBool("IsDoubleJump", false);
             pc.anim.SetBool("IsOnWall", true);
@@ -28,6 +29,10 @@ public class levelUpVine : MonoBehaviour
         GameSystem.isLevelUping = true;
         GetComponent<Collider2D>().enabled = true;
         transform.position = new Vector3(0, y + 20, 0);
+    }
+
+    public void resetPos(){
+        transform.position = new Vector3(18, 25, 0);
     }
 
     IEnumerator getUp(GameObject obj) {

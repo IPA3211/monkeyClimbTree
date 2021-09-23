@@ -9,6 +9,7 @@ public class EtcUIManager : MonoBehaviour
     LobbyUIManager manager;
     public Button onBtn, offBtn;
     public Button hOnBtn, hOffBtn, rightBtn, leftBtn, bothBtn;
+    public Text versionText;
     public GameObject etcUi;
     public List<GameObject> childUis;
     public GameObject heartImage;
@@ -24,6 +25,7 @@ public class EtcUIManager : MonoBehaviour
         manager = gameObject.GetComponent<LobbyUIManager>();
         GameSystem.isCanVive = SecurityPlayerPrefs.GetInt("Vive", 1) == 1;
         GameSystem.whichHand = (handPos)SecurityPlayerPrefs.GetInt("Hand", 0);
+        versionText.text = "Ver. " + Application.version;
         OnHandSettingChanged();
         OnViveSettingChanged();
     }

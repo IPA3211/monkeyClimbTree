@@ -41,7 +41,7 @@ public class SmoothCamera : MonoBehaviour
                 smoothY = Mathf.SmoothDamp(cam.transform.position.y, 0, ref velocityY, 0.5f);
                 cam.transform.position = new Vector3(0, smoothY, -10);
 
-                if (Mathf.Abs(cam.transform.position.y) < 0.1f)
+                if (Mathf.Abs(cam.transform.position.y) < 0.01f)
                     GameSystem.isRestarted = false;
             }
 
@@ -50,7 +50,7 @@ public class SmoothCamera : MonoBehaviour
             else
                 cam.transform.position = Vector3.Lerp(cam.transform.position, new Vector3(0, maxYPos - camOffset, -10), Time.deltaTime * camSpeed);
 
-            if (Mathf.Abs(limit - cam.transform.position.y) < 0.5f)
+            if (Mathf.Abs(limit - cam.transform.position.y) < 0.1f)
             {
                 if (fixCam == false)
                 {
@@ -68,7 +68,7 @@ public class SmoothCamera : MonoBehaviour
 
     void Reset(){
         maxYPos = camOffset;
-        limit = 10000;
+        limit = 100000000;
         fixCam = false;
         isEnd = false;
     }

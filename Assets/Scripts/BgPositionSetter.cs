@@ -66,5 +66,6 @@ public class BgPositionSetter : MonoBehaviour
     void Reset(){
         isEnd = false;
         endBg.SetActive(false);
+        GetComponentInChildren<levelUpVine>().resetPos();
     }
 }
