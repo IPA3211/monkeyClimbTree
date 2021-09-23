@@ -29,8 +29,6 @@ public class LobbyUIManager : MonoBehaviour
         if(temp != null){
             netManager = temp.GetComponent<GoogleManager>();
         }
-        else
-            JsonManager.Load();
     }
     private void FixedUpdate()
     {

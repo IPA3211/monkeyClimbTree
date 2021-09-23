@@ -52,8 +52,6 @@ public class GambleUIManager : MonoBehaviour
         {
             netManager = temp.GetComponent<GoogleManager>();
         }
-        else
-            JsonManager.Load();
     }
 
     // Update is called once per frame

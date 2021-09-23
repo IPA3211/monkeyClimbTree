@@ -15,7 +15,6 @@ public class RuntimeGameManager : MonoBehaviour
     GoogleManager netManager = null;
     // Start is called before the first frame update
     void Awake(){
-        SecurityPlayerPrefs.SetString("Version", Application.version);
         gameManager = gameObject;
         endingManger = GetComponent<EndingManager>();
         readyUIManager = canvas.GetComponent<ReadyUIManager>();
@@ -42,7 +41,20 @@ public class RuntimeGameManager : MonoBehaviour
                 }
             }
         }
+        // 로컬에 있는 것의 시간이 받아온 것 보다 더 크다면
+        else if (netManager != null && JsonManager.isLastSaveInLocal()){
+            JsonManager.Load();
+            if(SecurityPlayerPrefs.GetString("UserID", "").Equals(Social.localUser.id) || SecurityPlayerPrefs.GetString("UserID", "").Equals(""))
+                netManager.SaveCloud();
+            netManager.NetStatusText.text = "로컬에서 불러옴";
+        }
+
+        Debug.LogWarning(System.DateTime.FromBinary(SecurityPlayerPrefs.GetLong("SavedTime", 0)));
+        Debug.LogWarning(JsonManager.isLastSaveInLocal());
         
+        JsonManager.Save();
+
+        SecurityPlayerPrefs.SetString("Version", Application.version);
         GameSystem.setCoin(SecurityPlayerPrefs.GetInt("Coin", 0));
         GameSystem.playerClearedStage = SecurityPlayerPrefs.GetInt("playerClearedStage", 0);
         GameSystem.timeToAd = SecurityPlayerPrefs.GetInt("timeToAd", 3);

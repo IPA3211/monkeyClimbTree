@@ -104,6 +104,10 @@ public class SecurityPlayerPrefs
 
         return Encoding.UTF8.GetString(bytesDecrypted);
     }
+    
+    public static string getTimeHash(){
+        return MakeHash("SavedTime" + _saltForKey);
+    }
 
     private static void SetSecurityValue(string key, string value)
     {
@@ -113,6 +117,8 @@ public class SecurityPlayerPrefs
         JsonManager.SetValue(hideKey, encryptValue);
         JsonManager.Save();
         PlayerPrefs.SetString(hideKey, encryptValue);
+
+        
     }
 
     private static string GetSecurityValue(string key)
@@ -155,34 +161,47 @@ public class SecurityPlayerPrefs
     public static void SetInt(string key, int value)
     {
         SetSecurityValue(key, key + value.ToString());
+        SaveTime();
     }
 
     public static void SetLong(string key, long value)
     {
         SetSecurityValue(key, key + value.ToString());
+        SaveTime();
     }
 
     public static void SetFloat(string key, float value)
     {
         SetSecurityValue(key, key + value.ToString());
+        SaveTime();
     }
 
     public static void SetString(string key, string value)
     {
         SetSecurityValue(key, key + value);
+        SaveTime();
+    }
+
+    private static void SaveTime(){
+        long time = UnbiasedTime.Instance.Now().ToBinary();
+        SetSecurityValue("SavedTime", "SavedTime" + time.ToString());
     }
 
     // 위에 저렇게 해놔서 Get하는 부분도 변경
     public static int GetInt(string key, int defaultValue)
     {
         string originalValue = GetSecurityValue(key);
-        if (true == string.IsNullOrEmpty(originalValue))
+        if (true == string.IsNullOrEmpty(originalValue)){
+            SetInt(key, defaultValue);
             return defaultValue;
+        }
         
         originalValue = originalValue.Replace(key, "");
         int result = defaultValue;
-        if (false == int.TryParse(originalValue, out result))
+        if (false == int.TryParse(originalValue, out result)){
+            SetInt(key, defaultValue);
             return defaultValue;
+        }
 
         return result;
     }
@@ -190,13 +209,17 @@ public class SecurityPlayerPrefs
     public static long GetLong(string key, long defaultValue)
     {
         string originalValue = GetSecurityValue(key);
-        if (true == string.IsNullOrEmpty(originalValue))
+        if (true == string.IsNullOrEmpty(originalValue)){
+            SetLong(key, defaultValue);
             return defaultValue;
+        }
 
         originalValue = originalValue.Replace(key, "");
         long result = defaultValue;
-        if (false == long.TryParse(originalValue, out result))
+        if (false == long.TryParse(originalValue, out result)){
+            SetLong(key, defaultValue);
             return defaultValue;
+        }
 
         return result;
     }
@@ -204,13 +227,17 @@ public class SecurityPlayerPrefs
     public static float GetFloat(string key, float defaultValue)
     {
         string originalValue = GetSecurityValue(key);
-        if (true == string.IsNullOrEmpty(originalValue))
+        if (true == string.IsNullOrEmpty(originalValue)){
+            SetFloat(key, defaultValue);
             return defaultValue;
+        }
 
         originalValue = originalValue.Replace(key, "");
         float result = defaultValue;
-        if (false == float.TryParse(originalValue, out result))
+        if (false == float.TryParse(originalValue, out result)){
+            SetFloat(key, defaultValue);
             return defaultValue;
+        }
 
         return result;
     }
@@ -218,8 +245,10 @@ public class SecurityPlayerPrefs
     public static string GetString(string key, string defaultValue)
     {
         string originalValue = GetSecurityValue(key);
-        if (true == string.IsNullOrEmpty(originalValue))
+        if (true == string.IsNullOrEmpty(originalValue)){
+            SetString(key, defaultValue);
             return defaultValue;
+        }
 
         originalValue = originalValue.Replace(key, "");
         return originalValue;

@@ -51,6 +51,7 @@ public class JsonManager {
     public static void Load()
     {
         //Debug.Log("불러오기");
+        Debug.LogWarning("로컬 파일을 불러옴");
         string Jsonstring;
         try{
             if(Application.platform == RuntimePlatform.WindowsEditor){
@@ -71,18 +72,53 @@ public class JsonManager {
         }
     }
 
+    public static bool isLastSaveInLocal(){
+        string Jsonstring;
+        try{
+            if(Application.platform == RuntimePlatform.WindowsEditor){
+                Jsonstring = File.ReadAllText(Application.dataPath
+                                                        + "/ItemData");
+            }
+            else {
+                Jsonstring = File.ReadAllText(Application.persistentDataPath
+                                                        + "/ItemData");
+            }
+
+            return isLastSaveInLocalFromString(Jsonstring);
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("저장된 로컬 파일이 없습니다.");
+            return false;
+        }
+    }
+    public static bool isLastSaveInLocalFromString(string Jsonstring){  
+        JsonData itemData = JsonMapper.ToObject(SecurityPlayerPrefs.Decrypt(Jsonstring));
+        for(int i = 0; i < itemData.Count; i++)
+        {
+            if(itemData[i]["key"].ToString().Equals(SecurityPlayerPrefs.getTimeHash())){
+                long netTime = SecurityPlayerPrefs.GetLong("SavedTime", 0);
+                PlayerPrefs.SetString(itemData[i]["key"].ToString(), itemData[i]["value"].ToString());
+
+                Debug.Log(netTime);
+                Debug.Log(SecurityPlayerPrefs.GetLong("SavedTime", 0));
+                return netTime < SecurityPlayerPrefs.GetLong("SavedTime", 0);
+            }
+        }
+        
+        return false;
+    }
+
     public static void LoadDataFromString(string Jsonstring){
         ItemList.Clear();        
         JsonData itemData = JsonMapper.ToObject(SecurityPlayerPrefs.Decrypt(Jsonstring));
-
+        Debug.Log(SecurityPlayerPrefs.Decrypt(Jsonstring));
         for(int i = 0; i < itemData.Count; i++)
         {
             ItemList.Add(new Data(itemData[i]["key"].ToString(), itemData[i]["value"].ToString()));
             JsonManager.SetValue(itemData[i]["key"].ToString(), itemData[i]["value"].ToString());
             PlayerPrefs.SetString(itemData[i]["key"].ToString(), itemData[i]["value"].ToString());
         }
-        
-        JsonManager.Save();
     }
 
     public static void DeleteAll(){
